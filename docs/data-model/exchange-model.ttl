@@ -1,0 +1,667 @@
+@prefix :               <https://data.acqf-qcp.africa/model/resource/> .
+@prefix exchange-model: <https://data.acqf-qcp.africa/model/exchange-model> .
+@prefix adms:           <http://www.w3.org/ns/adms#>.
+@prefix ams:            <http://data.europa.eu/snb/model/ap/ams-constraints/>.
+@prefix cc:             <http://creativecommons.org/ns#>.
+@prefix clv:            <http://data.europa.eu/m8g/>.
+@prefix dc:             <http://purl.org/dc/terms/>.
+@prefix elm:            <http://data.europa.eu/snb/model/elm/>.
+@prefix foaf:           <http://xmlns.com/foaf/0.1/>.
+@prefix locn:           <http://www.w3.org/ns/locn#>.
+@prefix org:            <http://www.w3.org/ns/org#>.
+@prefix owl:            <http://www.w3.org/2002/07/owl#>.
+@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:           <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rov:            <http://www.w3.org/ns/regorg#>.
+@prefix sh:             <http://www.w3.org/ns/shacl#> .
+@prefix skos:           <http://www.w3.org/2004/02/skos/core#>.
+@prefix xsd:            <http://www.w3.org/2001/XMLSchema#>.
+
+exchange-model:
+    a                 owl:Ontology ;
+    owl:imports       elm: ;
+    owl:versionIRI    <https://data.acqf-qcp.africa/model/exchange-model/0.0.1> ;
+    owl:versionInfo   "0.0.1" ;
+    dc:created        "2024-04-03"^^xsd:date ;
+    dc:modified       "2024-04-03"^^xsd:date ;
+    dc:title          "ACQF QCP Exchange Model"@en ;
+    dc:description    "This is the exchange data model of ACQF QCP. It provides a unified representation of qualifications and related notions across african countries in a human-readable and machine-readable form that serves as a basis for the ACQF platform as well as an exchange (import/export) format for sharing the ACQF data."@en ;
+    dc:publisher      <http://publications.europa.eu/resource/authority/corporate-body/ETF> ;
+    cc:attributionURL <http://ec.europa.eu/> ;
+    dc:license        <https://creativecommons.org/licenses/by/4.0/> ;
+.
+
+:QualificationShape
+    a              sh:NodeShape ;
+    dc:description "A specification of an assessment and validation process which is obtained when a competent authority determines that an individual has achieved learning outcomes to given standards. Qualification is a subclass of Learning Achievement Specification."@en ;
+    sh:targetClass elm:Qualification ;
+    sh:closed      true ;
+    sh:property    :identifierPropertyShape,
+
+                   # Annex VI - "Title of the qualification"
+                   :titlePropertyShape-Min1,
+
+                   # Annex VI - "Field"
+                   :QualificationShape-ISCEDFCode,
+
+                   # Annex VI - "Country/Region (code)"
+                   # publisher -> location
+                   :publisherPropertyShape-Min1Max1,
+
+                   # Annex VI - "EQF Level"
+                   # EQF -> educationLevel
+                   :QualificationShape-educationLevel,
+
+                   # Annex VI - "Knowledge"
+                   # Annex VI - "Skills"
+                   # Annex VI - "Responsibility and autonomy"
+                   :QualificationShape-learningOutcome-Min1, :QualificationShape-learningOutcomeSummary-Max1,
+
+                   # Annex VI - "Awarding body or competent authority"
+                   :QualificationShape-awardingOpportunity-Min1,
+
+                   # Annex VI - "Credit points/notional workload needed to achieve the learning outcomes"
+                   :QualificationShape-creditPoint,
+
+                   # Annex VI - Link to relevant supplements
+                   # prior qualification
+                   :QualificationShape-supplementaryDocument-Min1,
+
+                   # Annex VI - Internal quality assurance processes
+                   # Annex VI - External quality assurance/regulatory body
+                   :QualificationShape-accreditation,
+
+                   # Annex VI - URL of the qualification
+                   :homepagePropertyShape,
+
+                   # Annex VI - Relationship to occupations or occupational fields
+                   # LearningEntitlementSpecification -> limitNationalOccupation
+                   :QualificationShape-entitlesTo
+.
+
+:QualificationShape-ISCEDFCode
+    a           sh:PropertyShape ;
+    sh:name     "thematic area"@en ;
+    sh:description
+                "The thematic area according to the ISCED-F 2013 Classification. It should be provided using the ISCED-F controlled vocabulary."@en ;
+    sh:path     elm:ISCEDFCode ;
+    sh:class    skos:Concept ;
+    sh:minCount 0 ;
+    sh:severity sh:Violation ;
+.
+
+:QualificationShape-educationLevel
+    a              sh:PropertyShape ;
+    sh:name        "education level"@en ;
+    sh:description "An associated level of education within a semantic framework describing education levels."@en ;
+    sh:path        elm:educationLevel ;
+    sh:class       skos:Concept ;
+    sh:minCount    0 ;
+    sh:severity    sh:Violation ;
+.
+
+:QualificationShape-learningOutcome-Min1
+    a              sh:PropertyShape ;
+    sh:name        "learning outcome"@en ;
+    sh:description "An individual (expected) learning outcome of the qualification."@en ;
+    sh:path        elm:learningOutcome ;
+    sh:class       elm:LearningOutcome ;
+    sh:minCount    1 ;
+    sh:severity    sh:Violation ;
+.
+
+:QualificationShape-learningOutcomeSummary-Max1
+    a              sh:PropertyShape ;
+    sh:name        "learning outcome summary"@en ;
+    sh:description "The full learning outcome summary of the qualification."@en ;
+    sh:path        elm:learningOutcomeSummary ;
+    sh:class       elm:Note ;
+    sh:maxCount    1 ;
+    sh:severity    sh:Violation ;
+.
+
+:QualificationShape-creditPoint
+    a              sh:PropertyShape ;
+    sh:name        "credit points"@en ;
+    sh:description "The credit points assigned to the qualification, following an educational credit system."@en ;
+    sh:path        elm:creditPoint ;
+    sh:class       elm:CreditPoint ;
+    sh:severity    sh:Violation ;
+.
+
+:QualificationShape-accreditation
+    a              sh:PropertyShape ;
+    sh:name        "accreditation"@en ;
+    sh:description "The associated accreditation."@en ;
+    sh:path        elm:accreditation ;
+    sh:class       elm:Accreditation ;
+    sh:severity    sh:Violation ;
+.
+
+:QualificationShape-awardingOpportunity-Min1
+    a           sh:PropertyShape ;
+    sh:name     "awarding information"@en ;
+    sh:description
+                "Refers to  an activity related to the awarding of the qualification, such as the country or region where the qualification is awarded, the awarding body and optionally the awarding period now or in the past."@en ;
+    sh:path     elm:awardingOpportunity ;
+    sh:class    elm:AwardingOpportunity ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+.
+
+:QualificationShape-entitlesTo
+    a              sh:PropertyShape ;
+    sh:name        "entitles To"@en ;
+    sh:description "Rights (such as which the person may acquire as a result of acquiring the learning outcomes)."@en ;
+    sh:path        elm:entitlesTo ;
+    sh:class       elm:LearningEntitlementSpecification ;
+    sh:severity    sh:Violation ;
+.
+
+:QualificationShape-supplementaryDocument-Min1
+    a           sh:PropertyShape ;
+    sh:name     "other documents"@en ;
+    sh:description
+                "A public web resource containing additional documentation about the resource. At minimum, it should contain Links of the qualification (partly or fully) to Recognition of Prior Learning (RPL, VAE, VNFIL)"@en ;
+    sh:path     elm:supplementaryDocument ;
+    sh:node     :URLRegexRestriction ;
+    sh:class    elm:WebResource ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+.
+
+:CreditPointShape
+    a              sh:NodeShape ;
+    dc:description "The credit Points"@en ;
+    sh:targetClass elm:CreditPoint ;
+    sh:closed      true ;
+    sh:property    :CreditPointShape-framework-Min1Max1 ;
+    sh:property    :CreditPointShape-point-Min1Max1 ;
+.
+
+:CreditPointShape-framework-Min1Max1
+    a           sh:PropertyShape ;
+    sh:name     "framework" ;
+    sh:description
+                "The framework used to assign the credit points to the learning specification. It could be provided using the EDC Controlled List of Educational Credit Systems."@en ;
+    sh:path     elm:framework ;
+    sh:class    skos:Concept ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+.
+
+:CreditPointShape-point-Min1Max1
+    a              sh:PropertyShape ;
+    sh:name        "points" ;
+    sh:description "The credit points assigned to the learning specification."@en ;
+    sh:path        elm:point ;
+    sh:datatype    xsd:string ;
+    sh:minCount    1 ;
+    sh:maxCount    1 ;
+    sh:severity    sh:Violation ;
+.
+
+:NoteShape
+    a              sh:NodeShape ;
+    dc:description "Free text metadata fields, such as the description, a historical or additional note of a qualification can contain a plain text or a XHTML fragment as literal value. By using a Note both the datatype of the literal and the language can be specified."@en ;
+    sh:targetClass elm:Note ;
+    sh:closed      true ;
+    sh:property    :NoteShape-noteLiteral-Min1 ;
+    sh:property    :NoteShape-subject-Max1 ;
+    sh:property    :NoteShape-noteFormat-Max1 ;
+.
+
+:NoteShape-noteLiteral-Min1
+    a              sh:PropertyShape ;
+    sh:name        "note literal"@en ;
+    sh:description "The textual content of the note."@en ;
+    sh:path        elm:noteLiteral ;
+    sh:datatype    rdf:langString ;
+    sh:minCount    1 ;
+    sh:severity    sh:Violation ;
+.
+
+:NoteShape-subject-Max1
+    a              sh:PropertyShape ;
+    sh:name        "subject"@en ;
+    sh:description "The subject of the note. It should be provided using a controlled vocabulary."@en ;
+    sh:path        dc:subject ;
+    sh:class       skos:Concept ;
+    sh:maxCount    1 ;
+    sh:severity    sh:Violation ;
+.
+
+:NoteShape-noteFormat-Max1
+    a           sh:PropertyShape ;
+    sh:name     "note format"@en ;
+    sh:description
+                "The format of the note. It should be provided using the IANA  types for text, text/plain, text/html etc."@en ;
+    sh:path     elm:noteFormat ;
+    sh:class    skos:Concept ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+.
+
+:WebResourceShape
+    a              sh:NodeShape ;
+    dc:description "A public web resource."@en ;
+    sh:targetClass elm:WebResource ;
+    sh:closed      true ;
+    sh:property    :WebResource-contentUrl-Min1Max1 ;
+.
+
+:titlePropertyShape
+    a              sh:PropertyShape ;
+    sh:name        "title"@en ;
+    sh:description "The title of the web resource. One value per language is permitted."@en ;
+    sh:path        dc:title ;
+    sh:datatype    rdf:langString ;
+    sh:uniqueLang  true ;
+    sh:severity    sh:Violation ;
+.
+
+:WebResource-contentUrl-Min1Max1
+    a              sh:PropertyShape ;
+    sh:name        "URL"@en ;
+    sh:description "The public access URL."@en ;
+    sh:path        elm:contentUrl ;
+    sh:datatype    xsd:anyURI ;
+    sh:minCount    1 ;
+    sh:maxCount    1 ;
+    sh:severity    sh:Violation ;
+.
+
+:LearningOutcomeShape
+    a              sh:NodeShape ;
+    dc:description "A statement regarding what a learner knows, understands and is able to do on completion of a learning process, which are defined in terms of knowledge, skills and responsibility and autonomy."@en ;
+    sh:targetClass elm:LearningOutcome ;
+    sh:closed      true ;
+    sh:property    :identifierPropertyShape,
+                   #
+                   :titlePropertyShape-Min1,
+                   #
+                   :LearningOutcomeShape-relatedSkill,
+                   #
+                   :additionalNotePropertyShape
+.
+
+:LearningOutcomeShape-relatedSkill
+    a           sh:PropertyShape ;
+    sh:name     "related skill(s)"@en ;
+    sh:description
+                "A link to a related skill or the level of a related skill on a skill framework (except ESCO). It should be provided using a controlled vocabulary."@en ;
+    sh:path     elm:relatedSkill ;
+    sh:class    skos:Concept ;
+    sh:severity sh:Violation ;
+.
+
+:AccreditationShape
+    a              sh:NodeShape ;
+    dc:description "The quality assurance or licensing of an organisation or a qualification. An accreditation instance can be used to specify information about: (1) the quality assurance and/or licensing of an organisation, (2) the quality assurance and/or licensing of an organisation with respect to a specific qualification."@en ;
+    sh:targetClass elm:Accreditation ;
+    sh:closed      true ;
+    sh:property    :identifierPropertyShape,
+                   #
+                   :titlePropertyShape-Min1,
+                   #
+                   :AccreditationShape-type-Min1Max1,
+                   #
+                   :AccreditationShape-organisation-Min1,
+                   #
+                   :AccreditationShape-accreditingAgent-Min1Max1,
+                   #
+                   :AccreditationShape-expiryDate-Max1
+.
+
+:AccreditationShape-type-Min1Max1
+    a           sh:PropertyShape ;
+    sh:name     "type"@en ;
+    sh:description
+                "The type of the accreditation. It should be provided using the EDC Controlled List of Accreditation Types."@en ;
+    sh:path     dc:type ;
+    sh:class    skos:Concept ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+.
+
+:AccreditationShape-organisation-Min1
+    a              sh:PropertyShape ;
+    sh:name        "organisation"@en ;
+    sh:description "The organisation whose activities are being accredited."@en ;
+    sh:path        elm:organisation ;
+    sh:class       elm:Organisation ;
+    sh:minCount    1 ;
+    sh:severity    sh:Violation ;
+.
+
+:AccreditationShape-accreditingAgent-Min1Max1
+    a              sh:PropertyShape ;
+    sh:name        "accrediting organisation"@en ;
+    sh:description "The Quality Assuring Authority (i.e., assurer)."@en ;
+    sh:path        elm:accreditingAgent ;
+    sh:class       elm:Organisation ;
+    sh:minCount    1 ;
+    sh:maxCount    1 ;
+    sh:severity    sh:Violation ;
+.
+
+:AccreditationShape-expiryDate-Max1
+    a              sh:PropertyShape ;
+    sh:name        "expiry date"@en ;
+    sh:description "The date when the accreditation expires or was expired."@en ;
+    sh:path        elm:expiryDate ;
+    sh:datatype    xsd:dateTime ;
+    sh:maxCount    1 ;
+    sh:severity    sh:Violation ;
+.
+
+:OrganisationShape
+    a              sh:NodeShape ;
+    dc:description "A legal person / registered organisation."@en ;
+    sh:targetClass elm:Organisation ;
+    sh:closed      true ;
+    sh:property    :identifierPropertyShape,
+                   #
+                   :OrganisationShape-prefLabel-Min1,
+                   #
+                   :OrganisationShape-location-Min1
+.
+
+:OrganisationShape-prefLabel-Min1
+    a              sh:PropertyShape ;
+    sh:name        "name"@en ;
+    sh:description "The preferred name of the organisation. One value per language is permitted."@en ;
+    sh:path        skos:prefLabel ;
+    sh:datatype    rdf:langString ;
+    sh:minCount    1 ;
+    sh:uniqueLang  true ;
+    sh:severity    sh:Violation ;
+.
+
+:OrganisationShape-location-Min1
+    a              sh:PropertyShape ;
+    sh:name        "location"@en ;
+    sh:description "The location of the organisation."@en ;
+    sh:path        elm:location ;
+    sh:class       dc:Location ;
+    sh:minCount    1 ;
+    sh:severity    sh:Violation ;
+.
+
+:AwardingOpportunityShape
+    a              sh:NodeShape ;
+    dc:description "An awarding opportunity describes how, where, from whom and when a claim may be obtained."@en ;
+    sh:targetClass elm:AwardingOpportunity ;
+    sh:closed      true ;
+    sh:property    :identifierPropertyShape,
+                   #
+                   :additionalNotePropertyShape,
+                   #
+                   :AwardingOpportunityShape-awardingBody
+.
+
+:AwardingOpportunityShape-awardingBody
+    a           sh:PropertyShape ;
+    sh:name     "awarding body"@en ;
+    sh:description
+                "The awarding body related to this awarding activity (i.e., the organisation that issues the qualification) Only in cases of co-awarding/co-graduation, where a qualification is issued to an individual by two or more organisations the cardinality is greater than 1."@en ;
+    sh:path     elm:awardingBody ;
+    sh:class    elm:Organisation ;
+    sh:severity sh:Violation ;
+.
+
+:ConceptShape
+    a              sh:NodeShape ;
+    dc:description "A term from a controlled vocabulary modelled as a skos:Concept."@en ;
+    sh:targetClass skos:Concept ;
+    sh:property    :ConceptShape-prefLabel,
+                   #
+                   :ConceptShape-altLabel,
+                   #
+                   :ConceptShape-notation-Max1,
+                   #
+                   :ConceptShape-inScheme
+.
+
+:ConceptShape-prefLabel
+    a              sh:PropertyShape ;
+    sh:name        "name"@en ;
+    sh:description "The text equivalent of the code content component. One value per language is permitted."@en ;
+    sh:datatype    rdf:langString ; ;
+    sh:path        skos:prefLabel ;
+    sh:uniqueLang  true ;
+    sh:severity    sh:Violation ;
+.
+
+:ConceptShape-altLabel
+    a              sh:PropertyShape ;
+    sh:name        "alternative name"@en ;
+    sh:description "The alternative name. It must be disjoint with name (skos:prefLabel) of the Concept."@en ;
+    sh:datatype    rdf:langString ; ;
+    sh:path        skos:altLabel ;
+    sh:disjoint    skos:prefLabel ;
+    sh:severity    sh:Violation ;
+.
+
+:ConceptShape-notation-Max1
+    a           sh:PropertyShape ;
+    sh:name     "notation"@en ;
+    sh:description
+                "A notation, also known as classification code, is a string of characters used to uniquely identify a concept within the scope of a given concept scheme. This property is used to assign a notation as a typed literal."@en ;
+    sh:path     skos:notation ;
+    sh:nodeKind sh:Literal ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+.
+
+:ConceptShape-inScheme
+    a              sh:PropertyShape ;
+    sh:name        "in scheme"@en ;
+    sh:description "The concept scheme this concept belongs to. The identification of the controlled vocabulary."@en ;
+    sh:path        skos:inScheme ;
+    sh:class       skos:ConceptScheme ;
+    sh:severity    sh:Violation ;
+.
+
+:ConceptScheme
+    a              sh:NodeShape ;
+    dc:description "A controlled vocabulary modelled as a Concept Scheme."@en ;
+    sh:targetClass skos:ConceptScheme ;
+.
+
+:IdentifierShape
+    a              sh:NodeShape ;
+    dc:description "A character string used to identify a resource. An identifier is a character string used to uniquely identify one instance of an object within an identification scheme that is managed by an agency. The Identifier class is a critical aspect of the ELM. It is used to identify persons and organisations. In these cases, and more, the identifier itself will be some sort of alpha-numeric string but that string only has meaning if it is contextualised."@en ;
+    sh:targetClass elm:Identifier ;
+    sh:closed      true ;
+    sh:property    :IdentifierShape-notation-Min1Max1,
+                   #
+                   :IdentifierShape-schemeAgency-Max1,
+                   #
+                   :IdentifierShape-schemeName-Max1
+.
+
+:IdentifierShape-notation-Min1Max1
+    a           sh:PropertyShape ;
+    sh:name     "identifier content"@en ;
+    sh:description
+                "Content string which is the identifier. This property is used to assign a notation as a typed literal"@en ;
+    sh:path     skos:notation ;
+    sh:nodeKind sh:Literal ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation
+.
+
+:IdentifierShape-schemeAgency-Max1
+    a              sh:PropertyShape ;
+    sh:name        "scheme agency name"@en ;
+    sh:description "The name of the agent that manages the identifier scheme."@en ;
+    sh:path        adms:schemeAgency ;
+    sh:datatype    rdf:langString ; ;
+    sh:maxCount    1 ;
+    sh:severity    sh:Violation ;
+.
+
+:IdentifierShape-schemeName-Max1
+    a              sh:PropertyShape ;
+    sh:name        "scheme name"@en ;
+    sh:description "The name of the identifier scheme."@en ;
+    sh:path        elm:schemeName ;
+    sh:datatype    xsd:string ;
+    sh:maxCount    1 ;
+    sh:severity    sh:Violation ;
+.
+
+:LearningEntitlementSpecificationShape
+    a              sh:NodeShape ;
+    dc:description "The specification of a right a person has access to, typically as a result of a learning achievement. It may take the form of the right to be a member of an organisation, to follow a certain learning opportunity specification, or to follow a certain career. Learning Entitlement Specifications is a subclass of Specification."@en ;
+    sh:targetClass elm:LearningEntitlementSpecification ;
+    sh:closed      true ;
+    sh:property    :identifierPropertyShape,
+                   #
+                   :LearningEntitlementSpecificationShape-limitNationalOccupation
+.
+
+:LearningEntitlementSpecificationShape-limitNationalOccupation
+    a              sh:PropertyShape ;
+    sh:name        "limit national occupation"@en ;
+    sh:description "An Occupation or Occupational Category. It should be provided using a controlled vocabulary."@en ;
+    sh:path        elm:limitNationalOccupation ;
+    sh:class       skos:Concept ;
+    sh:severity    sh:Violation ;
+.
+
+:LearningOpportunityShape
+    a              sh:NodeShape ;
+    dc:description "An opportunity to realise a given set of learning outcomes via a learning activity and/or assessment."@en ;
+    sh:targetClass elm:LearningOpportunity ;
+    sh:closed      true ;
+    sh:property    :identifierPropertyShape,
+                   #
+                   :titlePropertyShape-Min1,
+                   #
+                   :LearningOpportunityShape-providedBy-Min1,
+                   #
+                   :LearningOpportunityShape-learningAchievementSpecification-Min1Max1,
+                   #
+                   :LearningOpportunityShape-defaultLanguage-Min1Max1
+.
+
+:LearningOpportunityShape-providedBy-Min1
+    a           sh:PropertyShape ;
+    sh:name     "provided by"@en ;
+    sh:description
+                "The organisation providing or directing the learning opportunity. In the case of, e.g., joint qualifications, there may be several organisations directing the learning opportunity."@en ;
+    sh:path     elm:providedBy ;
+    sh:class    elm:Organisation ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+.
+
+:LearningOpportunityShape-learningAchievementSpecification-Min1Max1
+    a              sh:PropertyShape ;
+    sh:name        "qualification"@en ;
+    sh:description "The qualification, including the curricula, of this learning opportunity."@en ;
+    sh:path        elm:learningAchievementSpecification ;
+    sh:class       elm:Qualification ;
+    sh:minCount    1 ;
+    sh:maxCount    1 ;
+    sh:severity    sh:Violation ;
+.
+
+:LearningOpportunityShape-defaultLanguage-Min1Max1
+    a              sh:PropertyShape ;
+    sh:name        "default language"@en ;
+    sh:description "The base language of the learning opportunity, to be considered authoritative."@en ;
+    sh:path        elm:defaultLanguage ;
+    sh:class       skos:Concept ;
+    sh:minCount    1 ;
+    sh:maxCount    1 ;
+    sh:severity    sh:Violation ;
+.
+
+:LocationShape
+    a              sh:NodeShape ;
+    dc:description "An identifiable geographic place."@en ;
+    sh:targetClass dc:Location ;
+    sh:closed      true ;
+    sh:property    :identifierPropertyShape,
+                   #
+                   :LocationShape-spatialCode-Min1
+.
+
+:LocationShape-spatialCode-Min1
+    a              sh:PropertyShape ;
+    sh:name        "spatial code"@en ;
+    sh:description "A code identifying a spatial scope in which this physical location is located."@en ;
+    sh:path        elm:spatialCode ;
+    sh:minCount    1 ;
+    sh:class       skos:Concept ;
+    sh:severity    sh:Violation ;
+.
+
+### Common shapes
+
+:URLRegexRestriction
+    a           sh:NodeShape ;
+    dc:description
+                "This shape does not apply on a class. This shape is for checking if the value of contentUrl is well formed."@en ;
+    sh:property [ sh:path     elm:contentUrl ;
+                  sh:and      ( [ sh:pattern
+                                          "^(?i)(http|https):(//(([^@\\[/?#]*)@)?(\\[[[A-Fa-f0-9]\\:\\.]*[%[\\p{L}\\p{Nl}\\p{Nd}]]*\\]|[^\\[/?#:]*)(:(\\d*(?:\\{[^/]+?\\})?))?)?([^?#]*)(\\?([^#]*))?(#(.*))?" ; ]
+                                [ sh:pattern "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" ; ] ) ;
+                  sh:severity sh:Violation ; ]
+.
+
+:identifierPropertyShape
+    a              sh:PropertyShape ;
+    sh:name        "identifier"@en ;
+    sh:description "An identifier assigned to the resource."@en ;
+    sh:path        adms:identifier ;
+    sh:class       elm:Identifier ;
+    sh:severity    sh:Violation ;
+.
+
+:titlePropertyShape-Min1
+    a              sh:PropertyShape ;
+    sh:name        "title"@en ;
+    sh:description "The title. One value per language is permitted."@en ;
+    sh:path        dc:title ;
+    sh:datatype    rdf:langString ;
+    sh:minCount    1 ;
+    sh:uniqueLang  true ;
+    sh:severity    sh:Violation ;
+.
+
+:additionalNotePropertyShape
+    a              sh:PropertyShape ;
+    sh:name        "more information"@en ;
+    sh:description "An additional free text note about the resource."@en ;
+    sh:path        elm:additionalNote ;
+    sh:class       elm:Note ;
+    sh:severity    sh:Violation ;
+.
+
+:publisherPropertyShape-Min1Max1
+    a              sh:PropertyShape ;
+    sh:name        "publisher"@en ;
+    sh:description "The publisher."@en ;
+    sh:path        dc:publisher ;
+    sh:minCount    1 ;
+    sh:maxCount    1 ;
+    sh:class       elm:Organisation ;
+    sh:severity    sh:Violation ;
+.
+
+:homepagePropertyShape
+    a              sh:PropertyShape ;
+    sh:name        "homepage"@en ;
+    sh:description "The homepage."@en ;
+    sh:path        foaf:homepage ;
+    sh:class       elm:WebResource ;
+    sh:node        :URLRegexRestriction ;
+    sh:severity    sh:Violation ;
+.
