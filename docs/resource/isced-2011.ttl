@@ -1,10 +1,11 @@
-@prefix :     <https://data.acqf-acp.africa/resource/isced-2011/> .
-@prefix dct:  <http://purl.org/dc/terms/> .
-@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix acqf-qcp: <https://data.acqf-acp.africa/resource/> .
+@prefix :         <https://data.acqf-acp.africa/resource/isced-2011_> .
+@prefix dct:      <http://purl.org/dc/terms/> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
 
-:concept-scheme
+acqf-qcp:isced-2011
     a                  skos:ConceptScheme ;
     dct:title          "ISCED 2011 levels of education"@en ;
     dct:description    "This is a SKOS representation of the ISCED 2011 levels of education."@en ;
@@ -20,7 +21,7 @@
 
 :level-0
     a               skos:Concept ;
-    skos:inScheme   :concept-scheme ;
+    skos:inScheme   acqf-qcp:isced-2011 ;
     skos:prefLabel  "Early childhood education"@en ;
     skos:altLabel   "ISCED 2011 - Level 0"@en ;
     skos:notation   "ISCED2011-0" ;
@@ -52,7 +53,7 @@ ISCED level 0
 
 :level-1
     a               skos:Concept ;
-    skos:inScheme   :concept-scheme ;
+    skos:inScheme   acqf-qcp:isced-2011 ;
     skos:prefLabel  "Primary education"@en ;
     skos:altLabel   "ISCED 2011 - Level 1"@en ;
     skos:notation   "ISCED2011-1" ;
@@ -82,7 +83,7 @@ purposes the term ‘primary education’ is used to label ISCED level 1.
 
 :level-2
     a               skos:Concept ;
-    skos:inScheme   :concept-scheme ;
+    skos:inScheme   acqf-qcp:isced-2011 ;
     skos:prefLabel  "Lower secondary education"@en ;
     skos:altLabel   "ISCED 2011 - Level 2"@en ;
     skos:notation   "ISCED2011-2" ;
@@ -110,7 +111,7 @@ used to label ISCED level 2."""@en .
 
 :level-3
     a               skos:Concept ;
-    skos:inScheme   :concept-scheme ;
+    skos:inScheme   acqf-qcp:isced-2011 ;
     skos:prefLabel  "Upper secondary education"@en ;
     skos:altLabel   "ISCED 2011 - Level 3"@en ;
     skos:notation   "ISCED2011-3" ;
@@ -138,7 +139,7 @@ ISCED level 3."""@en
 
 :level-4
     a               skos:Concept ;
-    skos:inScheme   :concept-scheme ;
+    skos:inScheme   acqf-qcp:isced-2011 ;
     skos:prefLabel  "Post-secondary non-tertiary education"@en ;
     skos:altLabel   "ISCED 2011 - Level 4"@en ;
     skos:notation   "ISCED2011-4" ;
@@ -170,7 +171,7 @@ label ISCED level 4.
 
 :level-5
     a               skos:Concept ;
-    skos:inScheme   :concept-scheme ;
+    skos:inScheme   acqf-qcp:isced-2011 ;
     skos:prefLabel  "Short-cycle tertiary education"@en ;
     skos:altLabel   "ISCED 2011 - Level 5"@en ;
     skos:notation   "ISCED2011-5" ;
@@ -198,7 +199,7 @@ training, associate degree, or bac+2. For international comparability purposes t
 
 :level-6
     a               skos:Concept ;
-    skos:inScheme   :concept-scheme ;
+    skos:inScheme   acqf-qcp:isced-2011 ;
     skos:prefLabel  "Bachelor’s or equivalent level"@en ;
     skos:altLabel   "ISCED 2011 - Level 6"@en ;
     skos:notation   "ISCED2011-6" ;
@@ -233,7 +234,7 @@ satisfy the criteria described in Paragraph 228. For international comparability
 
 :level-7
     a               skos:Concept ;
-    skos:inScheme   :concept-scheme ;
+    skos:inScheme   acqf-qcp:isced-2011 ;
     skos:prefLabel  "Master’s or equivalent level"@en ;
     skos:altLabel   "ISCED 2011 - Level 7"@en ;
     skos:notation   "ISCED2011-7" ;
@@ -270,7 +271,7 @@ used to label ISCED level 7."""@en
 
 :level-8
     a               skos:Concept ;
-    skos:inScheme   :concept-scheme ;
+    skos:inScheme   acqf-qcp:isced-2011 ;
     skos:prefLabel  "Doctoral or equivalent level"@en ;
     skos:altLabel   "ISCED 2011 - Level 8"@en ;
     skos:notation   "ISCED2011-8" ;
@@ -306,7 +307,7 @@ satisfy the criteria described in Paragraph 263. For international comparability
 
 :level-9
     a              skos:Concept ;
-    skos:inScheme  :concept-scheme ;
+    skos:inScheme  acqf-qcp:isced-2011 ;
     skos:prefLabel "Not elsewhere classified"@en ;
     skos:altLabel  "ISCED 2011 - Level 9"@en ;
     skos:notation  "ISCED2011-9" .
