@@ -1,5 +1,5 @@
-@prefix :               <https://data.acqf-qcp.africa/model/resource/> .
-@prefix exchange-model: <https://data.acqf-qcp.africa/model/exchange-model> .
+@prefix acqf-qcp-model: <https://data.acqf-acp.africa/model/> .
+@prefix :               <https://data.acqf-acp.africa/model/exchange-model/resource/> .
 @prefix adms:           <http://www.w3.org/ns/adms#>.
 @prefix ams:            <http://data.europa.eu/snb/model/ap/ams-constraints/>.
 @prefix cc:             <http://creativecommons.org/ns#>.
@@ -17,7 +17,7 @@
 @prefix skos:           <http://www.w3.org/2004/02/skos/core#>.
 @prefix xsd:            <http://www.w3.org/2001/XMLSchema#>.
 
-exchange-model:
+acqf-qcp-model:exchange-model
     a                 owl:Ontology ;
     owl:imports       elm: ;
     owl:versionIRI    <https://data.acqf-qcp.africa/model/exchange-model/0.0.1> ;

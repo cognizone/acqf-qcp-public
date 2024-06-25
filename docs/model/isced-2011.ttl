@@ -1,0 +1,313 @@
+@prefix acqf-qcp-model: <https://data.acqf-acp.africa/model/> .
+@prefix :               <https://data.acqf-acp.africa/model/isced-2011/resource/> .
+@prefix dct:            <http://purl.org/dc/terms/> .
+@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos:           <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
+
+acqf-qcp-model:isced-2011
+    a                  skos:ConceptScheme ;
+    dct:title          "ISCED 2011 levels of education"@en ;
+    dct:description    "This is a SKOS representation of the ISCED 2011 levels of education."@en ;
+    dct:created        "2024-06-25"^^xsd:date ;
+    dct:created        "2024-06-25"^^xsd:date ;
+    dct:created        "2024-06-25"^^xsd:date ;
+    dct:publisher      "cognizone bv" ;
+    dct:creator        "Petr Křemen" ;
+    dct:license        <http://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:source         <https://uis.unesco.org/sites/default/files/documents/international-standard-classification-of-education-isced-2011-en.pdf> ;
+    skos:hasTopConcept :level-0, :level-1, :level-2, :level-3, :level-4, :level-5, :level-6, :level-7, :level-8,
+                       :level-9 .
+
+:level-0
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:isced-2011 ;
+    skos:prefLabel  "Early childhood education"@en ;
+    skos:altLabel   "ISCED 2011 - Level 0"@en ;
+    skos:notation   "ISCED2011-0" ;
+    skos:definition """Programmes at ISCED level 0, or early childhood education, are typically designed with a holistic
+        approach to support children’s early cognitive, physical, social and emotional development
+and introduce young children to organized instruction outside of the family context. ISCED
+level 0 refers to early childhood programmes that have an intentional education component.
+These programmes aim to develop socio-emotional skills necessary for participation in school
+and society. They also develop some of the skills needed for academic readiness and prepare
+children for entry into primary education.
+
+At this level, programmes are not necessarily highly structured but are designed to provide an
+organized and purposeful set of learning activities in a safe physical environment. They allow
+children to learn through interaction with other children under the guidance of staff/educators,
+typically through creative and play-based activities.
+
+ISCED level 0 programmes target children below the age of entry into ISCED level 1. There are
+two categories of ISCED level 0 programmes: early childhood educational development and preprimary education. The former has educational content designed for younger children (in the age
+range of 0 to 2 years), whilst the latter is designed for children from age 3 years to the start of
+primary education.
+
+Programmes classified at ISCED level 0 may be referred to in many ways, for example: early
+childhood education and development, play school, reception, pre-primary, pre-school, or
+educación inicial. For programmes provided in crèches, daycare centres, nurseries or guarderías,
+it is important to ensure that they meet the ISCED level 0 classification criteria specified below.
+For international comparability purposes, the term ‘early childhood education’ is used to label
+ISCED level 0
+"""@en .
+
+:level-1
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:isced-2011 ;
+    skos:prefLabel  "Primary education"@en ;
+    skos:altLabel   "ISCED 2011 - Level 1"@en ;
+    skos:notation   "ISCED2011-1" ;
+    skos:definition """Programmes at ISCED level 1, or primary education, are typically designed to provide students
+with fundamental skills in reading, writing and mathematics (i.e. literacy and numeracy) and
+establish a solid foundation for learning and understanding core areas of knowledge, personal
+and social development, in preparation for lower secondary education. It focuses on learning at a
+basic level of complexity with little, if any, specialisation.
+
+Educational activities at ISCED level 1 (particularly in the early grades) are often organized around
+units, projects or broad learning areas, often with an integrated approach rather than providing
+instruction in specific subjects. Typically, there is one main teacher responsible for a group of
+pupils who organizes the learning process, although a class may have more than one teacher,
+especially for certain subjects or units.
+
+Age is typically the only entry requirement at this level. The customary or legal age of entry is
+usually not below 5 years old nor above 7 years old. This level typically lasts six years, although
+its duration can range between four and seven years. Primary education typically lasts until
+age 10 to 12 (see Paragraphs 132 to 134). Upon completion of primary education programmes,
+children may continue their education at ISCED level 2 (lower secondary education).
+
+Programmes classified at ISCED level 1 may be referred to in many ways, for example: primary
+education, elementary education or basic education (stage 1 or lower grades if an education
+system has one programme that spans ISCED levels 1 and 2). For international comparability
+purposes the term ‘primary education’ is used to label ISCED level 1.
+"""@en .
+
+:level-2
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:isced-2011 ;
+    skos:prefLabel  "Lower secondary education"@en ;
+    skos:altLabel   "ISCED 2011 - Level 2"@en ;
+    skos:notation   "ISCED2011-2" ;
+    skos:definition """Programmes at ISCED level 2, or lower secondary education, are typically designed to build on
+the learning outcomes from ISCED level 1. Usually, the aim is to lay the foundation for lifelong
+learning and human development upon which education systems may then expand further
+educational opportunities. Some education systems may already offer vocational education
+programmes at ISCED level 2 to provide individuals with skills relevant to employment.
+
+Programmes at this level are usually organized around a more subject-oriented curriculum,
+introducing theoretical concepts across a broad range of subjects. Teachers typically have
+pedagogical training in specific subjects and, more often than at ISCED level 1, a class of
+students may have several teachers with specialised knowledge of the subjects they teach.
+
+ISCED level 2 begins after four to seven years of ISCED level 1 education, with six years of
+ISCED level 1 being the most common duration. Students enter ISCED level 2 typically between
+ages 10 and 13 (age 12 being the most common).
+
+Programmes classified at ISCED level 2 may be referred to in many ways, for example:
+secondary school (stage one/lower grades if there is one programme that spans ISCED levels 2
+and 3), junior secondary school, middle school, or junior high school. If a programme spans
+ISCED levels 1 and 2, the terms elementary education or basic school (stage two/upper grades)
+are often used. For international comparability purposes, the term ‘lower secondary education’ is
+used to label ISCED level 2."""@en .
+
+:level-3
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:isced-2011 ;
+    skos:prefLabel  "Upper secondary education"@en ;
+    skos:altLabel   "ISCED 2011 - Level 3"@en ;
+    skos:notation   "ISCED2011-3" ;
+    skos:definition """Programmes at ISCED level 3, or upper secondary education, are typically designed to
+complete secondary education in preparation for tertiary education or provide skills relevant to
+employment, or both.
+
+Programmes at this level offer students more varied, specialised and in-depth instruction
+than programmes at ISCED level 2. They are more differentiated, with an increased range of
+options and streams available. Teachers are often highly qualified in the subjects or fields of
+specialisation they teach, particularly in the higher grades.
+
+ISCED level 3 begins after 8 to 11 years of education since the beginning of ISCED level 1. Pupils
+enter this level typically between ages 14 and 16. ISCED level 3 programmes usually end 12 or
+13 years after the beginning of ISCED level 1 (or around age 17 or 18), with 12 years being the
+most widespread cumulative duration. However, exit from upper secondary education may range
+across education systems from usually 11 to 13 years of education since the beginning of ISCED
+level 1.
+
+Programmes classified at ISCED level 3 may be referred to in many ways, for example:
+secondary school (stage two/upper grades), senior secondary school, or (senior) high school.
+For international comparability purposes the term ‘upper secondary education’ is used to label
+ISCED level 3."""@en
+.
+
+:level-4
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:isced-2011 ;
+    skos:prefLabel  "Post-secondary non-tertiary education"@en ;
+    skos:altLabel   "ISCED 2011 - Level 4"@en ;
+    skos:notation   "ISCED2011-4" ;
+    skos:definition """Post-secondary non-tertiary education provides learning experiences building on secondary
+education, preparing for labour market entry as well as tertiary education. It aims at the
+individual acquisition of knowledge, skills and competencies lower than the level of complexity
+characteristic of tertiary education. Programmes at ISCED level 4, or post-secondary non-tertiary
+education, are typically designed to provide individuals who completed ISCED level 3 with nontertiary qualifications required for progression to tertiary education or for employment when their
+ISCED level 3 qualification does not grant such access. For example, graduates from general
+ISCED level 3 programmes may choose to complete a non-tertiary vocational qualification; or
+graduates from vocational ISCED level 3 programmes may choose to increase their level of
+qualifications or specialise further. The content of ISCED level 4 programmes is not sufficiently
+complex to be regarded as tertiary education, although it is clearly post-secondary.
+
+The completion of an ISCED level 3 programme is required to enter ISCED level 4 programmes.
+However, these entry requirements may be lower than for tertiary programmes at ISCED level 5,
+6 or 7.
+
+Usually, programmes at this level are designed for direct labour market entry. In some education
+systems, there are general programmes at this level. Such programmes typically target students
+who have completed ISCED level 3 but who want to increase their opportunities to enter tertiary
+education.
+
+Programmes classified at ISCED level 4 may be referred to in many ways, for example: technician
+diploma, primary professional education, or préparation aux carrières administratives. For
+international comparability purposes the term ‘post-secondary non-tertiary education’ is used to
+label ISCED level 4.
+"""@en .
+
+:level-5
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:isced-2011 ;
+    skos:prefLabel  "Short-cycle tertiary education"@en ;
+    skos:altLabel   "ISCED 2011 - Level 5"@en ;
+    skos:notation   "ISCED2011-5" ;
+    skos:definition """Programmes at ISCED level 5, or short-cycle tertiary education, are often designed to provide
+participants with professional knowledge, skills and competencies. Typically, they are practicallybased, occupationally-specific and prepare students to enter the labour market. However, these
+programmes may also provide a pathway to other tertiary education programmes. Academic
+tertiary education programmes below the level of a Bachelor’s programme or equivalent are also
+classified as ISCED level 5.
+
+Entry into ISCED level 5 programmes requires the successful completion of ISCED level 3 or 4
+with access to tertiary education. Programmes at ISCED level 5 have more complex content than
+programmes at ISCED levels 3 and 4, but they are shorter and usually less theoretically-oriented
+than ISCED level 6 programmes.
+
+Although ISCED level 5 programmes are usually designed to prepare for employment, they may
+give credit for transfer into ISCED level 6 or 7 programmes. Upon completion of these ISCED
+level 5 programmes, individuals may in some education systems continue their education at
+ISCED level 6 (Bachelor’s or equivalent level) or long first degree ISCED level 7 programmes
+(Master’s or equivalent level).
+
+Programmes classified at ISCED level 5 may be referred to in many ways, for example: (higher)
+technical education, community college education, technician or advanced/higher vocational
+training, associate degree, or bac+2. For international comparability purposes the term ‘shortcycle tertiary education’ is used to label ISCED level 5."""@en
+.
+
+:level-6
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:isced-2011 ;
+    skos:prefLabel  "Bachelor’s or equivalent level"@en ;
+    skos:altLabel   "ISCED 2011 - Level 6"@en ;
+    skos:notation   "ISCED2011-6" ;
+    skos:definition """Programmes at ISCED level 6, or Bachelor’s or equivalent level, are often designed to provide
+participants with intermediate academic and/or professional knowledge, skills and competencies,
+leading to a first degree or equivalent qualification. Programmes at this level are typically
+theoretically-based but may include practical components and are informed by state of the art
+research and/or best professional practice. They are traditionally offered by universities and
+equivalent tertiary educational institutions.
+
+Instruction at this level often takes the form of lectures by staff who are typically required to have
+attained ISCED levels 7 or 8 or have achieved experience as a senior professional in the field of
+work. Programmes at this level do not necessarily involve the completion of a research project or
+thesis, but if they do, it is less advanced, less independent or is undertaken with more guidance
+than those at ISCED level 7 or 8.
+
+Entry into these programmes normally requires the successful completion of an ISCED level 3
+or 4 programme with access to tertiary education. Entry may depend on subject choice and/or
+grades achieved at ISCED levels 3 and/or 4. Additionally, it may be required to take and succeed
+in entry examinations. Entry or transfer into ISCED level 6 is also sometimes possible after
+the successful completion of ISCED level 5. Upon completion of ISCED level 6 programmes,
+individuals may continue their education at ISCED level 7 (Master’s or equivalent level), although
+not all ISCED level 6 programmes provide access to ISCED level 7. ISCED level 6 programmes
+do not usually give direct access to programmes at ISCED level 8 (doctoral or equivalent level).
+
+Programmes classified at ISCED level 6 may be referred to in many ways, for example:
+Bachelor’s programme, licence, or first university cycle. However, it is important to note that
+programmes with a similar name to ‘bachelor’ should only be included in ISCED level 6 if they
+satisfy the criteria described in Paragraph 228. For international comparability purposes the term
+‘Bachelor’s or equivalent level’ is used to label ISCED level 6."""@en
+.
+
+:level-7
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:isced-2011 ;
+    skos:prefLabel  "Master’s or equivalent level"@en ;
+    skos:altLabel   "ISCED 2011 - Level 7"@en ;
+    skos:notation   "ISCED2011-7" ;
+    skos:definition """ Programmes at ISCED level 7, or Master’s or equivalent level, are often designed to provide
+participants with advanced academic and/or professional knowledge, skills and competencies,
+leading to a second degree or equivalent qualification. Programmes at this level may have a
+substantial research component but do not yet lead to the award of a doctoral qualification.
+Typically, programmes at this level are theoretically-based but may include practical components
+and are informed by state of the art research and/or best professional practice. They are
+traditionally offered by universities and other tertiary educational institutions.
+
+Instruction at this level often takes the form of lectures by staff who are typically required to have
+attained ISCED levels 7 or 8. Programmes at this level may involve the completion of a research
+project or thesis that is more advanced than those expected at ISCED level 6 and less advanced
+than those expected at ISCED level 8.
+
+Entry into ISCED level 7 programmes preparing for a second or further degree normally requires
+the successful completion of an ISCED level 6 or 7 programme. In the case of long programmes
+that prepare for a first degree equivalent to a Master’s degree, entry requires the successful
+completion of an ISCED level 3 or 4 programme with access to tertiary education. Entry into such
+programmes may depend on subject choice and/or grades achieved at ISCED levels 3
+and/or 4. Additionally, it may be required to take and succeed in entry examinations. ISCED
+level 7 programmes have a significantly more complex content than programmes at ISCED
+level 6 and are usually more specialised. Upon completion, individuals may continue their
+education at ISCED level 8 (doctoral-level education) although not all ISCED level 7 programmes
+give direct access to ISCED level 8.
+
+Programmes classified at ISCED level 7 may be referred to in many ways, for example: master
+programmes or magister. However, it is important to note that programmes with a similar name
+to ‘master’ should only be included in ISCED level 7 if they satisfy the criteria described in
+Paragraph 245. For international comparability purposes the term ‘Master’s or equivalent level’ is
+used to label ISCED level 7."""@en
+.
+
+:level-8
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:isced-2011 ;
+    skos:prefLabel  "Doctoral or equivalent level"@en ;
+    skos:altLabel   "ISCED 2011 - Level 8"@en ;
+    skos:notation   "ISCED2011-8" ;
+    skos:definition """Programmes at ISCED level 8, or doctoral or equivalent level, are designed primarily to lead to an
+advanced research qualification. Programmes at this ISCED level are devoted to advanced study
+and original research and are typically offered only by research-oriented tertiary educational
+institutions such as universities. Doctoral programmes exist in both academic and professional
+fields.
+
+ISCED level 8 usually concludes with the submission and defence of a thesis, dissertation
+or equivalent written work of publishable quality, representing a significant contribution to
+knowledge in the respective field of study. Therefore, these programmes are typically based on
+research and not only on course work. In some education systems, ISCED level 8 programmes
+contain very limited course work, or none at all, and individuals working towards a doctoral
+degree engage in research mostly independently or in small groups with varying degrees
+of supervision. In some education systems, doctoral research is undertaken by individuals
+employed by the university as junior researchers or research assistants, in addition to their being
+enrolled as doctoral students.
+
+Entry into ISCED level 8 programmes or junior research positions normally requires the
+successful completion of specific ISCED level 7 programmes. ISCED level 8 qualifications give
+access to professions with high academic skill requirements and research posts in government
+and industry, as well as research and teaching positions in educational institutions offering
+education at ISCED levels 6, 7 and 8.
+
+Programmes classified at ISCED level 8 may be referred to in many ways, for example: PhD,
+DPhil, D.Lit, D.Sc, LL.D, Doctorate or similar terms. However, it is important to note that
+programmes with a similar name to ‘doctor’ should only be included in ISCED level 8 if they
+satisfy the criteria described in Paragraph 263. For international comparability purposes, the term
+‘doctoral or equivalent level’ is used to label ISCED level 8.
+"""@en
+.
+
+:level-9
+    a              skos:Concept ;
+    skos:inScheme  acqf-qcp-model:isced-2011 ;
+    skos:prefLabel "Not elsewhere classified"@en ;
+    skos:altLabel  "ISCED 2011 - Level 9"@en ;
+    skos:notation  "ISCED2011-9" .

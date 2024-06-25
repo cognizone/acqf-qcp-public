@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "adms": "http://www.w3.org/ns/adms#",
+    "elm": "http://data.europa.eu/snb/model/elm/",
+    "rdfs": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "identifier": {
+      "@id": "adms:identifier",
+      "@context": "identifier.json"
+    },
+    "prefLabel": {
+      "@id": "skos:prefLabel",
+      "@type": "rdf:langString",
+      "@container": "@language"
+    },
+    "location": {
+      "@id": "elm:location",
+      "@type": "@id",
+      "@container": "@set",
+      "@context": {
+        "spatialCode": {
+          "@id": "elm:spatialCode",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@base": "http://publications.europa.eu/resource/authority/country/"
+          }
+        }
+      }
+    }
+  }
+}

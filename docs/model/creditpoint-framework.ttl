@@ -1,0 +1,25 @@
+@prefix acqf-qcp-model: <https://data.acqf-acp.africa/model/> .
+@prefix :               <https://data.acqf-acp.africa/model/creditpoint-framework/resource/> .
+@prefix dct:            <http://purl.org/dc/terms/> .
+@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos:           <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
+
+acqf-qcp-model:creditpoint-framework
+    a                  skos:ConceptScheme ;
+    dct:title          "ACQF Credit Point Frameworks"@en ;
+    dct:description    "This is a SKOS representation of the ACQF Credit Point Frameworks."@en ;
+    dct:created        "2024-06-25"^^xsd:date ;
+    dct:created        "2024-06-25"^^xsd:date ;
+    dct:created        "2024-06-25"^^xsd:date ;
+    dct:publisher      "cognizone bv" ;
+    dct:creator        "Petr Křemen" ;
+    dct:license        <http://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:source         "ACQF-II QCP Architecture report 20240503" ;
+    skos:hasTopConcept :acs .
+
+:acs
+    a              skos:Concept ;
+    skos:inScheme  acqf-qcp-model:creditpoint-framework ;
+    skos:prefLabel "African Credit System"@en
+.
