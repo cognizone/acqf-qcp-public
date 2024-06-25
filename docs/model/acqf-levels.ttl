@@ -1,11 +1,11 @@
-@prefix acqf-qcp: <https://data.acqf-acp.africa/resource/> .
-@prefix :         <https://data.acqf-acp.africa/resource/acqf-levels_> .
-@prefix dct:      <http://purl.org/dc/terms/> .
-@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
-@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix acqf-qcp-model: <https://data.acqf-acp.africa/model/> .
+@prefix :               <https://data.acqf-acp.africa/model/acqf-levels/resource/> .
+@prefix dct:            <http://purl.org/dc/terms/> .
+@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos:           <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
 
-acqf-qcp:acqf-levels
+acqf-qcp-model:acqf-levels
     a                  skos:ConceptScheme ;
     dct:title          "ACQF levels and level descriptors"@en ;
     dct:description    "This is a SKOS representation of the ACQF levels and level descriptors."@en ;
@@ -21,70 +21,70 @@ acqf-qcp:acqf-levels
 
 :level-1
     a              skos:Concept ;
-    skos:inScheme  acqf-qcp:acqf-levels ;
+    skos:inScheme  acqf-qcp-model:acqf-levels ;
     skos:prefLabel "Level 1"@en ;
     skos:notation  "ACQF-1"
 .
 
 :level-2
     a              skos:Concept ;
-    skos:inScheme  acqf-qcp:acqf-levels ;
+    skos:inScheme  acqf-qcp-model:acqf-levels ;
     skos:prefLabel "Level 2"@en ;
     skos:notation  "ACQF-2"
 .
 
 :level-3
     a              skos:Concept ;
-    skos:inScheme  acqf-qcp:acqf-levels ;
+    skos:inScheme  acqf-qcp-model:acqf-levels ;
     skos:prefLabel "Level 3"@en ;
     skos:notation  "ACQF-3"
 .
 
 :level-4
     a              skos:Concept ;
-    skos:inScheme  acqf-qcp:acqf-levels ;
+    skos:inScheme  acqf-qcp-model:acqf-levels ;
     skos:prefLabel "Level 4"@en ;
     skos:notation  "ACQF-4"
 .
 
 :level-5
     a              skos:Concept ;
-    skos:inScheme  acqf-qcp:acqf-levels ;
+    skos:inScheme  acqf-qcp-model:acqf-levels ;
     skos:prefLabel "Level 5"@en ;
     skos:notation  "ACQF-5"
 .
 
 :level-6
     a              skos:Concept ;
-    skos:inScheme  acqf-qcp:acqf-levels ;
+    skos:inScheme  acqf-qcp-model:acqf-levels ;
     skos:prefLabel "Level 6"@en ;
     skos:notation  "ACQF-6"
 .
 
 :level-7
     a              skos:Concept ;
-    skos:inScheme  acqf-qcp:acqf-levels ;
+    skos:inScheme  acqf-qcp-model:acqf-levels ;
     skos:prefLabel "Level 7"@en ;
     skos:notation  "ACQF-7"
 .
 
 :level-8
     a              skos:Concept ;
-    skos:inScheme  acqf-qcp:acqf-levels ;
+    skos:inScheme  acqf-qcp-model:acqf-levels ;
     skos:prefLabel "Level 8"@en ;
     skos:notation  "ACQF-8"
 .
 
 :level-9
     a              skos:Concept ;
-    skos:inScheme  acqf-qcp:acqf-levels ;
+    skos:inScheme  acqf-qcp-model:acqf-levels ;
     skos:prefLabel "Level 9"@en ;
     skos:notation  "ACQF-9"
 .
 
 :level-10
     a              skos:Concept ;
-    skos:inScheme  acqf-qcp:acqf-levels ;
+    skos:inScheme  acqf-qcp-model:acqf-levels ;
     skos:prefLabel "Level 10"@en ;
     skos:notation  "ACQF-10"
 .
