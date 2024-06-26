@@ -1,43 +1,90 @@
 <html lang="en">
+<head>
+    <title>ACQF Qualifications and Credentials Platform (QCP)</title>
+    <meta charset="UTF-8">
+</head>
 <body>
-<h1>African Continent Qualification Framework (ACQF)</h1>
+<h1>ACQF Qualifications and Credentials Platform (QCP)</h1>
 
-<h2>Qualifications and Credentials Platform (QCP)</h2>
+Welcome to the roadmap of the Qualifications and Credentials Platform (QCP) of the African Continent Qualification
+Framework (ACQF).
 
-<h3>ACQF Data Exchange Model</h3>
+<h2>Preparing existing qualification data for importing into ACQF QCP</h2>
+In order to import finalized qualification data into ACQF QCP, the following steps should be followed:
+<ol>
+    <li>Become familiar with the <a href="#exchange-model">ACQF Data Exchange Model</a> (exchange model), including
+        controlled vocabularies.
+    </li>
+    <li>Create a transformer from the native qualification format into the exchange model.</li>
+    <li>Verify that transformed qualification records comply with the exchange model, using an online validation service
+        (TBD - under development).
+    </li>
+</ol>
+
+<h3 id="exchange-model">ACQF Data Exchange Model</h3>
+The exchange model has been defined in the <a href="">ACQF-II QCP Architecture report</a> and describes basic
+qualification data fields to be shared using ACQF QCP. This section documents the technical format of the exchange
+model.
 <ul>
-    <li><a href="exchange-model/exchange-model.svg">Diagram</a> shows the classes and properties of the exchange model.
+    <li>core model
+        <ul>
+            <li><a href="exchange-model/exchange-model.svg">diagram</a> shows an overview of the model classes and
+                properties.
+            </li>
+            <li><a href="exchange-model/exchange-model.html">documentation</a> describes the meaning of the classes and
+                properties of the model in depth.
+            </li>
+        </ul>
     </li>
-    <li><a href="exchange-model/exchange-model.html">Textual documentation</a> describes the meaning of the classes and
-        properties of the model.
+    <li>
+        controlled vocabularies (expressed in the <a href="https://www.w3.org/TR/skos-reference/">SKOS</a> format)
+        <ul>
+            <li>
+                <a href="https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/accreditation/25831c2">Accreditation
+                    type</a> for <code>Accreditation → type</code></li>
+            <li>
+                <a href="https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://publications.europa.eu/resource/authority/language">Language</a>
+                for <code>LearningOpportunity → default language</code></li>
+            <li>
+                <a href="https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://publications.europa.eu/resource/authority/country">Countries
+                    and territories</a>for <code>Location → spatial code</code></li>
+            <li>
+                <a href="https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/isced-f/25831c2">ISCED
+                    2013</a> for <code>Qualification → thematic area</code></li>
+            <li><a href="https://esco.ec.europa.eu/en/classification/occupation_main">ESCO Occupations</a> for <code>LearningEntitlementSpecification
+                → limit national occupation</code></li>
+            <li><a href="https://esco.ec.europa.eu/en/classification/skill_main">ESCO Skills</a> for <code>LearningOutcome
+                → related skill</code></li>
+            <li><b>[CUSTOM FOR ACQF QCP]</b> <a href="model/creditpoint-framework.ttl">Credit point framework</a> for
+                <code>CreditPoint → framework</code></li>
+            <!-- TODO   <li><a href="model/isced-2011.ttl">ISCED 2011</a></li>-->
+            <li><b>[CUSTOM FOR ACQF QCP]</b> <a href="model/acqf-levels.ttl">ACQF levels</a> for <code>Qualification →
+                education level</code></li>
+        </ul>
     </li>
-    <li><a href="model/exchange-model.ttl">SHACL shapes</a> presents validation constraints for the model expressed
-        in <a href="https://www.w3.org/TR/shacl/">SHACL</a>.
-    </li>
-    <li><a href="https://github.com/cognizone/acqf-qpc-public">GitHub repository</a> containing this website source
-        code.
+    <li><a href="model/exchange-model.ttl">validation constraints</a>
+        in the <a href="https://www.w3.org/TR/shacl/">SHACL</a> format.
     </li>
 </ul>
 
-<h4>Controlled vocabularies</h4>
-All vocabularies are expressed in the <a href="https://www.w3.org/TR/skos-reference/">SKOS</a> format.
-
-<h4>Reused vocabularies</h4>
+<h4>Serializations</h4>
+Currently, qualifications compliant with the ACQF Data Exchange Model can be expressed in JSON. To interpret the JSON data as <a href="https://www.w3.org/TR/json-ld11/">JSON-LD</a> compliant with the validation constraints in
+SHACL, the following JSON-LD contexts have been designed:
 <ul>
-    <li><a href="http://data.europa.eu/snb/accreditation/25831c2">Accreditation type</a></li>
-    <li><a href="https://esco.ec.europa.eu/en/classification/occupation_main">ESCO Occupations</a></li>
-    <li><a href="http://publications.europa.eu/resource/authority/language">Language</a></li>
-    <li><a href="https://esco.ec.europa.eu/en/classification/skill_main">ESCO Skills</a></li>
-    <li><a href="http://publications.europa.eu/resource/authority/country">Countries and territories</a></li>
-    <li><a href="http://data.europa.eu/snb/isced-f/25831c2">ISCED 2013</a></li>
+    <li><a href="https://data.acqf-qcp.africa/model/contexts/identifier.json">identifier.json</a></li>
+    <li><a href="https://data.acqf-qcp.africa/model/contexts/note.json">note.json</a></li>
+    <li><a href="https://data.acqf-qcp.africa/model/contexts/organisation.json">organisation.json</a></li>
+    <li><a href="https://data.acqf-qcp.africa/model/contexts/qualification.json">qualification.json</a> (describes the
+        root JSON object)
+    </li>
+    <li><a href="https://data.acqf-qcp.africa/model/contexts/webresource.json">webresource.json</a></li>
 </ul>
 
-<h4>Custom vocabularies</h4>
-<ul>
-    <li><a href="model/creditpoint-framework.ttl">Credit point framework</a></li>
-    <!-- TODO   <li><a href="model/isced-2011.ttl">ISCED 2011</a></li>-->
-    <li><a href="model/acqf-levels.ttl">ACQF levels</a></li>
-</ul>
-
+<hr/>
+<p style="text-align: center">
+    This website was created within the ACQF-II project and is powered by Github Pages served from a <a href="https://github.com/cognizone/acqf-qpc-public">public
+    Github repository</a>.
+</p>
+</li>
 </body>
 </html>
