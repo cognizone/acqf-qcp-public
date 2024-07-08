@@ -18,8 +18,35 @@ acqf-qcp-model:creditpoint-framework
     dct:source         "ACQF-II QCP Architecture report 20240503" ;
     skos:hasTopConcept :acs .
 
-:acs
+:acts
     a              skos:Concept ;
     skos:inScheme  acqf-qcp-model:creditpoint-framework ;
-    skos:prefLabel "African Credit System"@en
+    skos:prefLabel "African Credit Transfer System"@en ;
+    skos:altLabel  "ACTS"@en ;
+    dct:source     <https://haqaa2.obsglob.org/wp-content/uploads/2023/02/Final-ACTS-Recommendations-1.pdf>
+.
+
+:ects
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:creditpoint-framework ;
+    skos:prefLabel  "European Credit Transfer System"@en ;
+    skos:altLabel   "ECTS"@en ;
+    skos:exactMatch <http://data.europa.eu/snb/education-credit/6fcec5c5af>
+.
+
+:eacat
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:creditpoint-framework ;
+    skos:prefLabel  "East African Credit Accumulation and Transfer"@en ;
+    skos:altLabel   "EACAT"@en ;
+    skos:exactMatch <https://www.iucea.org/mdocs-posts/east-african-credit-accumulation-and-transfer-system/>
+.
+
+:sadc-cats
+    a              skos:Concept ;
+    skos:inScheme  acqf-qcp-model:creditpoint-framework ;
+    skos:prefLabel "Southern African Development Community Accumulation and Transfer System"@en ;
+    skos:altLabel  "SADC-CATS"@en ;
+    skos:exactMatch
+                   <https://haqaa.aau.org/wp-content/uploads/2016/04/DRAFT-SADC-GUIDELINES-FOR-CREDIT-ACCUMULATION-AND-TRANSFER-003.docx>
 .
