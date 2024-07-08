@@ -16,7 +16,7 @@ acqf-qcp-model:creditpoint-framework
     dct:creator        "Petr Křemen" ;
     dct:license        <http://creativecommons.org/publicdomain/zero/1.0/> ;
     dct:source         "ACQF-II QCP Architecture report 20240503" ;
-    skos:hasTopConcept :acs .
+    skos:hasTopConcept :acts, :ects, :eacat, :sadc-cats .
 
 :acts
     a              skos:Concept ;
