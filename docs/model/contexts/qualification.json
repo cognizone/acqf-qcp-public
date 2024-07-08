@@ -91,7 +91,7 @@
           "@id": "elm:awardingBody",
           "@type": "@id",
           "@container": "@set",
-          "@context": "organisation.json"
+          "@context": "https://data.acqf-qcp.africa/model/contexts/organisation.json"
         }
       }
     },
