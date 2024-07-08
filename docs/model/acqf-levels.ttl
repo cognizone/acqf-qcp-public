@@ -20,71 +20,172 @@ acqf-qcp-model:acqf-levels
                        :level-9 .
 
 :level-1
-    a              skos:Concept ;
-    skos:inScheme  acqf-qcp-model:acqf-levels ;
-    skos:prefLabel "Level 1"@en ;
-    skos:notation  "ACQF-1"
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:acqf-levels ;
+    skos:prefLabel  "Level 1"@en ;
+    skos:notation   "ACQF-1" ;
+    skos:definition """The learning outcomes related to formal, non-formal and informal learning at this level include:
+
+Knowledge (facts, principles and theories in various areas):
+- simple knowledge, literacy and numeracy.
+
+Skills (ability to use knowledge to respond to information and address problems. Skills include cognitive, communication, digital, green, innovation, practical and social skills):
+- simple communication, cognitive and practical skills required to follow simple instructions, and use simple, repetitive solutions to address simple problems.
+
+Autonomy and responsibility (context and extent of the application of autonomy and responsibility):
+- highly structured, repetitive contexts under close supervision and guidance taking minimal responsibility for self."""
 .
 
 :level-2
-    a              skos:Concept ;
-    skos:inScheme  acqf-qcp-model:acqf-levels ;
-    skos:prefLabel "Level 2"@en ;
-    skos:notation  "ACQF-2"
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:acqf-levels ;
+    skos:prefLabel  "Level 2"@en ;
+    skos:notation   "ACQF-2" ;
+    skos:definition """The learning outcomes related to formal, non-formal and informal learning at this level include:
+
+Knowledge (facts, principles and theories in various areas):
+- basic knowledge incorporating comprehension and recall of factual and operational knowledge in some areas.
+
+Skills (ability to use knowledge to respond to information and address problems. Skills include cognitive, communication, digital, green, innovation, practical and social skills):
+- basic communication, cognitive and practical skills required to use concrete information, ideas and known solutions to address straightforward problems.
+
+Autonomy and responsibility (context and extent of the application of autonomy and responsibility):
+- structured contexts under limited supervision and guidance taking limited responsibility for self and group outcomes"""
 .
 
 :level-3
-    a              skos:Concept ;
-    skos:inScheme  acqf-qcp-model:acqf-levels ;
-    skos:prefLabel "Level 3"@en ;
-    skos:notation  "ACQF-3"
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:acqf-levels ;
+    skos:prefLabel  "Level 3"@en ;
+    skos:notation   "ACQF-3" ;
+    skos:definition """The learning outcomes related to formal, non-formal and informal learning at this level include:
+
+Knowledge (facts, principles and theories in various areas):
+- factual and operational knowledge incorporating some theoretical aspects in some areas.
+
+Skills (ability to use knowledge to respond to information and address problems. Skills include cognitive, communication, digital, green, innovation, practical and social skills):
+- a range of communication, cognitive, practical and technical skills required to interpret and communicate ideas and detailed information and select and use known solutions to address familiar problems.
+
+Autonomy and responsibility (context and extent of the application of autonomy and responsibility):
+- predictable contexts under routine supervision and guidance, with initiative for self-responsibility and some responsibility for group outcomes."""
 .
 
 :level-4
-    a              skos:Concept ;
-    skos:inScheme  acqf-qcp-model:acqf-levels ;
-    skos:prefLabel "Level 4"@en ;
-    skos:notation  "ACQF-4"
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:acqf-levels ;
+    skos:prefLabel  "Level 4"@en ;
+    skos:notation   "ACQF-4" ;
+    skos:definition """The learning outcomes related to formal, non-formal and informal learning at this level include:
+
+Knowledge (facts, principles and theories in various areas):
+- mainly factual, operational or technical knowledge incorporating theoretical aspects in one or more areas.
+
+Skills (ability to use knowledge to respond to information and address problems. Skills include cognitive, communication, digital, green, innovation, practical and social skills):
+- well-developed technical skills required to analyse information and new ideas, make informed judgements, communicate outcomes and apply varied solutions to varied (familiar and unfamiliar) problems.
+
+Autonomy and responsibility (context and extent of the application of autonomy and responsibility):
+- varied (predictable and unpredictable) contexts with adaptability and initiative for self-direction under general guidance, taking full responsibility for self, some planning and responsibility for group outcomes and initiative for responsibility for others."""
 .
 
 :level-5
-    a              skos:Concept ;
-    skos:inScheme  acqf-qcp-model:acqf-levels ;
-    skos:prefLabel "Level 5"@en ;
-    skos:notation  "ACQF-5"
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:acqf-levels ;
+    skos:prefLabel  "Level 5"@en ;
+    skos:notation   "ACQF-5" ;
+    skos:definition """The learning outcomes related to formal, non-formal and informal learning at this level include:
+
+Knowledge (facts, principles and theories in various areas):
+- mainly technical or theoretical knowledge with substantial depth in a discipline/ area.
+
+Skills (ability to use knowledge to respond to information and address problems. Skills include cognitive, communication, digital, green, innovation, practical and social skills):
+- a range of well-developed technical skills, with some specialisation, required to analyse information and new ideas, construct and communicate a coherent argument, and apply a range of solutions, often in combination, to address unfamiliar problems.
+
+Autonomy and responsibility (context and extent of the application of autonomy and responsibility):
+- unpredictable contexts with full autonomy and full responsibility for self and group outcomes, and some responsibility for others."""
 .
 
 :level-6
-    a              skos:Concept ;
-    skos:inScheme  acqf-qcp-model:acqf-levels ;
-    skos:prefLabel "Level 6"@en ;
-    skos:notation  "ACQF-6"
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:acqf-levels ;
+    skos:prefLabel  "Level 6"@en ;
+    skos:notation   "ACQF-6" ;
+    skos:definition """The learning outcomes related to formal, non-formal and informal learning at this level include:
+
+Knowledge (facts, principles and theories in various areas):
+- highly technical or theoretical knowledge, with specialisation in a discipline/ area.
+
+Skills (ability to use knowledge to respond to information and address problems. Skills include cognitive, communication, digital, green, innovation, practical and social skills):
+- highly technical and specialised skills required to collate, analyse, synthesise and communicate a range of information and new ideas, and formulate or adapt different solutions to address complex and sometimes abstract problems .
+
+Autonomy and responsibility (context and extent of the application of autonomy and responsibility):
+- highly variable contexts with well-developed autonomy and responsibility for self and group outcomes and responsibility for resources and processes."""
 .
 
+
 :level-7
-    a              skos:Concept ;
-    skos:inScheme  acqf-qcp-model:acqf-levels ;
-    skos:prefLabel "Level 7"@en ;
-    skos:notation  "ACQF-7"
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:acqf-levels ;
+    skos:prefLabel  "Level 7"@en ;
+    skos:notation   "ACQF-7" ;
+    skos:definition """The learning outcomes related to formal, non-formal and informal learning at this level include:
+
+Knowledge (facts, principles and theories in various areas):
+- advanced analytical and/ or specialised knowledge of a discipline/ area.
+
+Skills (ability to use knowledge to respond to information and address problems. Skills include cognitive, communication, digital, green, innovation, practical and social skills):
+- advanced, specialised skills required to demonstrate advanced analysis and initiative for new insights and ideas in research and/ or innovation, and formulate advanced solutions to address complex and abstract problems.
+
+Autonomy and responsibility (context and extent of the application of autonomy and responsibility):
+- complex and variable contexts with advanced autonomy and responsibility."""
 .
 
 :level-8
-    a              skos:Concept ;
-    skos:inScheme  acqf-qcp-model:acqf-levels ;
-    skos:prefLabel "Level 8"@en ;
-    skos:notation  "ACQF-8"
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:acqf-levels ;
+    skos:prefLabel  "Level 8"@en ;
+    skos:notation   "ACQF-8" ;
+    skos:definition """The learning outcomes related to formal, non-formal and informal learning at this level include:
+
+Knowledge (facts, principles and theories in various areas):
+- highly advanced, complex knowledge of a discipline/ area.
+
+Skills (ability to use knowledge to respond to information and address problems. Skills include cognitive, communication, digital, green, innovation, practical and social skills):
+- highly advanced, complex skills required to demonstrate highly advanced analysis, communicate new insights and ideas in research and/ or innovation, and formulate highly advanced solutions to address highly complex and abstract problems .
+
+Autonomy and responsibility (context and extent of the application of autonomy and responsibility):
+- highly complex contexts with some specialisation demonstrating highly advanced autonomy and responsibility."""
 .
 
 :level-9
-    a              skos:Concept ;
-    skos:inScheme  acqf-qcp-model:acqf-levels ;
-    skos:prefLabel "Level 9"@en ;
-    skos:notation  "ACQF-9"
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:acqf-levels ;
+    skos:prefLabel  "Level 9"@en ;
+    skos:notation   "ACQF-9" ;
+    skos:definition """The learning outcomes related to formal, non-formal and informal learning at this level include:
+
+Knowledge (facts, principles and theories in various areas):
+- mastery of a complex body of knowledge at the forefront of a discipline/ area.
+
+Skills (ability to use knowledge to respond to information and address problems. Skills include cognitive, communication, digital, green, innovation, practical and social skills):
+- skills mastery required to demonstrate originality and new insights in research and/ or innovation and formulate and test theories to show mastery of highly complex, abstract problems.
+
+Autonomy and responsibility (context and extent of the application of autonomy and responsibility):
+- highly specialised contexts demonstrating mastery in autonomy and responsibility."""
 .
 
 :level-10
-    a              skos:Concept ;
-    skos:inScheme  acqf-qcp-model:acqf-levels ;
-    skos:prefLabel "Level 10"@en ;
-    skos:notation  "ACQF-10"
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:acqf-levels ;
+    skos:prefLabel  "Level 10"@en ;
+    skos:notation   "ACQF-10" ;
+    skos:definition """The learning outcomes related to formal, non-formal and informal learning at this level include:
+
+Knowledge (facts, principles and theories in various areas):
+- substantial and original knowledge contribution that extends the forefront of a discipline/ area and/ or at the interface between disciplines/ areas.
+
+Skills (ability to use knowledge to respond to information and address problems. Skills include cognitive, communication, digital, green, innovation, practical and social skills):
+- expert skills and techniques that demonstrate innovation, interpretation and creation of new ideas required to critically evaluate, formulate and test theories to address emergent, new and critical problems.
+
+Autonomy and responsibility (context and extent of the application of autonomy and responsibility):
+- emergent new contexts demonstrating expertise in management of new ideas."""
 .
