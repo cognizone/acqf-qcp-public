@@ -2,6 +2,7 @@
   "@context": {
     "elm": "http://data.europa.eu/snb/model/elm/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "@type": "elm:Note",
     "identifier": {
       "@id": "adms:identifier",
       "@context": "https://data.acqf-qcp.africa/model/contexts/identifier.json"

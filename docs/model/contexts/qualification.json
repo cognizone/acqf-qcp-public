@@ -10,6 +10,7 @@
       "@id": "adms:identifier",
       "@context": "https://data.acqf-qcp.africa/model/contexts/identifier.json"
     },
+    "@type": "elm:Qualification",
     "title": {
       "@id": "dcterms:title",
       "@type": "rdf:langString",
