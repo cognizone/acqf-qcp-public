@@ -32,14 +32,14 @@
       "@id": "elm:educationLevel",
       "@type": "@id",
       "@context": {
-        "@base": "https://data.acqf-acp.africa/model/acqf-levels/resource/>"
+        "@base": "https://data.acqf-acp.africa/model/acqf-levels/resource/"
       }
     },
     "educationLevelNqf": {
       "@id": "elm:educationLevel",
       "@type": "@id",
       "@context": {
-        "@base": "https://data.acqf-acp.africa/model/isced-2011/resource/>"
+        "@base": "https://data.acqf-acp.africa/model/isced-2011/resource/"
       }
     },
     "learningOutcome": {
