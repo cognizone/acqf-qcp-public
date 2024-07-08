@@ -9,7 +9,7 @@
     "@type": "elm:Organisation",
     "identifier": {
       "@id": "adms:identifier",
-      "@context": "identifier.json"
+      "@context": "https://data.acqf-qcp.africa/model/contexts/identifier.json"
     },
     "prefLabel": {
       "@id": "skos:prefLabel",
