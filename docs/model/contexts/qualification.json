@@ -68,7 +68,7 @@
           "@id": "elm:additionalNote",
           "@type": "@id",
           "@container": "@set",
-          "@context": "note.json"
+          "@context": "https://data.acqf-qcp.africa/model/contexts/note.json"
         }
       }
     },
@@ -85,7 +85,7 @@
           "@id": "elm:additionalNote",
           "@type": "@id",
           "@container": "@set",
-          "@context": "note.json"
+          "@context": "https://data.acqf-qcp.africa/model/contexts/note.json"
         },
         "awardingBody": {
           "@id": "elm:awardingBody",
