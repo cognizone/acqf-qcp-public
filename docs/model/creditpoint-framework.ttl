@@ -10,8 +10,6 @@ acqf-qcp-model:creditpoint-framework
     dct:title          "ACQF Credit Point Frameworks"@en ;
     dct:description    "This is a SKOS representation of the ACQF Credit Point Frameworks."@en ;
     dct:created        "2024-06-25"^^xsd:date ;
-    dct:created        "2024-06-25"^^xsd:date ;
-    dct:created        "2024-06-25"^^xsd:date ;
     dct:publisher      "cognizone bv" ;
     dct:creator        "Petr Křemen" ;
     dct:license        <http://creativecommons.org/publicdomain/zero/1.0/> ;
