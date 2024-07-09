@@ -3,6 +3,7 @@
     "@version": 1.1,
     "adms": "http://www.w3.org/ns/adms#",
     "elm": "http://data.europa.eu/snb/model/elm/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
     "rdfs": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "dcterms": "http://purl.org/dc/terms/",
@@ -23,7 +24,9 @@
       "@type": "@id",
       "@container": "@set",
       "@context": {
-        "@base": "http://data.europa.eu/snb/isced-f/"
+        "@base": "http://data.europa.eu/snb/isced-f/",
+        "type": "@type",
+        "Concept": "skos:Concept"
       }
     },
     "publisher": {
@@ -35,14 +38,18 @@
       "@id": "elm:educationLevel",
       "@type": "@id",
       "@context": {
-        "@base": "https://data.acqf-acp.africa/model/acqf-levels/resource/"
+        "@base": "https://data.acqf-acp.africa/model/acqf-levels/resource/",
+        "type": "@type",
+        "Concept": "skos:Concept"
       }
     },
     "educationLevelNqf": {
       "@id": "elm:educationLevel",
       "@type": "@id",
       "@context": {
-        "@base": "https://data.acqf-acp.africa/model/isced-2011/resource/"
+        "@base": "https://data.acqf-acp.africa/model/isced-2011/resource/",
+        "type": "@type",
+        "Concept": "skos:Concept"
       }
     },
     "learningOutcome": {
@@ -66,7 +73,9 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@base": "http://data.europa.eu/esco/skill/"
+            "@base": "http://data.europa.eu/esco/skill/",
+            "type": "@type",
+            "Concept": "skos:Concept"
           }
         },
         "additionalNote": {
@@ -107,6 +116,8 @@
       "@type": "@id",
       "@container": "@set",
       "@context": {
+        "type": "@type",
+        "CreditPoint": "elm:CreditPoint",
         "identifier": {
           "@id": "adms:identifier",
           "@context": "https://data.acqf-qcp.africa/model/contexts/identifier.json"
@@ -115,7 +126,9 @@
           "@id": "elm:framework",
           "@type": "@id",
           "@context": {
-            "@base": "https://data.acqf-acp.africa/model/creditpoint-framework/resource/"
+            "@base": "https://data.acqf-acp.africa/model/creditpoint-framework/resource/",
+            "type": "@type",
+            "Concept": "skos:Concept"
           }
         },
         "point": {
@@ -135,6 +148,8 @@
       "@type": "@id",
       "@container": "@set",
       "@context": {
+        "type": "@type",
+        "Accreditation": "elm:Accreditation",
         "identifier": {
           "@id": "adms:identifier",
           "@context": "https://data.acqf-qcp.africa/model/contexts/identifier.json"
@@ -144,11 +159,13 @@
           "@type": "rdf:langString",
           "@container": "@language"
         },
-        "type": {
+        "accreditationType": {
           "@id": "dcterms:type",
           "@type": "@id",
           "@context": {
-            "@base": "https://publications.europa.eu/resource/authority/snb/accreditation/"
+            "@base": "https://publications.europa.eu/resource/authority/snb/accreditation/",
+            "type": "@type",
+            "Concept": "skos:Concept"
           }
         },
         "organisation": {
@@ -179,6 +196,8 @@
       "@type": "@id",
       "@container": "@set",
       "@context": {
+        "type": "@type",
+        "LearningEntitlementSpecification": "elm:LearningEntitlementSpecification",
         "identifier": {
           "@id": "adms:identifier",
           "@context": "https://data.acqf-qcp.africa/model/contexts/identifier.json"
@@ -188,7 +207,9 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@base": "http://data.europa.eu/esco/occupation/"
+            "@base": "http://data.europa.eu/esco/occupation/",
+            "type": "@type",
+            "Concept": "skos:Concept"
           }
         }
       }
@@ -217,7 +238,9 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@base": "http://publications.europa.eu/resource/authority/language/"
+            "@base": "http://publications.europa.eu/resource/authority/language/",
+            "type": "@type",
+            "Concept": "skos:Concept"
           }
         }
       }
