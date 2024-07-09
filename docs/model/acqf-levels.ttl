@@ -10,14 +10,12 @@ acqf-qcp-model:acqf-levels
     dct:title          "ACQF levels and level descriptors"@en ;
     dct:description    "This is a SKOS representation of the ACQF levels and level descriptors."@en ;
     dct:created        "2024-06-25"^^xsd:date ;
-    dct:created        "2024-06-25"^^xsd:date ;
-    dct:created        "2024-06-25"^^xsd:date ;
     dct:publisher      "cognizone bv" ;
     dct:creator        "Petr Křemen" ;
     dct:license        <http://creativecommons.org/publicdomain/zero/1.0/> ;
     dct:source         <https://acqf.africa/resources/policy-guidelines/acqf-level-descriptors/acqf-level-descriptors-article-newsletter-1-march-2022/@@display-file/file/ACQF_CDP%2010_Level%20descriptors_Article%20Newsletter%201.pdf> ;
-    skos:hasTopConcept :level-0, :level-1, :level-2, :level-3, :level-4, :level-5, :level-6, :level-7, :level-8,
-                       :level-9 .
+    skos:hasTopConcept :level-1, :level-2, :level-3, :level-4, :level-5, :level-6, :level-7, :level-8, :level-9,
+                       :level-10 .
 
 :level-1
     a               skos:Concept ;

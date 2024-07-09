@@ -10,8 +10,6 @@ acqf-qcp-model:isced-2011
     dct:title          "ISCED 2011 levels of education"@en ;
     dct:description    "This is a SKOS representation of the ISCED 2011 levels of education."@en ;
     dct:created        "2024-06-25"^^xsd:date ;
-    dct:created        "2024-06-25"^^xsd:date ;
-    dct:created        "2024-06-25"^^xsd:date ;
     dct:publisher      "cognizone bv" ;
     dct:creator        "Petr Křemen" ;
     dct:license        <http://creativecommons.org/publicdomain/zero/1.0/> ;
