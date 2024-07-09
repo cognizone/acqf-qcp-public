@@ -1,0 +1,232 @@
+@prefix acqf-qcp-model: <https://data.acqf-acp.africa/model/> .
+@prefix :               <https://data.acqf-acp.africa/model/esqf-levels/resource/> .
+@prefix dct:            <http://purl.org/dc/terms/> .
+@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos:           <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
+
+acqf-qcp-model:esqf-levels
+    a                  skos:ConceptScheme ;
+    dct:title          "Eswatini Qualifications Framework levels and level descriptors"@en ;
+    dct:description    "This is a SKOS representation of the ESQF levels and level descriptors."@en ;
+    dct:created        "2024-06-25"^^xsd:date ;
+    dct:publisher      "cognizone bv" ;
+    dct:creator        "Petr Křemen" ;
+    dct:license        <http://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:source         <https://eshec.org.sz/wp-content/uploads/2022/03/Eswatini-Qualifications-Framework-ESQF.pdf> ;
+    skos:hasTopConcept :level-1, :level-2, :level-3, :level-4, :level-5, :level-6, :level-7, :level-8, :level-9,
+                       :level-10 .
+
+:level-1
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:esqf-levels ;
+    skos:prefLabel  "Level 1"@en ;
+    skos:notation   "ACQF-1" ;
+    skos:definition """
+Knowledge:
+- To recall basic knowledge in well-defined and familiar contexts.
+
+Skills:
+- To apply numeracy and literacy skills to carry out tasks.
+
+Personal Attributes:
+- To demonstrate ability to understand, follow instructions and be able to function as a team member in learning and work environment.
+"""
+.
+
+:level-2
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:esqf-levels ;
+    skos:prefLabel  "Level 2"@en ;
+    skos:notation   "ACQF-2" ;
+    skos:definition """
+Knowledge:
+- To recall and apply basic practical and educational knowledge of a defined area of learning / work.
+
+Skills:
+- To apply basic skills to execute tasks involving known routines and procedures under maximum supervision.
+
+Personal Attributes:
+- To perform tasks in a well-defined and supervised environment.
+- To demonstrate limited autonomy in execution of tasks.
+"""
+.
+
+:level-3
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:esqf-levels ;
+    skos:prefLabel  "Level 3"@en ;
+    skos:notation   "ACQF-3" ;
+    skos:definition """
+Knowledge:
+- To demonstrate ability to understand and apply theoretical and technical knowledge of key concepts to perform tasks and solve problems within given parameters.
+- To have an understanding of solutions to a limited range of predictable problems.
+
+Skills:
+- To apply a range of methods, tools and materials to complete routine activities.
+
+Personal Attributes:
+- To complete tasks under moderate supervision in stable contexts.
+- To demonstrate ability to perform tasks in a team.
+- To demonstrate ability to adhere to organisational values.
+"""
+.
+
+:level-4
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:esqf-levels ;
+    skos:prefLabel  "Level 4"@en ;
+    skos:notation   "ACQF-4" ;
+    skos:definition """
+Knowledge:
+- To demonstrate advanced knowledge in specialised and emerging situations to make informed judgements.
+- To understand key concepts, terms, rules and established principles and theories in one or more fields or disciplines.
+
+Skills:
+- To apply strategic approaches to tasks that arise in work and using expert sources of information.
+- To use technology to solve existing and emerging situations.
+
+Personal Attributes:
+- To demonstrate accountability and responsibility in work/ learning situations.
+- To show proactivity and reliability in performance of tasks.
+"""
+.
+
+:level-5
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:esqf-levels ;
+    skos:prefLabel  "Level 5"@en ;
+    skos:notation   "ACQF-5" ;
+    skos:definition """
+Knowledge:
+- To demonstrate an understanding of concepts, principles, fact and theories within a specified field, discipline and practise.
+- To apply broad theoretic and practical knowledge that is often specialised within a field.
+- To analyze, categorize, classify information to construct logical and coherent argument
+- To show awareness of the knowledge base.
+
+Skills:
+- To demonstrate the ability to identify, evaluate and solve undefined, routine, new problems within a known context.
+- To apply solutions based on relevant evidence and procedures or other forms of explanations appropriate to the field, discipline or practice, demonstrating an understanding of consequences.
+
+Personal Attributes:
+- To manage projects with limited supervision that require problem solving where there are many factors some of which can lead to unforeseen changes.
+- To convey ideas in a reliable, accurate, and coherent manner to peers, supervisors and clients using appropriate conventions.
+- To express a comprehensive internalised personal world view reflecting engagement with others.
+- To formulate responses to abstract and concrete problems.
+- To demonstrate experience of operational interactions within a familiar field.
+- To make judgements based on knowledge of relevant social and ethical issues.
+"""
+.
+
+:level-6
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:esqf-levels ;
+    skos:prefLabel  "Level 6"@en ;
+    skos:notation   "ACQF-6" ;
+    skos:definition """
+Knowledge:
+- To demonstrate acquired specialist knowledge of an area of work or study to enable the use of an individual’s own ideas and research in response to complex problems and situations in a field.
+- To demonstrate the achievement of a high level of professional knowledge and a critical understanding of theories and principles, and how that knowledge relates to other fields/ disciplines/ practices.
+
+Skills:
+- To demonstrates ability to use specialised skills and tools to address unfamiliar situations that involve many interacting factors using appropriate methodologies and approaches.
+- To design and undertake research, development of strategic activities to inform or produce change in the area of work or study.
+- To evaluate actions, methods and results and their implications.
+
+Personal Attributes:
+- To manage processes and work with a large degree of accountability for personal and group outcomes;
+- To clearly communicating ideas, challenges and solutions to both specialist and non-specialist audiences using a range of relevant techniques;
+- To evaluate actions, methods and results and their implications.
+"""
+.
+
+
+:level-7
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:esqf-levels ;
+    skos:prefLabel  "Level 7"@en ;
+    skos:notation   "ACQF-7" ;
+    skos:definition """
+Knowledge:
+- To demonstrate understanding of the wider contexts in which the area of study or work is located and has knowledge of current developments in the area of study or work.
+- To demonstrate clear conceptualisation of different theoretical and methodological perspectives and how they affect the area of study or work.
+- To demonstrate critical awareness of knowledge issue in the field of study and between different fields.
+
+Skills:
+- To demonstrate ability to design and manage processes, can use specialised skills to conceptualise and address problematic situations that involve many interacting factors with a developed ability to undertake research, development of strategic activities to inform or produce change in the area of work or study.
+
+Personal Attributes:
+- To develop and communicate ideas, opinions and informed arguments using appropriate academic, professional or occupational discourse.
+- Accountable for own work, decision-making and use of resources.
+- Limited responsibility for decisions and actions of others in varied and/or unfamiliar contexts.
+"""
+.
+
+:level-8
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:esqf-levels ;
+    skos:prefLabel  "Level 8"@en ;
+    skos:notation   "ACQF-8" ;
+    skos:definition """
+Knowledge:
+- To demonstrate a critical understanding of the relevant theories, methodologies, and methods existing at the forefront of their discipline;
+- To critically and systematically analyse, evaluate, and engage with new and more complex concepts that will extend and replicate knowledge;
+- To possess a basic knowledge of innovation and entrepreneurship.
+
+Skills:
+- To generate hypothesis; analyse and evaluate problems; work in teams; present and communicate research findings through the interrogation of multiple sources of knowledge;
+- To apply knowledge and skills to solving abstract and complex problems; to acquire and apply intermediary entrepreneurial skills.
+
+Personal Attributes:
+- To be able to assume a leadership role;
+- To demonstrate a basic understanding of innovation and entrepreneurship;
+- To be autonomous learners;
+- To be reflective and self-critical;
+- To take responsibility for their own actions and work;
+- To undertake professional work within their given discipline.
+"""
+.
+
+:level-9
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:esqf-levels ;
+    skos:prefLabel  "Level 9"@en ;
+    skos:notation   "ACQF-9" ;
+    skos:definition """
+Knowledge:
+- To defend a position based upon advanced knowledge and understanding of a particular discipline;
+- To apply appropriate methods and techniques to collect new evidence, analyse existing evidence, or critique other scholarly work in a systematic way;
+- To advance the boundaries of knowledge in a creative way, and pioneer entrepreneurship.
+
+Skills:
+- To communicate and present research findings to a wider and professional audience;
+- To develop and defend original coherent and compelling arguments;
+- To design and plan rigorous and systematic projects based upon ethical principles.
+
+Personal Attributes:
+- To make autonomous and ethical decisions; to effectively manage their time and other resources;
+- To demonstrate initiative and innovation in a wide range of contexts;
+- To demonstrate creativity and initiative in their area of expertise.
+"""
+.
+
+:level-10
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:esqf-levels ;
+    skos:prefLabel  "Level 10"@en ;
+    skos:notation   "ACQF-10" ;
+    skos:definition """
+Knowledge:
+- To create a new, systematic and logical knowledge base through in-depth and original research and scholarship.
+
+Skills:
+- To apply innovative methods, technologies and interventions to solving real-world and theoretical problems;
+- To produce and defend independent, in-depth and publishable work.
+
+Personal Attributes:
+- To demonstrate independence of thought and action;
+- To take full responsibility for their own work; to effectively manage, supervise or oversee the work of others;
+- To portray confidence in communicating and leading research in their area of expertise;
+- To act professional within their field of work; work in ways which are reflective, critical and based on evidence.
+"""
+.
