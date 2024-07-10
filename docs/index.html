@@ -73,8 +73,11 @@ model.
 </ul>
 
 <h4>Serializations</h4>
-Currently, qualifications compliant with the ACQF Data Exchange Model can be expressed in JSON. To interpret the JSON data as <a href="https://www.w3.org/TR/json-ld11/">JSON-LD</a> compliant with the validation constraints in
-SHACL, the following JSON-LD contexts have been designed:
+Currently, qualifications compliant with the ACQF Data Exchange Model can be expressed in JSON.
+
+<h5>Raw Qualification JSON</h5>
+<b>Note: while this format is complete content-wise, the actual JSON structure is still subject to change (e.g. to support multiple qualifications and to avoid duplications of organisation data)</b><br/>
+Sample minimal qualification record is shown <a href="model/qualification-minimal.json">here</a>. This qualification record can be directly transformed to RDF by interpreting the JSON data using the following <a href="https://www.w3.org/TR/json-ld11/">JSON-LD</a> contexts:
 <ul>
     <li><a href="https://data.acqf-qcp.africa/model/contexts/identifier.json">identifier.json</a></li>
     <li><a href="https://data.acqf-qcp.africa/model/contexts/note.json">note.json</a></li>
