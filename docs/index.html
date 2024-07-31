@@ -1,98 +1,122 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>ACQF Qualifications and Credentials Platform (QCP)</title>
     <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+        }
+        .content {
+            width: 70%;
+            background-color: #ffffff;
+        }
+        h1, h2, h3, h4, h5 {
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #0056b3;
+        }
+        a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ol, ul {
+            margin: 20px 0;
+            padding: 0 20px;
+        }
+        li {
+            margin: 10px 0;
+        }
+        code {
+            background-color: #eee;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ccc;
+            margin: 40px 0;
+        }
+        p {
+            margin: 20px 0;
+        }
+        .center-text {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-<h1>ACQF Qualifications and Credentials Platform (QCP)</h1>
+<div class="content">
+    <h1>ACQF Qualifications and Credentials Platform (QCP)</h1>
+    <p>Welcome to the roadmap of the Qualifications and Credentials Platform (QCP) of the African Continent Qualification Framework (ACQF).</p>
 
-Welcome to the roadmap of the Qualifications and Credentials Platform (QCP) of the African Continent Qualification
-Framework (ACQF).
+    <h2>Preparing existing qualification data for importing into ACQF QCP</h2>
+    <p>In order to import finalized qualification data into ACQF QCP, the following steps should be followed:</p>
+    <ol>
+        <li>Become familiar with the <a href="#exchange-model">ACQF Data Exchange Model</a> (exchange model), including controlled vocabularies.</li>
+        <li>Create a transformer from the native qualification format into the exchange model.</li>
+        <li>Verify that transformed qualification records comply with the exchange model, using an online validation service (TBD - under development).</li>
+    </ol>
 
-<h2>Preparing existing qualification data for importing into ACQF QCP</h2>
-In order to import finalized qualification data into ACQF QCP, the following steps should be followed:
-<ol>
-    <li>Become familiar with the <a href="#exchange-model">ACQF Data Exchange Model</a> (exchange model), including
-        controlled vocabularies.
-    </li>
-    <li>Create a transformer from the native qualification format into the exchange model.</li>
-    <li>Verify that transformed qualification records comply with the exchange model, using an online validation service
-        (TBD - under development).
-    </li>
-</ol>
+    <h3 id="exchange-model">ACQF Data Exchange Model</h3>
+    <p>The exchange model has been defined in the <a href="https://acqf.africa/qualifications-platform/qualifications-and-credentials-platform-architecture-report">ACQF-II QCP Architecture report</a> and describes basic qualification data fields to be shared using ACQF QCP. This section documents the technical format of the exchange model.</p>
+    <ul>
+        <li>core model
+            <ul>
+                <li><a href="exchange-model/exchange-model.svg">diagram</a> shows an overview of the model classes and properties.</li>
+                <li><a href="exchange-model/exchange-model.html">documentation</a> describes the meaning of the classes and properties of the model in depth.</li>
+            </ul>
+        </li>
+        <li>controlled vocabularies (expressed in the <a href="https://www.w3.org/TR/skos-reference/">SKOS</a> format)
+            <ul>
+                <li><a href="https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/accreditation/25831c2">Accreditation type</a> for <code>Accreditation → type</code></li>
+                <li><a href="https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://publications.europa.eu/resource/authority/language">Language</a> for <code>LearningOpportunity → default language</code></li>
+                <li><a href="https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://publications.europa.eu/resource/authority/country">Countries and territories</a> for <code>Location → spatial code</code></li>
+                <li><a href="https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/isced-f/25831c2">ISCED-F 2013</a> for <code>Qualification → thematic area</code></li>
+                <li><a href="https://esco.ec.europa.eu/en/classification/occupation_main">ESCO Occupations</a> for <code>LearningEntitlementSpecification → limit national occupation</code></li>
+                <li><a href="https://esco.ec.europa.eu/en/classification/skill_main">ESCO Skills</a> for <code>LearningOutcome → related skill</code></li>
+                <li><b>[CUSTOM FOR ACQF QCP]</b> <a href="model/creditpoint-framework.ttl">Credit point framework</a> for <code>CreditPoint → framework</code></li>
+                <li><b>[CUSTOM FOR ACQF QCP]</b> for <code>Qualification → education level</code>
+                    <ul>
+                        <li><a href="model/acqf-levels.ttl">ACQF levels</a></li>
+                        <li>[NQF - Eswatini] <a href="model/nqf/esqf-levels.ttl">ESQF levels</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="model/exchange-model.ttl">validation constraints</a> in the <a href="https://www.w3.org/TR/shacl/">SHACL</a> format.</li>
+    </ul>
 
-<h3 id="exchange-model">ACQF Data Exchange Model</h3>
-The exchange model has been defined in the <a href="https://acqf.africa/qualifications-platform/qualifications-and-credentials-platform-architecture-report">ACQF-II QCP Architecture report</a> and describes basic
-qualification data fields to be shared using ACQF QCP. This section documents the technical format of the exchange
-model.
-<ul>
-    <li>core model
-        <ul>
-            <li><a href="exchange-model/exchange-model.svg">diagram</a> shows an overview of the model classes and
-                properties.
-            </li>
-            <li><a href="exchange-model/exchange-model.html">documentation</a> describes the meaning of the classes and
-                properties of the model in depth.
-            </li>
-        </ul>
-    </li>
-    <li>
-        controlled vocabularies (expressed in the <a href="https://www.w3.org/TR/skos-reference/">SKOS</a> format)
-        <ul>
-            <li>
-                <a href="https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/accreditation/25831c2">Accreditation
-                    type</a> for <code>Accreditation → type</code></li>
-            <li>
-                <a href="https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://publications.europa.eu/resource/authority/language">Language</a>
-                for <code>LearningOpportunity → default language</code></li>
-            <li>
-                <a href="https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://publications.europa.eu/resource/authority/country">Countries
-                    and territories</a>for <code>Location → spatial code</code></li>
-            <li>
-                <a href="https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/isced-f/25831c2">ISCED-F
-                    2013</a> for <code>Qualification → thematic area</code></li>
-            <li><a href="https://esco.ec.europa.eu/en/classification/occupation_main">ESCO Occupations</a> for <code>LearningEntitlementSpecification
-                → limit national occupation</code></li>
-            <li><a href="https://esco.ec.europa.eu/en/classification/skill_main">ESCO Skills</a> for <code>LearningOutcome
-                → related skill</code></li>
-            <li><b>[CUSTOM FOR ACQF QCP]</b> <a href="model/creditpoint-framework.ttl">Credit point framework</a> for
-                <code>CreditPoint → framework</code></li>
-            <!-- TODO   <li><a href="model/isced-2011.ttl">ISCED 2011</a></li>-->
-            <li><b>[CUSTOM FOR ACQF QCP]</b> for <code>Qualification →
-                education level</code>
-                <ul>
-                    <li><a href="model/acqf-levels.ttl">ACQF levels</a></li>
-                    <li>[NQF - Eswatini] <a href="model/nqf/esqf-levels.ttl">ESQF levels</a></li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-    <li><a href="model/exchange-model.ttl">validation constraints</a>
-        in the <a href="https://www.w3.org/TR/shacl/">SHACL</a> format.
-    </li>
-</ul>
+    <h4>Serializations</h4>
+    <p>Currently, qualifications compliant with the ACQF Data Exchange Model can be expressed in JSON.</p>
 
-<h4>Serializations</h4>
-Currently, qualifications compliant with the ACQF Data Exchange Model can be expressed in JSON.
+    <h5>Raw Qualification JSON</h5>
+    <p><b>Note: while this format is complete content-wise, the actual JSON structure is still subject to change (e.g. to support multiple qualifications and to avoid duplications of organisation data)</b><br/>
+        Sample minimal qualification record is shown <a href="model/qualification-minimal.json">here</a>. This qualification record can be directly transformed to RDF by interpreting the JSON data using the following <a href="https://www.w3.org/TR/json-ld11/">JSON-LD</a> contexts:</p>
+    <ul>
+        <li><a href="https://data.acqf-qcp.africa/model/contexts/identifier.json">identifier.json</a></li>
+        <li><a href="https://data.acqf-qcp.africa/model/contexts/note.json">note.json</a></li>
+        <li><a href="https://data.acqf-qcp.africa/model/contexts/organisation.json">organisation.json</a></li>
+        <li><a href="https://data.acqf-qcp.africa/model/contexts/qualification.json">qualification.json</a> (describes the root JSON object)</li>
+        <li><a href="https://data.acqf-qcp.africa/model/contexts/webresource.json">webresource.json</a></li>
+    </ul>
 
-<h5>Raw Qualification JSON</h5>
-<b>Note: while this format is complete content-wise, the actual JSON structure is still subject to change (e.g. to support multiple qualifications and to avoid duplications of organisation data)</b><br/>
-Sample minimal qualification record is shown <a href="model/qualification-minimal.json">here</a>. This qualification record can be directly transformed to RDF by interpreting the JSON data using the following <a href="https://www.w3.org/TR/json-ld11/">JSON-LD</a> contexts:
-<ul>
-    <li><a href="https://data.acqf-qcp.africa/model/contexts/identifier.json">identifier.json</a></li>
-    <li><a href="https://data.acqf-qcp.africa/model/contexts/note.json">note.json</a></li>
-    <li><a href="https://data.acqf-qcp.africa/model/contexts/organisation.json">organisation.json</a></li>
-    <li><a href="https://data.acqf-qcp.africa/model/contexts/qualification.json">qualification.json</a> (describes the
-        root JSON object)
-    </li>
-    <li><a href="https://data.acqf-qcp.africa/model/contexts/webresource.json">webresource.json</a></li>
-</ul>
-
-<hr/>
-<p style="text-align: center">
-    This website was created within the ACQF-II project and is powered by Github Pages served from a <a href="https://github.com/cognizone/acqf-qpc-public">public
-    Github repository</a>.
-</p>
-</li>
+    <hr/>
+    <p class="center-text">
+        This website was created within the ACQF-II project and is powered by Github Pages served from a <a href="https://github.com/cognizone/acqf-qpc-public">public Github repository</a>.
+    </p>
+</div>
 </body>
 </html>
