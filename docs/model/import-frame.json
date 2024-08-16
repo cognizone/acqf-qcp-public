@@ -1,17 +1,27 @@
 {
   "@context": {
     "@version": 1.1,
+    "@base": "https://data.acqf-acp.africa/model/tmp/",
+    "base": "https://data.acqf-acp.africa/model/tmp/",
     "adms": "http://www.w3.org/ns/adms#",
     "elm": "http://data.europa.eu/snb/model/elm/",
     "foaf": "http://xmlns.com/foaf/0.1/",
     "rdfs": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "dcterms": "http://purl.org/dc/terms/",
-    "skos": "http://www.w3.org/2004/02/skos/core#"
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "learningOpportunity": {
+      "@reverse": "elm:learningAchievementSpecification"
+    }
   },
-  "urn:acqf-import:qualifications": {
+  "base:qualifications": {
     "@type": {
       "@default": "elm:Qualification"
+    },
+    "foaf:homepage": {
+      "@type": {
+        "@default": "elm:WebResource"
+      }
     },
     "adms:identifier": {
       "@type": {
@@ -27,20 +37,12 @@
         "@default": "skos:Concept"
       }
     },
-    "elm:publisher": {
+    "dcterms:publisher": {
       "@type": {
         "@default": "elm:Organisation"
-      },
-      "adms:identifier": {
-        "@type": {
-          "@default": "elm:Identifier"
-        },
-        "skos:notation": {},
-        "adms:schemeAgency": {},
-        "elm:schemeName": {}
       }
     },
-    "elm:educationalLevel": {
+    "elm:educationLevel": {
       "@type": {
         "@default": "skos:Concept"
       }
@@ -88,14 +90,6 @@
       "elm:awardingBody": {
         "@type": {
           "@default": "elm:Organisation"
-        },
-        "adms:identifier": {
-          "@type": {
-            "@default": "elm:Identifier"
-          },
-          "skos:notation": {},
-          "adms:schemeAgency": {},
-          "elm:schemeName": {}
         }
       }
     },
@@ -134,7 +128,7 @@
         "adms:schemeAgency": {},
         "elm:schemeName": {}
       },
-      "elm:accreditationType": {
+      "dcterms:type": {
         "@type": {
           "@default": "skos:Concept"
         }
@@ -142,31 +136,15 @@
       "elm:organisation": {
         "@type": {
           "@default": "elm:Organisation"
-        },
-        "adms:identifier": {
-          "@type": {
-            "@default": "elm:Identifier"
-          },
-          "skos:notation": {},
-          "adms:schemeAgency": {},
-          "elm:schemeName": {}
         }
       },
       "elm:accreditingAgent": {
         "@type": {
           "@default": "elm:Organisation"
-        },
-        "adms:identifier": {
-          "@type": {
-            "@default": "elm:Identifier"
-          },
-          "skos:notation": {},
-          "adms:schemeAgency": {},
-          "elm:schemeName": {}
         }
       }
     },
-    "entitlesTo": {
+    "elm:entitlesTo": {
       "@type": {
         "@default": "elm:LearningEntitlementSpecification"
       },
@@ -178,16 +156,15 @@
         "adms:schemeAgency": {},
         "elm:schemeName": {}
       },
-      "limitNationalOccupation": {
+      "elm:limitNationalOccupation": {
         "@type": {
           "@default": "skos:Concept"
         }
       }
     },
     "learningOpportunity": {
-      "@reverse": "elm:learningAchievementSpecification",
       "@type": {
-        "@default": "elm:LearningAchievementSpecification"
+        "@default": "elm:LearningOpportunity"
       },
       "adms:identifier": {
         "@type": {
@@ -197,7 +174,7 @@
         "adms:schemeAgency": {},
         "elm:schemeName": {}
       },
-      "providedBy": {
+      "elm:providedBy": {
         "@type": {
           "@default": "elm:Organisation"
         },
@@ -210,14 +187,14 @@
           "elm:schemeName": {}
         }
       },
-      "defaultLanguage": {
+      "elm:defaultLanguage": {
         "@type": {
           "@default": "skos:Concept"
         }
       }
     }
   },
-  "urn:acqf-import:organisations": {
+  "base:organisations": {
     "@type": {
       "@default": "elm:Organisation"
     },
@@ -229,9 +206,10 @@
       "adms:schemeAgency": {},
       "elm:schemeName": {}
     },
+    "skos:prefLabel": {},
     "elm:location": {
       "@type": {
-        "@default": "elm:Location"
+        "@default": "dcterms:Location"
       },
       "elm:spatialCode": {
         "@type": {

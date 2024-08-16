@@ -1,6 +1,7 @@
 {
   "@context": {
     "@version": 1.1,
+    "@base": "https://data.acqf-acp.africa/model/tmp/",
     "adms": "http://www.w3.org/ns/adms#",
     "elm": "http://data.europa.eu/snb/model/elm/",
     "foaf": "http://xmlns.com/foaf/0.1/",
@@ -8,7 +9,7 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "dcterms": "http://purl.org/dc/terms/",
     "skos": "http://www.w3.org/2004/02/skos/core#",
-    "type": "@type",
+    "id": "@id",
     "Qualification": "elm:Qualification",
     "identifier": {
       "@id": "adms:identifier",
@@ -32,7 +33,9 @@
     "publisher": {
       "@id": "dcterms:publisher",
       "@type": "@id",
-      "@context": "https://data.acqf-qcp.africa/model/contexts/organisation.json"
+      "@context": {
+        "@base": "https://data.acqf-acp.africa/model/tmp/"
+      }
     },
     "educationLevelAcqf": {
       "@id": "elm:educationLevel",
@@ -107,7 +110,9 @@
           "@id": "elm:awardingBody",
           "@type": "@id",
           "@container": "@set",
-          "@context": "https://data.acqf-qcp.africa/model/contexts/organisation.json"
+          "@context": {
+            "@base": "https://data.acqf-acp.africa/model/tmp/"
+          }
         }
       }
     },
@@ -172,12 +177,16 @@
           "@id": "elm:organisation",
           "@type": "@id",
           "@container": "@set",
-          "@context": "https://data.acqf-qcp.africa/model/contexts/organisation.json"
+          "@context": {
+            "@base": "https://data.acqf-acp.africa/model/tmp/"
+          }
         },
         "accreditingAgent": {
           "@id": "elm:accreditingAgent",
           "@type": "@id",
-          "@context": "https://data.acqf-qcp.africa/model/contexts/organisation.json"
+          "@context": {
+            "@base": "https://data.acqf-acp.africa/model/tmp/"
+          }
         },
         "expiryDate": {
           "@id": "elm:expiryDate",
@@ -231,7 +240,9 @@
           "@id": "elm:providedBy",
           "@type": "@id",
           "@container": "@set",
-          "@context": "https://data.acqf-qcp.africa/model/contexts/organisation.json"
+          "@context": {
+            "@base": "https://data.acqf-acp.africa/model/tmp/"
+          }
         },
         "defaultLanguage": {
           "@id": "elm:defaultLanguage",

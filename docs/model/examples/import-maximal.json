@@ -1,0 +1,183 @@
+{
+  "organisations": [
+    {
+      "id": "1",
+      "prefLabel": {
+        "en": "Awarding Body 1"
+      },
+      "location": {
+        "spatialCode": "ZAR"
+      }
+    },
+    {
+      "id": "2",
+      "prefLabel": {
+        "en": "Awarding Body 2"
+      },
+      "location": {
+        "spatialCode": "ZAF"
+      }
+    },
+    {
+      "id": "3",
+      "prefLabel": {
+        "en": "Some agent 3"
+      },
+      "location": {
+        "spatialCode": "ZAR"
+      }
+    },
+    {
+      "id": "4",
+      "prefLabel": {
+        "en": "Some agent 3"
+      },
+      "location": {
+        "spatialCode": "ZAR"
+      }
+    },
+    {
+      "id": "5",
+      "prefLabel": {
+        "en": "Accredited Organisation 1"
+      },
+      "location": {
+        "spatialCode": "ZAR"
+      }
+    },
+    {
+      "id": "6",
+      "prefLabel": {
+        "en": "Accrediting Agent 1"
+      },
+      "location": {
+        "spatialCode": "ZAF"
+      }
+    }
+  ],
+  "qualifications": [
+    {
+      "title": {
+        "en": "Postgraduate Diploma in Labour Dispute Resolution"
+      },
+      "identifier": {
+        "notation": "Q12345",
+        "schemeAgency": {
+          "en": "Agency XYZ"
+        },
+        "schemeName": "Qualification Scheme"
+      },
+      "awardingOpportunity": [
+        {
+          "identifier": {
+            "notation": "AO12345"
+          },
+          "awardingBody": [
+            "1",
+            "2"
+          ],
+          "additionalNote": [
+            {
+              "noteLiteral": {
+                "en": "Awarding information note."
+              }
+            }
+          ]
+        }
+      ],
+      "learningOpportunity": {
+        "title": {
+          "en": "Some learning opportunity"
+        },
+        "providedBy": [
+          "3"
+        ],
+        "defaultLanguage": {
+          "id": "ENG"
+        }
+      },
+      "learningOutcome": [
+        {
+          "title": {
+            "en": "Postgraduate Diploma in Labour Dispute Resolution"
+          },
+          "relatedSkill": [
+            "skill123"
+          ],
+          "additionalNote": [
+            {
+              "noteLiteral": {
+                "en": "Learning outcome note."
+              }
+            }
+          ]
+        }
+      ],
+      "educationLevelAcqf": [
+        "level6"
+      ],
+      "publisher": "4",
+      "supplementaryDocument": [
+        {
+          "contentUrl": [
+            "http://someurl.org"
+          ]
+        },
+        {
+          "contentUrl": [
+            "http://anotherurl.org"
+          ]
+        }
+      ],
+      "homepage": [
+        {
+          "contentUrl": [
+            "http://homepageurl.org"
+          ]
+        }
+      ],
+      "entitlesTo": [
+        {
+          "identifier": {
+            "notation": "E12345"
+          },
+          "limitNationalOccupation": [
+            {
+              "id": "occupation123",
+              "prefLabel": {
+                "en": "Occupation 1"
+              }
+            }
+          ]
+        }
+      ],
+      "creditPoint": [
+        {
+          "framework": {
+            "id": "framework123",
+            "prefLabel": {
+              "en": "Credit Framework"
+            }
+          },
+          "point": "30"
+        }
+      ],
+      "accreditation": [
+        {
+          "identifier": {
+            "notation": "ACC12345"
+          },
+          "accreditationType": "003293d2ce",
+          "title": {
+            "en": "Accreditation Title"
+          },
+          "organisation": [
+            "5"
+          ],
+          "accreditingAgent": "6",
+          "expiryDate": "2025-12-31T00:00:00Z"
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,8 @@
 {
   "@context": {
+    "@version": 1.1,
+    "@base": "https://data.acqf-acp.africa/model/tmp/",
+    "base": "https://data.acqf-acp.africa/model/tmp/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
@@ -12,17 +15,15 @@
     "org": "http://www.w3.org/ns/org#",
     "elm": "http://data.europa.eu/snb/model/elm/",
     "acqf-qcp-model": "https://data.acqf-acp.africa/model/",
-    "id": "@id",
-    "type": "@type",
     "organisations": {
-      "@id": "urn:acqf-import:organisations",
+      "@id": "base:organisations",
       "@container": "@set",
       "@context": "https://data.acqf-qcp.africa/model/contexts/organisation.json"
     },
     "qualifications": {
-      "@id": "urn:acqf-import:qualifications",
+      "@id": "base:qualifications",
       "@container": "@set",
-      "@context": "https://data.acqf-qcp.africa/model/contexts/qualification.json"
+      "@context":  "https://data.acqf-qcp.africa/model/contexts/qualification.json"
     }
   }
 }

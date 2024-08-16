@@ -1,0 +1,101 @@
+{
+  "organisations": [
+    {
+      "id": "1",
+      "prefLabel": {
+        "en": "SOUTH AFRICAN QUALIFICATIONS AUTHORITY"
+      },
+      "location": {
+        "spatialCode": "ZAR"
+      }
+    },
+    {
+      "id": "2",
+      "prefLabel": {
+        "en": "University of Pretoria"
+      },
+      "location": {
+        "spatialCode": "ZAR"
+      }
+    },
+    {
+      "id": "3",
+      "prefLabel": {
+        "en": "Ministry of Magic"
+      },
+      "location": {
+        "spatialCode": "ZAR"
+      }
+    }
+  ],
+  "qualifications": [
+    {
+      "title": {
+        "en": "Postgraduate Diploma in Labour Dispute Resolution"
+      },
+      "awardingOpportunity": [
+        {
+        }
+      ],
+      "learningOpportunity": {
+        "title": {
+          "en": "Opportunity for Postgraduate Diploma in Labour Dispute Resolution"
+        },
+        "providedBy": [
+          "2"
+        ],
+        "defaultLanguage": {
+          "id": "ENG"
+        }
+      },
+      "learningOutcome": [
+        {
+          "title": {
+            "en": "Outcome for Postgraduate Diploma in Labour Dispute Resacqolution"
+          }
+        }
+      ],
+      "publisher": "1",
+      "supplementaryDocument": [
+        {
+          "contentUrl": [
+            "http://someurl.org"
+          ]
+        }
+      ]
+    },
+    {
+      "title": {
+        "en": "[2] Postgraduate Diploma in Labour Dispute Resolution"
+      },
+      "awardingOpportunity": [
+        {
+        }
+      ],
+      "learningOpportunity": {
+        "title": {
+          "en": "[2] Opportunity for Postgraduate Diploma in Labour Dispute Resolution"
+        },
+        "providedBy": [
+          "3"
+        ],
+        "defaultLanguage": "GER"
+      },
+      "learningOutcome": [
+        {
+          "title": {
+            "en": "[2] Outcome for Postgraduate Diploma in Labour Dispute Resolution"
+          }
+        }
+      ],
+      "publisher": "1",
+      "supplementaryDocument": [
+        {
+          "contentUrl": [
+            "http://someurl2.org"
+          ]
+        }
+      ]
+    }
+  ]
+}

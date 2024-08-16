@@ -677,9 +677,3 @@ acqf-qcp-model:exchange-model
     sh:node        :URLRegexRestriction ;
     sh:severity    sh:Violation ;
 .
-
-:TypeShape
-    a              sh:NodeShape ;
-    sh:targetClass elm:LearningOpportunity ;
-    sh:closed      true ;
-.
