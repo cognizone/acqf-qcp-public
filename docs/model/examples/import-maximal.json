@@ -142,23 +142,13 @@
             "notation": "E12345"
           },
           "limitNationalOccupation": [
-            {
-              "id": "occupation123",
-              "prefLabel": {
-                "en": "Occupation 1"
-              }
-            }
+            "occupation123"
           ]
         }
       ],
       "creditPoint": [
         {
-          "framework": {
-            "id": "framework123",
-            "prefLabel": {
-              "en": "Credit Framework"
-            }
-          },
+          "framework": "framework123",
           "point": "30"
         }
       ],
