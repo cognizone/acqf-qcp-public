@@ -6,6 +6,7 @@
 @prefix clv:            <http://data.europa.eu/m8g/>.
 @prefix dc:             <http://purl.org/dc/terms/>.
 @prefix elm:            <http://data.europa.eu/snb/model/elm/>.
+@prefix elm-extension:  <https://data.acqf-qcp.africa/model/elm-extension/> .
 @prefix foaf:           <http://xmlns.com/foaf/0.1/>.
 @prefix locn:           <http://www.w3.org/ns/locn#>.
 @prefix org:            <http://www.w3.org/ns/org#>.
@@ -36,7 +37,7 @@ acqf-qcp-model:exchange-model
     dc:description       "A specification of an assessment and validation process which is obtained when a competent authority determines that an individual has achieved learning outcomes to given standards. Qualification is a subclass of Learning Achievement Specification."@en ;
     sh:targetClass       elm:Qualification ;
     sh:closed            true ;
-    sh:ignoredProperties ( rdf:type ) ;
+    sh:ignoredProperties ( rdf:type elm-extension:learningOpportunity ) ;
     sh:property          :identifierPropertyShape,
 
                          # Annex VI - "Title of the qualification"
@@ -576,7 +577,7 @@ acqf-qcp-model:exchange-model
     a              sh:PropertyShape ;
     sh:name        "qualification"@en ;
     sh:description "The qualification, including the curricula, of this learning opportunity."@en ;
-    sh:path        elm:learningAchievementSpecification ;
+    sh:path        [ sh:inversePath elm-extension:learningOpportunity ];
     sh:class       elm:Qualification ;
     sh:minCount    1 ;
     sh:maxCount    1 ;
