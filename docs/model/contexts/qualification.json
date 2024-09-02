@@ -127,8 +127,7 @@
           "@type": "@id",
           "@context": {
             "@base": "https://data.acqf-acp.africa/model/creditpoint-framework/resource/",
-            "type": "@type",
-            "Concept": "skos:Concept"
+            "type": "@type"
           }
         },
         "point": {
@@ -163,8 +162,7 @@
           "@type": "@id",
           "@context": {
             "@base": "https://publications.europa.eu/resource/authority/snb/accreditation/",
-            "type": "@type",
-            "Concept": "skos:Concept"
+            "type": "@type"
           }
         },
         "organisation": {
@@ -216,7 +214,7 @@
       }
     },
     "learningOpportunity": {
-      "@reverse": "elm:learningAchievementSpecification",
+      "@id": "https://data.acqf-qcp.africa/model/elm-extension/learningOpportunity",
       "@type": "@id",
       "@context": {
         "identifier": {
@@ -242,8 +240,7 @@
           "@container": "@set",
           "@context": {
             "@base": "http://publications.europa.eu/resource/authority/language/",
-            "type": "@type",
-            "Concept": "skos:Concept"
+            "type": "@type"
           }
         }
       }
