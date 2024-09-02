@@ -1,11 +1,9 @@
 {
   "@context": {
     "@version": 1.1,
-    "@base": "https://data.acqf-acp.africa/model/tmp/",
+    "adms": "http://www.w3.org/ns/adms#",
     "elm": "http://data.europa.eu/snb/model/elm/",
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "type": "@type",
-    "Note": "elm:Note",
+    "id": "@id",
     "identifier": {
       "@id": "adms:identifier",
       "@context": "https://data.acqf-qcp.africa/model/contexts/identifier.json"

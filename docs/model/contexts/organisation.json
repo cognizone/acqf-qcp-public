@@ -1,15 +1,12 @@
 {
   "@context": {
     "@version": 1.1,
-    "@base": "https://data.acqf-acp.africa/model/tmp/",
     "adms": "http://www.w3.org/ns/adms#",
     "elm": "http://data.europa.eu/snb/model/elm/",
-    "rdfs": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "dcterms": "http://purl.org/dc/terms/",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "id": "@id",
-    "Organisation": "elm:Organisation",
     "identifier": {
       "@id": "adms:identifier",
       "@context": "https://data.acqf-qcp.africa/model/contexts/identifier.json"
@@ -25,7 +22,6 @@
       "@container": "@set",
       "@context": {
         "type": "@type",
-        "Location": "dcterms:Location",
         "spatialCode": {
           "@id": "elm:spatialCode",
           "@type": "@id",

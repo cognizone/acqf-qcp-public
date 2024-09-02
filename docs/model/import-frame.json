@@ -1,8 +1,8 @@
 {
   "@context": {
     "@version": 1.1,
-    "@base": "https://data.acqf-acp.africa/model/tmp/",
-    "base": "https://data.acqf-acp.africa/model/tmp/",
+    "@base": "https://data.acqf-acp.africa/resource/",
+    "acqf-import": "https://data.acqf-acp.africa/model/import/",
     "adms": "http://www.w3.org/ns/adms#",
     "elm": "http://data.europa.eu/snb/model/elm/",
     "foaf": "http://xmlns.com/foaf/0.1/",
@@ -14,7 +14,7 @@
       "@reverse": "elm:learningAchievementSpecification"
     }
   },
-  "base:qualifications": {
+  "acqf-import:qualifications": {
     "@type": {
       "@default": "elm:Qualification"
     },
@@ -194,7 +194,7 @@
       }
     }
   },
-  "base:organisations": {
+  "acqf-import:organisations": {
     "@type": {
       "@default": "elm:Organisation"
     },

@@ -1,7 +1,6 @@
 {
   "@context": {
     "@version": 1.1,
-    "@base": "https://data.acqf-acp.africa/model/tmp/",
     "adms": "http://www.w3.org/ns/adms#",
     "elm": "http://data.europa.eu/snb/model/elm/",
     "foaf": "http://xmlns.com/foaf/0.1/",
@@ -10,7 +9,6 @@
     "dcterms": "http://purl.org/dc/terms/",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "id": "@id",
-    "Qualification": "elm:Qualification",
     "identifier": {
       "@id": "adms:identifier",
       "@context": "https://data.acqf-qcp.africa/model/contexts/identifier.json"
@@ -34,7 +32,7 @@
       "@id": "dcterms:publisher",
       "@type": "@id",
       "@context": {
-        "@base": "https://data.acqf-acp.africa/model/tmp/"
+        "@base": "https://data.acqf-acp.africa/resource/"
       }
     },
     "educationLevelAcqf": {
@@ -65,7 +63,6 @@
           "@context": "https://data.acqf-qcp.africa/model/contexts/identifier.json"
         },
         "type": "@type",
-        "LearningOutcome": "elm:LearningOutcome",
         "title": {
           "@id": "dcterms:title",
           "@type": "rdf:langString",
@@ -95,7 +92,6 @@
       "@container": "@set",
       "@context": {
         "type": "@type",
-        "AwardingOpportunity": "elm:AwardingOpportunity",
         "identifier": {
           "@id": "adms:identifier",
           "@context": "https://data.acqf-qcp.africa/model/contexts/identifier.json"
@@ -111,7 +107,7 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@base": "https://data.acqf-acp.africa/model/tmp/"
+            "@base": "https://data.acqf-acp.africa/resource/"
           }
         }
       }
@@ -122,7 +118,6 @@
       "@container": "@set",
       "@context": {
         "type": "@type",
-        "CreditPoint": "elm:CreditPoint",
         "identifier": {
           "@id": "adms:identifier",
           "@context": "https://data.acqf-qcp.africa/model/contexts/identifier.json"
@@ -154,7 +149,6 @@
       "@container": "@set",
       "@context": {
         "type": "@type",
-        "Accreditation": "elm:Accreditation",
         "identifier": {
           "@id": "adms:identifier",
           "@context": "https://data.acqf-qcp.africa/model/contexts/identifier.json"
@@ -178,14 +172,14 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@base": "https://data.acqf-acp.africa/model/tmp/"
+            "@base": "https://data.acqf-acp.africa/resource/"
           }
         },
         "accreditingAgent": {
           "@id": "elm:accreditingAgent",
           "@type": "@id",
           "@context": {
-            "@base": "https://data.acqf-acp.africa/model/tmp/"
+            "@base": "https://data.acqf-acp.africa/resource/"
           }
         },
         "expiryDate": {
@@ -206,7 +200,6 @@
       "@container": "@set",
       "@context": {
         "type": "@type",
-        "LearningEntitlementSpecification": "elm:LearningEntitlementSpecification",
         "identifier": {
           "@id": "adms:identifier",
           "@context": "https://data.acqf-qcp.africa/model/contexts/identifier.json"
@@ -217,8 +210,7 @@
           "@container": "@set",
           "@context": {
             "@base": "http://data.europa.eu/esco/occupation/",
-            "type": "@type",
-            "Concept": "skos:Concept"
+            "type": "@type"
           }
         }
       }
@@ -241,7 +233,7 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@base": "https://data.acqf-acp.africa/model/tmp/"
+            "@base": "https://data.acqf-acp.africa/resource/"
           }
         },
         "defaultLanguage": {
