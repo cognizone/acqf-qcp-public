@@ -1,5 +1,5 @@
-@prefix acqf-qcp-model: <https://data.acqf-acp.africa/model/> .
-@prefix :               <https://data.acqf-acp.africa/model/exchange-model/resource/> .
+@prefix acqf-qcp-model: <https://data.acqf-qcp.africa/model/> .
+@prefix :               <https://data.acqf-qcp.africa/model/exchange-model/resource/> .
 @prefix adms:           <http://www.w3.org/ns/adms#>.
 @prefix ams:            <http://data.europa.eu/snb/model/ap/ams-constraints/>.
 @prefix cc:             <http://creativecommons.org/ns#>.

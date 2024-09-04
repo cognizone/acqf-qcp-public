@@ -32,14 +32,14 @@
       "@id": "dcterms:publisher",
       "@type": "@id",
       "@context": {
-        "@base": "https://data.acqf-acp.africa/resource/"
+        "@base": "https://data.acqf-qcp.africa/resource/"
       }
     },
     "educationLevelAcqf": {
       "@id": "elm:educationLevel",
       "@type": "@id",
       "@context": {
-        "@base": "https://data.acqf-acp.africa/model/acqf-levels/resource/",
+        "@base": "https://data.acqf-qcp.africa/model/acqf-levels/resource/",
         "type": "@type",
         "Concept": "skos:Concept"
       }
@@ -48,7 +48,7 @@
       "@id": "elm:educationLevel",
       "@type": "@id",
       "@context": {
-        "@base": "https://data.acqf-acp.africa/model/isced-2011/resource/",
+        "@base": "https://data.acqf-qcp.africa/model/isced-2011/resource/",
         "type": "@type",
         "Concept": "skos:Concept"
       }
@@ -107,7 +107,7 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@base": "https://data.acqf-acp.africa/resource/"
+            "@base": "https://data.acqf-qcp.africa/resource/"
           }
         }
       }
@@ -126,7 +126,7 @@
           "@id": "elm:framework",
           "@type": "@id",
           "@context": {
-            "@base": "https://data.acqf-acp.africa/model/creditpoint-framework/resource/",
+            "@base": "https://data.acqf-qcp.africa/model/creditpoint-framework/resource/",
             "type": "@type"
           }
         },
@@ -170,14 +170,14 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@base": "https://data.acqf-acp.africa/resource/"
+            "@base": "https://data.acqf-qcp.africa/resource/"
           }
         },
         "accreditingAgent": {
           "@id": "elm:accreditingAgent",
           "@type": "@id",
           "@context": {
-            "@base": "https://data.acqf-acp.africa/resource/"
+            "@base": "https://data.acqf-qcp.africa/resource/"
           }
         },
         "expiryDate": {
@@ -231,7 +231,7 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@base": "https://data.acqf-acp.africa/resource/"
+            "@base": "https://data.acqf-qcp.africa/resource/"
           }
         },
         "defaultLanguage": {

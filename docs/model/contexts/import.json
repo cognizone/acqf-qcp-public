@@ -1,7 +1,7 @@
 {
   "@context": {
     "@version": 1.1,
-    "acqf-import": "https://data.acqf-acp.africa/model/import/",
+    "acqf-import": "https://data.acqf-qcp.africa/model/import/",
     "id": "@id",
     "organisations": {
       "@id": "acqf-import:organisations",
