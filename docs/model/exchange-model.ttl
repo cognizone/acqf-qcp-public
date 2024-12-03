@@ -199,7 +199,7 @@ acqf-qcp-model:exchange-model
     sh:name        "points" ;
     sh:description "The credit points assigned to the learning specification."@en ;
     sh:path        elm:point ;
-    sh:datatype    xsd:string ;
+    sh:datatype    xsd:decimal ;
     sh:minCount    1 ;
     sh:maxCount    1 ;
     sh:severity    sh:Violation ;
@@ -474,7 +474,7 @@ acqf-qcp-model:exchange-model
     sh:severity    sh:Violation ;
 .
 
-:ConceptScheme
+:ConceptSchemeShape
     a              sh:NodeShape ;
     dc:description "A controlled vocabulary modelled as a Concept Scheme."@en ;
     sh:targetClass skos:ConceptScheme ;
@@ -634,6 +634,7 @@ acqf-qcp-model:exchange-model
     sh:name        "identifier"@en ;
     sh:description "An identifier assigned to the resource."@en ;
     sh:path        adms:identifier ;
+    sh:maxCount    1 ;
     sh:class       elm:Identifier ;
     sh:severity    sh:Violation ;
 .

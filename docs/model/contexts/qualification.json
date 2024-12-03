@@ -132,7 +132,7 @@
         },
         "point": {
           "@id": "elm:point",
-          "@type": "xsd:string"
+          "@type": "xsd:decimal"
         }
       }
     },
