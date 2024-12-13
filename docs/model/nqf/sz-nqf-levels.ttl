@@ -1,11 +1,11 @@
 @prefix acqf-qcp-model: <https://data.acqf-qcp.africa/model/> .
-@prefix :               <https://data.acqf-qcp.africa/model/esqf-levels/resource/> .
+@prefix :               <https://data.acqf-qcp.africa/model/sz-nqf-levels/resource/> .
 @prefix dct:            <http://purl.org/dc/terms/> .
 @prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos:           <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
 
-acqf-qcp-model:esqf-levels
+acqf-qcp-model:sz-nqf-levels
     a                  skos:ConceptScheme ;
     dct:title          "Eswatini Qualifications Framework levels and level descriptors"@en ;
     dct:description    "This is a SKOS representation of the ESQF levels and level descriptors."@en ;
@@ -19,9 +19,9 @@ acqf-qcp-model:esqf-levels
 
 :level-1
     a               skos:Concept ;
-    skos:inScheme   acqf-qcp-model:esqf-levels ;
+    skos:inScheme   acqf-qcp-model:sz-nqf-levels ;
     skos:prefLabel  "Level 1"@en ;
-    skos:notation   "ACQF-1" ;
+    skos:notation   "ESQF-1" ;
     skos:definition """
 Knowledge:
 - To recall basic knowledge in well-defined and familiar contexts.
@@ -38,7 +38,7 @@ Personal Attributes:
     a               skos:Concept ;
     skos:inScheme   acqf-qcp-model:esqf-levels ;
     skos:prefLabel  "Level 2"@en ;
-    skos:notation   "ACQF-2" ;
+    skos:notation   "ESQF-2" ;
     skos:definition """
 Knowledge:
 - To recall and apply basic practical and educational knowledge of a defined area of learning / work.
@@ -56,7 +56,7 @@ Personal Attributes:
     a               skos:Concept ;
     skos:inScheme   acqf-qcp-model:esqf-levels ;
     skos:prefLabel  "Level 3"@en ;
-    skos:notation   "ACQF-3" ;
+    skos:notation   "ESQF-3" ;
     skos:definition """
 Knowledge:
 - To demonstrate ability to understand and apply theoretical and technical knowledge of key concepts to perform tasks and solve problems within given parameters.
@@ -76,7 +76,7 @@ Personal Attributes:
     a               skos:Concept ;
     skos:inScheme   acqf-qcp-model:esqf-levels ;
     skos:prefLabel  "Level 4"@en ;
-    skos:notation   "ACQF-4" ;
+    skos:notation   "ESQF-4" ;
     skos:definition """
 Knowledge:
 - To demonstrate advanced knowledge in specialised and emerging situations to make informed judgements.
@@ -96,7 +96,7 @@ Personal Attributes:
     a               skos:Concept ;
     skos:inScheme   acqf-qcp-model:esqf-levels ;
     skos:prefLabel  "Level 5"@en ;
-    skos:notation   "ACQF-5" ;
+    skos:notation   "ESQF-5" ;
     skos:definition """
 Knowledge:
 - To demonstrate an understanding of concepts, principles, fact and theories within a specified field, discipline and practise.
@@ -122,7 +122,7 @@ Personal Attributes:
     a               skos:Concept ;
     skos:inScheme   acqf-qcp-model:esqf-levels ;
     skos:prefLabel  "Level 6"@en ;
-    skos:notation   "ACQF-6" ;
+    skos:notation   "ESQF-6" ;
     skos:definition """
 Knowledge:
 - To demonstrate acquired specialist knowledge of an area of work or study to enable the use of an individual’s own ideas and research in response to complex problems and situations in a field.
@@ -145,7 +145,7 @@ Personal Attributes:
     a               skos:Concept ;
     skos:inScheme   acqf-qcp-model:esqf-levels ;
     skos:prefLabel  "Level 7"@en ;
-    skos:notation   "ACQF-7" ;
+    skos:notation   "ESQF-7" ;
     skos:definition """
 Knowledge:
 - To demonstrate understanding of the wider contexts in which the area of study or work is located and has knowledge of current developments in the area of study or work.
@@ -166,7 +166,7 @@ Personal Attributes:
     a               skos:Concept ;
     skos:inScheme   acqf-qcp-model:esqf-levels ;
     skos:prefLabel  "Level 8"@en ;
-    skos:notation   "ACQF-8" ;
+    skos:notation   "ESQF-8" ;
     skos:definition """
 Knowledge:
 - To demonstrate a critical understanding of the relevant theories, methodologies, and methods existing at the forefront of their discipline;
@@ -191,7 +191,7 @@ Personal Attributes:
     a               skos:Concept ;
     skos:inScheme   acqf-qcp-model:esqf-levels ;
     skos:prefLabel  "Level 9"@en ;
-    skos:notation   "ACQF-9" ;
+    skos:notation   "ESQF-9" ;
     skos:definition """
 Knowledge:
 - To defend a position based upon advanced knowledge and understanding of a particular discipline;
@@ -214,7 +214,7 @@ Personal Attributes:
     a               skos:Concept ;
     skos:inScheme   acqf-qcp-model:esqf-levels ;
     skos:prefLabel  "Level 10"@en ;
-    skos:notation   "ACQF-10" ;
+    skos:notation   "ESQF-10" ;
     skos:definition """
 Knowledge:
 - To create a new, systematic and logical knowledge base through in-depth and original research and scholarship.
