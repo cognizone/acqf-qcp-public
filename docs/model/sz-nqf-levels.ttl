@@ -36,7 +36,7 @@ Personal Attributes:
 
 :level-2
     a               skos:Concept ;
-    skos:inScheme   acqf-qcp-model:esqf-levels ;
+    skos:inScheme   acqf-qcp-model:sz-nqf-levels ;
     skos:prefLabel  "Level 2"@en ;
     skos:notation   "ESQF-2" ;
     skos:definition """
@@ -54,7 +54,7 @@ Personal Attributes:
 
 :level-3
     a               skos:Concept ;
-    skos:inScheme   acqf-qcp-model:esqf-levels ;
+    skos:inScheme   acqf-qcp-model:sz-nqf-levels ;
     skos:prefLabel  "Level 3"@en ;
     skos:notation   "ESQF-3" ;
     skos:definition """
@@ -74,7 +74,7 @@ Personal Attributes:
 
 :level-4
     a               skos:Concept ;
-    skos:inScheme   acqf-qcp-model:esqf-levels ;
+    skos:inScheme   acqf-qcp-model:sz-nqf-levels ;
     skos:prefLabel  "Level 4"@en ;
     skos:notation   "ESQF-4" ;
     skos:definition """
@@ -94,7 +94,7 @@ Personal Attributes:
 
 :level-5
     a               skos:Concept ;
-    skos:inScheme   acqf-qcp-model:esqf-levels ;
+    skos:inScheme   acqf-qcp-model:sz-nqf-levels ;
     skos:prefLabel  "Level 5"@en ;
     skos:notation   "ESQF-5" ;
     skos:definition """
@@ -120,7 +120,7 @@ Personal Attributes:
 
 :level-6
     a               skos:Concept ;
-    skos:inScheme   acqf-qcp-model:esqf-levels ;
+    skos:inScheme   acqf-qcp-model:sz-nqf-levels ;
     skos:prefLabel  "Level 6"@en ;
     skos:notation   "ESQF-6" ;
     skos:definition """
@@ -143,7 +143,7 @@ Personal Attributes:
 
 :level-7
     a               skos:Concept ;
-    skos:inScheme   acqf-qcp-model:esqf-levels ;
+    skos:inScheme   acqf-qcp-model:sz-nqf-levels ;
     skos:prefLabel  "Level 7"@en ;
     skos:notation   "ESQF-7" ;
     skos:definition """
@@ -164,7 +164,7 @@ Personal Attributes:
 
 :level-8
     a               skos:Concept ;
-    skos:inScheme   acqf-qcp-model:esqf-levels ;
+    skos:inScheme   acqf-qcp-model:sz-nqf-levels ;
     skos:prefLabel  "Level 8"@en ;
     skos:notation   "ESQF-8" ;
     skos:definition """
@@ -189,7 +189,7 @@ Personal Attributes:
 
 :level-9
     a               skos:Concept ;
-    skos:inScheme   acqf-qcp-model:esqf-levels ;
+    skos:inScheme   acqf-qcp-model:sz-nqf-levels ;
     skos:prefLabel  "Level 9"@en ;
     skos:notation   "ESQF-9" ;
     skos:definition """
@@ -212,7 +212,7 @@ Personal Attributes:
 
 :level-10
     a               skos:Concept ;
-    skos:inScheme   acqf-qcp-model:esqf-levels ;
+    skos:inScheme   acqf-qcp-model:sz-nqf-levels ;
     skos:prefLabel  "Level 10"@en ;
     skos:notation   "ESQF-10" ;
     skos:definition """
