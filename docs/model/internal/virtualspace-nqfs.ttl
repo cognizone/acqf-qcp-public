@@ -1,0 +1,87 @@
+@prefix acqf-qcp-internal: <https://data.acqf-qcp.africa/model/internal/> .
+@prefix :               <https://data.acqf-qcp.africa/model/internal/virtualspace-nqfs/resource/> .
+@prefix dct:            <http://purl.org/dc/terms/> .
+@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos:           <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
+
+acqf-qcp-internal:virtualspace-nqfs
+    a                  skos:ConceptScheme ;
+    dct:title          "ACQF QCP Virtual Space Qualification Frameworks"@en ;
+    dct:description    "This is a SKOS representation of the ACQF QCP qualification frameworks."@en ;
+    dct:created        "2024-11-04"^^xsd:date ;
+    dct:publisher      "cognizone bv" ;
+    dct:creator        "Petr Křemen" ;
+    dct:license        <http://creativecommons.org/publicdomain/zero/1.0/> ;
+    skos:hasTopConcept
+        :cv-nqf,
+        :ke-nqf,
+        :ls-nqf,
+        :ma-nqf,
+        :mu-nqf,
+        :mz-nqf,
+        :sadc-qf,
+        :sz-nqf
+.
+
+:cv-nqf
+    a              skos:Concept ;
+    skos:inScheme  acqf-qcp-internal:virtualspace-nqfs ;
+    dct:relation   <https://data.acqf-qcp.africa/model/cv-nqf-levels> ;
+    skos:prefLabel "Quadro Nacional de Qualificações (QNQ) - NQF"@pt ;
+    skos:altLabel  "QNQ NQF"@pt
+.
+
+:ke-nqf
+    a              skos:Concept ;
+    skos:inScheme  acqf-qcp-internal:virtualspace-nqfs ;
+    dct:relation   <https://data.acqf-qcp.africa/model/ke-nqf-levels> ;
+    skos:prefLabel "The Kenya National Qualifications Framework"@en ;
+    skos:altLabel  "KNQF"@en
+.
+
+:ls-nqf
+    a              skos:Concept ;
+    skos:inScheme  acqf-qcp-internal:virtualspace-nqfs ;
+    dct:relation   <https://data.acqf-qcp.africa/model/ls-nqf-levels> ;
+    skos:prefLabel "Lesotho Qualifications Framework"@en ;
+    skos:altLabel  "LQF"@en
+.
+
+:ma-nqf
+    a              skos:Concept ;
+    skos:inScheme  acqf-qcp-internal:virtualspace-nqfs ;
+    dct:relation   <https://data.acqf-qcp.africa/model/ma-nqf-levels> ;
+    skos:prefLabel "Morocco National Qualifications Framework"@en
+.
+
+
+:mu-nqf
+    a              skos:Concept ;
+    skos:inScheme  acqf-qcp-internal:virtualspace-nqfs ;
+    dct:relation   <https://data.acqf-qcp.africa/model/mu-nqf-levels> ;
+    skos:prefLabel "Mauritius National Qualifications Framework"@en
+.
+
+:mz-nqf
+    a              skos:Concept ;
+    skos:inScheme  acqf-qcp-internal:virtualspace-nqfs ;
+    dct:relation   <https://data.acqf-qcp.africa/model/mz-nqf-levels> ;
+    skos:prefLabel "Mozambique National Qualifications Framework"@en
+.
+
+:sadc-qf
+    a              skos:Concept ;
+    skos:inScheme  acqf-qcp-internal:virtualspace-nqfs ;
+    dct:relation   <https://data.acqf-qcp.africa/model/sadc-qf-levels> ;
+    skos:prefLabel "Southern African Development Community Qualifications Framework"@en ;
+    skos:altLabel  "SADCQF"@en ;
+.
+
+:sz-nqf
+    a              skos:Concept ;
+    skos:inScheme  acqf-qcp-internal:virtualspace-nqfs ;
+    dct:relation   <https://data.acqf-qcp.africa/model/sz-nqf-levels> ;
+    skos:prefLabel "Eswatini Qualifications Framework"@en ;
+    skos:altLabel  "ESQF"@en ;
+.
