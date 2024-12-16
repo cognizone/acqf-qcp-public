@@ -182,7 +182,7 @@
       <circle r="2" clip-path="url(#clipPath8)" cx="43" cy="60" stroke="none"/>
       <text x="50" font-size="12px" y="63" clip-path="url(#clipPath8)" stroke="none" font-weight="normal" xml:space="preserve">framework: Concept [1,1]</text>
       <circle r="2" clip-path="url(#clipPath8)" cx="43" cy="77" stroke="none"/>
-      <text x="50" font-size="12px" y="80" clip-path="url(#clipPath8)" stroke="none" font-weight="normal" xml:space="preserve">point: decimal [1,1]</text>
+      <text x="50" font-size="12px" y="80" clip-path="url(#clipPath8)" stroke="none" font-weight="normal" xml:space="preserve">point: double [1,1]</text>
     </g>
     <g fill="silver" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,150,15)" stroke="silver">
       <rect x="574.5" width="252" height="100" y="661" clip-path="url(#clipPath2)" stroke="none"/>
