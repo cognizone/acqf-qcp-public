@@ -199,7 +199,7 @@ acqf-qcp-model:exchange-model
     sh:name        "points" ;
     sh:description "The credit points assigned to the learning specification."@en ;
     sh:path        elm:point ;
-    sh:datatype    xsd:decimal ;
+    sh:datatype    xsd:double ;
     sh:minCount    1 ;
     sh:maxCount    1 ;
     sh:severity    sh:Violation ;
