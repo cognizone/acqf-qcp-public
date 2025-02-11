@@ -18,7 +18,7 @@ acqf-qcp-internal:ingestion-statuses
 :waiting-for-file
     a              skos:Concept ;
     skos:inScheme  acqf-qcp-internal:ingestion-statuses ;
-    skos:prefLabel "Waiting for file"@en, "En attente du fichier"@fr, "Aguardando arquivo"@pt
+    skos:prefLabel "Created"@en, "Créé"@fr, "Criado"@pt
 .
 
 :uploaded
