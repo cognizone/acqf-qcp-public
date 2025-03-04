@@ -189,7 +189,7 @@ acqf-qcp-model:exchange-model
                 "The framework used to assign the credit points to the learning specification. It could be provided using the EDC Controlled List of Educational Credit Systems."@en ;
     sh:path     elm:framework ;
     sh:class    skos:Concept ;
-    sh:minCount 1 ;
+    sh:minCount 0 ;
     sh:maxCount 1 ;
     sh:severity sh:Violation ;
 .
@@ -339,7 +339,7 @@ acqf-qcp-model:exchange-model
     sh:description "The organisation whose activities are being accredited."@en ;
     sh:path        elm:organisation ;
     sh:class       elm:Organisation ;
-    sh:minCount    1 ;
+    sh:minCount    0 ;
     sh:severity    sh:Violation ;
 .
 

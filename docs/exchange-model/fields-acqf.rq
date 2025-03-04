@@ -1,0 +1,25 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX elm: <http://data.europa.eu/snb/model/elm/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?field {}
+VALUES ?field {
+    xsd:string
+    xsd:int
+    xsd:integer
+    xsd:positiveInteger
+    xsd:dateTime
+    rdf:langString
+    xsd:anyURI
+    xsd:boolean
+    xsd:duration
+    xsd:double
+    xsd:decimal
+    rdf:HTML
+    skos:ConceptScheme
+    skos:Concept
+    elm:Identifier
+    elm:WebResource
+    elm:Note
+}
