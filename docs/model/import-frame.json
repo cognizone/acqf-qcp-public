@@ -19,11 +19,6 @@
     "@type": {
       "@default": "elm:Qualification"
     },
-    "foaf:homepage": {
-      "@type": {
-        "@default": "elm:WebResource"
-      }
-    },
     "adms:identifier": {
       "@type": {
         "@default": "elm:Identifier"
@@ -32,6 +27,7 @@
       "adms:schemeAgency": {},
       "elm:schemeName": {}
     },
+    "dcterms:title": {},
     "elm:ISCEDFCode": {
       "@container": "@set",
       "@type": {
@@ -143,6 +139,11 @@
         "@type": {
           "@default": "elm:Organisation"
         }
+      }
+    },
+    "foaf:homepage": {
+      "@type": {
+        "@default": "elm:WebResource"
       }
     },
     "elm:entitlesTo": {
