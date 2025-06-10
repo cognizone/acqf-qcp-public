@@ -217,6 +217,14 @@
         "@type": {
           "@default": "skos:Concept"
         }
+      },
+      "adms:identifier": {
+        "@type": {
+          "@default": "elm:Identifier"
+        },
+        "skos:notation": {},
+        "adms:schemeAgency": {},
+        "elm:schemeName": {}
       }
     }
   }
