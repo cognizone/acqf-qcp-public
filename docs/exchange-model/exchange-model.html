@@ -908,8 +908,8 @@
                               to the learning specification, following a credit system.</td>
                         </tr>
                         <tr>
-                           <td>education level</td>
-                           <td><code><a href="http://data.europa.eu/snb/model/elm/educationLevel">elm:educationLevel</a></code></td>
+                           <td>education level (ACQF)</td>
+                           <td><code><a href="https://data.acqf-qcp.africa/model/elm-extension/educationLevelAcqf">elm-extension:educationLevelAcqf</a></code></td>
                            <td><code><a href="#skos:Concept">skos:Concept</a></code><br></td>
                            <td>
                               <div style="width:30px">0..*</div>
@@ -917,6 +917,18 @@
                            <td class="sp_table_propertyshapes_col_description">An associated level of education within a semantic framework describing education
                               levels., An associated level of education within a semantic framework describing education
                               levels.
+                              If provided, the value should come from the ACQF level vocabulary.</td>
+                        </tr>
+                        <tr>
+                           <td>education level (NQF)</td>
+                           <td><code><a href="https://data.acqf-qcp.africa/model/elm-extension/educationLevelNqf">elm-extension:educationLevelNqf</a></code></td>
+                           <td><code><a href="#skos:Concept">skos:Concept</a></code><br></td>
+                           <td>
+                              <div style="width:30px">0..*</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">An associated level of education within a semantic framework describing education
+                              levels., An associated level of education within a semantic framework describing education
+                              levels of the given national qualification framework.
                               If provided, the value should come from a controlled vocabulary. Data providers can
                               use their own cotrolled list(s).</td>
                         </tr>
@@ -955,17 +967,6 @@
                               <div style="width:30px">1..*</div>
                            </td>
                            <td class="sp_table_propertyshapes_col_description">An individual (expected) learning outcome of the learning specification.</td>
-                        </tr>
-                        <tr>
-                           <td>learning outcome summary</td>
-                           <td><code><a href="http://data.europa.eu/snb/model/elm/learningOutcomeSummary">elm:learningOutcomeSummary</a></code></td>
-                           <td><code><a href="#elm:Note">elm:Note</a></code><br></td>
-                           <td>
-                              <div style="width:30px">0..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The full learning outcome summary of the description of a set of knowledge and/or
-                              skills used with responsibility and autonomy, which may be acquired., The full learning
-                              outcome summary of the learning specification.</td>
                         </tr>
                         <tr>
                            <td>other documents</td>

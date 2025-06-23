@@ -52,7 +52,7 @@ acqf-qcp-model:exchange-model
 
                          # Annex VI - "EQF Level"
                          # EQF -> educationLevel
-                         :QualificationShape-educationLevel,
+                         :QualificationShape-educationLevelAcqf, :QualificationShape-educationLevelNqf,
 
                          # Annex VI - "Knowledge"
                          # Annex VI - "Skills"
@@ -92,11 +92,21 @@ acqf-qcp-model:exchange-model
     sh:severity sh:Violation ;
 .
 
-:QualificationShape-educationLevel
+:QualificationShape-educationLevelAcqf
     a              sh:PropertyShape ;
-    sh:name        "education level"@en ;
-    sh:description "An associated level of education within a semantic framework describing education levels."@en ;
-    sh:path        elm:educationLevel ;
+    sh:name        "education level (ACQF)"@en ;
+    sh:description "An associated level of education within ACQF education levels."@en ;
+    sh:path        elm-extension:educationLevelAcqf ;
+    sh:class       skos:Concept ;
+    sh:minCount    0 ;
+    sh:severity    sh:Violation ;
+.
+
+:QualificationShape-educationLevelAcqf
+    a              sh:PropertyShape ;
+    sh:name        "education level (NQF)"@en ;
+    sh:description "An associated level of education within ACQF education levels."@en ;
+    sh:path        elm-extension:educationLevelNqf ;
     sh:class       skos:Concept ;
     sh:minCount    0 ;
     sh:severity    sh:Violation ;

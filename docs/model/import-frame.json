@@ -39,7 +39,12 @@
         "@default": "elm:Organisation"
       }
     },
-    "elm:educationLevel": {
+    "elm-extension:educationLevelAcqf": {
+      "@type": {
+        "@default": "skos:Concept"
+      }
+    },
+    "elm-extension:educationLevelNqf": {
       "@type": {
         "@default": "skos:Concept"
       }
