@@ -102,7 +102,7 @@ acqf-qcp-model:exchange-model
     sh:severity    sh:Violation ;
 .
 
-:QualificationShape-educationLevelAcqf
+:QualificationShape-educationLevelNqf
     a              sh:PropertyShape ;
     sh:name        "education level (NQF)"@en ;
     sh:description "An associated level of education within ACQF education levels."@en ;
