@@ -160,7 +160,7 @@
           "@id": "dcterms:type",
           "@type": "@id",
           "@context": {
-            "@base": "https://publications.europa.eu/resource/authority/snb/accreditation/",
+            "@base": "http://data.europa.eu/snb/accreditation/",
             "type": "@type"
           }
         },
