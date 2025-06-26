@@ -1,0 +1,93 @@
+PREFIX owl:    <http://www.w3.org/2002/07/owl#>
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sh:     <http://www.w3.org/ns/shacl#>
+PREFIX dc:     <http://purl.org/dc/terms/>
+PREFIX skos:   <http://www.w3.org/2004/02/skos/core#>
+PREFIX elm:        <http://data.europa.eu/snb/model/elm/>
+CONSTRUCT {
+    ?class a sh:NodeShape ;
+    sh:name ?className ;
+    sh:description ?classDescription .
+
+    ?class sh:property ?propertyShape .
+
+    ?propertyShape
+    a sh:PropertyShape;
+    sh:name ?propertyName ;
+    sh:description ?propertyDescription ;
+    sh:path ?property ;
+    sh:minCount ?minCountX ;
+    sh:maxCount ?maxCountX ;
+    sh:class ?rangeClass ;
+    sh:datatype ?rangeDatatype
+}
+WHERE {
+    ?classShape sh:targetClass ?class .
+
+    ### Generate label
+    OPTIONAL {
+        ?class rdfs:label ?classNameOntology
+        FILTER(lang(?classNameOntology)='en')
+    }
+    OPTIONAL {
+        ?classShape dc:title ?classNameShacl
+        FILTER(lang(?classNameShacl)='en')
+    }
+    BIND(COALESCE(str(?classNameShacl),str(?classNameOntology),REPLACE(STR(?class), "^.*?([_\\p{L}][-_\\p{L}\\p{N}]*)$", "$1")) as ?className)
+
+    ### Generate comment
+    OPTIONAL {
+        ?class rdfs:comment ?classDescriptionOntology .
+        FILTER(lang(?classDescriptionOntology)='en')
+    }
+    OPTIONAL {
+        ?class dc:description ?classDescriptionShacl .
+        FILTER(lang(?classDescriptionShacl)='en')
+    }
+    BIND(COALESCE(str(?classDescriptionShacl),str(?classDescriptionOntology),REPLACE(STR(?class), "^.*?([_\\p{L}][-_\\p{L}\\p{N}]*)$", "$1")) as ?classDescription)
+
+    OPTIONAL {
+        ?classShape sh:property ?propertyShape .
+        ?propertyShape a sh:PropertyShape ;
+        sh:path ?property ;
+
+        ### Generate label
+        OPTIONAL {
+            # bug in ELM model - multiple en props, e.g. for mailbox
+            SELECT ?property (sample(?propertyNameXX) AS ?propertyNameOntology) {
+                ?property rdfs:label ?propertyNameXX
+                FILTER(lang(?propertyNameXX)='en')
+            } GROUP BY ?property
+        }
+        OPTIONAL {
+            ?propertyShape sh:name ?propertyNameShacl
+            FILTER(lang(?propertyNameShacl)='en')
+        }
+        BIND(COALESCE(str(?propertyNameShacl), str(?propertyNameOntology),REPLACE(str(?property),"^.*?([_\\p{L}][-_\\p{L}\\p{N}]*)$","$1")) AS ?propertyName)
+
+        ### Generate description
+        OPTIONAL {
+            ?property rdfs:comment ?propertyDescriptionOntology .
+            FILTER(lang(?propertyDescriptionOntology)='en')
+        }
+        OPTIONAL {
+            ?propertyShape sh:description ?propertyDescriptionShacl .
+            FILTER(lang(?propertyDescriptionShacl)='en')
+        }
+        BIND(COALESCE(str(?propertyDescriptionOntology), str(?propertyDescriptionShacl),REPLACE(str(?property),"^.*?([_\\p{L}][-_\\p{L}\\p{N}]*)$","$1")) AS ?propertyDescription)
+
+        OPTIONAL {
+            ?propertyShape sh:minCount ?minCountX .
+        }
+        OPTIONAL {
+            ?propertyShape sh:maxCount ?maxCountX .
+        }
+        OPTIONAL {
+            ?propertyShape sh:class ?rangeClass .
+        }
+        OPTIONAL {
+            ?propertyShape sh:datatype ?rangeDatatype .
+        }
+    }
+} ORDER BY ?className DESC(?propertyName)

@@ -1,0 +1,514 @@
+@prefix :                        <https://data.acqf-qcp.africa/model/resource/> .
+@prefix exchange-extended-model: <https://data.acqf-qcp.africa/model/exchange-extended-model> .
+@prefix exchange-model:          <https://data.acqf-qcp.africa/model/exchange-model> .
+@prefix adms:                    <http://www.w3.org/ns/adms#>.
+@prefix ams:                     <http://data.europa.eu/snb/model/ap/ams-constraints/>.
+@prefix cc:                      <http://creativecommons.org/ns#>.
+@prefix clv:                     <http://data.europa.eu/m8g/>.
+@prefix dc:                      <http://purl.org/dc/terms/>.
+@prefix elm:                     <http://data.europa.eu/snb/model/elm/>.
+@prefix foaf:                    <http://xmlns.com/foaf/0.1/>.
+@prefix locn:                    <http://www.w3.org/ns/locn#>.
+@prefix org:                     <http://www.w3.org/ns/org#>.
+@prefix owl:                     <http://www.w3.org/2002/07/owl#>.
+@prefix rdf:                     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:                    <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rov:                     <http://www.w3.org/ns/regorg#>.
+@prefix sh:                      <http://www.w3.org/ns/shacl#> .
+@prefix skos:                    <http://www.w3.org/2004/02/skos/core#>.
+@prefix xsd:                     <http://www.w3.org/2001/XMLSchema#>.
+
+exchange-extended-model:
+    a                 owl:Ontology ;
+    owl:imports       exchange-model: ;
+    owl:versionIRI    <https://data.acqf-qcp.africa/model/exchange-extended-model/0.0.1/> ;
+    owl:versionInfo   "0.0.1" ;
+    dc:created        "2024-04-03"^^xsd:date ;
+    dc:modified       "2024-04-03"^^xsd:date ;
+    dc:title          "ACQF QCP Extended Exchange Model"@en ;
+    dc:description    "This model defines other possible fields that are not currently part of the exchange model."@en ;
+    dc:publisher      <http://publications.europa.eu/resource/authority/corporate-body/ETF> ;
+    cc:attributionURL <http://ec.europa.eu/> ;
+    dc:license        <https://creativecommons.org/licenses/by/4.0/> ;
+.
+
+:QualificationShape
+    sh:property
+    # Annex VI - Further information on the qualification
+            :additionalNotePropertyShape,
+
+            # Annex VI - Link to relevant supplements
+            :supplementaryDocumentPropertyShape,
+
+            # Annex VI - Information language (code)
+            :QualificationShape-language,
+
+            # Annex VI - Entry requirements
+            :QualificationShape-entryRequirement
+.
+
+:QualificationShape-language
+    a           sh:PropertyShape ;
+    sh:name     "language"@en ;
+    sh:description
+                "The language of the qualification. It should be provided using the Language Named Authority List."@en ;
+    sh:path     dc:language ;
+    sh:class    skos:Concept ;
+    sh:severity sh:Violation ;
+.
+
+:QualificationShape-entryRequirement
+    a           sh:PropertyShape ;
+    sh:name     "entry requirement"@en ;
+    sh:description
+                "Specific entry requirement or prerequisite of individuals for which this qualification is designed to start this learning opportunity."@en ;
+    sh:path     elm:entryRequirement ;
+    sh:class    elm:Note ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+.
+
+:WebResourceShape
+    sh:property :titlePropertyShape ;
+    sh:property :WebResource-language-Max1 ;
+.
+
+:WebResource-language-Max1
+    a              sh:PropertyShape ;
+    sh:name        "language"@en ;
+    sh:description "The language of the web resource. It should be provided using Language Named Authority List."@en ;
+    sh:path        dc:language ;
+    sh:class       skos:Concept ;
+    sh:maxCount    1 ;
+    sh:severity    sh:Violation ;
+.
+
+:LearningOutcomeShape
+    sh:property :LearningOutcomeShape-type-Max1
+.
+
+:LearningOutcomeShape-type-Max1
+    a              sh:PropertyShape ;
+    sh:name        "type"@en ;
+    sh:description "The learning outcome type. It should be provided using ESCO Skill Pillar concept types."@en ;
+    sh:path        dc:type ;
+    sh:class       skos:Concept ;
+    sh:maxCount    1 ;
+    sh:severity    sh:Violation ;
+.
+
+:AccreditationShape
+    a              sh:NodeShape ;
+    dc:description "The quality assurance or licensing of an organisation or a qualification. An accreditation instance can be used to specify information about: (1) the quality assurance and/or licensing of an organisation, (2) the quality assurance and/or licensing of an organisation with respect to a specific qualification."@en ;
+    sh:targetClass elm:Accreditation ;
+    sh:closed      true ;
+    sh:property
+    #
+                   :descriptionPropertyShape,
+                   #
+                   :additionalNotePropertyShape,
+                   #
+                   :supplementaryDocumentPropertyShape,
+                   #
+                   :publisherPropertyShape-Max1,
+                   #
+                   :homepagePropertyShape,
+                   #
+                   :AccreditationShape-decision-Max1,
+                   #
+                   :AccreditationShape-valid-Max1
+.
+
+:AccreditationShape-decision-Max1
+    a           sh:PropertyShape ;
+    sh:name     "decision"@en ;
+    sh:description
+                "The Quality Decision issued by the Quality Assuring Authority. It should be provided using a controlled list."@en ;
+    sh:path     elm:decision ;
+    sh:class    skos:Concept ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+.
+
+:AccreditationShape-valid-Max1
+    a              sh:PropertyShape ;
+    sh:name        "validation date"@en ;
+    sh:description "The date when the accreditation became valid."@en ;
+    sh:path        dc:valid ;
+    sh:datatype    xsd:dateTime ;
+    sh:maxCount    1 ;
+    sh:severity    sh:Violation ;
+.
+
+:OrganisationShape
+    a              sh:NodeShape ;
+    dc:description "A legal person / registered organisation."@en ;
+    sh:targetClass elm:Organisation ;
+    sh:closed      true ;
+    sh:property    :additionalNotePropertyShape,
+                   #
+                   :publisherPropertyShape-Max1,
+                   #
+                   :OrganisationShape-contactPoint
+.
+
+:OrganisationShape-contactPoint
+    a              sh:PropertyShape ;
+    sh:name        "contact information"@en ;
+    sh:description "The contact information of the organisation."@en ;
+    sh:path        elm:contactPoint ;
+    sh:class       elm:ContactPoint ;
+    sh:severity    sh:Violation ;
+.
+
+:AddressShape
+    a              sh:NodeShape ;
+    dc:description "An address."@en ;
+    sh:targetClass elm:Address ;
+    sh:closed      true ;
+    sh:property    :identifierPropertyShape,
+                   #
+                   :AddressShape-fullAddress-Max1,
+                   #
+                   :AddressShape-countryCode-Min1Max1
+.
+
+:AddressShape-fullAddress-Max1
+    a              sh:PropertyShape ;
+    sh:name        "full address"@en ;
+    sh:description "The complete address with or without formatting."@en ;
+    sh:path        elm:fullAddress ;
+    sh:class       elm:Note ;
+    sh:maxCount    1 ;
+    sh:severity    sh:Violation ;
+.
+
+:AddressShape-countryCode-Min1Max1
+    a              sh:PropertyShape ;
+    sh:name        "country"@en ;
+    sh:description "The address’ country code. It should be provided using the Country Named Authority List."@en ;
+    sh:path        elm:countryCode ;
+    sh:class       skos:Concept ;
+    sh:minCount    1 ;
+    sh:maxCount    1 ;
+    sh:severity    sh:Violation ;
+.
+
+:MailboxShape
+    a              sh:NodeShape ;
+    dc:description "A mailbox."@en ;
+    sh:targetClass elm:Mailbox ;
+    sh:closed      true ;
+    sh:and         ( [ sh:pattern
+                               "^(([^:/?#]+):)?(//(([^@\\[/?#]*)@)?(\\[[[A-Fa-f0-9]\\:\\.]*[%[\\p{L}\\p{Nl}\\p{Nd}]]*\\]|[^\\[/?#:]*)(:(\\d*(?:\\{[^/]+?\\})?))?)?([^?#]*)(\\?([^#]*))?(#(.*))?" ; ]
+                     [ sh:pattern "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" ; ] ) ;
+.
+
+:AwardingOpportunityShape
+    a              sh:NodeShape ;
+    dc:description "An awarding opportunity describes how, where, from whom and when a claim may be obtained."@en ;
+    sh:targetClass elm:AwardingOpportunity ;
+    sh:closed      true ;
+    sh:property    :AwardingOpportunityShape-location-Max1,
+                   #
+                   :AwardingOpportunityShape-temporal-Max1
+.
+
+:AwardingOpportunityShape-location-Max1
+    a           sh:PropertyShape ;
+    sh:name     "location"@en ;
+    sh:description
+                "The location where the awarding activities take/took place (country/region where the qualification is awarded)."@en ;
+    sh:path     elm:location ;
+    sh:class    dc:Location ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+.
+
+:AwardingOpportunityShape-temporal-Max1
+    a           sh:PropertyShape ;
+    sh:name     "temporal"@en ;
+    sh:description
+                "The temporal duration, associated with a period of time, when the awarding activities take place. If not specified it is undefined (“not known”)."@en ;
+    sh:path     dc:temporal ;
+    sh:class    dc:PeriodOfTime ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+.
+
+:ContactPointShape-phone
+    a              sh:PropertyShape ;
+    sh:name        "phone"@en ;
+    sh:description "A phone number used for contacting the organisation."@en ;
+    sh:path        elm:phone ;
+    sh:class       elm:Phone ;
+    sh:severity    sh:Violation ;
+.
+
+:ContactPointShape-emailAddress
+    a              sh:PropertyShape ;
+    sh:name        "emailAddress"@en ;
+    sh:description "An e-mail address used for contacting the organisation."@en ;
+    sh:path        elm:emailAddress ;
+    sh:class       elm:Mailbox ;
+    sh:severity    sh:Violation ;
+.
+
+:ContactPointShape-address
+    a              sh:PropertyShape ;
+    sh:name        "address"@en ;
+    sh:description "A postal address used for contacting the organisation."@en ;
+    sh:path        elm:address ;
+    sh:class       elm:Address ;
+    sh:severity    sh:Violation ;
+.
+
+:LearningOpportunityShape
+    a              sh:NodeShape ;
+    dc:description "An opportunity to realise a given set of learning outcomes via a learning activity and/or assessment."@en ;
+    sh:targetClass elm:LearningOpportunity ;
+    sh:closed      true ;
+    sh:property    :descriptionPropertyShape,
+                   #
+                   :additionalNotePropertyShape,
+                   #
+                   :homepagePropertyShape,
+                   #
+                   :supplementaryDocumentPropertyShape,
+                   #
+                   :publisherPropertyShape-Max1,
+                   #
+                   :LearningOpportunityShape-learningSchedule-Max1,
+                   #
+                   :LearningOpportunityShape-location
+.
+
+:LearningOpportunityShape-learningSchedule-Max1
+    a           sh:PropertyShape ;
+    sh:name     "learning schedule"@en ;
+    sh:description
+                "The learning schedule. It should be provided using the EDC Controlled List of Learning Schedule Types."@en ;
+    sh:path     elm:learningSchedule ;
+    sh:class    skos:Concept ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+.
+
+:LearningOpportunityShape-location
+    a              sh:PropertyShape ;
+    sh:name        "location"@en ;
+    sh:description "The location where the learning opportunity was provided at."@en ;
+    sh:path        elm:location ;
+    sh:class       dc:Location ;
+    sh:severity    sh:Violation ;
+.
+
+:LocationShape
+    a              sh:NodeShape ;
+    dc:description "An identifiable geographic place."@en ;
+    sh:targetClass dc:Location ;
+    sh:closed      true ;
+    sh:property    :descriptionPropertyShape,
+                   #
+                   :LocationShape-geographicName
+.
+
+:LocationShape-geographicName
+    a              sh:PropertyShape ;
+    sh:name        "geographic name"@en ;
+    sh:description "A proper noun applied to a spatial object. One value per language is permitted."@en ;
+    sh:path        elm:geographicName ;
+    sh:datatype    rdf:langString ;
+    sh:uniqueLang  true ;
+    sh:severity    sh:Violation ;
+.
+
+:PeriodOfTimeShape
+    a              sh:NodeShape ;
+    dc:description "An interval of time that is named or defined by its start and end dates."@en ;
+    sh:targetClass dc:PeriodOfTime ;
+    sh:closed      true ;
+    sh:property    :PeriodOfTimeShape-prefLabel,
+                   #
+                   :PeriodOfTimeShape-startDate-Max1,
+                   #
+                   :PeriodOfTimeShape-endDate-Max1
+.
+
+:PeriodOfTimeShape-prefLabel
+    a              sh:PropertyShape ;
+    sh:name        "name"@en ;
+    sh:description "The name of the time period, e.g., semester. One value per language is permitted."@en ;
+    sh:path        skos:prefLabel ;
+    sh:datatype    rdf:langString ;
+    sh:uniqueLang  true ;
+    sh:severity    sh:Violation ;
+.
+
+:PeriodOfTimeShape-startDate-Max1
+    a              sh:PropertyShape ;
+    sh:name        "start date"@en ;
+    sh:description "The date since when the activities take place. If not specified it is undefined (not known)."@en ;
+    sh:path        elm:startDate ;
+    sh:datatype    xsd:dateTime ;
+    sh:maxCount    1 ;
+    sh:severity    sh:Violation ;
+.
+
+:PeriodOfTimeShape-endDate-Max1
+    a              sh:PropertyShape ;
+    sh:name        "end date"@en ;
+    sh:description "The date until when the activities take/took place."@en ;
+    sh:path        elm:endDate ;
+    sh:datatype    xsd:dateTime ;
+    sh:maxCount    1 ;
+    sh:severity    sh:Violation ;
+.
+
+:PhoneShape
+    a              sh:NodeShape ;
+    dc:description "A phone."@en ;
+    sh:targetClass elm:Phone ;
+    sh:closed      true ;
+    sh:property    :PhoneShape-phoneNumber-Max1,
+                   #
+                   :PhoneShape-countryDialing-Max1,
+                   #
+                   :PhoneShape-areaDialing-Max1,
+                   #
+                   :PhoneShape-dialNumber-Max1
+.
+
+:PhoneShape-phoneNumber-Max1
+    a              sh:PropertyShape ;
+    sh:name        "full phone number"@en ;
+    sh:description "The full phone number as a string."@en ;
+    sh:path        elm:phoneNumber ;
+    sh:datatype    xsd:string ;
+    sh:maxCount    1 ;
+    sh:severity    sh:Violation ;
+.
+
+:PhoneShape-countryDialing-Max1
+    a              sh:PropertyShape ;
+    sh:name        "country dialling code"@en ;
+    sh:description "The country dialling code for a contact number."@en ;
+    sh:path        elm:countryDialing ;
+    sh:datatype    xsd:string ;
+    sh:maxCount    1 ;
+    sh:severity    sh:Violation ;
+.
+
+:PhoneShape-areaDialing-Max1
+    a              sh:PropertyShape ;
+    sh:name        "area dialling code"@en ;
+    sh:description "The area dialling code for a contact number."@en ;
+    sh:path        elm:areaDialing ;
+    sh:datatype    xsd:string ;
+    sh:maxCount    1 ;
+    sh:severity    sh:Violation ;
+.
+
+:PhoneShape-dialNumber-Max1
+    a           sh:PropertyShape ;
+    sh:name     "phone number"@en ;
+    sh:description
+                "The contact number, not including country dialling or area dialling codes. (e.g., '3445654', '1234567', etc.)."@en ;
+    sh:path     elm:dialNumber ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+.
+
+### Common shapes
+
+:URLRegexRestriction
+    a           sh:NodeShape ;
+    dc:description
+                "This shape does not apply on a class. This shape is for checking if the value of contentUrl is well formed."@en ;
+    sh:property [ sh:path     elm:contentUrl ;
+                  sh:and      ( [ sh:pattern
+                                          "^(?i)(http|https):(//(([^@\\[/?#]*)@)?(\\[[[A-Fa-f0-9]\\:\\.]*[%[\\p{L}\\p{Nl}\\p{Nd}]]*\\]|[^\\[/?#:]*)(:(\\d*(?:\\{[^/]+?\\})?))?)?([^?#]*)(\\?([^#]*))?(#(.*))?" ; ]
+                                [ sh:pattern "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" ; ] ) ;
+                  sh:severity sh:Violation ; ]
+.
+
+:identifierPropertyShape
+    a              sh:PropertyShape ;
+    sh:name        "identifier"@en ;
+    sh:description "An identifier assigned to the resource."@en ;
+    sh:path        adms:identifier ;
+    sh:class       elm:Identifier ;
+    sh:severity    sh:Violation ;
+.
+
+:titlePropertyShape-Min1
+    a              sh:PropertyShape ;
+    sh:name        "title"@en ;
+    sh:description "The title. One value per language is permitted."@en ;
+    sh:path        dc:title ;
+    sh:datatype    rdf:langString ;
+    sh:minCount    1 ;
+    sh:uniqueLang  true ;
+    sh:severity    sh:Violation ;
+.
+
+:descriptionPropertyShape
+    a              sh:PropertyShape ;
+    sh:name        "description"@en ;
+    sh:description "A free text description. One value per language is permitted."@en ;
+    sh:path        sh:description ;
+    sh:datatype    rdf:langString ;
+    sh:uniqueLang  true ;
+    sh:severity    sh:Violation ;
+.
+
+:additionalNotePropertyShape
+    a              sh:PropertyShape ;
+    sh:name        "more information"@en ;
+    sh:description "An additional free text note about the resource."@en ;
+    sh:path        elm:additionalNote ;
+    sh:class       elm:Note ;
+    sh:severity    sh:Violation ;
+.
+
+:publisherPropertyShape-Min1Max1
+    a              sh:PropertyShape ;
+    sh:name        "publisher"@en ;
+    sh:description "The publisher."@en ;
+    sh:path        dc:publisher ;
+    sh:minCount    1 ;
+    sh:maxCount    1 ;
+    sh:class       elm:Organisation ;
+    sh:severity    sh:Violation ;
+.
+
+:publisherPropertyShape-Max1
+    a              sh:PropertyShape ;
+    sh:name        "publisher"@en ;
+    sh:description "The publisher."@en ;
+    sh:path        dc:publisher ;
+    sh:maxCount    1 ;
+    sh:class       elm:Organisation ;
+    sh:severity    sh:Violation ;
+.
+
+:supplementaryDocumentPropertyShape
+    a              sh:PropertyShape ;
+    sh:name        "other documents"@en ;
+    sh:description "A public web resource containing additional documentation about the resource."@en ;
+    sh:path        elm:supplementaryDocument ;
+    sh:class       elm:WebResource ;
+    sh:node        :URLRegexRestriction ;
+    sh:severity    sh:Violation ;
+.
+
+:homepagePropertyShape
+    a              sh:PropertyShape ;
+    sh:name        "homepage"@en ;
+    sh:description "The homepage."@en ;
+    sh:path        foaf:homepage ;
+    sh:class       elm:WebResource ;
+    sh:node        :URLRegexRestriction ;
+    sh:severity    sh:Violation ;
+.

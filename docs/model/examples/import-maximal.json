@@ -2,56 +2,141 @@
   "organisations": [
     {
       "id": "1",
+      "identifier": {
+        "notation": "org-1",
+        "schemeAgency": {
+          "en": "Agency XYZ"
+        },
+        "schemeName": "Organisation Scheme"
+      },
       "prefLabel": {
         "en": "Awarding Body 1"
       },
       "location": {
-        "spatialCode": "ZAR"
+        "spatialCode": "ZAR",
+        "identifier": {
+          "notation": "loc-1",
+          "schemeAgency": {
+            "en": "Agency XYZ"
+          },
+          "schemeName": "Location Scheme"
+        }
       }
     },
     {
       "id": "2",
+      "identifier": {
+        "notation": "org-2",
+        "schemeAgency": {
+          "en": "Agency XYZ"
+        },
+        "schemeName": "Organisation Scheme"
+      },
       "prefLabel": {
         "en": "Awarding Body 2"
       },
       "location": {
-        "spatialCode": "ZAF"
+        "spatialCode": "ZAF",
+        "identifier": {
+          "notation": "loc-10",
+          "schemeAgency": {
+            "en": "Agency XYZ"
+          },
+          "schemeName": "Location Scheme"
+        }
       }
     },
     {
       "id": "3",
+      "identifier": {
+        "notation": "org-3",
+        "schemeAgency": {
+          "en": "Agency XYZ"
+        },
+        "schemeName": "Organisation Scheme"
+      },
       "prefLabel": {
         "en": "Some agent 3"
       },
       "location": {
-        "spatialCode": "ZAR"
+        "spatialCode": "ZAR",
+        "identifier": {
+          "notation": "loc-100",
+          "schemeAgency": {
+            "en": "Agency XYZ"
+          },
+          "schemeName": "Location Scheme"
+        }
       }
     },
     {
       "id": "4",
+      "identifier": {
+        "notation": "org-4",
+        "schemeAgency": {
+          "en": "Agency XYZ"
+        },
+        "schemeName": "Organisation Scheme"
+      },
       "prefLabel": {
         "en": "Some agent 3"
       },
       "location": {
-        "spatialCode": "ZAR"
+        "spatialCode": "ZAR",
+        "identifier": {
+          "notation": "loc-1000",
+          "schemeAgency": {
+            "en": "Agency XYZ"
+          },
+          "schemeName": "Location Scheme"
+        }
       }
     },
     {
       "id": "5",
+      "identifier": {
+        "notation": "org-5",
+        "schemeAgency": {
+          "en": "Agency XYZ"
+        },
+        "schemeName": "Organisation Scheme"
+      },
       "prefLabel": {
         "en": "Accredited Organisation 1"
       },
       "location": {
-        "spatialCode": "ZAR"
+        "spatialCode": "ZAR",
+        "identifier": {
+          "notation": "loc-10000",
+          "schemeAgency": {
+            "en": "Agency XYZ"
+          },
+          "schemeName": "Location Scheme"
+        }
+
       }
     },
     {
       "id": "6",
+      "identifier": {
+        "notation": "org-6",
+        "schemeAgency": {
+          "en": "Agency XYZ"
+        },
+        "schemeName": "Organisation Scheme"
+      },
       "prefLabel": {
         "en": "Accrediting Agent 1"
       },
       "location": {
-        "spatialCode": "ZAF"
+        "spatialCode": "ZAF",
+        "identifier": {
+          "notation": "loc-100000",
+          "schemeAgency": {
+            "en": "Agency XYZ"
+          },
+          "schemeName": "Location Scheme"
+        }
       }
     }
   ],
@@ -61,7 +146,7 @@
         "en": "Postgraduate Diploma in Labour Dispute Resolution"
       },
       "identifier": {
-        "notation": "Q12345",
+        "notation": "q-1",
         "schemeAgency": {
           "en": "Agency XYZ"
         },
@@ -70,7 +155,11 @@
       "awardingOpportunity": [
         {
           "identifier": {
-            "notation": "AO12345"
+            "notation": "AO12345",
+            "schemeAgency": {
+              "en": "Agency XYZ"
+            },
+            "schemeName": "Identifier Scheme"
           },
           "awardingBody": [
             "1",
@@ -86,6 +175,13 @@
         }
       ],
       "learningOpportunity": {
+        "identifier": {
+          "notation": "lo-1",
+          "schemeAgency": {
+            "en": "Agency XYZ"
+          },
+          "schemeName": "Learning Opportunity Scheme"
+        },
         "title": {
           "en": "Some learning opportunity"
         },
@@ -98,11 +194,18 @@
       },
       "learningOutcome": [
         {
+          "identifier": {
+            "notation": "loutc-1",
+            "schemeAgency": {
+              "en": "Agency XYZ"
+            },
+            "schemeName": "Learning Outcome Scheme"
+          },
           "title": {
             "en": "Postgraduate Diploma in Labour Dispute Resolution"
           },
           "relatedSkill": [
-            "skill123"
+            "2f0a426f-3b95-455b-a872-ef6dee168114"
           ],
           "additionalNote": [
             {
@@ -114,7 +217,10 @@
         }
       ],
       "educationLevelAcqf": [
-        "level6"
+        "level-6"
+      ],
+      "ISCEDFCode": [
+        "0715"
       ],
       "publisher": "4",
       "supplementaryDocument": [
@@ -139,25 +245,33 @@
       "entitlesTo": [
         {
           "identifier": {
-            "notation": "E12345"
+            "notation": "les-1",
+            "schemeAgency": {
+              "en": "Agency XYZ"
+            },
+            "schemeName": "Learning Entitlement Scheme"
           },
           "limitNationalOccupation": [
-            "occupation123"
+            "46db7e2e-d44d-412a-9a80-02d43111aca8"
           ]
         }
       ],
       "creditPoint": [
         {
-          "framework": "framework123",
+          "framework": "eacat",
           "point": "30"
         }
       ],
       "accreditation": [
         {
           "identifier": {
-            "notation": "ACC12345"
+            "notation": "a-1",
+            "schemeAgency": {
+              "en": "Agency XYZ"
+            },
+            "schemeName": "Accreditation Scheme"
           },
-          "accreditationType": "003293d2ce",
+          "accreditationType": "820101cba6",
           "title": {
             "en": "Accreditation Title"
           },
