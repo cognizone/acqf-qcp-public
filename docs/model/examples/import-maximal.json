@@ -152,6 +152,12 @@
         },
         "schemeName": "Qualification Scheme"
       },
+      "volumeOfLearning": "PT2H",
+      "entryRequirement": {
+        "noteLiteral": {
+          "en": "Entry requirement 1."
+        }
+      },
       "awardingOpportunity": [
         {
           "identifier": {
@@ -279,7 +285,9 @@
             "5"
           ],
           "accreditingAgent": "6",
-          "expiryDate": "2025-12-31T00:00:00Z"
+          "expiryDate": "2025-12-31T00:00:00Z",
+          "issueDate": "2025-08-01T00:00:00Z",
+          "reviewDate": "2025-08-02T00:00:00Z"
         }
       ]
     }

@@ -19,39 +19,9 @@
     "@type": {
       "@default": "elm:Qualification"
     },
-    "adms:identifier": {
+    "elm:accreditation": {
       "@type": {
-        "@default": "elm:Identifier"
-      },
-      "skos:notation": {},
-      "adms:schemeAgency": {},
-      "elm:schemeName": {}
-    },
-    "dcterms:title": {},
-    "elm:ISCEDFCode": {
-      "@container": "@set",
-      "@type": {
-        "@default": "skos:Concept"
-      }
-    },
-    "dcterms:publisher": {
-      "@type": {
-        "@default": "elm:Organisation"
-      }
-    },
-    "elm-extension:educationLevelAcqf": {
-      "@type": {
-        "@default": "skos:Concept"
-      }
-    },
-    "elm-extension:educationLevelNqf": {
-      "@type": {
-        "@default": "skos:Concept"
-      }
-    },
-    "elm:learningOutcome": {
-      "@type": {
-        "@default": "elm:LearningOutcome"
+        "@default": "elm:Accreditation"
       },
       "adms:identifier": {
         "@type": {
@@ -61,14 +31,19 @@
         "adms:schemeAgency": {},
         "elm:schemeName": {}
       },
-      "elm:relatedSkill": {
+      "dcterms:type": {
         "@type": {
           "@default": "skos:Concept"
         }
       },
-      "elm:additionalNote": {
+      "elm:organisation": {
         "@type": {
-          "@default": "elm:Note"
+          "@default": "elm:Organisation"
+        }
+      },
+      "elm:accreditingAgent": {
+        "@type": {
+          "@default": "elm:Organisation"
         }
       }
     },
@@ -113,42 +88,14 @@
         }
       }
     },
-    "elm:supplementaryDocument": {
+    "elm-extension:educationLevelAcqf": {
       "@type": {
-        "@default": "elm:WebResource"
+        "@default": "skos:Concept"
       }
     },
-    "elm:accreditation": {
+    "elm-extension:educationLevelNqf": {
       "@type": {
-        "@default": "elm:Accreditation"
-      },
-      "adms:identifier": {
-        "@type": {
-          "@default": "elm:Identifier"
-        },
-        "skos:notation": {},
-        "adms:schemeAgency": {},
-        "elm:schemeName": {}
-      },
-      "dcterms:type": {
-        "@type": {
-          "@default": "skos:Concept"
-        }
-      },
-      "elm:organisation": {
-        "@type": {
-          "@default": "elm:Organisation"
-        }
-      },
-      "elm:accreditingAgent": {
-        "@type": {
-          "@default": "elm:Organisation"
-        }
-      }
-    },
-    "foaf:homepage": {
-      "@type": {
-        "@default": "elm:WebResource"
+        "@default": "skos:Concept"
       }
     },
     "elm:entitlesTo": {
@@ -168,6 +115,24 @@
           "@default": "skos:Concept"
         }
       }
+    },
+    "elm:entryRequirement": {
+      "@type": {
+        "@default": "elm:Note"
+      }
+    },
+    "foaf:homepage": {
+      "@type": {
+        "@default": "elm:WebResource"
+      }
+    },
+    "adms:identifier": {
+      "@type": {
+        "@default": "elm:Identifier"
+      },
+      "skos:notation": {},
+      "adms:schemeAgency": {},
+      "elm:schemeName": {}
     },
     "learningOpportunity": {
       "@type": {
@@ -199,7 +164,53 @@
           "@default": "skos:Concept"
         }
       }
-    }
+    },
+    "elm:learningOutcome": {
+      "@type": {
+        "@default": "elm:LearningOutcome"
+      },
+      "adms:identifier": {
+        "@type": {
+          "@default": "elm:Identifier"
+        },
+        "skos:notation": {},
+        "adms:schemeAgency": {},
+        "elm:schemeName": {}
+      },
+      "elm:relatedSkill": {
+        "@type": {
+          "@default": "skos:Concept"
+        }
+      },
+      "elm:additionalNote": {
+        "@type": {
+          "@default": "elm:Note"
+        }
+      }
+    },
+    "elm:learningOutcomeSummary": {
+      "@type": {
+        "@default": "elm:Note"
+      }
+    },
+    "elm:supplementaryDocument": {
+      "@type": {
+        "@default": "elm:WebResource"
+      }
+    },
+    "dcterms:publisher": {
+      "@type": {
+        "@default": "elm:Organisation"
+      }
+    },
+    "elm:ISCEDFCode": {
+      "@container": "@set",
+      "@type": {
+        "@default": "skos:Concept"
+      }
+    },
+    "dcterms:title": {},
+    "elm:volumeOfLearning": {}
   },
   "acqf-import:organisations": {
     "@type": {
