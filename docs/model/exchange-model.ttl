@@ -78,7 +78,11 @@ acqf-qcp-model:exchange-model
 
     # Annex VI - Relationship to occupations or occupational fields
     # LearningEntitlementSpecification -> limitNationalOccupation
-        :QualificationShape-entitlesTo
+        :QualificationShape-entitlesTo,
+
+    # curator feedback 20250205
+        :QualificationShape-entryRequirement,
+        :QualificationShape-volumeOfLearning
 .
 
 :QualificationShape-ISCEDFCode
@@ -127,6 +131,26 @@ acqf-qcp-model:exchange-model
         acqf-qcp-model:mz-nqf-levels,
         acqf-qcp-model:sadc-qf-levels,
         acqf-qcp-model:sz-nqf-levels ;
+    sh:severity sh:Violation ;
+.
+
+:QualificationShape-entryRequirement
+    a sh:PropertyShape ;
+    sh:name "entry requirement"@en ;
+    sh:description "Specific entry requirement or prerequisite of individuals for which this qualification is designed to start this learning opportunity."@en ;
+    sh:path elm:entryRequirement ;
+    sh:class elm:Note ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+.
+
+:QualificationShape-volumeOfLearning
+    a sh:PropertyShape ;
+    sh:name "volume of learning"@en ;
+    sh:description "The estimated number of hours the learner is expected to spend engaged in learning to earn the award. This would include the notional number of hours in class, in group work, in practicals, as well as hours engaged in self-motivated study., The estimated number of hours the learner is expected to spend engaged in learning to earn the award. This would include the notional number of hours in, in group work, in practicals, as well as hours engaged in self-motivated study."@en ;
+    sh:path elm:volumeOfLearning ;
+    sh:datatype xsd:duration ;
+    sh:maxCount 1 ;
     sh:severity sh:Violation ;
 .
 
@@ -349,7 +373,9 @@ acqf-qcp-model:exchange-model
         :AccreditationShape-type-Min1Max1,
         :AccreditationShape-organisation-Min1,
         :AccreditationShape-accreditingAgent-Min1Max1,
-        :AccreditationShape-expiryDate-Max1
+        :AccreditationShape-expiryDate-Max1,
+        :AccreditationShape-issueDate-Max1,
+        :AccreditationShape-reviewDate-Max1
 .
 
 :AccreditationShape-type-Min1Max1
@@ -393,6 +419,26 @@ acqf-qcp-model:exchange-model
     sh:name "expiry date"@en ;
     sh:description "The date when the accreditation expires or was expired."@en ;
     sh:path elm:expiryDate ;
+    sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+.
+
+:AccreditationShape-issueDate-Max1
+    a sh:PropertyShape ;
+    sh:name "issue date"@en ;
+    sh:description "Date of formal issuance of the resource."@en ;
+    sh:path dc:issued ;
+    sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+.
+
+:AccreditationShape-reviewDate-Max1
+    a sh:PropertyShape ;
+    sh:name "review date"@en ;
+    sh:description "The date when the accreditation has to be reviewed."@en ;
+    sh:path elm:reviewDate ;
     sh:datatype xsd:dateTime ;
     sh:maxCount 1 ;
     sh:severity sh:Violation ;
