@@ -52,6 +52,15 @@
         "Concept": "skos:Concept"
       }
     },
+    "entryRequirement": {
+      "@id": "elm:entryRequirement",
+      "@type": "@id",
+      "@context": "https://data.acqf-qcp.africa/model/contexts/note.json"
+    },
+    "volumeOfLearning": {
+      "@id": "elm:volumeOfLearning",
+      "@type": "xsd:duration"
+    },
     "learningOutcome": {
       "@id": "elm:learningOutcome",
       "@type": "@id",
@@ -181,6 +190,14 @@
         },
         "expiryDate": {
           "@id": "elm:expiryDate",
+          "@type": "xsd:dateTime"
+        },
+        "issueDate": {
+          "@id": "dcterms:issued",
+          "@type": "xsd:dateTime"
+        },
+        "reviewDate": {
+          "@id": "elm:reviewDate",
           "@type": "xsd:dateTime"
         }
       }
