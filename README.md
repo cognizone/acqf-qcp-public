@@ -13,5 +13,5 @@ In order to generate the SHACL documentation using SHACL Play using the Ontology
 export JENA_HOME=~/soft/apache-jena-5.2.0/
 export JENA_SPARQL=$JENA_HOME/bin/sparql
 export JENA_RIOT=$JENA_HOME/bin/riot
-./generate-documentation.sh docs/model/exchange-model.ttl
+./generate-documentation.sh
 ```
