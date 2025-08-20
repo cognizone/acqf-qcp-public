@@ -2,18 +2,12 @@
 @prefix exchange-extended-model: <https://data.acqf-qcp.africa/model/exchange-extended-model> .
 @prefix exchange-model:          <https://data.acqf-qcp.africa/model/exchange-model> .
 @prefix adms:                    <http://www.w3.org/ns/adms#>.
-@prefix ams:                     <http://data.europa.eu/snb/model/ap/ams-constraints/>.
 @prefix cc:                      <http://creativecommons.org/ns#>.
-@prefix clv:                     <http://data.europa.eu/m8g/>.
 @prefix dc:                      <http://purl.org/dc/terms/>.
 @prefix elm:                     <http://data.europa.eu/snb/model/elm/>.
 @prefix foaf:                    <http://xmlns.com/foaf/0.1/>.
-@prefix locn:                    <http://www.w3.org/ns/locn#>.
-@prefix org:                     <http://www.w3.org/ns/org#>.
 @prefix owl:                     <http://www.w3.org/2002/07/owl#>.
 @prefix rdf:                     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-@prefix rdfs:                    <http://www.w3.org/2000/01/rdf-schema#>.
-@prefix rov:                     <http://www.w3.org/ns/regorg#>.
 @prefix sh:                      <http://www.w3.org/ns/shacl#> .
 @prefix skos:                    <http://www.w3.org/2004/02/skos/core#>.
 @prefix xsd:                     <http://www.w3.org/2001/XMLSchema#>.
@@ -41,10 +35,7 @@ exchange-extended-model:
             :supplementaryDocumentPropertyShape,
 
             # Annex VI - Information language (code)
-            :QualificationShape-language,
-
-            # Annex VI - Entry requirements
-            :QualificationShape-entryRequirement
+            :QualificationShape-language
 .
 
 :QualificationShape-language
@@ -54,17 +45,6 @@ exchange-extended-model:
                 "The language of the qualification. It should be provided using the Language Named Authority List."@en ;
     sh:path     dc:language ;
     sh:class    skos:Concept ;
-    sh:severity sh:Violation ;
-.
-
-:QualificationShape-entryRequirement
-    a           sh:PropertyShape ;
-    sh:name     "entry requirement"@en ;
-    sh:description
-                "Specific entry requirement or prerequisite of individuals for which this qualification is designed to start this learning opportunity."@en ;
-    sh:path     elm:entryRequirement ;
-    sh:class    elm:Note ;
-    sh:maxCount 1 ;
     sh:severity sh:Violation ;
 .
 
