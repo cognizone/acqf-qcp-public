@@ -400,8 +400,9 @@ acqf-qcp-model:exchange-model
     sh:minCount 1 ;
     sh:maxCount 1 ;
     sh:nodeKind sh:IRI ;
-    acqf-qcp-internal:startsWith "http://data.europa.eu/snb/accreditation/" ;
-    acqf-qcp-internal:controlledVocabulary <http://data.europa.eu/snb/accreditation/25831c2> ;
+    acqf-qcp-internal:startsWith "https://" ; ;
+    # TODO to be enabled after refactoring
+    #   acqf-qcp-internal:controlledVocabulary <https://data.acqf-qcp.africa/model/accreditation-types> ;
     sh:severity sh:Violation ;
 .
 
