@@ -151,12 +151,19 @@
                 },
                 "schemeName": "Qualification Scheme"
             },
-            "volumeOfLearning": "PT2H",
             "entryRequirement": {
                 "noteLiteral": {
                     "en": "Entry requirement 1."
                 }
             },
+            "additionalNote": [
+                {
+                    "noteLiteral": {
+                        "en": "Qualification note."
+                    }
+                }
+            ],
+            "volumeOfLearning": "PT2H",
             "awardingOpportunity": [
                 {
                     "identifier": {
