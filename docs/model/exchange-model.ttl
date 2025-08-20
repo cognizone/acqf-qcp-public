@@ -81,7 +81,9 @@ acqf-qcp-model:exchange-model
         :QualificationShape-entitlesTo,
 
     # curator feedback 20250205
+    # Annex VI - Entry requirements
         :QualificationShape-entryRequirement,
+        :QualificationShape-additionalNote,
         :QualificationShape-volumeOfLearning
 .
 
@@ -142,6 +144,15 @@ acqf-qcp-model:exchange-model
     sh:path elm:entryRequirement ;
     sh:class elm:Note ;
     sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+.
+
+:QualificationShape-additionalNote
+    a sh:PropertyShape ;
+    sh:name "more information"@en ;
+    sh:description "An additional free text note about the resource. Can be used e.g. for qualification objectives."@en ;
+    sh:path elm:additionalNote ;
+    sh:class elm:Note ;
     sh:severity sh:Violation ;
 .
 

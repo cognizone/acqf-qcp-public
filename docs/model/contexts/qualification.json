@@ -58,6 +58,12 @@
             "@type": "@id",
             "@context": "https://data.acqf-qcp.africa/model/contexts/note.json"
         },
+        "additionalNote": {
+            "@id": "elm:additionalNote",
+            "@type": "@id",
+            "@container": "@set",
+            "@context": "https://data.acqf-qcp.africa/model/contexts/note.json"
+        },
         "volumeOfLearning": {
             "@id": "elm:volumeOfLearning",
             "@type": "xsd:duration"
