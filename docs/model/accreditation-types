@@ -41,56 +41,62 @@ acqf-qcp-model:accreditation-types
         "Licenciamento"@pt ;
 .
 
-<http://data.europa.eu/snb/accreditation/e57dddfcf3>
+:programme-license
     a skos:Concept ;
     skos:inScheme acqf-qcp-model:accreditation-types ;
     skos:prefLabel
         "Programme License"@en,
         "Licence d’un programme"@fr,
-        "Licença de programa"@pt
+        "Licença de programa"@pt ;
+    skos:exactMatch <http://data.europa.eu/snb/accreditation/e57dddfcf3>
 .
 
-<http://data.europa.eu/snb/accreditation/bb4618238e>
+:institutional-quality-assurance
     a skos:Concept ;
     skos:inScheme acqf-qcp-model:accreditation-types ;
     skos:prefLabel
         "Institutional Quality Assurance"@en,
         "Assurance de la qualité institutionnelle"@fr,
-        "Garantia de qualidade institucional"@pt
+        "Garantia de qualidade institucional"@pt ;
+    skos:exactMatch <http://data.europa.eu/snb/accreditation/bb4618238e>
 .
 
-<http://data.europa.eu/snb/accreditation/820101cba6>
+:programme-quality-assurance
     a skos:Concept ;
     skos:inScheme acqf-qcp-model:accreditation-types ;
     skos:prefLabel
         "Programme Quality Assurance"@en,
         "Assurance de la qualité d’un programme"@fr,
-        "Garantia de qualidade de um programa"@pt
+        "Garantia de qualidade de um programa"@pt ;
+    skos:exactMatch <http://data.europa.eu/snb/accreditation/820101cba6>
 .
 
-<http://data.europa.eu/snb/accreditation/c_64666c29>
+:eqar-programme-accreditation
     a skos:Concept ;
     skos:inScheme acqf-qcp-model:accreditation-types ;
     skos:prefLabel
         "EQAR Programme accreditation"@en,
         "Accréditation EQAR au niveau du programme"@fr,
-        "Acreditação de programa do EQAR"@pt
+        "Acreditação de programa do EQAR"@pt ;
+    skos:exactMatch <http://data.europa.eu/snb/accreditation/c_64666c29>
 .
 
-<http://data.europa.eu/snb/accreditation/003293d2ce>
+:institutional-license
     a skos:Concept ;
     skos:inScheme acqf-qcp-model:accreditation-types ;
     skos:prefLabel
         "Institutional License"@en,
         "Licence institutionnelle"@fr,
-        "Licença institucional"@pt
+        "Licença institucional"@pt ;
+    skos:exactMatch <http://data.europa.eu/snb/accreditation/003293d2ce>
 .
 
-<http://data.europa.eu/snb/accreditation/c_1f1a469a>
+:eqar-institutional-accreditation
     a skos:Concept ;
     skos:inScheme acqf-qcp-model:accreditation-types ;
     skos:prefLabel
         "EQAR Institutional accreditation"@en,
         "Accréditation EQAR au niveau institutionnel"@fr,
-        "Acreditação institucional do EQAR"@pt
+        "Acreditação institucional do EQAR"@pt ;
+    skos:exactMatch <http://data.europa.eu/snb/accreditation/c_1f1a469a>
 .
