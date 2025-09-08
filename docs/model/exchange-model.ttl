@@ -83,8 +83,15 @@ acqf-qcp-model:exchange-model
     # curator feedback 20250205
     # Annex VI - Entry requirements
         :QualificationShape-entryRequirement,
+
+    # curator feedback 20250205
         :QualificationShape-additionalNote,
-        :QualificationShape-volumeOfLearning
+
+    # curator feedback 20250205
+        :QualificationShape-volumeOfLearning,
+
+    # curator feedback 20250205
+        :QualificationShape-type
 .
 
 :QualificationShape-ISCEDFCode
@@ -152,6 +159,19 @@ acqf-qcp-model:exchange-model
     sh:description "An additional free text note about the resource. Can be used e.g. for qualification objectives."@en ;
     sh:path elm:additionalNote ;
     sh:class elm:Note ;
+    sh:severity sh:Violation ;
+.
+
+:QualificationShape-type
+    a sh:PropertyShape ;
+    sh:name "type"@en ;
+    sh:description
+        "The type of the qualifications. It should be provided using the ACQF Controlled List of Qualification Types."@en ;
+    sh:path dc:type ;
+    sh:class skos:Concept ;
+    sh:nodeKind sh:IRI ;
+    acqf-qcp-internal:startsWith "https://data.acqf-qcp.africa/model/qualification-tags/resource/" ;
+    acqf-qcp-internal:controlledVocabulary <https://data.acqf-qcp.africa/model/qualification-types> ;
     sh:severity sh:Violation ;
 .
 
@@ -399,9 +419,8 @@ acqf-qcp-model:exchange-model
     sh:minCount 1 ;
     sh:maxCount 1 ;
     sh:nodeKind sh:IRI ;
-    acqf-qcp-internal:startsWith "http" ;
-    # TODO to be enabled after refactoring
-    #   acqf-qcp-internal:controlledVocabulary <https://data.acqf-qcp.africa/model/accreditation-types> ;
+    acqf-qcp-internal:startsWith "https://data.acqf-qcp.africa/model/accreditation-types/resource/" ;
+    acqf-qcp-internal:controlledVocabulary <https://data.acqf-qcp.africa/model/accreditation-types> ;
     sh:severity sh:Violation ;
 .
 
