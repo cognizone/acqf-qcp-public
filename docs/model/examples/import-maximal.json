@@ -144,6 +144,7 @@
             "title": {
                 "en": "Postgraduate Diploma in Labour Dispute Resolution"
             },
+            "qualificationType": [ "full", "recognition-of-prior-learning" ],
             "identifier": {
                 "notation": "q-1",
                 "schemeAgency": {
@@ -283,7 +284,7 @@
                         },
                         "schemeName": "Accreditation Scheme"
                     },
-                    "accreditationType": "820101cba6",
+                    "accreditationType": "approval",
                     "title": {
                         "en": "Accreditation Title"
                     },
