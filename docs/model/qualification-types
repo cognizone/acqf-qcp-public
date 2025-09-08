@@ -1,0 +1,51 @@
+@prefix acqf-qcp-model: <https://data.acqf-qcp.africa/model/> .
+@prefix : <https://data.acqf-qcp.africa/model/qualification-tags/resource/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+acqf-qcp-model:qualification-tags
+    a skos:ConceptScheme ;
+    dct:title "Qualification tags"@en ;
+    dct:description "This is a SKOS representation of the tagging system for Qualifications."@en ;
+    dct:created "2025-09-08"^^xsd:date ;
+    dct:publisher "cognizone bv" ;
+    dct:creator "Petr Křemen" ;
+    dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
+    skos:hasTopConcept :partial, :full .
+
+:full
+    a skos:Concept ;
+    skos:inScheme acqf-qcp-model:qualification-tags ;
+    skos:prefLabel
+        "Full"@en,
+        "Plein"@fr,
+        "Pleno"@pt ;
+.
+
+:partial
+    a skos:Concept ;
+    skos:inScheme acqf-qcp-model:qualification-tags ;
+    skos:prefLabel
+        "Partial"@en,
+        "Partiel"@fr,
+        "Parcial"@pt ;
+.
+
+:recognition-of-prior-learning
+    a skos:Concept ;
+    skos:inScheme acqf-qcp-model:qualification-tags ;
+    skos:prefLabel
+        "Recognition of prior learning"@en,
+        "Reconnaissance des acquis"@fr,
+        "Reconhecimento da aprendizagem prévia"@pt ;
+.
+
+:micro-credential
+    a skos:Concept ;
+    skos:inScheme acqf-qcp-model:qualification-tags ;
+    skos:prefLabel
+        "Micro-credential"@en,
+        "Microcertification"@fr,
+        "Microcredenciais"@pt ;
+.
