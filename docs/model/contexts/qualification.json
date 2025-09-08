@@ -19,6 +19,14 @@
             "@type": "rdf:langString",
             "@container": "@language"
         },
+        "qualificationType": {
+            "@type": "@id",
+            "@id": "dcterms:type",
+            "@context": {
+                "@base": "https://data.acqf-qcp.africa/model/qualification-types/",
+                "type": "@type"
+            }
+        },
         "ISCEDFCode": {
             "@id": "elm:ISCEDFCode",
             "@type": "@id",
@@ -176,7 +184,7 @@
                     "@id": "dcterms:type",
                     "@type": "@id",
                     "@context": {
-                        "@base": "http://data.europa.eu/snb/accreditation/",
+                        "@base": "https://data.acqf-qcp.africa/model/accreditation-types/resource/",
                         "type": "@type"
                     }
                 },
