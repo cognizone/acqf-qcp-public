@@ -23,7 +23,7 @@
             "@type": "@id",
             "@id": "dcterms:type",
             "@context": {
-                "@base": "https://data.acqf-qcp.africa/model/qualification-types/",
+                "@base": "https://data.acqf-qcp.africa/model/qualification-types/resource/",
                 "type": "@type"
             }
         },
