@@ -180,7 +180,7 @@ acqf-qcp-model:exchange-model
     sh:path dc:type ;
     sh:class skos:Concept ;
     sh:nodeKind sh:IRI ;
-    acqf-qcp-internal:startsWith "https://data.acqf-qcp.africa/model/qualification-tags/resource/" ;
+    acqf-qcp-internal:startsWith "https://data.acqf-qcp.africa/model/qualification-types/resource/" ;
     acqf-qcp-internal:controlledVocabulary <https://data.acqf-qcp.africa/model/qualification-types> ;
     sh:severity sh:Violation ;
 .
