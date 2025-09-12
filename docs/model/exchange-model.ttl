@@ -162,6 +162,16 @@ acqf-qcp-model:exchange-model
     sh:severity sh:Violation ;
 .
 
+:QualificationShape-volumeOfLearning
+    a sh:PropertyShape ;
+    sh:name "volume of learning"@en ;
+    sh:description "The estimated number of hours the learner is expected to spend engaged in learning to earn the award. This would include the notional number of hours in class, in group work, in practicals, as well as hours engaged in self-motivated study., The estimated number of hours the learner is expected to spend engaged in learning to earn the award. This would include the notional number of hours in, in group work, in practicals, as well as hours engaged in self-motivated study."@en ;
+    sh:path elm:volumeOfLearning ;
+    sh:datatype xsd:duration ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+.
+
 :QualificationShape-type
     a sh:PropertyShape ;
     sh:name "type"@en ;
@@ -172,16 +182,6 @@ acqf-qcp-model:exchange-model
     sh:nodeKind sh:IRI ;
     acqf-qcp-internal:startsWith "https://data.acqf-qcp.africa/model/qualification-tags/resource/" ;
     acqf-qcp-internal:controlledVocabulary <https://data.acqf-qcp.africa/model/qualification-types> ;
-    sh:severity sh:Violation ;
-.
-
-:QualificationShape-volumeOfLearning
-    a sh:PropertyShape ;
-    sh:name "volume of learning"@en ;
-    sh:description "The estimated number of hours the learner is expected to spend engaged in learning to earn the award. This would include the notional number of hours in class, in group work, in practicals, as well as hours engaged in self-motivated study., The estimated number of hours the learner is expected to spend engaged in learning to earn the award. This would include the notional number of hours in, in group work, in practicals, as well as hours engaged in self-motivated study."@en ;
-    sh:path elm:volumeOfLearning ;
-    sh:datatype xsd:duration ;
-    sh:maxCount 1 ;
     sh:severity sh:Violation ;
 .
 
