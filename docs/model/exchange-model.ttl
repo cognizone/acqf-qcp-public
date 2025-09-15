@@ -91,7 +91,10 @@ acqf-qcp-model:exchange-model
         :QualificationShape-volumeOfLearning,
 
     # curator feedback 20250205
-        :QualificationShape-type
+        :QualificationShape-type,
+
+    # curator feedback 2025
+        :QualificationShape-isPartOf
 .
 
 :QualificationShape-ISCEDFCode
@@ -149,6 +152,16 @@ acqf-qcp-model:exchange-model
     sh:description "Specific entry requirement or prerequisite of individuals for which this qualification is designed to start this learning opportunity."@en ;
     sh:path elm:entryRequirement ;
     sh:class elm:Note ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+.
+
+:QualificationShape-isPartOf
+    a sh:PropertyShape ;
+    sh:name "is part of"@en ;
+    sh:description "Links the qualification to its master qualification (of which one this is part of)."@en ;
+    sh:path elm:isPartOf ;
+    sh:class elm:Qualification ;
     sh:maxCount 1 ;
     sh:severity sh:Violation ;
 .

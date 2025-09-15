@@ -134,6 +134,11 @@
       "adms:schemeAgency": {},
       "elm:schemeName": {}
     },
+    "elm:isPartOf": {
+        "@type": {
+            "@default": "elm:Qualification"
+        }
+    },
     "learningOpportunity": {
       "@type": {
         "@default": "elm:LearningOpportunity"

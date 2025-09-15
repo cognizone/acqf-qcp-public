@@ -948,16 +948,6 @@
                               is designed to start this learning opportunity.</td>
                         </tr>
                         <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>entry requirement</td>
-                           <td id="elm:Qualification_elm:entryRequirement"><code><a href="http://data.europa.eu/snb/model/elm/entryRequirement">elm:entryRequirement</a></code></td>
-                           <td><code><a href="#elm:Note">elm:Note</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">Specific entry requirement or prerequisite of individuals for which this qualification
-                              is designed to start this learning opportunity.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
                            <td>homepage</td>
                            <td id="elm:Qualification_foaf:homepage"><code><a href="http://xmlns.com/foaf/0.1/homepage">foaf:homepage</a></code></td>
                            <td><code><a href="#elm:WebResource">elm:WebResource</a></code><br><small></small></td>
@@ -976,6 +966,15 @@
                            <td class="sp_table_propertyshapes_col_description">An identifier assigned to the resource.</td>
                         </tr>
                         <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
+                           <td>is part of</td>
+                           <td id="elm:Qualification_elm:isPartOf"><code><a href="http://data.europa.eu/snb/model/elm/isPartOf">elm:isPartOf</a></code></td>
+                           <td><code><a href="#elm:Qualification">elm:Qualification</a></code><br><small></small></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">Links the qualification to its master qualification (of which one this is part of).</td>
+                        </tr>
+                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
                            <td>learning outcome</td>
                            <td id="elm:Qualification_elm:learningOutcome"><code><a href="http://data.europa.eu/snb/model/elm/learningOutcome">elm:learningOutcome</a></code></td>
                            <td><code><a href="#elm:LearningOutcome">elm:LearningOutcome</a></code><br><small></small></td>
@@ -992,16 +991,6 @@
                               <div style="width:30px">0..1</div>
                            </td>
                            <td class="sp_table_propertyshapes_col_description">The full learning outcome summary of the qualification.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>more information</td>
-                           <td id="elm:Qualification_elm:additionalNote"><code><a href="http://data.europa.eu/snb/model/elm/additionalNote">elm:additionalNote</a></code></td>
-                           <td><code><a href="#elm:Note">elm:Note</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">An additional free text note about the resource. Can be used e.g. for qualification
-                              objectives.</td>
                         </tr>
                         <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
                            <td>more information</td>

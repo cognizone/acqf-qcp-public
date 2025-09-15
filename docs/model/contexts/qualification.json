@@ -37,6 +37,13 @@
                 "Concept": "skos:Concept"
             }
         },
+        "isPartOf": {
+            "@id": "elm:isPartOf",
+            "@type": "@id",
+            "@context": {
+                "@base": "https://data.acqf-qcp.africa/resource/"
+            }
+        },
         "publisher": {
             "@id": "dcterms:publisher",
             "@type": "@id",

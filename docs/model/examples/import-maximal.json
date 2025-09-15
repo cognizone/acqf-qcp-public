@@ -141,6 +141,13 @@
     ],
     "qualifications": [
         {
+            "id" : "q1",
+            "title": {
+                "en": "Parent of Postgraduate Diploma in Labour Dispute Resolution"
+            }
+        },
+        {
+            "id" : "q2",
             "title": {
                 "en": "Postgraduate Diploma in Labour Dispute Resolution"
             },
@@ -152,6 +159,7 @@
                 },
                 "schemeName": "Qualification Scheme"
             },
+            "isPartOf": "q1",
             "entryRequirement": {
                 "noteLiteral": {
                     "en": "Entry requirement 1."
