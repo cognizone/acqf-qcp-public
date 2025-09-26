@@ -617,8 +617,8 @@ acqf-qcp-model:exchange-model
     sh:name "scheme agency name"@en ;
     sh:description "The name of the agent that manages the identifier scheme."@en ;
     sh:path adms:schemeAgency ;
-    sh:datatype rdf:langString ; ;
-    sh:maxCount 1 ;
+    sh:datatype rdf:langString ;
+    sh:uniqueLang true ;
     sh:severity sh:Violation ;
 .
 
