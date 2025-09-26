@@ -100,7 +100,7 @@ acqf-qcp-model:exchange-model
     sh:description
         "The thematic area according to the ISCED-F 2013 Classification. It should be provided using the ISCED-F controlled vocabulary."@en ;
     sh:path elm:ISCEDFCode ;
-    sh:class skos:Concept ;
+#    sh:class skos:Concept ;
     sh:minCount 0 ;
     sh:nodeKind sh:IRI ;
     acqf-qcp-internal:startsWith "http://data.europa.eu/snb/isced-f/" ;
@@ -113,7 +113,7 @@ acqf-qcp-model:exchange-model
     sh:name "education level (ACQF)"@en ;
     sh:description "An associated level of education within ACQF education levels."@en ;
     sh:path elm-extension:educationLevelAcqf ;
-    sh:class skos:Concept ;
+#    sh:class skos:Concept ;
     sh:minCount 0 ;
     sh:nodeKind sh:IRI ;
     acqf-qcp-internal:startsWith "https://data.acqf-qcp.africa/model/acqf-levels/resource/" ;
@@ -126,7 +126,7 @@ acqf-qcp-model:exchange-model
     sh:name "education level (NQF)"@en ;
     sh:description "An associated level of education within ACQF education levels."@en ;
     sh:path elm-extension:educationLevelNqf ;
-    sh:class skos:Concept ;
+#    sh:class skos:Concept ;
     sh:minCount 0 ;
     sh:nodeKind sh:IRI ;
     acqf-qcp-internal:startsWith "https://data.acqf-qcp.africa/model/" ;
@@ -179,7 +179,7 @@ acqf-qcp-model:exchange-model
     sh:description
         "The type of the qualifications. It should be provided using the ACQF Controlled List of Qualification Types."@en ;
     sh:path dc:type ;
-    sh:class skos:Concept ;
+#    sh:class skos:Concept ;
     sh:nodeKind sh:IRI ;
     acqf-qcp-internal:startsWith "https://data.acqf-qcp.africa/model/qualification-types/resource/" ;
     acqf-qcp-internal:controlledVocabulary <https://data.acqf-qcp.africa/model/qualification-types> ;
@@ -272,7 +272,7 @@ acqf-qcp-model:exchange-model
     sh:description
         "The framework used to assign the credit points to the learning specification. It could be provided using the EDC Controlled List of Educational Credit Systems."@en ;
     sh:path elm:framework ;
-    sh:class skos:Concept ;
+#    sh:class skos:Concept ;
     sh:minCount 0 ;
     sh:maxCount 1 ;
     sh:nodeKind sh:IRI ;
@@ -319,7 +319,7 @@ acqf-qcp-model:exchange-model
     sh:name "subject"@en ;
     sh:description "The subject of the note. It should be provided using a controlled vocabulary."@en ;
     sh:path dc:subject ;
-    sh:class skos:Concept ;
+#    sh:class skos:Concept ;
     sh:maxCount 1 ;
     sh:severity sh:Violation ;
 .
@@ -330,7 +330,7 @@ acqf-qcp-model:exchange-model
     sh:description
         "The format of the note. It should be provided using the IANA  types for text, text/plain, text/html etc."@en ;
     sh:path elm:noteFormat ;
-    sh:class skos:Concept ;
+#    sh:class skos:Concept ;
     sh:maxCount 1 ;
     sh:severity sh:Violation ;
 .
@@ -359,7 +359,7 @@ acqf-qcp-model:exchange-model
     sh:name "URL"@en ;
     sh:description "The public access URL."@en ;
     sh:path elm:contentUrl ;
-    sh:datatype xsd:anyURI ;
+#    sh:datatype xsd:anyURI ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
     sh:severity sh:Violation ;
@@ -385,7 +385,7 @@ acqf-qcp-model:exchange-model
     sh:description
         "A link to a related skill or the level of a related skill on a skill framework (except ESCO). It should be provided using a controlled vocabulary."@en ;
     sh:path elm:relatedSkill ;
-    sh:class skos:Concept ;
+#    sh:class skos:Concept ;
     sh:nodeKind sh:IRI ;
     acqf-qcp-internal:startsWith "http://data.europa.eu/esco/skill/" ;
 #    acqf-qcp-internal:controlledVocabulary <http://data.europa.eu/esco/concept-scheme/member-skills> ;
@@ -416,7 +416,7 @@ acqf-qcp-model:exchange-model
     sh:description
         "The type of the accreditation. It should be provided using the EDC Controlled List of Accreditation Types."@en ;
     sh:path dc:type ;
-    sh:class skos:Concept ;
+#    sh:class skos:Concept ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
     sh:nodeKind sh:IRI ;
@@ -504,7 +504,7 @@ acqf-qcp-model:exchange-model
     sh:name "location"@en ;
     sh:description "The location of the organisation."@en ;
     sh:path elm:location ;
-    sh:class dc:Location ;
+    #    sh:class dc:Location ;
     sh:minCount 1 ;
     sh:severity sh:Violation ;
 .
@@ -578,7 +578,7 @@ acqf-qcp-model:exchange-model
     sh:name "in scheme"@en ;
     sh:description "The concept scheme this concept belongs to. The identification of the controlled vocabulary."@en ;
     sh:path skos:inScheme ;
-    sh:class skos:ConceptScheme ;
+#    sh:class skos:ConceptScheme ;
     sh:severity sh:Violation ;
 .
 
@@ -650,7 +650,7 @@ acqf-qcp-model:exchange-model
     sh:name "limit national occupation"@en ;
     sh:description "An Occupation or Occupational Category. It should be provided using a controlled vocabulary."@en ;
     sh:path elm:limitNationalOccupation ;
-    sh:class skos:Concept ;
+#    sh:class skos:Concept ;
     sh:nodeKind sh:IRI ;
     acqf-qcp-internal:startsWith "http://data.europa.eu/esco/occupation/" ;
 #    acqf-qcp-internal:controlledVocabulary <http://data.europa.eu/esco/concept-scheme/member-occupations> ;
@@ -699,7 +699,7 @@ acqf-qcp-model:exchange-model
     sh:name "default language"@en ;
     sh:description "The base language of the learning opportunity, to be considered authoritative."@en ;
     sh:path elm:defaultLanguage ;
-    sh:class skos:Concept ;
+#    sh:class skos:Concept ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
     sh:nodeKind sh:IRI ;
@@ -725,7 +725,7 @@ acqf-qcp-model:exchange-model
     sh:description "A code identifying a spatial scope in which this physical location is located."@en ;
     sh:path elm:spatialCode ;
     sh:minCount 1 ;
-    sh:class skos:Concept ;
+#    sh:class skos:Concept ;
     sh:nodeKind sh:IRI ;
     acqf-qcp-internal:startsWith "http://publications.europa.eu/resource/authority/country/" ;
 #    acqf-qcp-internal:controlledVocabulary <http://publications.europa.eu/resource/authority/country> ;
