@@ -21,7 +21,8 @@ acqf-qcp-internal:virtualspace-nqfs
         :mu-nqf,
         :mz-nqf,
         :sadc-qf,
-        :sz-nqf
+        :sz-nqf,
+        :zw-nqf
 .
 
 :cv-nqf
