@@ -126,7 +126,8 @@ acqf-qcp-model:exchange-model
         acqf-qcp-model:mu-nqf-levels,
         acqf-qcp-model:mz-nqf-levels,
         acqf-qcp-model:sadc-qf-levels,
-        acqf-qcp-model:sz-nqf-levels ;
+        acqf-qcp-model:sz-nqf-levels,
+        acqf-qcp-model:zw-nqf-levels ;
     sh:severity sh:Violation ;
 .
 
