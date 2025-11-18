@@ -86,3 +86,11 @@ acqf-qcp-internal:virtualspace-nqfs
     skos:prefLabel "Eswatini Qualifications Framework"@en ;
     skos:altLabel  "ESQF"@en ;
 .
+
+:zw-nqf
+    a              skos:Concept ;
+    skos:inScheme  acqf-qcp-internal:virtualspace-nqfs ;
+    dct:relation   <https://data.acqf-qcp.africa/model/zw-nqf-levels> ;
+    skos:prefLabel "Zimbabwe National Qualifications Framework"@en ;
+    skos:altLabel  "ZNQF"@en ;
+.
