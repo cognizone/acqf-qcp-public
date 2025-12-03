@@ -67,7 +67,7 @@ acqf-qcp-model:exchange-model
 
     # Annex VI - Link to relevant supplements
     # prior qualification
-        :QualificationShape-supplementaryDocument-Min1,
+        :QualificationShape-supplementaryDocument,
 
     # Annex VI - Internal quality assurance processes
     # Annex VI - External quality assurance/regulatory body
@@ -256,15 +256,15 @@ acqf-qcp-model:exchange-model
     sh:severity sh:Violation ;
 .
 
-:QualificationShape-supplementaryDocument-Min1
+:QualificationShape-supplementaryDocument
     a sh:PropertyShape ;
     sh:name "other documents"@en ;
     sh:description
-        "A public web resource containing additional documentation about the resource. At minimum, it should contain Links of the qualification (partly or fully) to Recognition of Prior Learning (RPL, VAE, VNFIL)"@en ;
+        "A public web resource containing additional documentation about the resource. For example, it could contain Links of the qualification (partly or fully) to Recognition of Prior Learning (RPL, VAE, VNFIL)"@en ;
     sh:path elm:supplementaryDocument ;
     sh:node :URLRegexRestriction ;
     sh:class elm:WebResource ;
-    sh:minCount 1 ;
+    sh:minCount 0 ;
     sh:severity sh:Violation ;
 .
 
