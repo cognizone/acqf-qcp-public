@@ -1,7 +1,4 @@
-@prefix :                        <https://data.acqf-qcp.africa/model/resource/> .
-@prefix exchange-extended-model: <https://data.acqf-qcp.africa/model/exchange-extended-model> .
-@prefix exchange-model:          <https://data.acqf-qcp.africa/model/exchange-model> .
-@prefix adms:                    <http://www.w3.org/ns/adms#>.
+@prefix :                        <https://data.acqf-qcp.africa/model/exchange-model/resource/> .
 @prefix cc:                      <http://creativecommons.org/ns#>.
 @prefix dc:                      <http://purl.org/dc/terms/>.
 @prefix elm:                     <http://data.europa.eu/snb/model/elm/>.
@@ -12,9 +9,9 @@
 @prefix skos:                    <http://www.w3.org/2004/02/skos/core#>.
 @prefix xsd:                     <http://www.w3.org/2001/XMLSchema#>.
 
-exchange-extended-model:
+<https://data.acqf-qcp.africa/model/exchange-extended-model>
     a                 owl:Ontology ;
-    owl:imports       exchange-model: ;
+    owl:imports       <https://data.acqf-qcp.africa/model/exchange-model> ;
     owl:versionIRI    <https://data.acqf-qcp.africa/model/exchange-extended-model/0.0.1/> ;
     owl:versionInfo   "0.0.1" ;
     dc:created        "2024-04-03"^^xsd:date ;
@@ -28,12 +25,6 @@ exchange-extended-model:
 
 :QualificationShape
     sh:property
-    # Annex VI - Further information on the qualification
-            :additionalNotePropertyShape,
-
-            # Annex VI - Link to relevant supplements
-            :supplementaryDocumentPropertyShape,
-
             # Annex VI - Information language (code)
             :QualificationShape-language
 .
@@ -58,20 +49,6 @@ exchange-extended-model:
     sh:name        "language"@en ;
     sh:description "The language of the web resource. It should be provided using Language Named Authority List."@en ;
     sh:path        dc:language ;
-    sh:class       skos:Concept ;
-    sh:maxCount    1 ;
-    sh:severity    sh:Violation ;
-.
-
-:LearningOutcomeShape
-    sh:property :LearningOutcomeShape-type-Max1
-.
-
-:LearningOutcomeShape-type-Max1
-    a              sh:PropertyShape ;
-    sh:name        "type"@en ;
-    sh:description "The learning outcome type. It should be provided using ESCO Skill Pillar concept types."@en ;
-    sh:path        dc:type ;
     sh:class       skos:Concept ;
     sh:maxCount    1 ;
     sh:severity    sh:Violation ;
@@ -284,10 +261,6 @@ exchange-extended-model:
 .
 
 :LocationShape
-    a              sh:NodeShape ;
-    dc:description "An identifiable geographic place."@en ;
-    sh:targetClass dc:Location ;
-    sh:closed      true ;
     sh:property    :descriptionPropertyShape,
                    #
                    :LocationShape-geographicName
@@ -402,37 +375,6 @@ exchange-extended-model:
 
 ### Common shapes
 
-:URLRegexRestriction
-    a           sh:NodeShape ;
-    dc:description
-                "This shape does not apply on a class. This shape is for checking if the value of contentUrl is well formed."@en ;
-    sh:property [ sh:path     elm:contentUrl ;
-                  sh:and      ( [ sh:pattern
-                                          "^(?i)(http|https):(//(([^@\\[/?#]*)@)?(\\[[[A-Fa-f0-9]\\:\\.]*[%[\\p{L}\\p{Nl}\\p{Nd}]]*\\]|[^\\[/?#:]*)(:(\\d*(?:\\{[^/]+?\\})?))?)?([^?#]*)(\\?([^#]*))?(#(.*))?" ; ]
-                                [ sh:pattern "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" ; ] ) ;
-                  sh:severity sh:Violation ; ]
-.
-
-:identifierPropertyShape
-    a              sh:PropertyShape ;
-    sh:name        "identifier"@en ;
-    sh:description "An identifier assigned to the resource."@en ;
-    sh:path        adms:identifier ;
-    sh:class       elm:Identifier ;
-    sh:severity    sh:Violation ;
-.
-
-:titlePropertyShape-Min1
-    a              sh:PropertyShape ;
-    sh:name        "title"@en ;
-    sh:description "The title. One value per language is permitted."@en ;
-    sh:path        dc:title ;
-    sh:datatype    rdf:langString ;
-    sh:minCount    1 ;
-    sh:uniqueLang  true ;
-    sh:severity    sh:Violation ;
-.
-
 :descriptionPropertyShape
     a              sh:PropertyShape ;
     sh:name        "description"@en ;
@@ -440,15 +382,6 @@ exchange-extended-model:
     sh:path        sh:description ;
     sh:datatype    rdf:langString ;
     sh:uniqueLang  true ;
-    sh:severity    sh:Violation ;
-.
-
-:additionalNotePropertyShape
-    a              sh:PropertyShape ;
-    sh:name        "more information"@en ;
-    sh:description "An additional free text note about the resource."@en ;
-    sh:path        elm:additionalNote ;
-    sh:class       elm:Note ;
     sh:severity    sh:Violation ;
 .
 
