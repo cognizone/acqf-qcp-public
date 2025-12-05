@@ -530,15 +530,16 @@ acqf-qcp-model:exchange-model
     sh:property
         :identifierPropertyShape,
         :additionalNotePropertyShape,
-        :AwardingOpportunityShape-awardingBody
+        :AwardingOpportunityShape-awardingBody-Min1
 .
 
-:AwardingOpportunityShape-awardingBody
+:AwardingOpportunityShape-awardingBody-Min1
     a sh:PropertyShape ;
     sh:name "awarding body"@en ;
     sh:description
         "The awarding body related to this awarding activity (i.e., the organisation that issues the qualification) Only in cases of co-awarding/co-graduation, where a qualification is issued to an individual by two or more organisations the cardinality is greater than 1."@en ;
     sh:path elm:awardingBody ;
+    sh:minCount 1;
     sh:class elm:Organisation ;
     sh:severity sh:Violation ;
 .
