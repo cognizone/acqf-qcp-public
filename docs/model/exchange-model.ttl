@@ -199,6 +199,58 @@ acqf-qcp-model:exchange-model
     sh:severity sh:Violation ;
 .
 
+:QualificationShape-entryRequirement
+    a sh:PropertyShape ;
+    sh:name "entry requirement"@en ;
+    sh:description "Specific entry requirement or prerequisite of individuals for which this qualification is designed to start this learning opportunity."@en ;
+    sh:path elm:entryRequirement ;
+    sh:class elm:Note ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+.
+
+:QualificationShape-isPartOf
+    a sh:PropertyShape ;
+    sh:name "is part of"@en ;
+    sh:description "Links the qualification to its master qualification (of which one this is part of)."@en ;
+    sh:path elm:isPartOf ;
+    sh:class elm:Qualification ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+.
+
+:QualificationShape-additionalNote
+    a sh:PropertyShape ;
+    sh:name "more information"@en ;
+    sh:description "An additional free text note about the resource. Can be used e.g. for qualification objectives."@en ;
+    sh:path elm:additionalNote ;
+    sh:class elm:Note ;
+    sh:severity sh:Violation ;
+.
+
+:QualificationShape-volumeOfLearning
+    a sh:PropertyShape ;
+    sh:name "volume of learning"@en ;
+    sh:description "The estimated number of hours the learner is expected to spend engaged in learning to earn the award. This would include the notional number of hours in class, in group work, in practicals, as well as hours engaged in self-motivated study., The estimated number of hours the learner is expected to spend engaged in learning to earn the award. This would include the notional number of hours in, in group work, in practicals, as well as hours engaged in self-motivated study."@en ;
+    sh:path elm:volumeOfLearning ;
+    sh:datatype xsd:duration ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+.
+
+:QualificationShape-type
+    a sh:PropertyShape ;
+    sh:name "type"@en ;
+    sh:description
+        "The type of the qualifications. It should be provided using the ACQF Controlled List of Qualification Types."@en ;
+    sh:path dc:type ;
+#    sh:class skos:Concept ;
+    sh:nodeKind sh:IRI ;
+    acqf-qcp-internal:startsWith "https://data.acqf-qcp.africa/model/qualification-types/resource/" ;
+    acqf-qcp-internal:controlledVocabulary <https://data.acqf-qcp.africa/model/qualification-types> ;
+    sh:severity sh:Violation ;
+.
+
 :QualificationShape-learningOutcome-Min1
     a sh:PropertyShape ;
     sh:name "learning outcome"@en ;
