@@ -1,287 +1,462 @@
 {
-  "organisations": [
-    {
-      "id": "1",
-      "identifier": {
-        "notation": "org-1",
-        "schemeAgency": {
-          "en": "Agency XYZ"
-        },
-        "schemeName": "Organisation Scheme"
-      },
-      "prefLabel": {
-        "en": "Awarding Body 1"
-      },
-      "location": {
-        "spatialCode": "ZAR",
-        "identifier": {
-          "notation": "loc-1",
-          "schemeAgency": {
-            "en": "Agency XYZ"
-          },
-          "schemeName": "Location Scheme"
-        }
-      }
-    },
-    {
-      "id": "2",
-      "identifier": {
-        "notation": "org-2",
-        "schemeAgency": {
-          "en": "Agency XYZ"
-        },
-        "schemeName": "Organisation Scheme"
-      },
-      "prefLabel": {
-        "en": "Awarding Body 2"
-      },
-      "location": {
-        "spatialCode": "ZAF",
-        "identifier": {
-          "notation": "loc-10",
-          "schemeAgency": {
-            "en": "Agency XYZ"
-          },
-          "schemeName": "Location Scheme"
-        }
-      }
-    },
-    {
-      "id": "3",
-      "identifier": {
-        "notation": "org-3",
-        "schemeAgency": {
-          "en": "Agency XYZ"
-        },
-        "schemeName": "Organisation Scheme"
-      },
-      "prefLabel": {
-        "en": "Some agent 3"
-      },
-      "location": {
-        "spatialCode": "ZAR",
-        "identifier": {
-          "notation": "loc-100",
-          "schemeAgency": {
-            "en": "Agency XYZ"
-          },
-          "schemeName": "Location Scheme"
-        }
-      }
-    },
-    {
-      "id": "4",
-      "identifier": {
-        "notation": "org-4",
-        "schemeAgency": {
-          "en": "Agency XYZ"
-        },
-        "schemeName": "Organisation Scheme"
-      },
-      "prefLabel": {
-        "en": "Some agent 3"
-      },
-      "location": {
-        "spatialCode": "ZAR",
-        "identifier": {
-          "notation": "loc-1000",
-          "schemeAgency": {
-            "en": "Agency XYZ"
-          },
-          "schemeName": "Location Scheme"
-        }
-      }
-    },
-    {
-      "id": "5",
-      "identifier": {
-        "notation": "org-5",
-        "schemeAgency": {
-          "en": "Agency XYZ"
-        },
-        "schemeName": "Organisation Scheme"
-      },
-      "prefLabel": {
-        "en": "Accredited Organisation 1"
-      },
-      "location": {
-        "spatialCode": "ZAR",
-        "identifier": {
-          "notation": "loc-10000",
-          "schemeAgency": {
-            "en": "Agency XYZ"
-          },
-          "schemeName": "Location Scheme"
-        }
-
-      }
-    },
-    {
-      "id": "6",
-      "identifier": {
-        "notation": "org-6",
-        "schemeAgency": {
-          "en": "Agency XYZ"
-        },
-        "schemeName": "Organisation Scheme"
-      },
-      "prefLabel": {
-        "en": "Accrediting Agent 1"
-      },
-      "location": {
-        "spatialCode": "ZAF",
-        "identifier": {
-          "notation": "loc-100000",
-          "schemeAgency": {
-            "en": "Agency XYZ"
-          },
-          "schemeName": "Location Scheme"
-        }
-      }
-    }
-  ],
-  "qualifications": [
-    {
-      "title": {
-        "en": "Postgraduate Diploma in Labour Dispute Resolution"
-      },
-      "identifier": {
-        "notation": "q-1",
-        "schemeAgency": {
-          "en": "Agency XYZ"
-        },
-        "schemeName": "Qualification Scheme"
-      },
-      "awardingOpportunity": [
+    "organisations": [
         {
-          "identifier": {
-            "notation": "AO12345",
-            "schemeAgency": {
-              "en": "Agency XYZ"
+            "id": "1",
+            "identifier": {
+                "notation": "org-1",
+                "schemeAgency": {
+                    "en": "Agency XYZ"
+                },
+                "schemeName": "Organisation Scheme"
             },
-            "schemeName": "Identifier Scheme"
-          },
-          "awardingBody": [
-            "1",
-            "2"
-          ],
-          "additionalNote": [
-            {
-              "noteLiteral": {
-                "en": "Awarding information note."
-              }
+            "prefLabel": {
+                "en": "Awarding Body 1"
+            },
+            "location": {
+                "spatialCode": "ZAR",
+                "identifier": {
+                    "notation": "loc-1",
+                    "schemeAgency": {
+                        "en": "Agency XYZ"
+                    },
+                    "schemeName": "Location Scheme"
+                }
             }
-          ]
-        }
-      ],
-      "learningOpportunity": {
-        "identifier": {
-          "notation": "lo-1",
-          "schemeAgency": {
-            "en": "Agency XYZ"
-          },
-          "schemeName": "Learning Opportunity Scheme"
         },
-        "title": {
-          "en": "Some learning opportunity"
-        },
-        "providedBy": [
-          "3"
-        ],
-        "defaultLanguage": {
-          "id": "ENG"
-        }
-      },
-      "learningOutcome": [
         {
-          "identifier": {
-            "notation": "loutc-1",
-            "schemeAgency": {
-              "en": "Agency XYZ"
+            "id": "2",
+            "identifier": {
+                "notation": "org-2",
+                "schemeAgency": {
+                    "en": "Agency XYZ"
+                },
+                "schemeName": "Organisation Scheme"
             },
-            "schemeName": "Learning Outcome Scheme"
-          },
-          "title": {
-            "en": "Postgraduate Diploma in Labour Dispute Resolution"
-          },
-          "relatedSkill": [
-            "2f0a426f-3b95-455b-a872-ef6dee168114"
-          ],
-          "additionalNote": [
-            {
-              "noteLiteral": {
-                "en": "Learning outcome note."
-              }
+            "prefLabel": {
+                "en": "Awarding Body 2"
+            },
+            "location": {
+                "spatialCode": "ZAF",
+                "identifier": {
+                    "notation": "loc-10",
+                    "schemeAgency": {
+                        "en": "Agency XYZ"
+                    },
+                    "schemeName": "Location Scheme"
+                }
             }
-          ]
-        }
-      ],
-      "educationLevelAcqf": [
-        "level-6"
-      ],
-      "ISCEDFCode": [
-        "0715"
-      ],
-      "publisher": "4",
-      "supplementaryDocument": [
-        {
-          "contentUrl": [
-            "http://someurl.org"
-          ]
         },
         {
-          "contentUrl": [
-            "http://anotherurl.org"
-          ]
-        }
-      ],
-      "homepage": [
-        {
-          "contentUrl": [
-            "http://homepageurl.org"
-          ]
-        }
-      ],
-      "entitlesTo": [
-        {
-          "identifier": {
-            "notation": "les-1",
-            "schemeAgency": {
-              "en": "Agency XYZ"
+            "id": "3",
+            "identifier": {
+                "notation": "org-3",
+                "schemeAgency": {
+                    "en": "Agency XYZ"
+                },
+                "schemeName": "Organisation Scheme"
             },
-            "schemeName": "Learning Entitlement Scheme"
-          },
-          "limitNationalOccupation": [
-            "46db7e2e-d44d-412a-9a80-02d43111aca8"
-          ]
-        }
-      ],
-      "creditPoint": [
-        {
-          "framework": "eacat",
-          "point": "30"
-        }
-      ],
-      "accreditation": [
-        {
-          "identifier": {
-            "notation": "a-1",
-            "schemeAgency": {
-              "en": "Agency XYZ"
+            "prefLabel": {
+                "en": "Some agent 3"
             },
-            "schemeName": "Accreditation Scheme"
-          },
-          "accreditationType": "820101cba6",
-          "title": {
-            "en": "Accreditation Title"
-          },
-          "organisation": [
-            "5"
-          ],
-          "accreditingAgent": "6",
-          "expiryDate": "2025-12-31T00:00:00Z"
+            "location": {
+                "spatialCode": "ZAR",
+                "identifier": {
+                    "notation": "loc-100",
+                    "schemeAgency": {
+                        "en": "Agency XYZ"
+                    },
+                    "schemeName": "Location Scheme"
+                }
+            }
+        },
+        {
+            "id": "4",
+            "identifier": {
+                "notation": "org-4",
+                "schemeAgency": {
+                    "en": "Agency XYZ"
+                },
+                "schemeName": "Organisation Scheme"
+            },
+            "prefLabel": {
+                "en": "Some agent 3"
+            },
+            "location": {
+                "spatialCode": "ZAR",
+                "identifier": {
+                    "notation": "loc-1000",
+                    "schemeAgency": {
+                        "en": "Agency XYZ"
+                    },
+                    "schemeName": "Location Scheme"
+                }
+            }
+        },
+        {
+            "id": "5",
+            "identifier": {
+                "notation": "org-5",
+                "schemeAgency": {
+                    "en": "Agency XYZ"
+                },
+                "schemeName": "Organisation Scheme"
+            },
+            "prefLabel": {
+                "en": "Accredited Organisation 1"
+            },
+            "location": {
+                "spatialCode": "ZAR",
+                "identifier": {
+                    "notation": "loc-10000",
+                    "schemeAgency": {
+                        "en": "Agency XYZ"
+                    },
+                    "schemeName": "Location Scheme"
+                }
+            }
+        },
+        {
+            "id": "6",
+            "identifier": {
+                "notation": "org-6",
+                "schemeAgency": {
+                    "en": "Agency XYZ"
+                },
+                "schemeName": "Organisation Scheme"
+            },
+            "prefLabel": {
+                "en": "Accrediting Agent 1"
+            },
+            "location": {
+                "spatialCode": "ZAF",
+                "identifier": {
+                    "notation": "loc-100000",
+                    "schemeAgency": {
+                        "en": "Agency XYZ"
+                    },
+                    "schemeName": "Location Scheme"
+                }
+            }
         }
-      ]
-    }
-  ]
+    ],
+    "qualifications": [
+        {
+            "id" : "q1",
+            "title": {
+                "en": "Some super qualification"
+            },
+            "qualificationType": [ "full" ],
+            "identifier": {
+                "notation": "q-1",
+                "schemeAgency": {
+                    "en": "Agency XYZ"
+                },
+                "schemeName": "Qualification Scheme"
+            },
+            "entryRequirement": {
+                "noteLiteral": {
+                    "en": "Entry requirement q1."
+                }
+            },
+            "additionalNote": [
+                {
+                    "noteLiteral": {
+                        "en": "Qualification note q1."
+                    }
+                }
+            ],
+            "volumeOfLearning": "PT2H",
+            "awardingOpportunity": [
+                {
+                    "identifier": {
+                        "notation": "AO12345",
+                        "schemeAgency": {
+                            "en": "Agency XYZ"
+                        },
+                        "schemeName": "Identifier Scheme"
+                    },
+                    "awardingBody": [
+                        "1",
+                        "2"
+                    ],
+                    "additionalNote": [
+                        {
+                            "noteLiteral": {
+                                "en": "Awarding information note."
+                            }
+                        }
+                    ]
+                }
+            ],
+            "learningOpportunity": {
+                "identifier": {
+                    "notation": "lo-1",
+                    "schemeAgency": {
+                        "en": "Agency XYZ"
+                    },
+                    "schemeName": "Learning Opportunity Scheme"
+                },
+                "title": {
+                    "en": "Some learning opportunity"
+                },
+                "providedBy": [
+                    "3"
+                ],
+                "defaultLanguage": {
+                    "id": "ENG"
+                }
+            },
+            "learningOutcome": [
+                {
+                    "identifier": {
+                        "notation": "loutc-1",
+                        "schemeAgency": {
+                            "en": "Agency XYZ"
+                        },
+                        "schemeName": "Learning Outcome Scheme"
+                    },
+                    "title": {
+                        "en": "Postgraduate Diploma in Labour Dispute Resolution"
+                    },
+                    "relatedSkill": [
+                        "2f0a426f-3b95-455b-a872-ef6dee168114"
+                    ],
+                    "additionalNote": [
+                        {
+                            "noteLiteral": {
+                                "en": "Learning outcome note."
+                            }
+                        }
+                    ]
+                }
+            ],
+            "educationLevelAcqf": [
+                "level-6"
+            ],
+            "ISCEDFCode": [
+                "0715"
+            ],
+            "publisher": "4",
+            "supplementaryDocument": [
+                {
+                    "contentUrl": [
+                        "http://someurl.org"
+                    ]
+                },
+                {
+                    "contentUrl": [
+                        "http://anotherurl.org"
+                    ]
+                }
+            ],
+            "homepage": [
+                {
+                    "contentUrl": [
+                        "http://homepageurl.org"
+                    ]
+                }
+            ],
+            "entitlesTo": [
+                {
+                    "identifier": {
+                        "notation": "les-1",
+                        "schemeAgency": {
+                            "en": "Agency XYZ"
+                        },
+                        "schemeName": "Learning Entitlement Scheme"
+                    },
+                    "limitNationalOccupation": [
+                        "46db7e2e-d44d-412a-9a80-02d43111aca8"
+                    ]
+                }
+            ],
+            "creditPoint": [
+                {
+                    "framework": "eacat",
+                    "point": "30"
+                }
+            ],
+            "accreditation": [
+                {
+                    "identifier": {
+                        "notation": "a-1",
+                        "schemeAgency": {
+                            "en": "Agency XYZ"
+                        },
+                        "schemeName": "Accreditation Scheme"
+                    },
+                    "accreditationType": "approval",
+                    "title": {
+                        "en": "Accreditation Title"
+                    },
+                    "organisation": [
+                        "5"
+                    ],
+                    "accreditingAgent": "6",
+                    "expiryDate": "2025-12-31T00:00:00Z",
+                    "issueDate": "2025-08-01T00:00:00Z",
+                    "reviewDate": "2025-08-02T00:00:00Z"
+                }
+            ]
+        },
+        {
+            "id" : "q2",
+            "title": {
+                "en": "Postgraduate Diploma in Labour Dispute Resolution"
+            },
+            "qualificationType": [ "partial" ],
+            "identifier": {
+                "notation": "q-2",
+                "schemeAgency": {
+                    "en": "Agency XYZ"
+                },
+                "schemeName": "Qualification Scheme"
+            },
+            "isPartOf": "q1",
+            "entryRequirement": {
+                "noteLiteral": {
+                    "en": "Entry requirement q2."
+                }
+            },
+            "additionalNote": [
+                {
+                    "noteLiteral": {
+                        "en": "Qualification note q2."
+                    }
+                }
+            ],
+            "volumeOfLearning": "PT2H",
+            "awardingOpportunity": [
+                {
+                    "identifier": {
+                        "notation": "AO12345",
+                        "schemeAgency": {
+                            "en": "Agency XYZ"
+                        },
+                        "schemeName": "Identifier Scheme"
+                    },
+                    "awardingBody": [
+                        "1"
+                    ],
+                    "additionalNote": [
+                        {
+                            "noteLiteral": {
+                                "en": "Awarding information note."
+                            }
+                        }
+                    ]
+                }
+            ],
+            "learningOpportunity": {
+                "identifier": {
+                    "notation": "lo-2",
+                    "schemeAgency": {
+                        "en": "Agency XYZ"
+                    },
+                    "schemeName": "Learning Opportunity Scheme"
+                },
+                "title": {
+                    "en": "Some learning opportunity"
+                },
+                "providedBy": [
+                    "3"
+                ],
+                "defaultLanguage": {
+                    "id": "ENG"
+                }
+            },
+            "learningOutcome": [
+                {
+                    "identifier": {
+                        "notation": "loutc-2",
+                        "schemeAgency": {
+                            "en": "Agency XYZ"
+                        },
+                        "schemeName": "Learning Outcome Scheme"
+                    },
+                    "title": {
+                        "en": "Postgraduate Diploma in Labour Dispute Resolution"
+                    },
+                    "relatedSkill": [
+                        "2f0a426f-3b95-455b-a872-ef6dee168114"
+                    ],
+                    "additionalNote": [
+                        {
+                            "noteLiteral": {
+                                "en": "Learning outcome note."
+                            }
+                        }
+                    ]
+                }
+            ],
+            "educationLevelAcqf": [
+                "level-6"
+            ],
+            "ISCEDFCode": [
+                "0715"
+            ],
+            "publisher": "4",
+            "supplementaryDocument": [
+                {
+                    "contentUrl": [
+                        "http://someurl.org"
+                    ]
+                },
+                {
+                    "contentUrl": [
+                        "http://anotherurl.org"
+                    ]
+                }
+            ],
+            "homepage": [
+                {
+                    "contentUrl": [
+                        "http://homepageurl.org"
+                    ]
+                }
+            ],
+            "entitlesTo": [
+                {
+                    "identifier": {
+                        "notation": "les-1",
+                        "schemeAgency": {
+                            "en": "Agency XYZ"
+                        },
+                        "schemeName": "Learning Entitlement Scheme"
+                    },
+                    "limitNationalOccupation": [
+                        "46db7e2e-d44d-412a-9a80-02d43111aca8"
+                    ]
+                }
+            ],
+            "creditPoint": [
+                {
+                    "framework": "eacat",
+                    "point": "30"
+                }
+            ],
+            "accreditation": [
+                {
+                    "identifier": {
+                        "notation": "a-1",
+                        "schemeAgency": {
+                            "en": "Agency XYZ"
+                        },
+                        "schemeName": "Accreditation Scheme"
+                    },
+                    "accreditationType": "approval",
+                    "title": {
+                        "en": "Accreditation Title"
+                    },
+                    "organisation": [
+                        "5"
+                    ],
+                    "accreditingAgent": "6",
+                    "expiryDate": "2025-12-31T00:00:00Z",
+                    "issueDate": "2025-08-01T00:00:00Z",
+                    "reviewDate": "2025-08-02T00:00:00Z"
+                }
+            ]
+        }
+    ]
 }

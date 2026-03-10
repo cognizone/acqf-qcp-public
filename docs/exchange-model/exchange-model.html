@@ -367,7 +367,7 @@
                         <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
                            <td>spatial code</td>
                            <td id="dc:Location_elm:spatialCode"><code><a href="http://data.europa.eu/snb/model/elm/spatialCode">elm:spatialCode</a></code></td>
-                           <td><code><a href="#skos:Concept">skos:Concept</a></code><br><small></small></td>
+                           <td><br><small></small></td>
                            <td>
                               <div style="width:30px">1..*</div>
                            </td>
@@ -421,6 +421,15 @@
                            <td class="sp_table_propertyshapes_col_description">An identifier assigned to the resource.</td>
                         </tr>
                         <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
+                           <td>issue date</td>
+                           <td id="elm:Accreditation_dc:issued"><code><a href="http://purl.org/dc/terms/issued">dc:issued</a></code></td>
+                           <td><code>xsd:dateTime</code><br><small></small></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">Date of formal issuance of the resource.</td>
+                        </tr>
+                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
                            <td>organisation</td>
                            <td id="elm:Accreditation_elm:organisation"><code><a href="http://data.europa.eu/snb/model/elm/organisation">elm:organisation</a></code></td>
                            <td><code><a href="#elm:Organisation">elm:Organisation</a></code><br><small></small></td>
@@ -428,6 +437,15 @@
                               <div style="width:30px">0..*</div>
                            </td>
                            <td class="sp_table_propertyshapes_col_description">The organisation whose activities are being accredited.</td>
+                        </tr>
+                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
+                           <td>review date</td>
+                           <td id="elm:Accreditation_elm:reviewDate"><code><a href="http://data.europa.eu/snb/model/elm/reviewDate">elm:reviewDate</a></code></td>
+                           <td><code>xsd:dateTime</code><br><small></small></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">The date when the accreditation has to be reviewed.</td>
                         </tr>
                         <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
                            <td>title</td>
@@ -441,7 +459,7 @@
                         <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
                            <td>type</td>
                            <td id="elm:Accreditation_dc:type"><code><a href="http://purl.org/dc/terms/type">dc:type</a></code></td>
-                           <td><code><a href="#skos:Concept">skos:Concept</a></code><br><small></small></td>
+                           <td><br><small></small></td>
                            <td>
                               <div style="width:30px">1..1</div>
                            </td>
@@ -473,7 +491,7 @@
                            <td id="elm:AwardingOpportunity_elm:awardingBody"><code><a href="http://data.europa.eu/snb/model/elm/awardingBody">elm:awardingBody</a></code></td>
                            <td><code><a href="#elm:Organisation">elm:Organisation</a></code><br><small></small></td>
                            <td>
-                              <div style="width:30px">0..*</div>
+                              <div style="width:30px">1..*</div>
                            </td>
                            <td class="sp_table_propertyshapes_col_description">The awarding body related to this awarding activity (i.e., the organisation that issues
                               the qualification) Only in cases of co-awarding/co-graduation, where a qualification
@@ -521,7 +539,7 @@
                         <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
                            <td>framework</td>
                            <td id="elm:CreditPoint_elm:framework"><code><a href="http://data.europa.eu/snb/model/elm/framework">elm:framework</a></code></td>
-                           <td><code><a href="#skos:Concept">skos:Concept</a></code><br><small></small></td>
+                           <td><br><small></small></td>
                            <td>
                               <div style="width:30px">0..1</div>
                            </td>
@@ -572,7 +590,7 @@
                            <td id="elm:Identifier_adms:schemeAgency"><code><a href="http://www.w3.org/ns/adms#schemeAgency">adms:schemeAgency</a></code></td>
                            <td><code>rdf:langString</code><br><small></small></td>
                            <td>
-                              <div style="width:30px">0..1</div>
+                              <div style="width:30px">0..*</div>
                            </td>
                            <td class="sp_table_propertyshapes_col_description">The name of the agent that manages the identifier scheme.</td>
                         </tr>
@@ -617,7 +635,7 @@
                         <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
                            <td>limit national occupation</td>
                            <td id="elm:LearningEntitlementSpecification_elm:limitNationalOccupation"><code><a href="http://data.europa.eu/snb/model/elm/limitNationalOccupation">elm:limitNationalOccupation</a></code></td>
-                           <td><code><a href="#skos:Concept">skos:Concept</a></code><br><small></small></td>
+                           <td><br><small></small></td>
                            <td>
                               <div style="width:30px">0..*</div>
                            </td>
@@ -646,7 +664,7 @@
                         <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
                            <td>default language</td>
                            <td id="elm:LearningOpportunity_elm:defaultLanguage"><code><a href="http://data.europa.eu/snb/model/elm/defaultLanguage">elm:defaultLanguage</a></code></td>
-                           <td><code><a href="#skos:Concept">skos:Concept</a></code><br><small></small></td>
+                           <td><br><small></small></td>
                            <td>
                               <div style="width:30px">1..1</div>
                            </td>
@@ -731,7 +749,7 @@
                         <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
                            <td>related skill(s)</td>
                            <td id="elm:LearningOutcome_elm:relatedSkill"><code><a href="http://data.europa.eu/snb/model/elm/relatedSkill">elm:relatedSkill</a></code></td>
-                           <td><code><a href="#skos:Concept">skos:Concept</a></code><br><small></small></td>
+                           <td><br><small></small></td>
                            <td>
                               <div style="width:30px">0..*</div>
                            </td>
@@ -770,7 +788,7 @@
                         <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
                            <td>note format</td>
                            <td id="elm:Note_elm:noteFormat"><code><a href="http://data.europa.eu/snb/model/elm/noteFormat">elm:noteFormat</a></code></td>
-                           <td><code><a href="#skos:Concept">skos:Concept</a></code><br><small></small></td>
+                           <td><br><small></small></td>
                            <td>
                               <div style="width:30px">0..1</div>
                            </td>
@@ -789,7 +807,7 @@
                         <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
                            <td>subject</td>
                            <td id="elm:Note_dc:subject"><code><a href="http://purl.org/dc/terms/subject">dc:subject</a></code></td>
-                           <td><code><a href="#skos:Concept">skos:Concept</a></code><br><small></small></td>
+                           <td><br><small></small></td>
                            <td>
                               <div style="width:30px">0..1</div>
                            </td>
@@ -827,7 +845,7 @@
                         <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
                            <td>location</td>
                            <td id="elm:Organisation_elm:location"><code><a href="http://data.europa.eu/snb/model/elm/location">elm:location</a></code></td>
-                           <td><code><a href="#dc:Location">dc:Location</a></code><br><small></small></td>
+                           <td><br><small></small></td>
                            <td>
                               <div style="width:30px">1..*</div>
                            </td>
@@ -894,7 +912,7 @@
                         <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
                            <td>education level (ACQF)</td>
                            <td id="elm:Qualification_acqf-qcp-model:elm-extension/educationLevelAcqf"><code><a href="https://data.acqf-qcp.africa/model/elm-extension/educationLevelAcqf">acqf-qcp-model:elm-extension/educationLevelAcqf</a></code></td>
-                           <td><code><a href="#skos:Concept">skos:Concept</a></code><br><small></small></td>
+                           <td><br><small></small></td>
                            <td>
                               <div style="width:30px">0..*</div>
                            </td>
@@ -903,7 +921,7 @@
                         <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
                            <td>education level (NQF)</td>
                            <td id="elm:Qualification_acqf-qcp-model:elm-extension/educationLevelNqf"><code><a href="https://data.acqf-qcp.africa/model/elm-extension/educationLevelNqf">acqf-qcp-model:elm-extension/educationLevelNqf</a></code></td>
-                           <td><code><a href="#skos:Concept">skos:Concept</a></code><br><small></small></td>
+                           <td><br><small></small></td>
                            <td>
                               <div style="width:30px">0..*</div>
                            </td>
@@ -918,6 +936,16 @@
                            </td>
                            <td class="sp_table_propertyshapes_col_description">Rights (such as which the person may acquire as a result of acquiring the learning
                               outcomes).</td>
+                        </tr>
+                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
+                           <td>entry requirement</td>
+                           <td id="elm:Qualification_elm:entryRequirement"><code><a href="http://data.europa.eu/snb/model/elm/entryRequirement">elm:entryRequirement</a></code></td>
+                           <td><code><a href="#elm:Note">elm:Note</a></code><br><small></small></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">Specific entry requirement or prerequisite of individuals for which this qualification
+                              is designed to start this learning opportunity.</td>
                         </tr>
                         <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
                            <td>homepage</td>
@@ -938,6 +966,15 @@
                            <td class="sp_table_propertyshapes_col_description">An identifier assigned to the resource.</td>
                         </tr>
                         <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
+                           <td>is part of</td>
+                           <td id="elm:Qualification_elm:isPartOf"><code><a href="http://data.europa.eu/snb/model/elm/isPartOf">elm:isPartOf</a></code></td>
+                           <td><code><a href="#elm:Qualification">elm:Qualification</a></code><br><small></small></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">Links the qualification to its master qualification (of which one this is part of).</td>
+                        </tr>
+                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
                            <td>learning outcome</td>
                            <td id="elm:Qualification_elm:learningOutcome"><code><a href="http://data.europa.eu/snb/model/elm/learningOutcome">elm:learningOutcome</a></code></td>
                            <td><code><a href="#elm:LearningOutcome">elm:LearningOutcome</a></code><br><small></small></td>
@@ -956,15 +993,25 @@
                            <td class="sp_table_propertyshapes_col_description">The full learning outcome summary of the qualification.</td>
                         </tr>
                         <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
+                           <td>more information</td>
+                           <td id="elm:Qualification_elm:additionalNote"><code><a href="http://data.europa.eu/snb/model/elm/additionalNote">elm:additionalNote</a></code></td>
+                           <td><code><a href="#elm:Note">elm:Note</a></code><br><small></small></td>
+                           <td>
+                              <div style="width:30px">0..*</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">An additional free text note about the resource. Can be used e.g. for qualification
+                              objectives.</td>
+                        </tr>
+                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
                            <td>other documents</td>
                            <td id="elm:Qualification_elm:supplementaryDocument"><code><a href="http://data.europa.eu/snb/model/elm/supplementaryDocument">elm:supplementaryDocument</a></code></td>
                            <td><code><a href="#elm:WebResource">elm:WebResource</a></code><br><small></small></td>
                            <td>
-                              <div style="width:30px">1..*</div>
+                              <div style="width:30px">0..*</div>
                            </td>
-                           <td class="sp_table_propertyshapes_col_description">A public web resource containing additional documentation about the resource. At minimum,
-                              it should contain Links of the qualification (partly or fully) to Recognition of Prior
-                              Learning (RPL, VAE, VNFIL)</td>
+                           <td class="sp_table_propertyshapes_col_description">A public web resource containing additional documentation about the resource. For
+                              example, it could contain Links of the qualification (partly or fully) to Recognition
+                              of Prior Learning (RPL, VAE, VNFIL)</td>
                         </tr>
                         <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
                            <td>publisher</td>
@@ -978,7 +1025,7 @@
                         <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
                            <td>thematic area</td>
                            <td id="elm:Qualification_elm:ISCEDFCode"><code><a href="http://data.europa.eu/snb/model/elm/ISCEDFCode">elm:ISCEDFCode</a></code></td>
-                           <td><code><a href="#skos:Concept">skos:Concept</a></code><br><small></small></td>
+                           <td><br><small></small></td>
                            <td>
                               <div style="width:30px">0..*</div>
                            </td>
@@ -993,6 +1040,30 @@
                               <div style="width:30px">1..*</div>
                            </td>
                            <td class="sp_table_propertyshapes_col_description">The title. One value per language is permitted.</td>
+                        </tr>
+                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
+                           <td>type</td>
+                           <td id="elm:Qualification_dc:type"><code><a href="http://purl.org/dc/terms/type">dc:type</a></code></td>
+                           <td><br><small></small></td>
+                           <td>
+                              <div style="width:30px">0..*</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">The type of the qualifications. It should be provided using the ACQF Controlled List
+                              of Qualification Types.</td>
+                        </tr>
+                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
+                           <td>volume of learning</td>
+                           <td id="elm:Qualification_elm:volumeOfLearning"><code><a href="http://data.europa.eu/snb/model/elm/volumeOfLearning">elm:volumeOfLearning</a></code></td>
+                           <td><code>xsd:duration</code><br><small></small></td>
+                           <td>
+                              <div style="width:30px">0..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description">The estimated number of hours the learner is expected to spend engaged in learning
+                              to earn the award. This would include the notional number of hours in class, in group
+                              work, in practicals, as well as hours engaged in self-motivated study., The estimated
+                              number of hours the learner is expected to spend engaged in learning to earn the award.
+                              This would include the notional number of hours in, in group work, in practicals,
+                              as well as hours engaged in self-motivated study.</td>
                         </tr>
                      </tbody>
                   </table>
@@ -1017,7 +1088,7 @@
                         <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
                            <td>URL</td>
                            <td id="elm:WebResource_elm:contentUrl"><code><a href="http://data.europa.eu/snb/model/elm/contentUrl">elm:contentUrl</a></code></td>
-                           <td><code>xsd:anyURI</code><br><small></small></td>
+                           <td><br><small></small></td>
                            <td>
                               <div style="width:30px">1..1</div>
                            </td>
@@ -1055,7 +1126,7 @@
                         <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
                            <td>in scheme</td>
                            <td id="skos:Concept_skos:inScheme"><code><a href="http://www.w3.org/2004/02/skos/core#inScheme">skos:inScheme</a></code></td>
-                           <td><code><a href="#skos:ConceptScheme">skos:ConceptScheme</a></code><br><small></small></td>
+                           <td><br><small></small></td>
                            <td>
                               <div style="width:30px">0..*</div>
                            </td>
