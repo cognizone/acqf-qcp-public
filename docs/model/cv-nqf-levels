@@ -12,7 +12,7 @@ acqf-qcp-model:cv-nqf-levels
     dct:publisher      "cognizone" ;
     dct:creator        "Petr Křemen" ;
     dct:license        <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:source         <https://acqf.africa/resources/nqf-inventory/countries/cabo-verde> ;
+    dct:source         <https://acqf.africa/resources/nqf-inventory/countries/cabo-verde>, <https://europass.europa.eu/system/files/2024-08/FINAL%20Revised%20Comparison%20report%20EQF%20Cabo%20Verde%20EN.pdf> ;
     skos:hasTopConcept :level-1, :level-2, :level-3, :level-4, :level-5, :level-6, :level-7, :level-8 .
 
 :level-1

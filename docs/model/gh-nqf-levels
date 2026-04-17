@@ -1,0 +1,133 @@
+@prefix acqf-qcp-model: <https://data.acqf-qcp.africa/model/> .
+@prefix :               <https://data.acqf-qcp.africa/model/gh-nqf-levels/resource/> .
+@prefix dct:            <http://purl.org/dc/terms/> .
+@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos:           <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
+
+acqf-qcp-model:gh-nqf-levels
+    a                  skos:ConceptScheme ;
+    dct:title          "National TVET Qualifications Framework (NTVETQF)"@en ;
+    dct:description    "The National TVET Qualifications Framework of Ghana is structured in eight levels spanning National Proficiency I through Doctor of Technology."@en ;
+    dct:created        "2026-04-17"^^xsd:date ;
+    dct:publisher      "cognizone" ;
+    dct:creator        "Petr Křemen" ;
+    dct:license        <http://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:source         <https://ctvet.gov.gh/qualifications-framework/> ;
+    skos:hasTopConcept :level-1, :level-2, :level-3, :level-4, :level-5, :level-6, :level-7, :level-8 .
+
+:level-1
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:gh-nqf-levels ;
+    skos:prefLabel  "Level 1"@en ;
+    skos:altLabel   "National Proficiency I"@en ;
+    skos:definition """
+The National Proficiency I Programme is a bridging programme, allowing progression for people with minimal or no education background into the National Proficiency II Programme.
+
+The programme focuses on the basic skills, knowledge and understanding within the technical and vocational area.
+
+Graduates are expected to perform routine and predictable tasks, often under close supervision. Entry into these programmes will normally require no formal certificate. The programme also prepares and facilitates progression into the general education band through the introduction to Generic Skills Units.
+"""@en ;
+.
+
+:level-2
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:gh-nqf-levels ;
+    skos:prefLabel  "Level 2"@en ;
+    skos:altLabel   "National Proficiency II"@en ;
+    skos:definition """
+The National Proficiency II Programme allows progression to the National Certificate I programmes and provides a window of opportunity for entry into technical institutions in appropriate technical and vocational areas.
+
+Entry is through achievement of a COTVET qualification at National Proficiency I level.
+
+Graduates are expected to perform a range of varied work activities, most of which may be routine, predictable, and non-complex in nature. Work is carried out under limited supervision. The programme also facilitates progression to National Certificate I and introduction to general education through Generic Skills Units.
+"""@en ;
+.
+
+:level-3
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:gh-nqf-levels ;
+    skos:prefLabel  "Level 3"@en ;
+    skos:altLabel   "National Certificate I"@en ;
+    skos:definition """
+The National Certificate I Programme allows progression to the National Certificate II programmes and provides a window of opportunity for entry into technical institutions in appropriate technical and vocational areas.
+
+Entry is through National Proficiency II or a pass at BECE in the appropriate subjects, or an equivalent qualification.
+
+Graduates are expected to perform complex and varied activities under minimum supervision and to develop employable skills through significant workplace experience learning, thereby enhancing their employment prospects.
+"""@en ;
+.
+
+:level-4
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:gh-nqf-levels ;
+    skos:prefLabel  "Level 4"@en ;
+    skos:altLabel   "National Certificate II"@en ;
+    skos:definition """
+The National Certificate II Programme allows progression to HND or B. Tech programmes and provides a window of opportunity for entry into technical and vocational institutions in appropriate technical and vocational areas.
+
+Entry is through National Certificate I, or a pass at WASSCE in the appropriate subjects and points total, or an equivalent qualification.
+
+Graduates are expected to perform a wide variety of work, most of which is complex and non-routine. The level involves considerable responsibility and autonomy in the performance of work, and often requires the ability to control or guide others.
+"""@en ;
+.
+
+:level-5
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:gh-nqf-levels ;
+    skos:prefLabel  "Level 5"@en ;
+    skos:altLabel   "Higher National Diploma (HND)"@en ;
+    skos:definition """
+The Higher National Diploma programme allows progression to Bachelor of Technology (B. Tech) or Master of Technology (M. Tech) programmes and provides a window of opportunity for entry into technical and vocational institutions in appropriate technical and vocational areas.
+
+Entry is through National Certificate II, or a pass at WASSCE in appropriate subjects and points total, or an equivalent qualification.
+
+Graduates are expected to perform a wide variety of work, most of which is complex and non-routine. Activities involve some level of organizational ability, resource management, and accountability for their own processes and outputs as well as for the processes and outputs of others.
+"""@en ;
+.
+
+:level-6
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:gh-nqf-levels ;
+    skos:prefLabel  "Level 6"@en ;
+    skos:altLabel   "Bachelor of Technology (B. Tech)"@en ;
+    skos:definition """
+The Bachelor of Technology programme allows progression to the Master of Technology programme and provides a window of opportunity for entry into technical and vocational institutions in appropriate technical and vocational areas.
+
+Entry is through a COTVET National Certificate II or HND, or an equivalent qualification in the appropriate subjects and points.
+
+Graduates are expected to perform a wide variety of work, most of which is complex and non-routine. Activities are mainly self-directed and require a significant degree of strategic thinking and judgement. A high level of organizational and resource management skill is required, and graduates assume full accountability for their own processes and outputs as well as those of others within broadly defined boundaries.
+"""@en ;
+.
+
+:level-7
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:gh-nqf-levels ;
+    skos:prefLabel  "Level 7"@en ;
+    skos:altLabel   "Master of Technology (M. Tech)"@en ;
+    skos:definition """
+The Master of Technology programme allows progression to the Doctor of Technology programme and provides a window of opportunity for entry into technical and vocational institutions in appropriate technical and vocational areas.
+
+Entry is through a COTVET HND or B. Tech, or an equivalent qualification in the appropriate subjects and points.
+
+Graduates are expected to perform a wide variety of work, much of which involves resolving complex issues, making sound judgements in the absence of complete data, and communicating conclusions to both specialist and non-specialist audiences. They continue to advance their knowledge and understanding and to develop new skills to a high level.
+
+The programme requires self-direction and originality in tackling and solving problems, and independent action in planning and implementing tasks at a professional level. It promotes the quality and transferable skills needed for employment, initiative, personal responsibility, and decision-making in complex and unpredictable situations, as well as the independent learning ability required for continuing professional development.
+"""@en ;
+.
+
+:level-8
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:gh-nqf-levels ;
+    skos:prefLabel  "Level 8"@en ;
+    skos:altLabel   "Doctor of Technology (D. Tech)"@en ;
+    skos:definition """
+The Doctor of Technology programme provides a window of opportunity for entry into technical and vocational institutions in appropriate technical and vocational areas.
+
+Entry is through a COTVET Master of Technology qualification, or an equivalent qualification in the appropriate subjects and points.
+
+Graduates are expected to perform a wide variety of work, most of which is highly complex in nature. They are expected to make informed judgements on complex issues in technology or professional practice, often in the absence of complete data, and to communicate ideas and conclusions clearly to both specialist and non-specialist audiences.
+
+Graduates also exhibit the qualities and transferable skills needed to exercise personal responsibility and initiative in very complex and unpredictable situations.
+"""@en ;
+.
