@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export JAVA_HOME=~/.jdks/corretto-17.0.11
+
 # SHACL file to generate documentation for
 INPUT_FILE="docs/model/exchange-model.ttl"
 BUILD_DIR=${BUILD_DIR:=./build}
@@ -17,12 +19,12 @@ IMAGE_DESTINATION="docs/exchange-model/exchange-model.tgf"
 mkdir -p "$BUILD_DIR"
 mkdir -p "$BUILD_DIR"/shacl-play
 
-$CURL -L -H "Accept: application/rdf+xml" http://data.europa.eu/snb/model/elm/ -o "$ELM_FILE"
+$CURL -L https://op.europa.eu/o/opportal-service/euvoc-download-handler?cellarURI=http%3A%2F%2Fpublications.europa.eu%2Fresource%2Fdistribution%2Fsnb-model%2F20250514-0%2Frdf%2Fowl%2FELM.rdf -o "$ELM_FILE"
 $JENA_SPARQL --query ./queries/generate-shacl-for-shacl-play.rq --data "$ELM_FILE" --data "$INPUT_FILE" > "$SHACL_PLAY_FILE"
 
 SHACLPLAY=shaclplay.jar
 if ! [ -e "$SHACLPLAY" ]; then
-  curl -L -o $SHACLPLAY https://github.com/sparna-git/shacl-play/releases/download/0.10.2/shacl-play-app-0.10.2-onejar.jar
+  curl -L -o $SHACLPLAY https://github.com/sparna-git/shacl-play/releases/download/0.11.2/shacl-play-app-0.11.2-onejar.jar
 fi
 java -jar $SHACLPLAY doc -nsd -i "$SHACL_PLAY_FILE" -l en -o "$DOCUMENTATION_DESTINATION"
 
