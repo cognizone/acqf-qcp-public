@@ -1,0 +1,111 @@
+@prefix acqf-qcp-model: <https://data.acqf-qcp.africa/model/> .
+@prefix :               <https://data.acqf-qcp.africa/model/za-nqf-levels/resource/> .
+@prefix dct:            <http://purl.org/dc/terms/> .
+@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos:           <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
+
+acqf-qcp-model:za-nqf-levels
+    a                  skos:ConceptScheme ;
+    dct:title          "South African National Qualifications Framework (NQF)"@en ;
+    dct:description    "The South African NQF is a comprehensive system approved by the Minister for the classification, registration, publication and articulation of quality assured national qualifications across three sub-frameworks."@en ;
+    dct:created        "2026-04-17"^^xsd:date ;
+    dct:publisher      "cognizone" ;
+    dct:creator        "Petr Křemen" ;
+    dct:license        <http://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:source         <https://saqa.org.za/wp-content/uploads/2024/05/NQF-Booklet-Digital_v1.pdf> ;
+    skos:hasTopConcept :level-1, :level-2, :level-3, :level-4, :level-5, :level-6, :level-7, :level-8, :level-9, :level-10 .
+
+:level-1
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:za-nqf-levels ;
+    skos:prefLabel  "Level 1"@en ;
+    skos:altLabel   "General Certificate"@en ;
+    skos:altLabel   "General Occupational Certificate"@en ;
+    skos:definition "Qualification types shown in the SAQA NQF booklet for Level 1: General Certificate; General Occupational Certificate."@en ;
+.
+
+:level-2
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:za-nqf-levels ;
+    skos:prefLabel  "Level 2"@en ;
+    skos:altLabel   "Elementary Certificate"@en ;
+    skos:altLabel   "Elementary Occupational Certificate"@en ;
+    skos:definition "Qualification types shown in the SAQA NQF booklet for Level 2: Elementary Certificate; Elementary Occupational Certificate."@en ;
+.
+
+:level-3
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:za-nqf-levels ;
+    skos:prefLabel  "Level 3"@en ;
+    skos:altLabel   "Intermediate Certificate"@en ;
+    skos:altLabel   "Intermediate Occupational Certificate"@en ;
+    skos:definition "Qualification types shown in the SAQA NQF booklet for Level 3: Intermediate Certificate; Intermediate Occupational Certificate."@en ;
+.
+
+:level-4
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:za-nqf-levels ;
+    skos:prefLabel  "Level 4"@en ;
+    skos:altLabel   "National Certificate"@en ;
+    skos:altLabel   "National Occupational Certificate"@en ;
+    skos:definition "Qualification types shown in the SAQA NQF booklet for Level 4: National Certificate; National Occupational Certificate."@en ;
+.
+
+:level-5
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:za-nqf-levels ;
+    skos:prefLabel  "Level 5"@en ;
+    skos:altLabel   "Higher Certificate"@en ;
+    skos:altLabel   "Higher Occupational Certificate"@en ;
+    skos:definition "Qualification types shown in the SAQA NQF booklet for Level 5: Higher Certificate; Higher Occupational Certificate."@en ;
+.
+
+:level-6
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:za-nqf-levels ;
+    skos:prefLabel  "Level 6"@en ;
+    skos:altLabel   "Diploma"@en ;
+    skos:altLabel   "Advanced Certificate"@en ;
+    skos:altLabel   "Occupational Diploma"@en ;
+    skos:altLabel   "Advanced Occupational Certificate"@en ;
+    skos:definition "Qualification types shown in the SAQA NQF booklet for Level 6: Diploma; Advanced Certificate; Occupational Diploma; Advanced Occupational Certificate."@en ;
+.
+
+:level-7
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:za-nqf-levels ;
+    skos:prefLabel  "Level 7"@en ;
+    skos:altLabel   "Bachelor's Degree"@en ;
+    skos:altLabel   "Advanced Diploma"@en ;
+    skos:altLabel   "Advanced Occupational Diploma"@en ;
+    skos:definition "Qualification types shown in the SAQA NQF booklet for Level 7: Bachelor's Degree; Advanced Diploma; Advanced Occupational Diploma."@en ;
+.
+
+:level-8
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:za-nqf-levels ;
+    skos:prefLabel  "Level 8"@en ;
+    skos:altLabel   "Bachelor Honours Degree"@en ;
+    skos:altLabel   "Postgraduate Diploma"@en ;
+    skos:altLabel   "Specialised Occupational Diploma"@en ;
+    skos:definition "Qualification types shown in the SAQA NQF booklet for Level 8: Bachelor Honours Degree; Postgraduate Diploma; Specialised Occupational Diploma."@en ;
+.
+
+:level-9
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:za-nqf-levels ;
+    skos:prefLabel  "Level 9"@en ;
+    skos:altLabel   "Master's Degree"@en ;
+    skos:altLabel   "Master's Degree (Professional)"@en ;
+    skos:definition "Qualification types shown in the SAQA NQF booklet for Level 9: Master's Degree; Master's Degree (Professional)."@en ;
+.
+
+:level-10
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:za-nqf-levels ;
+    skos:prefLabel  "Level 10"@en ;
+    skos:altLabel   "Doctoral Degree"@en ;
+    skos:altLabel   "Doctoral Degree (Professional)"@en ;
+    skos:definition "Qualification types shown in the SAQA NQF booklet for Level 10: Doctoral Degree; Doctoral Degree (Professional)."@en ;
+.

@@ -34,7 +34,7 @@ ENTRIES = [
     {"country": "Senegal", "placeholder": "Under development"},
     {"country": "Sierra Leone", "placeholder": "Under development"},
     {"country": "Somalia", "placeholder": "Under development"},
-    {"country": "South Africa", "model": "za-qf-levels"},
+    {"country": "South Africa", "model": "za-nqf-levels"},
     {"country": "South Sudan", "placeholder": "Under development"},
     {"country": "Southern African Development Community", "model": "sadc-qf-levels"},
     {"country": "Zambia", "model": "zm-nqf-levels"},

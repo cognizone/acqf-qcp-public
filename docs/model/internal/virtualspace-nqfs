@@ -27,7 +27,7 @@ acqf-qcp-internal:virtualspace-nqfs
         :sadc-qf,
         :sc-nqf,
         :sz-nqf,
-        :za-qf,
+        :za-nqf,
         :zm-nqf,
         :zw-nqf
 .
@@ -133,10 +133,10 @@ acqf-qcp-internal:virtualspace-nqfs
     skos:altLabel  "ESQF"@en ;
 .
 
-:za-qf
+:za-nqf
     a              skos:Concept ;
     skos:inScheme  acqf-qcp-internal:virtualspace-nqfs ;
-    dct:relation   <https://data.acqf-qcp.africa/model/za-qf-levels> ;
+    dct:relation   <https://data.acqf-qcp.africa/model/za-nqf-levels> ;
     skos:prefLabel "South African National Qualifications Framework"@en ;
     skos:altLabel  "NQF"@en
 .
