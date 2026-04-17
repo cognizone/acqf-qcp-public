@@ -33,3 +33,5 @@ if ! [ -e "$SHACLVIZ" ]; then
     curl -L -o $SHACLVIZ https://repo1.maven.org/maven2/zone/cogni/semanticz/semanticz-shaclviz/1.0.2/semanticz-shaclviz-1.0.2-executable.jar
 fi
 java -jar $SHACLVIZ file:docs/model/exchange-model.ttl $IMAGE_DESTINATION --fieldQuery=docs/exchange-model/fields-acqf.rq --outputFormat tgf
+
+python3 tools/generate-nqf-list.py
