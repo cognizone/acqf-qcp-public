@@ -1,0 +1,153 @@
+@prefix acqf-qcp-model: <https://data.acqf-qcp.africa/model/> .
+@prefix :               <https://data.acqf-qcp.africa/model/na-nqf-levels/resource/> .
+@prefix dct:            <http://purl.org/dc/terms/> .
+@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos:           <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
+
+acqf-qcp-model:na-nqf-levels
+    a                  skos:ConceptScheme ;
+    dct:title          "Namibia National Qualifications Framework"@en ;
+    dct:description    "The Namibia National Qualifications Framework is made up of ten levels, each representing a different level of difficulty in learning and in the application of acquired knowledge and skills."@en ;
+    dct:created        "2026-04-17"^^xsd:date ;
+    dct:publisher      "cognizone" ;
+    dct:creator        "Petr Křemen" ;
+    dct:license        <http://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:source         <https://namqa.org/wp-content/uploads/2024/02/REGULATIONS-NATIONAL-QUALIFICATIONS-FRAMEWORK-1.pdf> ;
+    skos:hasTopConcept :level-1, :level-2, :level-3, :level-4, :level-5, :level-6, :level-7, :level-8, :level-9, :level-10 .
+
+:level-1
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:na-nqf-levels ;
+    skos:prefLabel  "Level 1"@en ;
+    skos:definition """
+Employs recall and a narrow range of knowledge and cognitive skills. No generation of new ideas.
+
+Carry out processes that are limited in range, repetitive and familiar, and employed within closely defined contexts.
+
+Applied in directed activity under close supervision with no responsibility for the work or learning of others.
+"""@en ;
+.
+
+:level-2
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:na-nqf-levels ;
+    skos:prefLabel  "Level 2"@en ;
+    skos:definition """
+Employs basic operational knowledge using readily available information. Uses known solutions to familiar problems with little generation of new ideas.
+
+Carry out processes that are moderate in range, are established and familiar and offer a clear choice of routine responses.
+
+Applied in directed activity under general supervision and quality control. Some responsibility for quantity and quality, with possible responsibility for guiding others.
+"""@en ;
+.
+
+:level-3
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:na-nqf-levels ;
+    skos:prefLabel  "Level 3"@en ;
+    skos:definition """
+Employing some relevant theoretical knowledge and interpretation of available information. Uses discretion and judgement over a range of known responses to familiar problems.
+
+Carry out processes that require a range of well-developed skills and offer a significant choice of procedures within a range of familiar contexts.
+
+Applied in directed activity with some autonomy. Under general supervision and quality checking, though with significant responsibility for the quantity and quality of output, with possible responsibility for the output of others.
+"""@en ;
+.
+
+:level-4
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:na-nqf-levels ;
+    skos:prefLabel  "Level 4"@en ;
+    skos:definition """
+Employing a broad knowledge base incorporating some theoretical concepts or in-depth applied knowledge and skills in a specific area. Analytical interpretation of information. Making informed judgement and offers a range of sometimes innovative responses to concrete but often unfamiliar problems.
+
+Carry out processes that require a wide range of technical or scholastic skills and/or that offer a considerable choice of procedures. Often employed in a variety of familiar and unfamiliar contexts.
+
+Applied in self-directed activity under broad guidance and evaluation. Complete responsibility for quantity and quality of output, with possible responsibility for the quantity and quality of the output of others.
+"""@en ;
+.
+
+:level-5
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:na-nqf-levels ;
+    skos:prefLabel  "Level 5"@en ;
+    skos:definition """
+Broad, general knowledge based on general principle in a specific area with substantial depth in some aspects. Analytical interpretation of a wide range of data and the determination of appropriate methods and procedures in response to a range of concrete problems with some theoretical elements.
+
+Carry out processes that require a wide range of specialised technical or scholastic skills involving a wide choice of standard and non-standard procedures. Employed in a variety of routine and non-routine contexts.
+
+Self-directed and sometimes directive activity within broad general guidelines or functions. Full responsibility for the nature, quantity and quality of outcomes, with possible responsibility for the achievement of group outcome.
+"""@en ;
+.
+
+:level-6
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:na-nqf-levels ;
+    skos:prefLabel  "Level 6"@en ;
+    skos:definition """
+Demonstrates focussed knowledge and skills in a particular field using general principles and application and/or some specialised knowledge with depth in more than one area. Analysis, reformatting and evaluation of a wide range of information used in the formulation of appropriate responses to resolve both concrete and abstract problems.
+
+Carry out processes that require a command of wide-ranging highly specialised technical or scholastic skills and/or which involve a wide choice of standard and non-standard procedures, often in non-standard combinations, often in highly variable routine and non-routine contexts.
+
+Manages processes within broad parameters for defined activities. Complete accountability for determining and achieving personal and/or group outcomes.
+"""@en ;
+.
+
+:level-7
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:na-nqf-levels ;
+    skos:prefLabel  "Level 7"@en ;
+    skos:definition """
+Knowledge of a major discipline with areas of specialisation in depth. Analysis, transformation and evaluation of abstract data and concepts in the creation of appropriate responses to resolve given or contextual abstract problems.
+
+Carry out processes that require a command of highly specialised technical or scholastic and basic research skills across a major discipline and which involve the full range of procedures in a major discipline. Application in complex, variable and specialised contexts.
+
+Planning, resourcing and managing processes within broad parameters and functions with complete accountability for determining, achieving and evaluating personal and/or group outcomes.
+"""@en ;
+.
+
+:level-8
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:na-nqf-levels ;
+    skos:prefLabel  "Level 8"@en ;
+    skos:definition """
+Deepened, comprehensive and systematic expertise in a particular discipline. Developed research capacity using a coherent and critical understanding of the principles, theories and methodologies of a particular discipline.
+
+Selects research methods, techniques and technologies appropriate to a particular problem.
+
+Efficient and effective information retrieval and processing skills, involving critical analysis and independent evaluation of quantitative and qualitative data.
+
+Engages with current research and scholarly or professional literature. Able to present and communicate academic or professional work effectively, catering for a wide range of audiences and/or in diverse genres.
+"""@en ;
+.
+
+:level-9
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:na-nqf-levels ;
+    skos:prefLabel  "Level 9"@en ;
+    skos:definition """
+Comprehensive and systematic knowledge in a discipline or field with specialist knowledge in an area at the forefront of that discipline or field.
+
+Capacity for self-directed study and the ability to work independently. Planning and carrying out of a substantial piece of original research or scholarship to internationally recognised standards and involving a high order of skill in analysis and critical evaluation.
+
+Identification, analysis and proposed responses to real world or complex issues and problems drawing systematically and creatively on the principles, theories and methodologies of a particular discipline.
+
+Advanced information retrieval, processing, analytical, synthesising and independent evaluation of quantitative and qualitative data.
+
+Able to present and communicate academic or professional work effectively, catering for a wide range of specialist and non specialist audiences and/or in diverse genres.
+"""@en ;
+.
+
+:level-10
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:na-nqf-levels ;
+    skos:prefLabel  "Level 10"@en ;
+    skos:definition """
+Comprehensive, systematic and in-depth mastery of a discipline or field's knowledge, research, analytical and/or creative requirements. Able to contribute ideas and to debate at the cutting edge of an area of specialisation.
+
+Highest level of research capabilities and/or in the creation of new knowledge, art or work.
+
+Provide through publication and/or presentation an original contribution to knowledge through research or scholarship, as judged by independent experts and peers applying international standards.
+"""@en ;
+.

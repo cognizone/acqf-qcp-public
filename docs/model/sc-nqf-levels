@@ -1,0 +1,271 @@
+@prefix acqf-qcp-model: <https://data.acqf-qcp.africa/model/> .
+@prefix :               <https://data.acqf-qcp.africa/model/sc-nqf-levels/resource/> .
+@prefix dct:            <http://purl.org/dc/terms/> .
+@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos:           <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
+
+acqf-qcp-model:sc-nqf-levels
+    a                  skos:ConceptScheme ;
+    dct:title          "Seychelles National Qualifications Framework (SNQF)"@en ;
+    dct:description    "The Seychelles National Qualifications Framework has ten levels spanning primary certificate through doctoral and post-doctoral degrees."@en ;
+    dct:created        "2026-04-17"^^xsd:date ;
+    dct:publisher      "cognizone" ;
+    dct:creator        "Petr Křemen" ;
+    dct:license        <http://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:source         <http://www.sqa.sc/images/Seychelles%20National%20Qualifications%20Framework_Final_Digital.pdf> ;
+    skos:hasTopConcept :level-1, :level-2, :level-3, :level-4, :level-5, :level-6, :level-7, :level-8, :level-9, :level-10 .
+
+:level-1
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:sc-nqf-levels ;
+    skos:prefLabel  "Level 1"@en ;
+    skos:definition """
+Degree of complexity of tasks:
+- Carry out processes at a concrete (hands-on) level based on familiar content and involving logical groupings.
+
+Reasoning and problem solving:
+- Apply basic procedures and techniques related to language, mathematical, ICT, scientific, historical, socio-cultural and environmental domains.
+- Apply repetitive and other learning skills to instil sound elementary knowledge, attitudes and values.
+- Demonstrate basic communication skills to inform, recall and express facts, ideas, views, opinions and feelings.
+
+Knowledge:
+- Acquire basic, broad-based knowledge and skills (operational literacy in terms of Reading, Writing and Arithmetic) and develop desirable attitudes and values.
+
+Autonomy and responsibility:
+- Involved in basic directed learning under continuous guidance with close supervision with limited responsibility and autonomy.
+"""@en ;
+.
+
+:level-2
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:sc-nqf-levels ;
+    skos:prefLabel  "Level 2"@en ;
+    skos:definition """
+Degree of complexity of tasks:
+- Carry out processes that deal with hypothetical propositions involving abstract thinking and requires the combination of elements in a systematic way.
+
+Reasoning and problem solving:
+- Apply procedures and/or techniques related to language, mathematical, ICT, scientific, historical, socio-cultural and environmental domains.
+- Transfer skills in multiple contexts according to set procedures and use them to learn more effectively.
+- Apply critical and creative thinking to solve problems.
+- Communicate information, instructions, ideas and feelings in a range of different cultural, language and social contexts.
+
+Knowledge:
+- Acquire broad-based knowledge and skills and develop desirable attitudes, to provide the basis for independent and future learning, and application of learning.
+
+Autonomy and responsibility:
+- Involved in directed learning under guided autonomy and with close supervision with limited responsibility aiming towards increased autonomy by taking positions.
+"""@en ;
+.
+
+:level-3
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:sc-nqf-levels ;
+    skos:prefLabel  "Level 3"@en ;
+    skos:definition """
+Degree of complexity of tasks:
+- Carry out processes that cover a range of specialized technical skills in a precise field of study.
+- Involve repetitive and familiar procedures.
+- Are executed within closely defined parameters.
+
+Reasoning and problem solving:
+- Apply procedures and/or techniques in response to precise instructions in order to obtain expected results.
+- Propose new solutions, adjustments and adaptations.
+- Exchange factual information.
+
+Knowledge:
+- Employ basic operational knowledge.
+- Refer to readily available information.
+- Use known solution to familiar problems.
+- Fill in working forms or other relevant formats.
+- Understand working instructions.
+
+Autonomy and responsibility:
+- Involved in directed activities under general supervision and quality control with limited responsibility for the quantity and quality of their work with no responsibility for guiding others.
+"""@en ;
+.
+
+:level-4
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:sc-nqf-levels ;
+    skos:prefLabel  "Level 4"@en ;
+    skos:definition """
+Degree of complexity of tasks:
+- Carry out processes that deal with advanced hypothetical propositions which will be directly linked to a concern, topic or theme.
+- Require developed abstract thinking skills to solve complex problems.
+- Involve a wide range of procedures, often in non-standard combinations.
+
+Reasoning and problem solving:
+- Demonstrate the ability to gain and apply a range of knowledge, skills and understanding at a detailed level.
+- Show evidence of the ability to analyze, synthesize a range of data and to comprehend material of reasonably complex nature.
+- Determine the proper methods and procedures to respond to a variety of problems.
+- Articulate the results of their study and research clearly, accurately, and in a balanced and rational manner.
+
+Knowledge:
+- Demonstrate wide-ranging understanding of the subject(s) at hand but with in depth knowledge of certain areas.
+- Prepare oral and written essays with coherency on research done.
+
+Autonomy and responsibility:
+- Involves a high degree of independent learning, but will often require input or guidance from others to complete of tasks.
+- Displays qualities and transferable skills useful in situations requiring the exercise of some personal responsibility and judgement.
+"""@en ;
+.
+
+:level-5
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:sc-nqf-levels ;
+    skos:prefLabel  "Level 5"@en ;
+    skos:definition """
+Degree of complexity of tasks:
+- Carry out processes that require a wide range of specialized technical and/or academic skills.
+- Involve a wide choice of standard and non-standard procedures.
+- Are employed in a variety of routine and non-routine contexts.
+
+Reasoning and problem solving:
+- Research, adapt and implement innovative and creative processes.
+- Determine appropriate methods and procedures in response to a range of concrete problems and with reference to some theoretical concepts.
+- Demonstrate interpersonal communication skills in order to train or supervise.
+
+Knowledge:
+- Employ broad knowledge base with substantial depth in some areas.
+- Analyse and interpret a wide range of data and make informed judgement.
+- Prepare, present and discuss oral and/or written reports.
+- Understand and interpret relatively complex technical information.
+
+Autonomy and responsibility:
+- Involved in activities with full responsibility for the nature, quantity and quality of outcomes, under broad guidance, with possible responsibility for the achievement of group outcomes with some responsibility for the supervision of others.
+"""@en ;
+.
+
+:level-6
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:sc-nqf-levels ;
+    skos:prefLabel  "Level 6"@en ;
+    skos:definition """
+Degree of complexity of tasks:
+- Carry out processes that require a command of highly specialised technical or academic, and basic research skills across a particular branch of a field of study.
+- Involve the application of a full range of procedures in the branch of study.
+- Are employed in highly variable routine and non-routine contexts.
+
+Reasoning and problem solving:
+- Propose appropriate responses to resolve given or contextual abstract problems.
+- Provide adequate responses to unfamiliar situation requiring synthesis and consideration of heterogeneous data.
+- Demonstrate interpersonal communication skills in the context of professional consultation.
+
+Knowledge:
+- Demonstrate specialised knowledge with depth in a particular branch of a discipline.
+- Analyse, reformat and evaluate a wide range of information.
+- Conceive, write and discuss specialised texts.
+- Understand and interpret fundamental and highly technical information in a particular field of study.
+
+Autonomy and responsibility:
+- Involved in planning, resourcing and managing processes within broad parameters and functions with responsibility for determining, achieving and evaluating personal and / or group outcomes.
+"""@en ;
+.
+
+:level-7
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:sc-nqf-levels ;
+    skos:prefLabel  "Level 7"@en ;
+    skos:definition """
+Degree of complexity of tasks:
+- Carry out processes that require self-directed application of knowledge with substantial depth in some areas.
+- Involve the development and adaptation of standard procedures to specific context in the field of study.
+- Require the application of a range of technical and other skills to tasks in both varied and highly specific contexts.
+
+Reasoning and problem solving:
+- Evaluate critically the appropriateness of different problem solving approaches in the field of study.
+- Provide appropriate responses to new situations requiring synthesis and evaluation of heterogenous data in contexts involving aspects of uncertainty.
+- Demonstrate interpersonal communication skills in the context of supervisory and collaborative role.
+
+Knowledge:
+- Demonstrate knowledge and intellectual independence in the critical understanding of ideas, principles and concepts of the field of study, and of area of specialization.
+- Analyze, synthesize and evaluate rigorously a wide range of information including consideration of areas of uncertainty.
+- Conceive, write, critically analyse, discuss and compare specialized texts.
+- Understand the limits of the knowledge acquired and its influence on analysis and interpretation.
+
+Autonomy and responsibility:
+- Involved in the planning, resourcing, managing processes and guiding or supervising the work of others.
+- Within a context of broad autonomy with complete accountability for determining, achieving and evaluating personal and /or group outcomes.
+"""@en ;
+.
+
+:level-8
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:sc-nqf-levels ;
+    skos:prefLabel  "Level 8"@en ;
+    skos:definition """
+Degree of complexity of tasks:
+- Carry out processes that require a mastery in the application of in-depth and specialized knowledge.
+- Involve the development and adaptation of procedures to specific and professional context in the field of study.
+- Require the application and the consolidation of a wide range of skills applied to tasks in highly specialized contexts.
+
+Reasoning and problem solving:
+- Evaluate critically the appropriateness of different problem solving approaches and where appropriate, propose a range of solutions.
+- Make sound judgement on complex issues based on systematic analysis in specialized contexts involving aspects of uncertainty.
+- Demonstrate interpersonal communication skills in the context of consultative and/or supervisory role.
+
+Knowledge:
+- Demonstrate knowledge and intellectual independence in the critical and systematic understanding of ideas, principles and concepts of their area of specialization.
+- Analyze and synthesize critically current research and advanced scholarship in the field of study.
+- Conceive, write, critically analyse, discuss and compare specialized texts.
+- Understand limits of the knowledge acquired, its influence on analysis and interpretation and explore lines of research.
+
+Autonomy and responsibility:
+- Operate in accordance with broad development or strategic plan and budget.
+- Within a context of broad autonomy with responsibility and broad ranging accountability for management of resources and supervision of others.
+"""@en ;
+.
+
+:level-9
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:sc-nqf-levels ;
+    skos:prefLabel  "Level 9"@en ;
+    skos:definition """
+Degree of complexity of tasks:
+- Carry out processes that require a measure of originality and mastery in the application of in-depth and specialized and/or broad knowledge.
+- Involve the use of established techniques of research and enquiry, to internationally recognized standards, to create and interpret knowledge in the field of study.
+- Require the application of a wide range of skills applied to tasks in highly varied and/or highly specialized contexts.
+
+Reasoning and problem solving:
+- Evaluate critically the appropriateness of different problem solving approaches, the underpinning methodologies, and where appropriate, propose new hypotheses or solutions.
+- Make sound judgement on complex issues based on systematic and innovative analysis in contexts involving aspects of uncertainty.
+- Demonstrate interpersonal communication skills in the context of consultative and/or supervisory role.
+
+Knowledge:
+- Demonstrate evidence of critical and systematic understanding of knowledge and current problems and/or insights at the forefront of their field of study or area of specialization.
+- Analyze and synthesize comprehensively and critically current research and advanced scholarship in the field of study.
+- Conceive, write, critically analyse, discuss, compare specialized texts, propose new insights into the field of study and possibly generate new knowledge.
+- Understand limits of the knowledge and the necessity for further research and continuous development in the field of study.
+
+Autonomy and responsibility:
+- Operate in accordance with broad development or strategic plan and budget in a completely self directed manner with responsibility and broad ranging accountability for management of resources and supervision of others.
+"""@en ;
+.
+
+:level-10
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:sc-nqf-levels ;
+    skos:prefLabel  "Level 10"@en ;
+    skos:definition """
+Degree of complexity of tasks:
+- Carry out processes that require originality and mastery in the application of in-depth and specialized knowledge.
+- Involve substantial contribution to the development of new techniques, ideas, or approaches in research and enquiry in the field of study.
+- Demonstrate initiative and employ a wide range of advanced research skills applied to complex tasks in highly specialized contexts.
+
+Reasoning and problem solving:
+- Generate new knowledge and applications through conceptualizing, designing and implementing a research project at the forefront of the field of study.
+- Make sound judgement on and provide new insights into complex issues based on systematic and supported analysis in specialist fields involving aspects of uncertainty.
+- Demonstrate interpersonal communication skills in the context of consultation and dissemination of new findings to specialist and non-specialist audiences.
+
+Knowledge:
+- Demonstrate evidence of creating and interpreting new knowledge based on original and advanced research at the forefront of the field of study, to satisfy peer review and merit publication.
+- Analyze and synthesize comprehensively and critically a substantial body of knowledge in the field of study in order to elicit and establish relationships between the elements of the subject in the area of research.
+- Conceive, write, critically analyse, discuss, compare specialized texts, propose new insights into the field of study and generate new knowledge.
+- Understand the limits of the knowledge and the necessity for further research and continuous development in the field of study.
+
+Autonomy and responsibility:
+- Operate in accordance with broad development or strategic plan and budget in a completely self directed manner with full responsibility and accountability for all aspects of advanced research work and including management of resources and supervision of others.
+"""@en ;
+.

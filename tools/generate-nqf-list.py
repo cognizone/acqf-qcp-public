@@ -16,16 +16,29 @@ END_MARKER = "<!-- END GENERATED NQF LEVEL LIST -->"
 TITLE_PATTERN = re.compile(r'dct:title\s+"([^"]+)"@[a-z]+')
 
 ENTRIES = [
-    ("Botswana", "bw-nqf-levels"),
-    ("Cabo Verde", "cv-nqf-levels"),
-    ("Kenya", "ke-nqf-levels"),
-    ("Lesotho", "ls-nqf-levels"),
-    ("Morocco", "ma-nqf-levels"),
-    ("Mauritius", "mu-nqf-levels"),
-    ("Mozambique", "mz-nqf-levels"),
-    ("Southern African Development Community", "sadc-qf-levels"),
-    ("Eswatini", "sz-nqf-levels"),
-    ("Zimbabwe", "zw-nqf-levels"),
+    {"country": "Angola", "model": "ao-nqf-levels"},
+    {"country": "Botswana", "model": "bw-nqf-levels"},
+    {"country": "Cabo Verde", "model": "cv-nqf-levels"},
+    {"country": "Democratic Republic of the Congo", "placeholder": "Under development"},
+    {"country": "Djibouti", "placeholder": "Under development"},
+    {"country": "Eswatini", "model": "sz-nqf-levels"},
+    {"country": "Ghana", "model": "gh-nqf-levels"},
+    {"country": "Guinea-Bissau", "placeholder": "Under development"},
+    {"country": "Kenya", "model": "ke-nqf-levels"},
+    {"country": "Lesotho", "model": "ls-nqf-levels"},
+    {"country": "Morocco", "model": "ma-nqf-levels"},
+    {"country": "Mauritius", "model": "mu-nqf-levels"},
+    {"country": "Mozambique", "model": "mz-nqf-levels"},
+    {"country": "Namibia", "model": "na-nqf-levels"},
+    {"country": "Seychelles", "model": "sc-nqf-levels"},
+    {"country": "Senegal", "placeholder": "Under development"},
+    {"country": "Sierra Leone", "placeholder": "Under development"},
+    {"country": "Somalia", "placeholder": "Under development"},
+    {"country": "South Africa", "model": "za-qf-levels"},
+    {"country": "South Sudan", "placeholder": "Under development"},
+    {"country": "Southern African Development Community", "model": "sadc-qf-levels"},
+    {"country": "Zambia", "model": "zm-nqf-levels"},
+    {"country": "Zimbabwe", "model": "zw-nqf-levels"},
 ]
 
 
@@ -48,12 +61,21 @@ def display_title(raw_title: str) -> str:
 
 def render_items() -> str:
     lines = []
-    for country_name, model_name in ENTRIES:
-        title = display_title(read_title(model_name))
-        lines.append(
-            f'                                <li><b>{country_name}:</b> '
-            f'<a href="model/{model_name}">{title}</a></li>'
-        )
+    for entry in ENTRIES:
+        country_name = entry["country"]
+        model_name = entry.get("model")
+        placeholder = entry.get("placeholder")
+        if model_name:
+            title = display_title(read_title(model_name))
+            lines.append(
+                f'                                <li><b>{country_name}:</b> '
+                f'<a href="model/{model_name}">{title}</a></li>'
+            )
+            continue
+        if placeholder:
+            lines.append(f"                                <li><b>{country_name}:</b> {placeholder}</li>")
+            continue
+        raise ValueError(f"Entry for {country_name} must define either 'model' or 'placeholder'")
     return "\n".join(lines)
 
 
