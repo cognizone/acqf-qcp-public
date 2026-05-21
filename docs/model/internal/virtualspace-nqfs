@@ -36,14 +36,14 @@ acqf-qcp-internal:virtualspace-nqfs
     a              skos:Concept ;
     skos:inScheme  acqf-qcp-internal:virtualspace-nqfs ;
     dct:relation   <https://data.acqf-qcp.africa/model/ao-nqf-levels> ;
-    skos:prefLabel "National Qualifications Framework"@en
+    skos:prefLabel "(Angola) National Qualifications Framework"@en
 .
 
 :bw-nqf
     a              skos:Concept ;
     skos:inScheme  acqf-qcp-internal:virtualspace-nqfs ;
     dct:relation   <https://data.acqf-qcp.africa/model/bw-nqf-levels> ;
-    skos:prefLabel "National Credit and Qualifications Framework"@en ;
+    skos:prefLabel "(Botswana) National Credit and Qualifications Framework"@en ;
     skos:altLabel  "NCQF"@en
 .
 
@@ -51,7 +51,7 @@ acqf-qcp-internal:virtualspace-nqfs
     a              skos:Concept ;
     skos:inScheme  acqf-qcp-internal:virtualspace-nqfs ;
     dct:relation   <https://data.acqf-qcp.africa/model/cv-nqf-levels> ;
-    skos:prefLabel "Quadro Nacional de Qualificações (QNQ) - NQF"@pt ;
+    skos:prefLabel "(Cabo Verde) Quadro Nacional de Qualificações (QNQ) - NQF"@pt ;
     skos:altLabel  "QNQ NQF"@pt
 .
 
@@ -59,7 +59,7 @@ acqf-qcp-internal:virtualspace-nqfs
     a              skos:Concept ;
     skos:inScheme  acqf-qcp-internal:virtualspace-nqfs ;
     dct:relation   <https://data.acqf-qcp.africa/model/gh-nqf-levels> ;
-    skos:prefLabel "National TVET Qualifications Framework"@en ;
+    skos:prefLabel "(Ghana) National TVET Qualifications Framework"@en ;
     skos:altLabel  "NTVETQF"@en
 .
 
@@ -145,7 +145,7 @@ acqf-qcp-internal:virtualspace-nqfs
     a              skos:Concept ;
     skos:inScheme  acqf-qcp-internal:virtualspace-nqfs ;
     dct:relation   <https://data.acqf-qcp.africa/model/zm-nqf-levels> ;
-    skos:prefLabel "Revised National Qualifications Framework"@en ;
+    skos:prefLabel "(Zambia) Revised National Qualifications Framework"@en ;
     skos:altLabel  "NQF"@en
 .
 
