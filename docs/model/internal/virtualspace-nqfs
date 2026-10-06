@@ -9,7 +9,7 @@ acqf-qcp-internal:virtualspace-nqfs
     a                  skos:ConceptScheme ;
     dct:title          "ACQF QCP Virtual Space Qualification Frameworks"@en ;
     dct:description    "This is a SKOS representation of the ACQF QCP qualification frameworks."@en ;
-    dct:created        "2024-11-04"^^xsd:date ;
+    dct:created        "2026-10-06"^^xsd:date ;
     dct:publisher      "cognizone bv" ;
     dct:creator        "Petr Křemen" ;
     dct:license        <http://creativecommons.org/publicdomain/zero/1.0/> ;
@@ -26,6 +26,7 @@ acqf-qcp-internal:virtualspace-nqfs
         :na-nqf,
         :sadc-qf,
         :sc-nqf,
+        :tn-nqf,
         :sz-nqf,
         :za-nqf,
         :zm-nqf,
@@ -131,6 +132,14 @@ acqf-qcp-internal:virtualspace-nqfs
     dct:relation   <https://data.acqf-qcp.africa/model/sz-nqf-levels> ;
     skos:prefLabel "Eswatini Qualifications Framework"@en ;
     skos:altLabel  "ESQF"@en ;
+.
+
+:tn-nqf
+    a              skos:Concept ;
+    skos:inScheme  acqf-qcp-internal:virtualspace-nqfs ;
+    dct:relation   <https://data.acqf-qcp.africa/model/tn-nqf-levels> ;
+    skos:prefLabel "(Tunisia) National Qualifications Framework"@en ;
+    skos:altLabel  "NQF"@en ;
 .
 
 :za-nqf
