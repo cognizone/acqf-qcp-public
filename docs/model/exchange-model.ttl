@@ -134,15 +134,21 @@ acqf-qcp-model:exchange-model
     sh:nodeKind sh:IRI ;
     acqf-qcp-internal:startsWith "https://data.acqf-qcp.africa/model/" ;
     acqf-qcp-internal:controlledVocabulary
+        acqf-qcp-model:ao-nqf-levels,
         acqf-qcp-model:bw-nqf-levels,
         acqf-qcp-model:cv-nqf-levels,
+        acqf-qcp-model:gh-nqf-levels,
         acqf-qcp-model:ke-nqf-levels,
         acqf-qcp-model:ls-nqf-levels,
         acqf-qcp-model:ma-nqf-levels,
         acqf-qcp-model:mu-nqf-levels,
         acqf-qcp-model:mz-nqf-levels,
+        acqf-qcp-model:na-nqf-levels,
         acqf-qcp-model:sadc-qf-levels,
+        acqf-qcp-model:sc-nqf-levels,
         acqf-qcp-model:sz-nqf-levels,
+        acqf-qcp-model:za-nqf-levels,
+        acqf-qcp-model:zm-nqf-levels,
         acqf-qcp-model:zw-nqf-levels ;
     sh:severity sh:Violation ;
 .
