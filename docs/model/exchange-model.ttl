@@ -897,3 +897,30 @@ acqf-qcp-internal:startsWithConstraintComponent
                 }
 			"""
         ] .
+
+:UniqueQualificationNotationShape
+    a sh:NodeShape ;
+    sh:targetClass elm:Qualification ;
+    sh:severity sh:Violation ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Qualification identifier notation {?value} must be unique within this upload."@en ;
+        sh:select """
+            PREFIX elm: <http://data.europa.eu/snb/model/elm/>
+            PREFIX adms: <http://www.w3.org/ns/adms#>
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+            SELECT DISTINCT $this ?value
+            WHERE {
+                $this adms:identifier/skos:notation ?value .
+                FILTER EXISTS {
+                    ?other a elm:Qualification ;
+                           adms:identifier/skos:notation ?otherValue .
+                    FILTER (
+                        $this != ?other &&
+                        STR(?value) = STR(?otherValue)
+                    )
+                }
+            }
+        """
+    ] .
