@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # Regression fixtures run against the standalone export with Jena's SHACL CLI.
 set -euo pipefail
-product=$1 common=$2 work=$3
+common=$1 config=$2 work=$3
 tests=$common/publication/tests
 model=$work/generated.ttl
-expectations=$product/publication/tests
+expectations=$common/$(jq -er '.tests' "$config")
 arq --data="$tests/input-errors.trig" --query="$common/publication/queries/input-errors.rq" --results=JSON > "$work/input-errors.json"
 jq -e '
   [.results.bindings[].error.value] | unique == [
@@ -43,7 +43,7 @@ diff -u "$work/notation-expected.tsv" "$work/notation-actual.tsv"
 # Optional historical contract belongs to the product, not the shared runner.
 baseline=$(jq -r '.baseline // empty' "$expectations/contract.json")
 if [[ -n $baseline ]]; then
-  git -C "$product" show "$baseline:docs/model/exchange-model.ttl" > "$work/baseline.ttl"
+  git -C "$common" show "$baseline:$(jq -er '.output' "$config")" > "$work/baseline.ttl"
   rdfcompare "$model" "$work/baseline.ttl" TURTLE TURTLE
 fi
 echo "Passed vocabulary input, level, cardinality, diagnostic and notation checks"

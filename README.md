@@ -1,6 +1,8 @@
-# ACQF QCP Documentation
+# QCP public model and vocabularies
 
-This repository hosts the website for ACQF QCP hosted at https://data.acqf-qcp.africa.
+This repository maintains the shared QCP model and product-specific ACQF/ETF
+validation contracts for https://data.acqf-qcp.africa/. On `dev2`, both products are
+checked together and packaged as one preview site. Existing deployments are unchanged.
 
 ## Data Model
 
@@ -31,5 +33,6 @@ The existing commands remain available:
 
 See [publication/README.md](publication/README.md) for repository ownership, the
 architecture diagram, product profiles, standalone exports and CI checks. Edit the
-common model and ACQF profile, then regenerate
-`docs/model/exchange-model.ttl`; do not edit the generated export directly.
+common model or a product profile, then regenerate both complete exports; do not
+edit generated validation files directly. See [deployment coordination](publication/DEPLOYMENT.md)
+before moving either application or the public website to the consolidated outputs.

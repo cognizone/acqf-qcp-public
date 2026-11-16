@@ -19,5 +19,7 @@
     "docs/model/za-nqf-levels",
     "docs/model/zm-nqf-levels",
     "docs/model/zw-nqf-levels"
-  ]
+  ],
+  "output": "docs/model/exchange-model.ttl",
+  "tests": "publication/tests/acqf"
 }

@@ -1,0 +1,9 @@
+{
+  "profile": "docs/model/etf/profile.ttl",
+  "vocabularies": [
+    "docs/model/etf/eqf-nqf-levels",
+    "docs/model/etf/internal/virtualspace-nqfs"
+  ],
+  "output": "docs/model/etf/exchange-model.ttl",
+  "tests": "publication/tests/etf"
+}

@@ -1,120 +1,122 @@
-# Public-repository architecture
+# One public data site, two product contracts
 
-ACQF is the source of the shared QCP model and publication tools. ETF pins one
-reviewed ACQF commit in `publication/acqf.json` and checks it out under ignored
-`build/acqf/`. This is an ordinary dependency checkout, with no Git submodule.
-Each repository serves its own complete validation export.
+The source of truth is `cognizone/acqf-qpc-public`. It builds the ACQF and ETF
+validation contracts together and serves both from **https://data.acqf-qcp.africa/**.
+The ETF public repository is retired on `dev2`; no submodule, dependency checkout,
+artifact download or second publisher is needed.
 
-| Responsibility | ACQF public repo | ETF public repo |
-| --- | --- | --- |
-| Shared structure and constraints | `docs/model/common/exchange-model.ttl` | Uses the pinned common file |
-| Shared controlled vocabularies | Files listed in `publication/common-vocabularies.json` | Uses the same pinned files |
-| Product policy | `docs/model/acqf-profile.ttl` | `docs/model/etf-profile.ttl` |
-| Framework catalogue and levels | ACQF catalogue and national schemes | ETF catalogue and full official EQF snapshot |
-| Reviewed local inputs | `publication/validation.json` | `publication/validation.json` |
-| Publisher, queries and test runner | `publication/` | Thin wrappers invoke `build/acqf/publication/` |
-| Product test expectations | `publication/tests/contract.json`, `cross-level.ttl`, `level-expected.tsv` | Same filenames, with ETF expectations |
-| Jena version and checksum | `publication/jena.sha512` | Uses the same pin |
-| CI implementation | `.github/actions/validate/action.yml` | Uses the pinned local composite action |
-| Public standalone artifact | `docs/model/exchange-model.ttl` | `docs/model/exchange-model.ttl` |
+| Layer | Maintained files |
+| --- | --- |
+| Shared structure | `docs/model/common/exchange-model.ttl` |
+| Shared vocabulary inputs | `publication/common-vocabularies.json` and its listed files |
+| ACQF policy and inputs | `docs/model/acqf-profile.ttl`, existing catalogue/national vocabularies, `publication/products/acqf.json` |
+| ETF policy and inputs | `docs/model/etf/profile.ttl`, `docs/model/etf/internal/virtualspace-nqfs`, full `docs/model/etf/eqf-nqf-levels`, `publication/products/etf.json` |
+| Shared implementation | `publication/publish.sh`, `queries/`, `tests/check.sh` and shared fixtures |
+| Product expectations | `publication/tests/acqf/` and `publication/tests/etf/` |
+| CLI dependency | One official Jena archive/version/checksum in `publication/jena.sha512` |
+| Complete site | One `docs/` tree, checked and uploaded as one preview artifact |
 
 ```mermaid
 flowchart LR
-    common["Shared shapes, vocabularies and publisher in ACQF"] --> acqfBuild["Build ACQF"]
-    acqf["ACQF profile, catalogue and national schemes"] --> acqfBuild
-    acqfBuild --> acqfOut["ACQF standalone export"]
-    common -->|pinned dependency checkout| etfBuild["Build ETF with the same publisher"]
-    etf["ETF profile, catalogue and EQF"] --> etfBuild
-    etfBuild --> etfOut["ETF standalone export"]
+    shared["Shared shapes and vocabularies"] --> acqf["ACQF profile and inputs"]
+    shared --> etf["ETF profile and EQF"]
+    acqf --> build["One Bash/Jena build and check"]
+    etf --> build
+    build --> site["One complete docs/ artifact, one commit"]
+    site --> host["data.acqf-qcp.africa"]
+    host --> acqfApp["ACQF-dev: /model/exchange-model.ttl"]
+    host --> etfApp["ETF-dev: /model/etf/exchange-model.ttl"]
 ```
 
-## Run locally
+The diagram describes the intended rollout. `dev2` currently produces a preview
+artifact only; it does not publish the website or change application deployments.
+See [deployment coordination](DEPLOYMENT.md) before promoting it.
 
-Install Java 21+, Bash, jq and GNU coreutils. ACQF's existing commands remain supported:
+## Build and check
+
+Install Java 21+, Bash, jq and GNU coreutils. Existing commands remain available
+and now cover **both** product contracts:
 
 ```bash
 ./gradlew buildValidation
 ./gradlew check
 ```
 
-These tasks install the pinned CLI and delegate to the shared publisher. They do
-not compile an RDF application. The direct commands also work from either product's root:
+Gradle is a thin command adapter. The direct CLI interface is:
 
 ```bash
 bash publication/setup-jena.sh
 export PATH="$PWD/build/tools/apache-jena-6.2.0/bin:$PATH"
-bash publication/publish.sh build
-bash publication/publish.sh check
+bash publication/publish.sh build          # both products
+bash publication/publish.sh check          # both products
+bash publication/publish.sh check etf      # one product while editing
 ```
 
-Skip setup if the pinned Apache Jena CLI is already on PATH and ETF's dependency
-cache is already resolved (or `ACQF_ROOT` is set). Setup downloads the official
-distribution and verifies `jena.sha512`. Its archive filename is the
-single executable version pin; the installer, publisher and CI use that file.
-Build and check use reviewed local inputs, with no application compilation. ETF does not require Gradle.
+Setup downloads the official Jena distribution and verifies its pinned SHA-512.
+Skip setup if that CLI is already on PATH. Build/check use reviewed local inputs
+and do not fetch imports or vocabularies. There is no application compilation.
 
-## What the publisher does
+Each product configuration declares its profile, vocabulary input paths, output
+path and expectation directory. The publisher reads shared plus product-specific
+inputs into separate named graphs. Jena discovers scheme IRIs from RDF; the input
+lists do not repeat them. Duplicate scheme definitions, invalid profile statements,
+missing/empty membership, ambiguous catalogue links and non-IRI members fail.
 
-1. Read the common shapes, product profile and explicitly listed vocabulary files.
-   Each input gets its own named graph, preserving source boundaries and RDF bases.
-2. Let Jena discover `skos:ConceptScheme` IRIs in those files. Configurations list
-   paths, not copies of the IRIs already maintained in the RDF. A scheme defined in
-   more than one input is rejected rather than silently overridden.
-3. Use SPARQL to resolve `controlledVocabulary` bindings and catalogue members'
-   `dct:relation` links. Reject invalid profile statements, missing/empty schemes,
-   ambiguous catalogue entries, non-IRI members and conflicting `sh:in` constraints.
-4. Select distinct members in IRI order. A small awk grouping step emits Turtle
-   collections; Jena combines those lists with the structural shapes and profile.
-   Resolved binding annotations become `sh:in`; prefix constraints remain intact.
-5. Parse the completed shapes, then replace the output by a rename staged in its
-   destination directory. Failed builds leave the existing published file intact.
+SPARQL resolves direct bindings and catalogue members' `dct:relation` links. Distinct
+members are ordered by IRI; a small awk grouping step emits Turtle collections.
+Jena merges them with the common shapes and product profile, replacing resolved
+binding annotations with `sh:in`. Existing prefix constraints remain intact. Each
+output is parsed and replaced by an atomic rename only after successful assembly.
 
-`check` rebuilds temporarily, compares RDF graphs including blank nodes, and runs
-shared SHACL fixtures using product-owned expectations. The shared runner contains
-no ETF/ACQF branching. It covers all accepted levels, missing/multiple/invalid/mixed
-values, diagnostics and duplicate notation. ACQF additionally pins its reviewed
-historical standalone export through its test contract. Isolated fixtures omit
-`owl:imports` to keep tests offline; the published graph retains its original imports.
+`check` reconstructs each graph temporarily, compares it with the committed export
+including blank nodes, and runs shared SHACL fixtures with product-owned expectations.
+It covers all 161 ACQF levels and eight EQF levels, missing/multiple/invalid/mixed
+values, diagnostics and duplicate notation. The ACQF historical contract remains
+pinned in its test data. Isolated fixtures omit `owl:imports` to keep tests offline;
+the public graph retains its original imports.
 
-Each GitHub workflow checks out its repository and calls the shared local composite
-action. The action sets up Java, caches the checksum-pinned Jena distribution and
-calls the same local `check` command. CI does not edit, commit or deploy documents.
+## Public paths and identity
 
-## Editing and releasing
+The ACQF endpoint stays `/model/exchange-model.ttl`, with the same graph and existing
+model/vocabulary IRIs. ETF has its own complete endpoint at
+`/model/etf/exchange-model.ttl`. Both are standalone validation contracts; consumers
+select one and do not assemble profiles at startup.
 
-- Edit shared rules and tooling in ACQF. ETF consumes them through its revision pin.
-- Edit each product's policy and vocabulary snapshots in that product's repository.
-  Adding a framework requires its catalogue entry, vocabulary file and input-list
-  entry. Update the product's test expectations when the intended contract changes.
-- Run build/check and commit generated exports with the source changes.
-- Publish the ACQF commit first, then update the revision in ETF's
-  `publication/acqf.json`, run `bash publication/acqf.sh fetch`, rebuild/check ETF,
-  and commit the lock and any resulting export change. A moving ACQF branch or
-  changed public website cannot silently change ETF's pinned build.
-- For joint local development, set `ACQF_ROOT=/path/to/acqf-checkout` in ETF. This
-  explicit override uses that working tree, including uncommitted changes, instead
-  of the revision pin. Normal builds use the pinned cache and never fetch.
-  Initial setup or an explicit `acqf.sh fetch` resolves the dependency with Git.
+The ETF catalogue and EQF snapshot are served under `/model/etf/`. Their original
+scheme/member IRIs are preserved, including the existing ETF catalogue namespace
+and official EU EQF IRIs. A graph's download URL and its resource identifiers have
+different roles; moving its published file does not rename its resources.
 
-Vocabulary refresh automation is deferred. Keep one reviewed snapshot per input;
-source provenance for the EQF snapshot is documented in ETF. The frozen shared
-`publication/isced-f.jsonld` comes from QCP commit
+Existing ACQF contexts, examples, documentation, national schemes and URLs are kept.
+The website index adds ETF links. The common source and two generated complete
+exports overlap intentionally; only the sources are maintained independently.
+The older South Africa `za-qf-levels` publication is retained for its existing IRIs;
+only `za-nqf-levels` feeds the current ACQF build.
+
+## CI and release boundary
+
+The `dev2` workflow installs the pinned CLI, runs the shared Bash check for both products,
+then uploads the **whole** `docs/` directory as `public-data-site-<commit SHA>`.
+Failure in either product prevents the artifact upload. There is no Pages deployment
+job, repository dispatch, cross-repository fetch or app-deployment trigger.
+
+A future website release must promote this whole validated tree from one reviewed
+commit through the existing website publication process. Do not publish ACQF and
+ETF files from independently selected revisions. Keep the existing public hostname.
+Application deployment is a separate step: coordinate shape URLs and packaged lookup
+membership using [DEPLOYMENT.md](DEPLOYMENT.md).
+
+## Snapshot provenance
+
+Vocabulary refresh automation is deferred. Keep one reviewed source snapshot per
+input, with full metadata.
+
+The full EQF Turtle was converted losslessly from the
+[official 20260923-0 RDF/XML release](https://op.europa.eu/o/opportal-service/euvoc-download-handler?cellarURI=http%3A%2F%2Fpublications.europa.eu%2Fresource%2Fdistribution%2Feuropean-qualification-framework%2F20260923-0%2Frdf%2Fskos_ap_eu%2Feuropean-qualification-framework-skos-ap-eu.rdf&fileName=european-qualification-framework-skos-ap-eu.rdf).
+Source SHA-256: `df1a574c4ab1c1d3559c631057d0aac67abcc1342d6a7b329423676384cea25a`.
+Its scheme remains `http://data.europa.eu/snb/eqf/25831c2`.
+
+The frozen `publication/isced-f.jsonld` is QCP's ISCED-F lookup from commit
 `c79c70c98078f5857793ec19cc6dbff94abb0f9c`, path
 `backend/src/main/resources/concept-schemes/http___data.europa.eu_snb_isced-f_25831c2`.
-It is ISCED-F, not the separate published ISCED-2011 scheme.
-
-## Intentional overlap and compatibility
-
-The common source graph and the two complete exports overlap by design. The exports
-are generated delivery artifacts, not independently maintained copies. Keep existing
-shape and vocabulary IRIs, including ACQF namespace IRIs used by the shared model.
-ETF does not copy shared contexts, examples, documentation or vocabulary documents
-into its own public `docs/` directory. Applications consume the complete generated
-SHACL graph without publisher-specific preprocessing. QCP's packaged vocabulary
-lookups are a separate consumer; update them when accepted membership changes.
-
-The older South Africa documents `docs/model/za-qf-levels` and
-`docs/model/za-nqf-levels` describe corresponding levels with different published
-IRIs. Only `za-nqf-levels` is an input to the current catalogue/build. The older
-publication is retained for compatibility; removing or redirecting it requires an
-explicit IRI migration, not file deduplication.
+It is distinct from the separately published ISCED-2011 scheme.

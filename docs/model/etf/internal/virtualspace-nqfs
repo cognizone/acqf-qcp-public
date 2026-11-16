@@ -1,0 +1,25 @@
+@prefix etf-qd: <https://data.etf-qd.cogni.zone/model/internal/> .
+@prefix :               <https://data.etf-qd.cogni.zone/model/internal/virtualspace-nqfs/resource/> .
+@prefix dct:            <http://purl.org/dc/terms/> .
+@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos:           <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
+
+etf-qd:virtualspace-nqfs
+    a                  skos:ConceptScheme ;
+    dct:title          "QCP Virtual Space Qualification Frameworks for ETF QD"@en ;
+    dct:description    "This is a SKOS representation of the QCP qualification frameworks for ETF QD."@en ;
+    dct:created        "2026-10-06"^^xsd:date ;
+    dct:publisher      "cognizone bv" ;
+    dct:creator        "Petr Křemen" ;
+    dct:license        <http://creativecommons.org/publicdomain/zero/1.0/> ;
+    skos:hasTopConcept
+        :eqf-nqf
+.
+
+:eqf-nqf
+    a              skos:Concept ;
+    skos:inScheme  etf-qd:virtualspace-nqfs ;
+    dct:relation   <http://data.europa.eu/snb/eqf/25831c2> ;
+    skos:prefLabel "European Qualifications Framework (EQF)"@en
+.

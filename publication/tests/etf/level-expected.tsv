@@ -1,0 +1,7 @@
+?focus	?count
+<urn:test:case:blank>	2
+<urn:test:case:cross>	1
+<urn:test:case:internal>	1
+<urn:test:case:literal>	2
+<urn:test:case:mixed>	1
+<urn:test:case:unknown>	1

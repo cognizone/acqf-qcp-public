@@ -2,24 +2,32 @@
 # Shared ACQF/ETF publisher: reviewed local RDF inputs only.
 set -euo pipefail
 common=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)
-product=$(realpath -- "${2:-$common}")
 mode=${1:-check}
-case "$mode" in build|check) ;; *) echo "Usage: $0 {build|check} [product-root]" >&2; exit 2 ;; esac
+selection=${2:-all}
+case "$mode" in build|check) ;; *) echo "Usage: $0 {build|check} [all|acqf|etf]" >&2; exit 2 ;; esac
+if [[ $selection == all ]]; then
+  for config in "$common"/publication/products/*.json; do
+    bash "${BASH_SOURCE[0]}" "$mode" "$(basename "$config" .json)"
+  done
+  exit
+fi
+[[ $selection =~ ^[a-z0-9-]+$ ]] || { echo "Invalid product: $selection" >&2; exit 2; }
 for tool in arq riot rdfcompare shacl jq awk realpath; do command -v "$tool" >/dev/null; done
 read -r jena_checksum jena_archive < "$common/publication/jena.sha512"
 jena_version=${jena_archive#apache-jena-}
 jena_version=${jena_version%.tar.gz}
 [[ $(arq --version) == "Apache Jena version $jena_version" ]] || { echo "Use Apache Jena $jena_version" >&2; exit 1; }
 queries=$common/publication/queries
-config=$product/publication/validation.json
-mkdir -p "$product/build/publication"
-work=$(mktemp -d "$product/build/publication/run.XXXXXX")
+config=$common/publication/products/$selection.json
+[[ -f $config ]] || { echo "Unknown product: $selection" >&2; exit 2; }
+mkdir -p "$common/build/publication/$selection"
+work=$(mktemp -d "$common/build/publication/$selection/run.XXXXXX")
 trap 'rm -rf -- "$work"' EXIT
 
 # Resolve only regular files inside their declared checkout, including symlinks.
 local_file() {
   local path
-  path=$(realpath -e -- "$1/$2")
+  path=$(realpath -e -- "$1/$2") || return
   [[ $path == "$1/"* && -f $path ]] || { echo "Invalid local input: $path" >&2; return 1; }
   printf '%s\n' "$path"
 }
@@ -44,21 +52,18 @@ stage() {
   printf '<%s> p:source <%s> .\n' "$id" "$(file_uri "$target")" >> "$work/manifest.ttl"
   dataset+=(--namedGraph="$target")
 }
-stage urn:publication:graph:common "$(local_file "$common" docs/model/common/exchange-model.ttl)"
-stage urn:publication:graph:profile "$(local_file "$product" "$(jq -er '.profile' "$config")")"
+input=$(local_file "$common" docs/model/common/exchange-model.ttl)
+stage urn:publication:graph:common "$input"
+relative=$(jq -er '.profile' "$config")
+input=$(local_file "$common" "$relative")
+stage urn:publication:graph:profile "$input"
 # Inventory files, not scheme IRIs: schemes and membership come from the RDF.
-for inventory in shared product; do
-  if [[ $inventory == shared ]]; then
-    source_root=$common
-    jq -er '.[]' "$common/publication/common-vocabularies.json" > "$work/inputs.txt"
-  else
-    source_root=$product
-    jq -er '.vocabularies[]' "$config" > "$work/inputs.txt"
-  fi
-  while IFS= read -r relative; do
-    stage urn:publication:graph:vocabulary "$(local_file "$source_root" "$relative")"
-  done < "$work/inputs.txt"
-done
+jq -ern --slurpfile shared "$common/publication/common-vocabularies.json" --slurpfile product "$config" \
+  '$shared[0] + $product[0].vocabularies | unique[]' > "$work/inputs.txt"
+while IFS= read -r relative; do
+  input=$(local_file "$common" "$relative")
+  stage urn:publication:graph:vocabulary "$input"
+done < "$work/inputs.txt"
 arq "${dataset[@]}" --query="$queries/bindings.rq" --results=TURTLE > "$work/bindings.ttl"
 printf '<urn:publication:graph:bindings> p:source <%s> .\n' "$(file_uri "$work/bindings.ttl")" >> "$work/manifest.ttl"
 dataset+=(--namedGraph="$work/bindings.ttl")
@@ -83,10 +88,11 @@ arq "${dataset[@]}" --query="$queries/export-structure.rq" --results=TURTLE > "$
 # Parse the files together; never merge RDF by concatenating Turtle source text.
 riot --quiet --formatted=TURTLE "$work/structure.ttl" "$work/lists.ttl" > "$work/generated.ttl"
 shacl parse "$work/generated.ttl" > /dev/null
-output=$product/docs/model/exchange-model.ttl
+output=$(realpath -m -- "$common/$(jq -er '.output' "$config")")
+[[ $output == "$common/docs/"* ]] || { echo "Output must be inside docs/: $output" >&2; exit 1; }
 if [[ $mode == check ]]; then
   rdfcompare "$work/generated.ttl" "$output" TURTLE TURTLE
-  bash "$common/publication/tests/check.sh" "$product" "$common" "$work"
+  bash "$common/publication/tests/check.sh" "$common" "$config" "$work"
   echo "Checked $output"
 else
   # Stage beside the destination so the final rename is atomic.
