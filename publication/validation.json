@@ -1,4 +1,23 @@
 {
   "profile": "docs/model/acqf-profile.ttl",
-  "vocabularies": {}
+  "vocabularies": [
+    "docs/model/internal/virtualspace-nqfs",
+    "docs/model/ao-nqf-levels",
+    "docs/model/bw-nqf-levels",
+    "docs/model/cv-nqf-levels",
+    "docs/model/gh-nqf-levels",
+    "docs/model/ke-nqf-levels",
+    "docs/model/ls-nqf-levels",
+    "docs/model/ma-nqf-levels",
+    "docs/model/mu-nqf-levels",
+    "docs/model/mz-nqf-levels",
+    "docs/model/na-nqf-levels",
+    "docs/model/sadc-qf-levels",
+    "docs/model/sc-nqf-levels",
+    "docs/model/sz-nqf-levels",
+    "docs/model/tn-nqf-levels",
+    "docs/model/za-nqf-levels",
+    "docs/model/zm-nqf-levels",
+    "docs/model/zw-nqf-levels"
+  ]
 }

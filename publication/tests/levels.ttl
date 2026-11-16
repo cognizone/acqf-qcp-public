@@ -1,0 +1,10 @@
+@prefix t: <urn:test:case:> .
+@prefix ext: <https://data.acqf-qcp.africa/model/elm-extension/> .
+t:missing a t:LevelCase .
+t:multiple a t:LevelCase .
+t:unknown a t:LevelCase; ext:educationLevelNqf <https://example.org/unknown> .
+t:internal a t:LevelCase; ext:educationLevelNqf <https://data.acqf-qcp.africa/model/unknown> .
+t:blank a t:LevelCase; ext:educationLevelNqf [] .
+t:literal a t:LevelCase; ext:educationLevelNqf "not an IRI" .
+t:mixed a t:LevelCase; ext:educationLevelNqf <https://example.org/unknown> .
+t:cross a t:LevelCase .

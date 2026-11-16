@@ -1,3 +1,7 @@
-{
-  "http://data.europa.eu/snb/isced-f/25831c2": "publication/isced-f.jsonld"
-}
+[
+  "publication/isced-f.jsonld",
+  "docs/model/acqf-levels",
+  "docs/model/qualification-types",
+  "docs/model/creditpoint-framework",
+  "docs/model/accreditation-types"
+]

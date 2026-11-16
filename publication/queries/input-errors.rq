@@ -1,0 +1,59 @@
+PREFIX p: <urn:publication:graph:>
+PREFIX qcp: <https://data.acqf-qcp.africa/model/internal/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+SELECT DISTINCT ?item ?error WHERE {
+  {
+    p:profile p:source ?profile . p:common p:source ?common .
+    GRAPH ?profile { ?item ?predicate ?value }
+    FILTER (?predicate NOT IN (qcp:controlledVocabulary, qcp:controlledVocabularyCatalogue, qcp:startsWith)
+      || NOT EXISTS { GRAPH ?common { ?item a sh:PropertyShape } })
+    BIND("Invalid profile binding" AS ?error)
+  } UNION {
+    VALUES ?part { p:common p:profile }
+    ?part p:source ?graph .
+    GRAPH ?graph { ?item ?binding ?scheme }
+    VALUES ?binding { qcp:controlledVocabulary qcp:controlledVocabularyCatalogue }
+    FILTER (!isIRI(?item) || !isIRI(?scheme))
+    BIND("Expected named shape and scheme IRIs" AS ?error)
+  } UNION {
+    VALUES ?part { p:common p:profile p:bindings }
+    ?part p:source ?graph .
+    GRAPH ?graph { ?item ?binding ?scheme }
+    VALUES ?binding { qcp:controlledVocabulary qcp:controlledVocabularyCatalogue }
+    FILTER NOT EXISTS {
+      p:vocabulary p:source ?source .
+      GRAPH ?source { ?scheme a skos:ConceptScheme . ?member skos:inScheme ?scheme }
+    }
+    BIND(CONCAT("Missing scheme or empty membership: ", STR(?scheme)) AS ?error)
+  } UNION {
+    VALUES ?part { p:common p:profile }
+    ?part p:source ?graph .
+    GRAPH ?graph { ?shape qcp:controlledVocabularyCatalogue ?catalogue }
+    p:vocabulary p:source ?source .
+    GRAPH ?source { ?catalogue a skos:ConceptScheme . ?item skos:inScheme ?catalogue }
+    FILTER (NOT EXISTS { GRAPH ?source { ?item dct:relation ?scheme } }
+      || EXISTS { GRAPH ?source { ?item dct:relation ?scheme } FILTER (!isIRI(?scheme)) }
+      || EXISTS { GRAPH ?source { ?item dct:relation ?a, ?b } FILTER (?a != ?b) })
+    BIND("Catalogue member must reference exactly one scheme IRI" AS ?error)
+  } UNION {
+    p:bindings p:source ?bindings .
+    GRAPH ?bindings { ?shape qcp:controlledVocabulary ?scheme }
+    p:vocabulary p:source ?source .
+    GRAPH ?source { ?scheme a skos:ConceptScheme . ?item skos:inScheme ?scheme }
+    FILTER (!isIRI(?item))
+    BIND("Vocabulary member must be an IRI" AS ?error)
+  } UNION {
+    p:bindings p:source ?bindings . GRAPH ?bindings { ?item qcp:controlledVocabulary ?scheme }
+    VALUES ?part { p:common p:profile }
+    ?part p:source ?graph . GRAPH ?graph { ?item sh:in ?list }
+    BIND("Shape already has sh:in" AS ?error)
+  } UNION {
+    p:vocabulary p:source ?first, ?second .
+    FILTER (?first != ?second)
+    GRAPH ?first { ?item a skos:ConceptScheme }
+    GRAPH ?second { ?item a skos:ConceptScheme }
+    BIND("Scheme defined in multiple input files" AS ?error)
+  }
+} ORDER BY ?error ?item

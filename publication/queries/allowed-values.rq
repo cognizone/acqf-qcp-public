@@ -1,0 +1,9 @@
+PREFIX p: <urn:publication:graph:>
+PREFIX qcp: <https://data.acqf-qcp.africa/model/internal/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT DISTINCT ?shape ?member WHERE {
+  p:bindings p:source ?bindings .
+  GRAPH ?bindings { ?shape qcp:controlledVocabulary ?scheme }
+  p:vocabulary p:source ?source .
+  GRAPH ?source { ?scheme a skos:ConceptScheme . ?member skos:inScheme ?scheme }
+} ORDER BY STR(?shape) STR(?member)

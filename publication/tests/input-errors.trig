@@ -1,0 +1,36 @@
+@prefix p: <urn:publication:graph:> .
+@prefix qcp: <https://data.acqf-qcp.africa/model/internal/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix t: <urn:test:input:> .
+{
+  p:common p:source t:common . p:profile p:source t:profile . p:bindings p:source t:bindings .
+  p:vocabulary p:source t:emptyGraph, t:catalogueGraph, t:vocabulary, t:duplicateA, t:duplicateB .
+}
+t:common {
+  t:good a sh:PropertyShape .
+  t:badProfile a sh:PropertyShape .
+  t:missingShape qcp:controlledVocabulary t:missing .
+  t:emptyShape qcp:controlledVocabulary t:empty .
+  t:catalogueShape qcp:controlledVocabularyCatalogue t:catalogue .
+  t:existingShape qcp:controlledVocabulary t:scheme; sh:in (t:member) .
+  t:invalidBinding qcp:controlledVocabulary "not a scheme IRI" .
+}
+t:profile { t:good qcp:startsWith "urn:" . t:badProfile sh:maxCount 1 . }
+t:bindings {
+  t:existingShape qcp:controlledVocabulary t:scheme .
+  t:blankShape qcp:controlledVocabulary t:scheme .
+}
+t:emptyGraph { t:empty a skos:ConceptScheme . }
+t:catalogueGraph {
+  t:catalogue a skos:ConceptScheme .
+  t:ambiguous skos:inScheme t:catalogue; dct:relation t:scheme, t:other .
+  t:unlinked skos:inScheme t:catalogue .
+}
+t:vocabulary {
+  t:scheme a skos:ConceptScheme . t:member skos:inScheme t:scheme .
+  [] skos:inScheme t:scheme .
+}
+t:duplicateA { t:duplicateScheme a skos:ConceptScheme . }
+t:duplicateB { t:duplicateScheme a skos:ConceptScheme . }

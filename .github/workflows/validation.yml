@@ -13,11 +13,5 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Regression baseline is an earlier dev commit.
-      - uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: '21'
-      - uses: gradle/actions/setup-gradle@v4
-      - name: Check export, ACQF equivalence and standalone SHACL validation
-        run: ./gradlew check
+          fetch-depth: 0
+      - uses: ./.github/actions/validate

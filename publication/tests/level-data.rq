@@ -1,0 +1,9 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ext: <https://data.acqf-qcp.africa/model/elm-extension/>
+CONSTRUCT { ?member a <urn:test:case:LevelCase>; ext:educationLevelNqf ?member .
+            <urn:test:case:multiple> ext:educationLevelNqf ?member }
+WHERE {
+  <https://data.acqf-qcp.africa/model/exchange-model/resource/QualificationShape-educationLevelNqf>
+    sh:in/rdf:rest*/rdf:first ?member
+}

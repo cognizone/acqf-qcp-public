@@ -5,17 +5,13 @@ set -euo pipefail
 TOOLS_DIR=$(cd "$(dirname "$0")" && pwd)
 ROOT_DIR=$(cd "$TOOLS_DIR/.." && pwd)
 
-export JAVA_HOME=~/.jdks/corretto-17.0.11
-
 # SHACL file to generate documentation for
 INPUT_FILE="docs/model/exchange-model.ttl"
 BUILD_DIR=${BUILD_DIR:=./build}
 CURL=${CURL:=curl}
 JENA_SPARQL=${JENA_SPARQL:=sparql}
 JENA_RIOT=${JENA_RIOT:=riot}
-SHACL_PLAY=${SHACL_PLAY:=shaclplay}
 
-INPUT_FILE_WITHOUT_EXTENSION="${INPUT_FILE%.*}" # ./exchange-model.ttl
 SHACL_PLAY_FILE="$BUILD_DIR/input-for-shacl-play.ttl"
 ELM_FILE="$BUILD_DIR/elm.rdf"
 DOCUMENTATION_DESTINATION="docs/exchange-model/exchange-model.html"

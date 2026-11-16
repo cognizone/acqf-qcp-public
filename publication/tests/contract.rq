@@ -1,0 +1,8 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX qcp: <https://data.acqf-qcp.africa/model/internal/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT (COUNT(DISTINCT ?member) AS ?count) (COUNT(DISTINCT ?prefix) AS ?prefixCount) (MIN(STR(?member)) AS ?first)
+WHERE {
+  BIND(<https://data.acqf-qcp.africa/model/exchange-model/resource/QualificationShape-educationLevelNqf> AS ?shape)
+  ?shape sh:in/rdf:rest*/rdf:first ?member . OPTIONAL { ?shape qcp:startsWith ?prefix }
+} GROUP BY ?shape
