@@ -27,8 +27,8 @@ jobs:
           bash publication/setup-jena.sh
           read -r checksum archive < publication/jena.sha512
           echo "$PWD/build/tools/${archive%.tar.gz}/bin" >> "$GITHUB_PATH"
-      - name: Check both product exports and validation contracts
-        run: bash publication/publish.sh check
+      - name: Check website resources and both product contracts
+        run: bash publication/site.sh check
       - name: Upload the complete site preview
         uses: actions/upload-artifact@v7
         with:

@@ -1,0 +1,76 @@
+@prefix acqf-qcp-model: <https://data.acqf-qcp.africa/model/> .
+@prefix :               <https://data.acqf-qcp.africa/model/ls-nqf-levels/resource/> .
+@prefix dct:            <http://purl.org/dc/terms/> .
+@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos:           <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
+
+acqf-qcp-model:ls-nqf-levels
+    a                  skos:ConceptScheme ;
+    dct:title          "Lesotho Qualifications Framework (LQF)"@en ;
+    dct:created        "2024-12-13"^^xsd:date ;
+    dct:publisher      "cognizone" ;
+    dct:creator        "Petr Křemen" ;
+    dct:license        <http://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:source         <https://acqf.africa/resources/nqf-inventory/countries/lesotho> ;
+    skos:hasTopConcept :level-1, :level-2, :level-3, :level-4, :level-5, :level-6, :level-7, :level-8, :level-9, :level-10 .
+
+:level-1
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:ls-nqf-levels ;
+    skos:prefLabel  "Level 1"@en ;
+.
+
+:level-2
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:ls-nqf-levels ;
+    skos:prefLabel  "Level 2"@en ;
+.
+
+:level-3
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:ls-nqf-levels ;
+    skos:prefLabel  "Level 3"@en ;
+.
+
+:level-4
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:ls-nqf-levels ;
+    skos:prefLabel  "Level 4"@en ;
+.
+
+:level-5
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:ls-nqf-levels ;
+    skos:prefLabel  "Level 5"@en ;
+.
+
+:level-6
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:ls-nqf-levels ;
+    skos:prefLabel  "Level 6"@en ;
+.
+
+:level-7
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:ls-nqf-levels ;
+    skos:prefLabel  "Level 7"@en ;
+.
+
+:level-8
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:ls-nqf-levels ;
+    skos:prefLabel  "Level 8"@en ;
+.
+
+:level-9
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:ls-nqf-levels ;
+    skos:prefLabel  "Level 9"@en ;
+.
+
+:level-10
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:ls-nqf-levels ;
+    skos:prefLabel  "Level 10"@en ;
+.

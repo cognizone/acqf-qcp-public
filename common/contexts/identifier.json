@@ -1,0 +1,21 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "adms": "http://www.w3.org/ns/adms#",
+    "elm": "http://data.europa.eu/snb/model/elm/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "id": "@id",
+    "notation": "skos:notation",
+    "schemeAgency": {
+      "@id": "adms:schemeAgency",
+      "@type": "rdf:langString",
+      "@container": "@language"
+    },
+    "schemeName": {
+      "@id": "elm:schemeName",
+      "@type": "xsd:string"
+    }
+  }
+}

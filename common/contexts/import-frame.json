@@ -1,0 +1,252 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@base": "https://data.acqf-qcp.africa/resource/",
+    "acqf-import": "https://data.acqf-qcp.africa/model/import/",
+    "adms": "http://www.w3.org/ns/adms#",
+    "elm": "http://data.europa.eu/snb/model/elm/",
+    "elm-extension": "https://data.acqf-qcp.africa/model/elm-extension/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "rdfs": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "learningOpportunity": {
+      "@id": "elm-extension:learningOpportunity"
+    }
+  },
+  "acqf-import:qualifications": {
+    "@type": {
+      "@default": "elm:Qualification"
+    },
+    "elm:accreditation": {
+      "@type": {
+        "@default": "elm:Accreditation"
+      },
+      "adms:identifier": {
+        "@type": {
+          "@default": "elm:Identifier"
+        },
+        "skos:notation": {},
+        "adms:schemeAgency": {},
+        "elm:schemeName": {}
+      },
+      "dcterms:type": {
+        "@type": {
+          "@default": "skos:Concept"
+        }
+      },
+      "elm:organisation": {
+        "@type": {
+          "@default": "elm:Organisation"
+        }
+      },
+      "elm:accreditingAgent": {
+        "@type": {
+          "@default": "elm:Organisation"
+        }
+      }
+    },
+    "elm:awardingOpportunity": {
+      "@type": {
+        "@default": "elm:AwardingOpportunity"
+      },
+      "adms:identifier": {
+        "@type": {
+          "@default": "elm:Identifier"
+        },
+        "skos:notation": {},
+        "adms:schemeAgency": {},
+        "elm:schemeName": {}
+      },
+      "elm:additionalNote": {
+        "@type": {
+          "@default": "elm:Note"
+        }
+      },
+      "elm:awardingBody": {
+        "@type": {
+          "@default": "elm:Organisation"
+        }
+      }
+    },
+    "elm:creditPoint": {
+      "@type": {
+        "@default": "elm:CreditPoint"
+      },
+      "adms:identifier": {
+        "@type": {
+          "@default": "elm:Identifier"
+        },
+        "skos:notation": {},
+        "adms:schemeAgency": {},
+        "elm:schemeName": {}
+      },
+      "elm:framework": {
+        "@type": {
+          "@default": "skos:Concept"
+        }
+      }
+    },
+    "elm-extension:educationLevelAcqf": {
+      "@type": {
+        "@default": "skos:Concept"
+      }
+    },
+    "elm-extension:educationLevelNqf": {
+      "@type": {
+        "@default": "skos:Concept"
+      }
+    },
+    "elm:entitlesTo": {
+      "@type": {
+        "@default": "elm:LearningEntitlementSpecification"
+      },
+      "adms:identifier": {
+        "@type": {
+          "@default": "elm:Identifier"
+        },
+        "skos:notation": {},
+        "adms:schemeAgency": {},
+        "elm:schemeName": {}
+      },
+      "elm:limitNationalOccupation": {
+        "@type": {
+          "@default": "skos:Concept"
+        }
+      }
+    },
+    "elm:entryRequirement": {
+      "@type": {
+        "@default": "elm:Note"
+      }
+    },
+    "foaf:homepage": {
+      "@type": {
+        "@default": "elm:WebResource"
+      }
+    },
+    "adms:identifier": {
+      "@type": {
+        "@default": "elm:Identifier"
+      },
+      "skos:notation": {},
+      "adms:schemeAgency": {},
+      "elm:schemeName": {}
+    },
+    "elm:isPartOf": {
+        "@type": {
+            "@default": "elm:Qualification"
+        }
+    },
+    "learningOpportunity": {
+      "@type": {
+        "@default": "elm:LearningOpportunity"
+      },
+      "adms:identifier": {
+        "@type": {
+          "@default": "elm:Identifier"
+        },
+        "skos:notation": {},
+        "adms:schemeAgency": {},
+        "elm:schemeName": {}
+      },
+      "elm:providedBy": {
+        "@type": {
+          "@default": "elm:Organisation"
+        },
+        "adms:identifier": {
+          "@type": {
+            "@default": "elm:Identifier"
+          },
+          "skos:notation": {},
+          "adms:schemeAgency": {},
+          "elm:schemeName": {}
+        }
+      },
+      "elm:defaultLanguage": {
+        "@type": {
+          "@default": "skos:Concept"
+        }
+      }
+    },
+    "elm:learningOutcome": {
+      "@type": {
+        "@default": "elm:LearningOutcome"
+      },
+      "adms:identifier": {
+        "@type": {
+          "@default": "elm:Identifier"
+        },
+        "skos:notation": {},
+        "adms:schemeAgency": {},
+        "elm:schemeName": {}
+      },
+      "elm:relatedSkill": {
+        "@type": {
+          "@default": "skos:Concept"
+        }
+      },
+      "elm:additionalNote": {
+        "@type": {
+          "@default": "elm:Note"
+        }
+      }
+    },
+    "elm:learningOutcomeSummary": {
+      "@type": {
+        "@default": "elm:Note"
+      }
+    },
+    "elm:supplementaryDocument": {
+      "@type": {
+        "@default": "elm:WebResource"
+      }
+    },
+    "dcterms:publisher": {
+      "@type": {
+        "@default": "elm:Organisation"
+      }
+    },
+    "elm:ISCEDFCode": {
+      "@container": "@set",
+      "@type": {
+        "@default": "skos:Concept"
+      }
+    },
+    "dcterms:title": {},
+    "elm:volumeOfLearning": {}
+  },
+  "acqf-import:organisations": {
+    "@type": {
+      "@default": "elm:Organisation"
+    },
+    "adms:identifier": {
+      "@type": {
+        "@default": "elm:Identifier"
+      },
+      "skos:notation": {},
+      "adms:schemeAgency": {},
+      "elm:schemeName": {}
+    },
+    "skos:prefLabel": {},
+    "elm:location": {
+      "@type": {
+        "@default": "dcterms:Location"
+      },
+      "elm:spatialCode": {
+        "@type": {
+          "@default": "skos:Concept"
+        }
+      },
+      "adms:identifier": {
+        "@type": {
+          "@default": "elm:Identifier"
+        },
+        "skos:notation": {},
+        "adms:schemeAgency": {},
+        "elm:schemeName": {}
+      }
+    }
+  }
+}

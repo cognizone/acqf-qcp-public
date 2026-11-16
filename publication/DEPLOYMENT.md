@@ -11,7 +11,7 @@ The intended public website is `https://data.acqf-qcp.africa/`.
 | Consumer | Validation contract on the shared website |
 | --- | --- |
 | ACQF-dev | `https://data.acqf-qcp.africa/model/exchange-model.ttl` |
-| ETF-dev | `https://data.acqf-qcp.africa/model/etf/exchange-model.ttl` |
+| ETF-dev | `https://data.acqf-qcp.africa/etf/model/exchange-model.ttl` |
 
 The ACQF endpoint and graph stay compatible. ETF is an additional path with EQF
 constraints. Both belong to one validated `docs/` tree from one commit. Publishing
@@ -41,12 +41,12 @@ For an explicitly configured canary, after pushing/reviewing `dev2`, the two pre
 URLs from the actual ACQF repository are:
 
 ```text
-https://raw.githubusercontent.com/cognizone/acqf-qpc-public/refs/heads/dev2/docs/model/exchange-model.ttl
-https://raw.githubusercontent.com/cognizone/acqf-qpc-public/refs/heads/dev2/docs/model/etf/exchange-model.ttl
+https://raw.githubusercontent.com/cognizone/acqf-qcp-public/refs/heads/dev2/docs/model/exchange-model.ttl
+https://raw.githubusercontent.com/cognizone/acqf-qcp-public/refs/heads/dev2/docs/etf/model/exchange-model.ttl
 ```
 
-The repository's Git remote uses `acqf-qpc-public`; the domain and model namespace
-continue to use `acqf-qcp`. Use the actual repository spelling for raw GitHub URLs.
+The canonical repository is `cognizone/acqf-qcp-public`; the old remote spelling
+redirects to it. Use the canonical spelling for new links.
 These preview URLs do not publish the public website and are not automatic
 replacements in existing deployments.
 

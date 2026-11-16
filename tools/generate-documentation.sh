@@ -14,8 +14,8 @@ JENA_RIOT=${JENA_RIOT:=riot}
 
 SHACL_PLAY_FILE="$BUILD_DIR/input-for-shacl-play.ttl"
 ELM_FILE="$BUILD_DIR/elm.rdf"
-DOCUMENTATION_DESTINATION="docs/exchange-model/exchange-model.html"
-IMAGE_DESTINATION="docs/exchange-model/exchange-model.tgf"
+DOCUMENTATION_DESTINATION="products/acqf/documentation/exchange-model/exchange-model.html"
+IMAGE_DESTINATION="build/exchange-model.tgf"
 
 mkdir -p "$ROOT_DIR/$BUILD_DIR"
 mkdir -p "$ROOT_DIR/$BUILD_DIR/shacl-play"
@@ -33,4 +33,4 @@ SHACLVIZ="$ROOT_DIR/shaclviz.jar"
 if ! [ -e "$SHACLVIZ" ]; then
     curl -L -o "$SHACLVIZ" https://repo1.maven.org/maven2/zone/cogni/semanticz/semanticz-shaclviz/1.0.2/semanticz-shaclviz-1.0.2-executable.jar
 fi
-java -jar "$SHACLVIZ" "file:$ROOT_DIR/docs/model/exchange-model.ttl" "$ROOT_DIR/$IMAGE_DESTINATION" --fieldQuery="$ROOT_DIR/docs/exchange-model/fields-acqf.rq" --outputFormat tgf
+java -jar "$SHACLVIZ" "file:$ROOT_DIR/docs/model/exchange-model.ttl" "$ROOT_DIR/$IMAGE_DESTINATION" --fieldQuery="$ROOT_DIR/products/acqf/documentation/exchange-model/fields-acqf.rq" --outputFormat tgf

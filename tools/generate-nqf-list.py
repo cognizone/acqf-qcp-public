@@ -8,7 +8,7 @@ from pathlib import Path
 
 TOOLS_DIR = Path(__file__).resolve().parent
 ROOT = TOOLS_DIR.parent
-INDEX_HTML = ROOT / "docs" / "index.html"
+INDEX_HTML = ROOT / "products" / "acqf" / "documentation" / "index.html"
 
 BEGIN_MARKER = "<!-- BEGIN GENERATED NQF LEVEL LIST -->"
 END_MARKER = "<!-- END GENERATED NQF LEVEL LIST -->"
@@ -43,7 +43,7 @@ ENTRIES = [
 
 
 def read_title(model_name: str) -> str:
-    model_path = ROOT / "docs" / "model" / model_name
+    model_path = ROOT / "products" / "acqf" / "vocabularies" / model_name
     match = TITLE_PATTERN.search(model_path.read_text(encoding="utf-8"))
     if not match:
         raise ValueError(f"Could not find dct:title in {model_path}")

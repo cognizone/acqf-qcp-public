@@ -1,0 +1,36 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "adms": "http://www.w3.org/ns/adms#",
+    "elm": "http://data.europa.eu/snb/model/elm/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "id": "@id",
+    "identifier": {
+      "@id": "adms:identifier",
+      "@context": "https://data.acqf-qcp.africa/model/contexts/identifier.json"
+    },
+    "prefLabel": {
+      "@id": "skos:prefLabel",
+      "@type": "rdf:langString",
+      "@container": "@language"
+    },
+    "location": {
+      "@id": "elm:location",
+      "@type": "@id",
+      "@container": "@set",
+      "@context": {
+        "type": "@type",
+        "spatialCode": {
+          "@id": "elm:spatialCode",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@base": "http://publications.europa.eu/resource/authority/country/"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+@prefix acqf-qcp-model: <https://data.acqf-qcp.africa/model/> .
+@prefix : <https://data.acqf-qcp.africa/model/accreditation-types/resource/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+acqf-qcp-model:accreditation-types
+    a skos:ConceptScheme ;
+    dct:title "ACQF Accreditation Types"@en ;
+    dct:description "This is a SKOS representation of the ACQF Accreditation Types Controlled Vocabulary."@en ;
+    dct:created "2025-08-20"^^xsd:date ;
+    dct:publisher "cognizone bv" ;
+    dct:creator "Petr Křemen" ;
+    dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
+    skos:hasTopConcept :registration, :approval, :licensing .
+
+:registration
+    a skos:Concept ;
+    skos:inScheme acqf-qcp-model:accreditation-types ;
+    skos:prefLabel
+        "Registration"@en,
+        "Enregistrement"@fr,
+        "Registro"@pt ;
+.
+
+:approval
+    a skos:Concept ;
+    skos:inScheme acqf-qcp-model:accreditation-types ;
+    skos:prefLabel
+        "Approval"@en,
+        "Approbation"@fr,
+        "Aprovação"@pt ;
+.
+
+:licensing
+    a skos:Concept ;
+    skos:inScheme acqf-qcp-model:accreditation-types ;
+    skos:prefLabel
+        "Licensing"@en,
+        "Licences"@fr,
+        "Licenciamento"@pt ;
+.
+
+:programme-license
+    a skos:Concept ;
+    skos:inScheme acqf-qcp-model:accreditation-types ;
+    skos:prefLabel
+        "Programme License"@en,
+        "Licence d’un programme"@fr,
+        "Licença de programa"@pt ;
+    skos:exactMatch <http://data.europa.eu/snb/accreditation/e57dddfcf3>
+.
+
+:institutional-quality-assurance
+    a skos:Concept ;
+    skos:inScheme acqf-qcp-model:accreditation-types ;
+    skos:prefLabel
+        "Institutional Quality Assurance"@en,
+        "Assurance de la qualité institutionnelle"@fr,
+        "Garantia de qualidade institucional"@pt ;
+    skos:exactMatch <http://data.europa.eu/snb/accreditation/bb4618238e>
+.
+
+:programme-quality-assurance
+    a skos:Concept ;
+    skos:inScheme acqf-qcp-model:accreditation-types ;
+    skos:prefLabel
+        "Programme Quality Assurance"@en,
+        "Assurance de la qualité d’un programme"@fr,
+        "Garantia de qualidade de um programa"@pt ;
+    skos:exactMatch <http://data.europa.eu/snb/accreditation/820101cba6>
+.
+
+:eqar-programme-accreditation
+    a skos:Concept ;
+    skos:inScheme acqf-qcp-model:accreditation-types ;
+    skos:prefLabel
+        "EQAR Programme accreditation"@en,
+        "Accréditation EQAR au niveau du programme"@fr,
+        "Acreditação de programa do EQAR"@pt ;
+    skos:exactMatch <http://data.europa.eu/snb/accreditation/c_64666c29>
+.
+
+:institutional-license
+    a skos:Concept ;
+    skos:inScheme acqf-qcp-model:accreditation-types ;
+    skos:prefLabel
+        "Institutional License"@en,
+        "Licence institutionnelle"@fr,
+        "Licença institucional"@pt ;
+    skos:exactMatch <http://data.europa.eu/snb/accreditation/003293d2ce>
+.
+
+:eqar-institutional-accreditation
+    a skos:Concept ;
+    skos:inScheme acqf-qcp-model:accreditation-types ;
+    skos:prefLabel
+        "EQAR Institutional accreditation"@en,
+        "Accréditation EQAR au niveau institutionnel"@fr,
+        "Acreditação institucional do EQAR"@pt ;
+    skos:exactMatch <http://data.europa.eu/snb/accreditation/c_1f1a469a>
+.

@@ -1,0 +1,17 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "acqf-import": "https://data.acqf-qcp.africa/model/import/",
+    "id": "@id",
+    "organisations": {
+      "@id": "acqf-import:organisations",
+      "@container": "@set",
+      "@context": "https://data.acqf-qcp.africa/model/contexts/organisation.json"
+    },
+    "qualifications": {
+      "@id": "acqf-import:qualifications",
+      "@container": "@set",
+      "@context":  "https://data.acqf-qcp.africa/model/contexts/qualification.json"
+    }
+  }
+}

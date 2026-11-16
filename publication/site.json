@@ -1,0 +1,30 @@
+{
+  "resources": [
+    {
+      "source": "common/vocabularies",
+      "target": "model",
+      "exclude": [
+        "isced-f.jsonld"
+      ]
+    },
+    {
+      "source": "common/model",
+      "target": "model/common"
+    },
+    {
+      "source": "common/contexts",
+      "target": "model/contexts",
+      "exclude": [
+        "import-frame.json"
+      ]
+    },
+    {
+      "source": "common/contexts/import-frame.json",
+      "target": "model/import-frame.json"
+    },
+    {
+      "source": "common/documentation",
+      "target": "common"
+    }
+  ]
+}

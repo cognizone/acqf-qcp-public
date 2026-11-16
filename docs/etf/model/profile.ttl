@@ -1,0 +1,7 @@
+@prefix shape: <https://data.acqf-qcp.africa/model/exchange-model/resource/> .
+@prefix qcp: <https://data.acqf-qcp.africa/model/internal/> .
+
+# Additive bindings to the named property shape in the common model.
+# The publisher expands catalogue members' dct:relation links into sh:in.
+shape:QualificationShape-educationLevelNqf
+    qcp:controlledVocabularyCatalogue <https://data.etf-qd.cogni.zone/model/internal/virtualspace-nqfs> .

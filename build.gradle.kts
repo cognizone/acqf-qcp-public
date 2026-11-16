@@ -13,7 +13,7 @@ listOf("buildValidation" to "build", "checkValidation" to "check").forEach { (na
         group = if (operation == "build") "publication" else "verification"
         dependsOn(setupJena)
         environment("PATH", "${jenaRoot.get().asFile}/bin:${System.getenv("PATH")}")
-        commandLine("bash", "publication/publish.sh", operation)
+        commandLine("bash", "publication/site.sh", operation)
         if (operation == "check") mustRunAfter("buildValidation")
     }
 }

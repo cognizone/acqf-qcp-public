@@ -1,0 +1,23 @@
+{
+  "profile": "products/etf/profile.ttl",
+  "vocabularies": [
+    "products/etf/vocabularies/eqf-nqf-levels",
+    "products/etf/vocabularies/internal/virtualspace-nqfs"
+  ],
+  "output": "docs/etf/model/exchange-model.ttl",
+  "tests": "products/etf/tests",
+  "resources": [
+    {
+      "source": "products/etf/vocabularies",
+      "target": "etf/model"
+    },
+    {
+      "source": "products/etf/documentation",
+      "target": "etf"
+    },
+    {
+      "source": "products/etf/profile.ttl",
+      "target": "etf/model/profile.ttl"
+    }
+  ]
+}

@@ -4,9 +4,17 @@ This repository maintains the shared QCP model and product-specific ACQF/ETF
 validation contracts for https://data.acqf-qcp.africa/. On `dev2`, both products are
 checked together and packaged as one preview site. Existing deployments are unchanged.
 
+## Source layout
+
+Shared model, vocabularies, contexts and reference documentation live in `common/`.
+Each product owns its profile, vocabularies, documentation and publication settings
+under `products/acqf/` or `products/etf/`. `docs/` is generated: ACQF retains its
+existing URLs, while ETF uses `/etf/`. See [publication/README.md](publication/README.md).
+
 ## Data Model
 
-Generate SHACL documentation with ontology labels using SHACL Play:
+Refresh the existing ACQF model documentation using SHACL Play. The command updates
+its source under `products/acqf/documentation/`; rebuild the site afterwards:
 
 1. Run `bash publication/setup-jena.sh` to install the checksum-pinned Jena CLI.
 2. Generate NQF list to the documentation
@@ -19,6 +27,7 @@ export JENA_HOME="$PWD/build/tools/apache-jena-6.2.0"
 export JENA_SPARQL=$JENA_HOME/bin/sparql
 export JENA_RIOT=$JENA_HOME/bin/riot
 ./tools/generate-documentation.sh
+./gradlew buildValidation
 ```
 
 ## Product validation (dev)

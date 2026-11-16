@@ -1,0 +1,287 @@
+@prefix acqf-qcp-model: <https://data.acqf-qcp.africa/model/> .
+@prefix :               <https://data.acqf-qcp.africa/model/zm-nqf-levels/resource/> .
+@prefix dct:            <http://purl.org/dc/terms/> .
+@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos:           <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
+
+acqf-qcp-model:zm-nqf-levels
+    a                  skos:ConceptScheme ;
+    dct:title          "Revised National Qualifications Framework (NQF)"@en ;
+    dct:description    "The revised Zambia National Qualifications Framework defines ten levels across general education, trades and occupations, and higher education, with learning outcomes expressed through knowledge, skills, and autonomy and responsibility."@en ;
+    dct:created        "2026-04-17"^^xsd:date ;
+    dct:publisher      "cognizone" ;
+    dct:creator        "Petr Křemen" ;
+    dct:license        <http://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:source         <https://www.zaqa.gov.zm/> ;
+    skos:hasTopConcept :level-1, :level-2, :level-3, :level-4, :level-5, :level-6, :level-7, :level-8, :level-9, :level-10 .
+
+:level-1
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:zm-nqf-levels ;
+    skos:prefLabel  "Level 1"@en ;
+    skos:altLabel   "Primary Education Certificate"@en ;
+    skos:definition """
+Qualification type: Primary Education Certificate.
+
+Knowledge:
+- Basic knowledge in literacy, numeracy, and communication.
+- Awareness of civic, moral, and cultural values.
+
+Skills:
+- Basic cognitive, communication, practical, and problem-solving skills.
+- Apply basic and creative reasoning.
+- Reflective and critical thinking.
+- Show competency to use basic mathematical and ICT tools.
+
+Autonomy and responsibility:
+- Structured learning environments but gradually develop the ability to think critically, ability to work collaboratively, and take age-appropriate independence and decision-making within guided settings.
+- Applies an elementary understanding of appropriate values, attitudes and ethics.
+
+Duration:
+- 6 years.
+"""@en ;
+.
+
+:level-2
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:zm-nqf-levels ;
+    skos:prefLabel  "Level 2"@en ;
+    skos:altLabel   "Secondary Education Ordinary Level Certificate"@en ;
+    skos:definition """
+Qualification type: Secondary Education Ordinary Level Certificate.
+
+Knowledge:
+- Holistic comprehension and application of factual and operational knowledge.
+
+Skills:
+- Intermediate communication, cognitive, and practical skills to apply knowledge in solving non-complex problems within structured and familiar contexts.
+- Use a few simple/basic applications, which are adequate to perform given task(s) under guidance.
+- Critical thinking, creativity, and adaptability while fostering technical competencies, problem-solving skills.
+
+Autonomy and responsibility:
+- Gradual independence, transitioning from structured supervision to increasing responsibility in varied practical settings for individual and group tasks.
+- Informed decision-making.
+- Applies basic understanding of the values, attitudes and ethics in carrying out basic tasks.
+
+Duration:
+- 4 years.
+"""@en ;
+.
+
+:level-3
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:zm-nqf-levels ;
+    skos:prefLabel  "Level 3"@en ;
+    skos:altLabel   "Level 3 Certificate"@en ;
+    skos:definition """
+Qualification type: Level 3 Certificate.
+
+Knowledge:
+- Factual, technical, operational, and theoretical knowledge within a specific area of work and learning.
+
+Skills:
+- Interpret, apply and communicate solutions to familiar and predictable problems.
+- Communicate within a limited range of contexts requiring simple and direct exchange of information on familiar and routine matters.
+- Use a limited range of basic applications and digital tools which are adequate to perform a given set of task(s) under supervision that enables access, and to process simple data.
+
+Autonomy and responsibility:
+- Functions independently in predictable contexts under routine supervision and guidance, with initiative for self-responsibility and some responsibility for group outcomes.
+- Applies simple understanding of the values, attitudes and ethics in a subject field or discipline to carry out selected tasks.
+
+Duration:
+- 1 year (1200 Notional Hours, 120 Credits) or through RPL.
+"""@en ;
+.
+
+:level-4
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:zm-nqf-levels ;
+    skos:prefLabel  "Level 4"@en ;
+    skos:altLabel   "Secondary Education Advanced Level Certificate"@en ;
+    skos:altLabel   "Level 4 Certificate"@en ;
+    skos:definition """
+Qualification types: Secondary Education Advanced Level Certificate; Level 4 Certificate.
+
+Knowledge:
+- Factual, operational, technical and theoretical knowledge.
+- Theory and practical applications, critical thinking and analytical reasoning.
+
+Skills:
+- Use of well-developed technical skills to make informed judgments, and apply solutions and problem-solving analytical abilities in both familiar and unfamiliar situations.
+- Communicate effectively and clearly orally or in writing, ideas, information, problems and solutions, individually or as a team to peers, experts and non-experts.
+- Use basic digital technology applications to support study/work to seek and process data related to a subject of study/work.
+
+Autonomy and responsibility:
+- Varied (predictable and unpredictable) contexts with adaptability, independent and collaborative decision making and initiative for self-direction under general guidance, accountability and taking full responsibility for self, some planning and responsibility for group outcomes and initiative for responsibility for others.
+- Applies a general understanding of the values, attitudes and ethics required in a subject field or discipline and displays these to others.
+
+Duration:
+- Secondary Education Advanced Level Certificate: 2 years (2400 Notional Hours, 240 Credits).
+- Level 4 Certificate: 2 years (2400 Notional Hours, 240 Credits) or through RPL.
+"""@en ;
+.
+
+:level-5
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:zm-nqf-levels ;
+    skos:prefLabel  "Level 5"@en ;
+    skos:altLabel   "Level 5 Certificate"@en ;
+    skos:definition """
+Qualification type: Level 5 Certificate.
+
+Knowledge:
+- Substantial depth in technical or theoretical knowledge with the ability to integrate facts, operational insights, and theoretical frameworks to address complex, unfamiliar problems.
+- Some level of specialisation in areas of expertise.
+
+Skills:
+- Well-developed technical and analytical skills to synthesise information, construct well-reasoned arguments, and apply a range of solutions to complex issues.
+- Communicate clearly, both orally and in writing, ideas, information, problems and solutions, to others including peers, experts and non-experts.
+- Use a range of digital applications to support study/work as well as to seek and process data related to work or study.
+
+Autonomy and responsibility:
+- Unpredictable contexts with full autonomy and full responsibility for self and group outcomes, and some responsibility for others.
+- Shows a broad understanding of the values, attitudes and ethics associated with the occupation and/or study and displays these to others.
+
+Duration:
+- 2½ years (3000 Notional Hours, 300 Credits) or through RPL.
+"""@en ;
+.
+
+:level-6
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:zm-nqf-levels ;
+    skos:prefLabel  "Level 6"@en ;
+    skos:altLabel   "Diploma"@en ;
+    skos:definition """
+Qualification type: Diploma.
+
+Knowledge:
+- Advanced technical or theoretical knowledge in specialised areas of work or study, able to adapt and formulate solutions for complex or abstract problems using up-to-date principles and theories.
+
+Skills:
+- Advanced, specialised skills to collate, analyse, synthesise, and communicate information clearly.
+- Communicate and interact effectively and cogently in a comprehensive and well-structured manner to convey information, ideas, problems and solutions for social, academic and professional purposes to a range of audiences.
+- Use a range of information, media and technology applications to support study and/or work.
+
+Autonomy and responsibility:
+- Highly variable contexts with well-developed autonomy in managing self and others to meet objectives.
+- Responsibility for processes and resources, including ensuring that complex solutions are implemented effectively.
+- Demonstrates significant understanding of the values, attitudes and ethics associated with the occupation and/or study and introduces these to others.
+
+Duration:
+- 2 years (2400 Notional Hours, 240 Credits) - 3 years (3600 Notional Hours, 360 Credits) or through RPL.
+"""@en ;
+.
+
+:level-7
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:zm-nqf-levels ;
+    skos:prefLabel  "Level 7"@en ;
+    skos:altLabel   "Bachelor's Degree"@en ;
+    skos:definition """
+Qualification type: Bachelor's Degree.
+
+Knowledge:
+- Advanced analytical and/or specialised knowledge of a discipline, contributing new insights and frameworks.
+
+Skills:
+- Able to devise tailored solutions for unfamiliar issues, demonstrating proficiency in specialised fields.
+- Highly specialised and advanced skills to generate new insights, formulate innovative solutions, and contribute to theoretical and practical advancements in the discipline.
+- Convey ideas both in written or oral forms using appropriate and different forms of presentation, confidently, accurately and coherently in appropriate context in a well-structured manner to a diversity of audiences.
+- Use a broad range of information, media and technology applications to support study and/or work.
+
+Autonomy and responsibility:
+- Complex, variable contexts with significant autonomy and responsibility for outcomes.
+- Manages teams, resources, and processes to ensure successful implementation.
+- Applies advanced knowledge of the associated values, attitudes and ethics and encourages the use of these in others.
+
+Duration:
+- 3 years (3600 Notional Hours, 360 Credits) - 6 years (7200 Notional Hours, 720 Credits).
+"""@en ;
+.
+
+:level-8
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:zm-nqf-levels ;
+    skos:prefLabel  "Level 8"@en ;
+    skos:altLabel   "Bachelor Honours Degree"@en ;
+    skos:altLabel   "Postgraduate Diploma"@en ;
+    skos:altLabel   "Postgraduate Certificate"@en ;
+    skos:definition """
+Qualification types: Bachelor Honours Degree; Postgraduate Diploma; Postgraduate Certificate.
+
+Knowledge:
+- Highly advanced and complex body of knowledge, including cutting-edge theories, principles, and methodologies.
+
+Skills:
+- Able to engage in advanced problem-solving within the field.
+- Highly advanced skills to critically analyse and synthesise information, demonstrating the ability to innovate and lead in theoretical and practical advancements.
+- Proficiency in developing and testing new solutions through research.
+- Communicate clearly the knowledge, skills, ideas, critique and conclusion/rationale using appropriate methods to peers, experts, and non-experts.
+- Competently use a wide range of suitable digital technologies and appropriate software to enhance study, research and/or work/practice.
+
+Autonomy and responsibility:
+- High levels of autonomy and responsibility, ensuring that outcomes are achieved in specialised and complex contexts.
+- Advanced leadership in managing resources, processes, and teams, fostering innovation.
+
+Duration:
+- Bachelor Honours Degree: 1 year (1200 Notional Hours, 120 Credits).
+- Postgraduate Diploma: 1 year (1200 Notional Hours, 120 Credits).
+- Postgraduate Certificate: Min. 6 months (min. 600 Notional Hours, min. 60 Credits).
+"""@en ;
+.
+
+:level-9
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:zm-nqf-levels ;
+    skos:prefLabel  "Level 9"@en ;
+    skos:altLabel   "Master's Degree"@en ;
+    skos:definition """
+Qualification type: Master's Degree.
+
+Knowledge:
+- Mastery of a complex body of knowledge at the forefront of research and innovation, contributing to new theories, models, and frameworks.
+- Ability to integrate cross-disciplinary perspectives to address emergent issues.
+
+Skills:
+- Skills mastery required to demonstrate originality and new insights in research and/or innovation and formulate and test theories to show mastery of highly complex, abstract problems.
+- Communicate clearly the knowledge, skills, ideas, critique and conclusion/rationale using appropriate methods to peers, experts, and non-experts.
+- Competently use a wide range of suitable digital technologies and appropriate software to enhance study, research and/or work/practice.
+
+Autonomy and responsibility:
+- Expertise in managing and leading in highly specialised contexts.
+- Holds full responsibility for resources, teams, and outcomes, influencing and guiding stakeholders to advance the field.
+
+Duration:
+- 1 year (1200 Notional Hours, 120 Credits) - 4 years (4800 Notional Hours, 480 Credits).
+"""@en ;
+.
+
+:level-10
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:zm-nqf-levels ;
+    skos:prefLabel  "Level 10"@en ;
+    skos:altLabel   "Doctorate Degree"@en ;
+    skos:definition """
+Qualification type: Doctorate Degree.
+
+Knowledge:
+- Original knowledge that reshapes or significantly extends the forefront of a discipline, contributing to its evolution.
+- Capable of bridging multiple disciplines to address emergent challenges.
+
+Skills:
+- Supremacy at innovation, creating new theoretical frameworks, testing hypotheses, and addressing emerging problems.
+- Communicate effectively research findings to peers, scholarly communities and society at large in the relevant field of expertise.
+- Use/select/improve existing or develop new appropriate tools/methodologies to support and enhance research activities.
+- Able to lead multidisciplinary teams and guide the creation of new knowledge.
+- Capable of leading transformative changes across disciplines.
+
+Autonomy and responsibility:
+- Highest level of autonomy and leadership in emergent and dynamic contexts, with full responsibility for strategic direction, managing resources, processes, and outcomes.
+- Provides visionary leadership and shapes future directions in the discipline.
+
+Duration:
+- Min. 3 years (min. 3600 Notional Hours, min. 360 Credits).
+"""@en ;
+.
