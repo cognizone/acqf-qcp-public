@@ -1,3 +1,5 @@
+package zone.cogni.publication;
+
 import java.util.*;
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.riot.RDFDataMgr;
