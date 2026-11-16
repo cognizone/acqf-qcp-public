@@ -1,0 +1,24 @@
+{
+  "resources": [
+    {
+      "source": "vocabularies",
+      "target": "model"
+    },
+    {
+      "source": "model",
+      "target": "model/common"
+    },
+    {
+      "source": "contexts",
+      "target": "model/contexts"
+    },
+    {
+      "source": "frames",
+      "target": "model"
+    },
+    {
+      "source": "documentation",
+      "target": "common"
+    }
+  ]
+}

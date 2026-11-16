@@ -20,6 +20,7 @@ jena_version=${jena_version%.tar.gz}
 queries=$common/publication/queries
 config=$common/products/$selection/publication.json
 [[ -f $config ]] || { echo "Unknown product: $selection" >&2; exit 2; }
+product=$(dirname "$config")
 mkdir -p "$common/build/publication/$selection"
 work=$(mktemp -d "$common/build/publication/$selection/run.XXXXXX")
 trap 'rm -rf -- "$work"' EXIT
@@ -55,15 +56,16 @@ stage() {
 input=$(local_file "$common" common/model/exchange-model.ttl)
 stage urn:publication:graph:common "$input"
 relative=$(jq -er '.profile' "$config")
-input=$(local_file "$common" "$relative")
+input=$(local_file "$product" "$relative")
 stage urn:publication:graph:profile "$input"
-# Inventory files, not scheme IRIs: schemes and membership come from the RDF.
-jq -ern --slurpfile shared "$common/publication/common-vocabularies.json" --slurpfile product "$config" \
-  '$shared[0] + $product[0].vocabularies | unique[]' > "$work/inputs.txt"
-while IFS= read -r relative; do
-  input=$(local_file "$common" "$relative")
-  stage urn:publication:graph:vocabulary "$input"
-done < "$work/inputs.txt"
+# Curated RDF directories are the inventory. Only bound schemes contribute values.
+for directory in "$common/common/vocabularies" "$common/common/validation-inputs" "$product/vocabularies"; do
+  [[ -d $directory ]] || { echo "Missing vocabulary directory: $directory" >&2; exit 1; }
+  while IFS= read -r -d '' file; do
+    input=$(local_file "$common" "${file#"$common/"}")
+    stage urn:publication:graph:vocabulary "$input"
+  done < <(find "$directory" -type f -print0 | sort -z)
+done
 arq "${dataset[@]}" --query="$queries/bindings.rq" --results=TURTLE > "$work/bindings.ttl"
 printf '<urn:publication:graph:bindings> p:source <%s> .\n' "$(file_uri "$work/bindings.ttl")" >> "$work/manifest.ttl"
 dataset+=(--namedGraph="$work/bindings.ttl")

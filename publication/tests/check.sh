@@ -4,21 +4,7 @@ set -euo pipefail
 common=$1 config=$2 work=$3
 tests=$common/publication/tests
 model=$work/generated.ttl
-expectations=$common/$(jq -er '.tests' "$config")
-arq --data="$tests/input-errors.trig" --query="$common/publication/queries/input-errors.rq" --results=JSON > "$work/input-errors.json"
-jq -e '
-  [.results.bindings[].error.value] | unique == [
-    "Catalogue member must reference exactly one scheme IRI",
-    "Expected named shape and scheme IRIs",
-    "Invalid profile binding",
-    "Missing scheme or empty membership: not a scheme IRI",
-    "Missing scheme or empty membership: urn:test:input:empty",
-    "Missing scheme or empty membership: urn:test:input:missing",
-    "Scheme defined in multiple input files",
-    "Shape already has sh:in",
-    "Vocabulary member must be an IRI"
-  ]
-' "$work/input-errors.json" >/dev/null
+expectations=$(dirname "$config")/$(jq -er '.tests' "$config")
 arq --data="$model" --query="$tests/contract.rq" --results=JSON > "$work/contract.json"
 jq -e --slurpfile expected "$expectations/contract.json" '
   .results.bindings | length == 1 and (.[0] |
@@ -46,4 +32,4 @@ if [[ -n $baseline ]]; then
   git -C "$common" show "$baseline:$(jq -er '.output' "$config")" > "$work/baseline.ttl"
   rdfcompare "$model" "$work/baseline.ttl" TURTLE TURTLE
 fi
-echo "Passed vocabulary input, level, cardinality, diagnostic and notation checks"
+echo "Passed level, cardinality, diagnostic and notation checks"

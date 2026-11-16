@@ -9,16 +9,15 @@ work=$(mktemp -d "$root/build/site/run.XXXXXX")
 trap 'rm -rf -- "$work"' EXIT
 stage=$work/docs
 mkdir -p "$stage"
-configs=("$root/publication/site.json" "$root"/products/*/publication.json)
+configs=("$root/common/publication.json" "$root"/products/*/publication.json)
 for config in "${configs[@]}"; do
   while IFS= read -r mapping; do
     relative=$(jq -er '.source' <<< "$mapping")
-    source=$(realpath -e -- "$root/$relative")
+    source=$(realpath -e -- "$(dirname "$config")/$relative")
     [[ $source == "$root/"* ]] || { echo "Source must stay in repository: $source" >&2; exit 1; }
     target=$(jq -r '.target' <<< "$mapping")
     while IFS= read -r -d '' file; do
       if [[ -d $source ]]; then suffix=${file#"$source/"}; else suffix=""; fi
-      if jq -e --arg file "$suffix" '(.exclude // []) | index($file) != null' <<< "$mapping" >/dev/null; then continue; fi
       output=$(realpath -m -- "$stage/$target${suffix:+/$suffix}")
       [[ $output == "$stage/"* && ! -e $output ]] || { echo "Invalid or duplicate site output: $output" >&2; exit 1; }
       mkdir -p -- "$(dirname "$output")"
@@ -38,13 +37,14 @@ else
     cmp -- "$file" "$root/docs/$relative" || { echo "Stale website file: docs/$relative" >&2; exit 1; }
   done < <(find "$stage" -type f -print0)
   for config in "$root"/products/*/publication.json; do
-    contract=$root/$(jq -er '.tests' "$config")/published-paths.txt
+    contract=$(dirname "$config")/$(jq -er '.tests' "$config")/published-paths.txt
     if [[ -f $contract ]]; then
       while IFS= read -r relative; do
         [[ $relative == docs/* && -f $root/$relative ]] || { echo "Missing established public path: $relative" >&2; exit 1; }
       done < "$contract"
     fi
   done
+  bash "$root/publication/tests/check-inputs.sh" "$root" "$work"
   bash "$root/publication/publish.sh" check
   # Reject obsolete tracked outputs, while leaving unrelated untracked local files alone.
   find "$stage" -type f -printf 'docs/%P\n' > "$work/expected"

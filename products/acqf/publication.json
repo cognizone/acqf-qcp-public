@@ -1,46 +1,26 @@
 {
-  "profile": "products/acqf/profile.ttl",
-  "vocabularies": [
-    "products/acqf/vocabularies/internal/virtualspace-nqfs",
-    "products/acqf/vocabularies/ao-nqf-levels",
-    "products/acqf/vocabularies/bw-nqf-levels",
-    "products/acqf/vocabularies/cv-nqf-levels",
-    "products/acqf/vocabularies/gh-nqf-levels",
-    "products/acqf/vocabularies/ke-nqf-levels",
-    "products/acqf/vocabularies/ls-nqf-levels",
-    "products/acqf/vocabularies/ma-nqf-levels",
-    "products/acqf/vocabularies/mu-nqf-levels",
-    "products/acqf/vocabularies/mz-nqf-levels",
-    "products/acqf/vocabularies/na-nqf-levels",
-    "products/acqf/vocabularies/sadc-qf-levels",
-    "products/acqf/vocabularies/sc-nqf-levels",
-    "products/acqf/vocabularies/sz-nqf-levels",
-    "products/acqf/vocabularies/tn-nqf-levels",
-    "products/acqf/vocabularies/za-nqf-levels",
-    "products/acqf/vocabularies/zm-nqf-levels",
-    "products/acqf/vocabularies/zw-nqf-levels"
-  ],
+  "profile": "profile.ttl",
   "output": "docs/model/exchange-model.ttl",
-  "tests": "products/acqf/tests",
+  "tests": "tests",
   "resources": [
     {
-      "source": "products/acqf/vocabularies",
+      "source": "vocabularies",
       "target": "model"
     },
     {
-      "source": "products/acqf/documentation",
+      "source": "documentation",
       "target": ""
     },
     {
-      "source": "products/acqf/profile.ttl",
+      "source": "profile.ttl",
       "target": "model/acqf-profile.ttl"
     },
     {
-      "source": "products/acqf/examples",
+      "source": "examples",
       "target": "model/examples"
     },
     {
-      "source": "products/acqf/model",
+      "source": "model",
       "target": "model"
     }
   ]

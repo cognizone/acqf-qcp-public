@@ -7,8 +7,11 @@ ACQF keeps every existing published path and RDF identifier. ETF is published un
 ```text
 common/
   model/exchange-model.ttl       shared rules and shared CV bindings
-  vocabularies/                 shared CVs and the frozen ISCED-F input
-  contexts/                     shared import contexts and frame
+  vocabularies/                 published shared CVs
+  contexts/                     published import contexts
+  frames/                       published import frame
+  validation-inputs/            private frozen ISCED-F input
+  publication.json              shared website mappings
   documentation/                shared reference page
 products/
   acqf/
@@ -18,7 +21,7 @@ products/
     documentation/              existing landing page and model reference
     examples/
     tests/                      ACQF contract expectations
-    publication.json            input files, site mappings and export path
+    publication.json            profile, site mappings and export path
   etf/
     profile.ttl
     vocabularies/               ETF catalogue and complete EQF distribution
@@ -29,10 +32,18 @@ publication/                    shared Bash/Jena builder, queries and test runne
 docs/                           generated, deployable website; do not edit
 ```
 
-`publication/site.json` maps shared sources to their existing published locations.
-Each product's `publication.json` declares its source paths, output, tests and
-resource mappings. Neither builder contains ACQF/ETF conditionals. Adding a product
-means adding its sources, configuration and contract expectations.
+`common/publication.json` maps shared sources to their existing published locations.
+Product configurations declare their profile, test expectations, site mappings and
+export path. Source paths are relative to the configuration's directory; `output`
+is relative to the repository and mapping `target` values are relative to the website.
+Neither builder contains ACQF/ETF conditionals.
+
+Validation reads the RDF-only directories `common/vocabularies/`,
+`common/validation-inputs/` and each product's `vocabularies/`. There are no separate
+file inventories. Profiles and catalogue links select which schemes constrain a
+property; an unreferenced legacy scheme does not expand the accepted values.
+Missing, empty and duplicate scheme definitions still fail validation assembly.
+Keep prose and non-RDF files outside these directories.
 
 ## Build and check
 
@@ -69,7 +80,9 @@ source moves before checking, so the tracked-file check sees the intended layout
 
 Check compares each generated resource with its maintained source, reconstructs
 both validation graphs, compares RDF graphs including blank nodes, and runs the
-shared input-error, level, cardinality, diagnostic and duplicate-notation fixtures.
+shared level, cardinality, diagnostic and duplicate-notation fixtures. The complete
+site check runs product-independent malformed-input tests once; the direct
+`publish.sh check <product>` command runs that product's graph and contract checks.
 The product-owned `products/acqf/tests/published-paths.txt` also protects all 46
 established ACQF public files. All 161 ACQF levels and eight EQF levels are exercised. ACQF additionally compares
 against its historical complete validation graph. Changing source file locations
@@ -121,7 +134,7 @@ Original source SHA-256:
 `df1a574c4ab1c1d3559c631057d0aac67abcc1342d6a7b329423676384cea25a`.
 Its scheme is `http://data.europa.eu/snb/eqf/25831c2`.
 
-`common/vocabularies/isced-f.jsonld` is QCP's frozen lookup from commit
+`common/validation-inputs/isced-f.jsonld` is QCP's frozen lookup from commit
 `c79c70c98078f5857793ec19cc6dbff94abb0f9c`, originally at
 `backend/src/main/resources/concept-schemes/http___data.europa.eu_snb_isced-f_25831c2`.
 It is a build input, not a second published ISCED vocabulary. Vocabulary refresh
