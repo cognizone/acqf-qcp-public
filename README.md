@@ -19,3 +19,9 @@ export JENA_SPARQL=$JENA_HOME/bin/sparql
 export JENA_RIOT=$JENA_HOME/bin/riot
 ./tools/generate-documentation.sh
 ```
+
+## Product validation (dev)
+
+See [publication/README.md](publication/README.md) for common rules, product profiles,
+standalone exports and CI checks. Edit the common model and ACQF profile, then regenerate
+`docs/model/exchange-model.ttl`; do not edit the generated export directly.

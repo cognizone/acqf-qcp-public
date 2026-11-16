@@ -1,0 +1,3643 @@
+{
+    "@graph": [
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0799",
+            "pl": {
+                "en": "Engineering, manufacturing and construction not elsewhere classified",
+                "fr": "Ingénierie, industries de transformation et construction non classés ailleurs",
+                "pt": "Programas de engenharia, indústrias transformadoras e construção não classificados noutras áreas"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/079"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/079",
+            "pl": {
+                "en": "Engineering, manufacturing and construction not elsewhere classified",
+                "fr": "Ingénierie, industries de transformation et construction non classés ailleurs",
+                "pt": "Programas de engenharia, indústrias transformadoras e construção não classificados noutras áreas"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0799"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/07"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/25831c2",
+            "@type": "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/053",
+            "pl": {
+                "pt": "Ciências físicas",
+                "en": "Physical sciences",
+                "fr": "Sciences physiques"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0532",
+                "http://data.europa.eu/snb/isced-f/0533",
+                "http://data.europa.eu/snb/isced-f/0531",
+                "http://data.europa.eu/snb/isced-f/0530",
+                "http://data.europa.eu/snb/isced-f/0539"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/05"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0532",
+            "pl": {
+                "pt": "Ciências da Terra",
+                "fr": "Sciences de la Terre",
+                "en": "Earth sciences"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/053"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0533",
+            "pl": {
+                "fr": "Physique",
+                "pt": "Física",
+                "en": "Physics"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/053"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0531",
+            "pl": {
+                "en": "Chemistry",
+                "pt": "Química",
+                "fr": "Chimie"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/053"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0530",
+            "pl": {
+                "pt": "Ciências físicas sem definição precisa",
+                "fr": "Sciences physiques non définies",
+                "en": "Physical sciences not further defined"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/053"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0539",
+            "pl": {
+                "en": "Physical sciences not elsewhere classified",
+                "pt": "Programas de ciências físicas não classificados noutras áreas",
+                "fr": "Sciences physiques non classés ailleurs"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/053"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/05",
+            "pl": {
+                "en": "Natural sciences, mathematics and statistics",
+                "pt": "Ciências naturais, matemática e estatística",
+                "fr": "Sciences naturelles, mathématiques et statistiques"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/053",
+                "http://data.europa.eu/snb/isced-f/054",
+                "http://data.europa.eu/snb/isced-f/058",
+                "http://data.europa.eu/snb/isced-f/052",
+                "http://data.europa.eu/snb/isced-f/059",
+                "http://data.europa.eu/snb/isced-f/051",
+                "http://data.europa.eu/snb/isced-f/050"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/02",
+            "pl": {
+                "pt": "Artes e humanidades",
+                "fr": "Lettres et arts",
+                "en": "Arts and humanities"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/022",
+                "http://data.europa.eu/snb/isced-f/028",
+                "http://data.europa.eu/snb/isced-f/021",
+                "http://data.europa.eu/snb/isced-f/029",
+                "http://data.europa.eu/snb/isced-f/020",
+                "http://data.europa.eu/snb/isced-f/023"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/022",
+            "pl": {
+                "fr": "Lettres (à l’exception des langues)",
+                "pt": "Humanidades (exceto línguas)",
+                "en": "Humanities (except languages)"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0223",
+                "http://data.europa.eu/snb/isced-f/0220",
+                "http://data.europa.eu/snb/isced-f/0228",
+                "http://data.europa.eu/snb/isced-f/0221",
+                "http://data.europa.eu/snb/isced-f/0229",
+                "http://data.europa.eu/snb/isced-f/0222"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/02"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/028",
+            "pl": {
+                "pt": "Programas e qualificações interdisciplinares que envolvem as artes e as humanidades",
+                "en": "Inter-disciplinary programmes and qualifications involving arts and humanities",
+                "fr": "Programmes interdisciplinaires et certifications impliquant les arts et les lettres"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0288"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/02"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/021",
+            "pl": {
+                "pt": "Artes",
+                "en": "Arts",
+                "fr": "Arts"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0214",
+                "http://data.europa.eu/snb/isced-f/0210",
+                "http://data.europa.eu/snb/isced-f/0213",
+                "http://data.europa.eu/snb/isced-f/0211",
+                "http://data.europa.eu/snb/isced-f/0219",
+                "http://data.europa.eu/snb/isced-f/0212",
+                "http://data.europa.eu/snb/isced-f/0215"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/02"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/029",
+            "pl": {
+                "fr": "Arts et lettres non classés ailleurs",
+                "en": "Arts and humanities not elsewhere classified",
+                "pt": "Programas de artes e humanidades não classificados noutras áreas"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0299"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/02"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/020",
+            "pl": {
+                "en": "Arts and humanities not further defined",
+                "pt": "Artes e humanidades sem definição precisa",
+                "fr": "Lettres et arts non définis"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0200"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/02"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/023",
+            "pl": {
+                "fr": "Langues",
+                "pt": "Línguas",
+                "en": "Languages"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0231",
+                "http://data.europa.eu/snb/isced-f/0239",
+                "http://data.europa.eu/snb/isced-f/0232",
+                "http://data.europa.eu/snb/isced-f/0230"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/02"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0540",
+            "pl": {
+                "fr": "Mathématiques et statistiques non définis",
+                "en": "Mathematics and statistics not further defined",
+                "pt": "Matemática e estatística sem definição precisa"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/054"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/054",
+            "pl": {
+                "fr": "Mathématiques et statistiques",
+                "pt": "Matemática e estatística",
+                "en": "Mathematics and statistics"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0540",
+                "http://data.europa.eu/snb/isced-f/0542",
+                "http://data.europa.eu/snb/isced-f/0541"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/05"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/000",
+            "pl": {
+                "pt": "Programas e qualificações genéricos sem definição precisa",
+                "en": "Generic programmes and qualifications not further defined",
+                "fr": "Programmes et certifications génériques non définis"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0000"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/00"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0000",
+            "pl": {
+                "pt": "Programas e qualificações genéricos sem definição precisa",
+                "en": "Generic programmes and qualifications not further defined",
+                "fr": "Programmes et certifications génériques non définis"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/000"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/00",
+            "pl": {
+                "pt": "Programas e qualificações genéricos",
+                "en": "Generic programmes and qualifications",
+                "fr": "Programmes et certifications génériques"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/000",
+                "http://data.europa.eu/snb/isced-f/002",
+                "http://data.europa.eu/snb/isced-f/009",
+                "http://data.europa.eu/snb/isced-f/003",
+                "http://data.europa.eu/snb/isced-f/001"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/083",
+            "pl": {
+                "fr": "Halieutique",
+                "pt": "Pescas",
+                "en": "Fisheries"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0831"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/08"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0831",
+            "pl": {
+                "fr": "Halieutique",
+                "pt": "Pescas",
+                "en": "Fisheries"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/083"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/08",
+            "pl": {
+                "en": "Agriculture, forestry, fisheries and veterinary",
+                "fr": "Agriculture, sylviculture et halieutique et sciences vétérinaires",
+                "pt": "Agricultura, silvicultura, pescas e ciências veterinárias"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/083",
+                "http://data.europa.eu/snb/isced-f/084",
+                "http://data.europa.eu/snb/isced-f/088",
+                "http://data.europa.eu/snb/isced-f/089",
+                "http://data.europa.eu/snb/isced-f/081",
+                "http://data.europa.eu/snb/isced-f/082",
+                "http://data.europa.eu/snb/isced-f/080"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0810",
+            "pl": {
+                "en": "Agriculture not further defined",
+                "fr": "Agriculture non définie",
+                "pt": "Agricultura sem definição precisa"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/081"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/081",
+            "pl": {
+                "pt": "Agricultura",
+                "fr": "Agriculture",
+                "en": "Agriculture"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0810",
+                "http://data.europa.eu/snb/isced-f/0819",
+                "http://data.europa.eu/snb/isced-f/0812",
+                "http://data.europa.eu/snb/isced-f/0811"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/08"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0410",
+            "pl": {
+                "en": "Business and administration not further defined",
+                "fr": "Commerce et administration non définis",
+                "pt": "Ciências empresariais e administração sem definição precisa"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/041"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/041",
+            "pl": {
+                "fr": "Commerce et administration",
+                "en": "Business and administration",
+                "pt": "Ciências empresariais e administração"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0410",
+                "http://data.europa.eu/snb/isced-f/0417",
+                "http://data.europa.eu/snb/isced-f/0412",
+                "http://data.europa.eu/snb/isced-f/0414",
+                "http://data.europa.eu/snb/isced-f/0419",
+                "http://data.europa.eu/snb/isced-f/0413",
+                "http://data.europa.eu/snb/isced-f/0415",
+                "http://data.europa.eu/snb/isced-f/0411",
+                "http://data.europa.eu/snb/isced-f/0416"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/04"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/090",
+            "pl": {
+                "fr": "Santé et protection sociales non définis",
+                "en": "Health and welfare not further defined",
+                "pt": "Saúde e proteção social sem definição precisa"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0900"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/09"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0900",
+            "pl": {
+                "fr": "Santé et protection sociales non définis",
+                "en": "Health and welfare not further defined",
+                "pt": "Saúde e proteção social sem definição precisa"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/090"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/09",
+            "pl": {
+                "fr": "Santé et protection sociales",
+                "pt": "Saúde e proteção social",
+                "en": "Health and welfare"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/090",
+                "http://data.europa.eu/snb/isced-f/099",
+                "http://data.europa.eu/snb/isced-f/092",
+                "http://data.europa.eu/snb/isced-f/091",
+                "http://data.europa.eu/snb/isced-f/098"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/072",
+            "pl": {
+                "en": "Manufacturing and processing",
+                "fr": "Industries de transformation et de traitement",
+                "pt": "Indústrias transformadoras"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0723",
+                "http://data.europa.eu/snb/isced-f/0722",
+                "http://data.europa.eu/snb/isced-f/0729",
+                "http://data.europa.eu/snb/isced-f/0724",
+                "http://data.europa.eu/snb/isced-f/0720",
+                "http://data.europa.eu/snb/isced-f/0721"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/07"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0723",
+            "pl": {
+                "fr": "Textiles (vêtements, chaussures et cuir)",
+                "en": "Textiles (clothes, footwear and leather)",
+                "pt": "Têxteis (vestuário, calçado e couro)"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/072"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0722",
+            "pl": {
+                "pt": "Materiais (vidro, papel, plástico e madeira)",
+                "fr": "Matériaux (verre, papier, plastique et bois)",
+                "en": "Materials (glass, paper, plastic and wood)"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/072"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0729",
+            "pl": {
+                "pt": "Programas das indústrias transformadoras não classificados noutras áreas",
+                "fr": "Industries de transformation et de traitement non classés ailleurs",
+                "en": "Manufacturing and processing not elsewhere classified"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/072"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0724",
+            "pl": {
+                "en": "Mining and extraction",
+                "pt": "Indústrias extrativas",
+                "fr": "Exploitation minière et extraction"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/072"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0720",
+            "pl": {
+                "fr": "Industries de transformation et de traitement non définis",
+                "pt": "Indústrias transformadora sem definição precisa",
+                "en": "Manufacturing and processing not further defined"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/072"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0721",
+            "pl": {
+                "pt": "Indústrias alimentares",
+                "fr": "Traitement des aliments",
+                "en": "Food processing"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/072"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/07",
+            "pl": {
+                "en": "Engineering, manufacturing and construction",
+                "pt": "Engenharia, indústrias transformadoras e construção",
+                "fr": "Ingénierie, industries de transformation et construction"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/072",
+                "http://data.europa.eu/snb/isced-f/073",
+                "http://data.europa.eu/snb/isced-f/078",
+                "http://data.europa.eu/snb/isced-f/070",
+                "http://data.europa.eu/snb/isced-f/071",
+                "http://data.europa.eu/snb/isced-f/079"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/1029",
+            "pl": {
+                "pt": "Programas de serviços de higiene e de saúde ocupacional não classificados noutras áreas",
+                "fr": "Hygiène et services de santé au travail non classés ailleurs",
+                "en": "Hygiene and occupational health services not elsewhere classified"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/102"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/102",
+            "pl": {
+                "fr": "Hygiène et services de santé au travail",
+                "en": "Hygiene and occupational health services",
+                "pt": "Serviços de higiene e saúde ocupacional"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/1029",
+                "http://data.europa.eu/snb/isced-f/1022",
+                "http://data.europa.eu/snb/isced-f/1020",
+                "http://data.europa.eu/snb/isced-f/1021"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/10"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0821",
+            "pl": {
+                "pt": "Silvicultura",
+                "en": "Forestry",
+                "fr": "Sylviculture"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/082"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/082",
+            "pl": {
+                "pt": "Silvicultura",
+                "en": "Forestry",
+                "fr": "Sylviculture"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0821"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/08"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0421",
+            "pl": {
+                "pt": "Direito",
+                "en": "Law",
+                "fr": "Droit"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/042"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/042",
+            "pl": {
+                "pt": "Direito",
+                "en": "Law",
+                "fr": "Droit"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0421"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/04"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0231",
+            "pl": {
+                "fr": "Acquisition d’une langue",
+                "pt": "Aprendizagem de línguas",
+                "en": "Language acquisition"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/023"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/002",
+            "pl": {
+                "en": "Literacy and numeracy",
+                "fr": "Compétences en lecture et en calcul",
+                "pt": "Literacia e numeracia"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0021"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/00"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0021",
+            "pl": {
+                "en": "Literacy and numeracy",
+                "pt": "Literacia e numeracia",
+                "fr": "Alphabétisation et apprentissage du calcul"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/002"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/04",
+            "pl": {
+                "pt": "Ciências empresariais, administração e direito",
+                "fr": "Commerce, administration et droit",
+                "en": "Business, administration and law"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/042",
+                "http://data.europa.eu/snb/isced-f/041",
+                "http://data.europa.eu/snb/isced-f/048",
+                "http://data.europa.eu/snb/isced-f/040",
+                "http://data.europa.eu/snb/isced-f/049"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0715",
+            "pl": {
+                "en": "Mechanics and metal trades",
+                "fr": "Mécanique et techniques apparentées",
+                "pt": "Metalurgia e metalomecânica"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/071"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/071",
+            "pl": {
+                "en": "Engineering and engineering trades",
+                "fr": "Ingénierie et techniques apparentées",
+                "pt": "Engenharia e tecnologias afins"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0715",
+                "http://data.europa.eu/snb/isced-f/0712",
+                "http://data.europa.eu/snb/isced-f/0713",
+                "http://data.europa.eu/snb/isced-f/0714",
+                "http://data.europa.eu/snb/isced-f/0716",
+                "http://data.europa.eu/snb/isced-f/0719",
+                "http://data.europa.eu/snb/isced-f/0710",
+                "http://data.europa.eu/snb/isced-f/0711"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/07"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0916",
+            "pl": {
+                "fr": "Pharmacie",
+                "en": "Pharmacy",
+                "pt": "Ciências farmacêuticas"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/091"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/091",
+            "pl": {
+                "pt": "Saúde",
+                "fr": "Santé",
+                "en": "Health"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0916",
+                "http://data.europa.eu/snb/isced-f/0912",
+                "http://data.europa.eu/snb/isced-f/0914",
+                "http://data.europa.eu/snb/isced-f/0917",
+                "http://data.europa.eu/snb/isced-f/0911",
+                "http://data.europa.eu/snb/isced-f/0915",
+                "http://data.europa.eu/snb/isced-f/0910",
+                "http://data.europa.eu/snb/isced-f/0919",
+                "http://data.europa.eu/snb/isced-f/0913"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/09"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/1012",
+            "pl": {
+                "fr": "Services de soins de beauté et de coiffure",
+                "en": "Hair and beauty services",
+                "pt": "Serviços de cabeleireiro e estética"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/101"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/101",
+            "pl": {
+                "en": "Personal services",
+                "pt": "Serviços pessoais",
+                "fr": "Services aux particuliers"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/1012",
+                "http://data.europa.eu/snb/isced-f/1011",
+                "http://data.europa.eu/snb/isced-f/1013",
+                "http://data.europa.eu/snb/isced-f/1014",
+                "http://data.europa.eu/snb/isced-f/1010",
+                "http://data.europa.eu/snb/isced-f/1015",
+                "http://data.europa.eu/snb/isced-f/1019"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/10"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/011",
+            "pl": {
+                "pt": "Educação",
+                "fr": "Éducation",
+                "en": "Education"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0112",
+                "http://data.europa.eu/snb/isced-f/0119",
+                "http://data.europa.eu/snb/isced-f/0113",
+                "http://data.europa.eu/snb/isced-f/0110",
+                "http://data.europa.eu/snb/isced-f/0114",
+                "http://data.europa.eu/snb/isced-f/0111"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/01"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0112",
+            "pl": {
+                "fr": "Formation des enseignants au niveau préscolaire",
+                "en": "Training for pre-school teachers",
+                "pt": "Formação de educadores e infância"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/011"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0119",
+            "pl": {
+                "fr": "Éducation non classée ailleurs",
+                "en": "Education not elsewhere classified",
+                "pt": "Programas de educação não classificados noutras áreas"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/011"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0113",
+            "pl": {
+                "pt": "Formação de professores de áreas disciplinares não específicas",
+                "en": "Teacher training without subject specialisation",
+                "fr": "Formation des enseignants sans spécialisation"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/011"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0110",
+            "pl": {
+                "en": "Education not further defined",
+                "fr": "Éducation non définie",
+                "pt": "Programas de educação sem definição precisa"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/011"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0114",
+            "pl": {
+                "fr": "Formation des enseignants avec spécialisation",
+                "pt": "Formação de professores de áreas disciplinares específicas",
+                "en": "Teacher training with subject specialisation"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/011"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0111",
+            "pl": {
+                "fr": "Sciences de l’éducation",
+                "en": "Education science",
+                "pt": "Ciências da educação"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/011"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/01",
+            "pl": {
+                "pt": "Educação",
+                "fr": "Éducation",
+                "en": "Education"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/011",
+                "http://data.europa.eu/snb/isced-f/018"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/109",
+            "pl": {
+                "en": "Services not elsewhere classified",
+                "fr": "Services non classés ailleurs",
+                "pt": "Programas de serviços não classificados noutras áreas"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/1099"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/10"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/1099",
+            "pl": {
+                "en": "Services not elsewhere classified",
+                "fr": "Services non classés ailleurs",
+                "pt": "Programas de serviços não classificados noutras áreas"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/109"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/10",
+            "pl": {
+                "fr": "Services",
+                "en": "Services",
+                "pt": "Serviços"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/109",
+                "http://data.europa.eu/snb/isced-f/104",
+                "http://data.europa.eu/snb/isced-f/100",
+                "http://data.europa.eu/snb/isced-f/103",
+                "http://data.europa.eu/snb/isced-f/108",
+                "http://data.europa.eu/snb/isced-f/102",
+                "http://data.europa.eu/snb/isced-f/101"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0610",
+            "pl": {
+                "pt": "Tecnologias da informação e comunicação (TIC) sem definição precisa",
+                "en": "Information and Communication Technologies (ICTs) not further defined",
+                "fr": "Technologies de l’information et de la communication (TIC) non définis"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/061"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/061",
+            "pl": {
+                "fr": "Technologies de l’information et de la communication (TIC)",
+                "en": "Information and Communication Technologies (ICTs)",
+                "pt": "Tecnologias da informação e comunicação (TIC)"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0610",
+                "http://data.europa.eu/snb/isced-f/0611",
+                "http://data.europa.eu/snb/isced-f/0612",
+                "http://data.europa.eu/snb/isced-f/0613",
+                "http://data.europa.eu/snb/isced-f/0619"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/06"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0223",
+            "pl": {
+                "pt": "Filosofia e ética",
+                "fr": "Philosophie et morale",
+                "en": "Philosophy and ethics"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/022"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0220",
+            "pl": {
+                "fr": "Lettres (à l’exception des langues) non définis",
+                "en": "Humanities (except languages) not further defined",
+                "pt": "Humanidades (exceto línguas) sem definição precisa"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/022"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0228",
+            "pl": {
+                "en": "Inter-disciplinary programmes and qualifications involving humanities",
+                "pt": "Programas e qualificações interdisciplinares que envolvem humanidades",
+                "fr": "Programmes interdisciplinaires et certifications impliquant les lettres"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/022"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0221",
+            "pl": {
+                "fr": "Religion et théologie",
+                "pt": "Religião e teologia",
+                "en": "Religion and theology"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/022"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0229",
+            "pl": {
+                "fr": "Lettres (à l’exception des langues) non classés ailleurs",
+                "en": "Humanities (except languages) not elsewhere classified",
+                "pt": "Programas de humanidades (exceto línguas) não classificados noutras áreas"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/022"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0222",
+            "pl": {
+                "fr": "Histoire et archéologie",
+                "pt": "História e arqueologia",
+                "en": "History and archaeology"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/022"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0712",
+            "pl": {
+                "pt": "Tecnologia de proteção do ambiente",
+                "en": "Environmental protection technology",
+                "fr": "Technologie de la protection de l’environnement"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/071"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0314",
+            "pl": {
+                "fr": "Sociologie et études culturelles",
+                "pt": "Sociologia e estudos culturais",
+                "en": "Sociology and cultural studies"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/031"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/031",
+            "pl": {
+                "fr": "Sciences sociales et du comportement",
+                "en": "Social and behavioural sciences",
+                "pt": "Ciências sociais e comportamentais"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0314",
+                "http://data.europa.eu/snb/isced-f/0310",
+                "http://data.europa.eu/snb/isced-f/0313",
+                "http://data.europa.eu/snb/isced-f/0312",
+                "http://data.europa.eu/snb/isced-f/0311",
+                "http://data.europa.eu/snb/isced-f/0319"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/03"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0499",
+            "pl": {
+                "en": "Business, administration and law not elsewhere classified",
+                "fr": "Commerce, administration et droit non classés ailleurs",
+                "pt": "Programas de ciências empresariais, administração e direito não classificados noutras áreas"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/049"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/049",
+            "pl": {
+                "en": "Business, administration and law not elsewhere classified",
+                "fr": "Commerce, administration et droit non classés ailleurs",
+                "pt": "Programas de ciências empresariais, administração e direito não classificados noutras áreas"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0499"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/04"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0488",
+            "pl": {
+                "en": "Inter-disciplinary programmes and qualifications involving business, administration and law",
+                "fr": "Programmes interdisciplinaires et certifications impliquant le commerce, l'administration et le droit",
+                "pt": "Programas e qualificações interdisciplinares que envolvem as ciências empresariais, administração e direito"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/048"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/048",
+            "pl": {
+                "en": "Inter-disciplinary programmes and qualifications involving business, administration and law",
+                "fr": "Programmes interdisciplinaires et certifications impliquant le commerce, l'administration et le droit",
+                "pt": "Programas e qualificações interdisciplinares que envolvem as ciências empresariais, administração e direito"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0488"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/04"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/068",
+            "pl": {
+                "fr": "Programmes interdisciplinaires et certifications impliquant les technologies de l’information et de la communication (TIC)",
+                "en": "Inter-disciplinary programmes and qualifications involving Information and Communication Technologies (ICTs)",
+                "pt": "Programas e qualificações interdisciplinares que envolvem as tecnologias da informação e da comunicação (TIC)"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0688"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/06"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0688",
+            "pl": {
+                "fr": "Programmes interdisciplinaires et certifications impliquant les technologies de l’information et de la communication (TIC)",
+                "en": "Inter-disciplinary programmes and qualifications involving Information and Communication Technologies (ICTs)",
+                "pt": "Programas e qualificações interdisciplinares que envolvem as tecnologias da informação e da comunicação (TIC)"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/068"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/06",
+            "pl": {
+                "fr": "Technologies de l’information et de la communication (TIC)",
+                "en": "Information and Communication Technologies (ICTs)",
+                "pt": "Tecnologias da informação e comunicação (TIC)"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/068",
+                "http://data.europa.eu/snb/isced-f/061"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/1022",
+            "pl": {
+                "fr": "Santé et sécurité au travail",
+                "en": "Occupational health and safety",
+                "pt": "Saúde e segurança no trabalho"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/102"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/084",
+            "pl": {
+                "fr": "Sciences vétérinaires",
+                "en": "Veterinary",
+                "pt": "Ciências veterinárias"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0841"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/08"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0841",
+            "pl": {
+                "fr": "Sciences vétérinaires",
+                "en": "Veterinary",
+                "pt": "Ciências veterinárias"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/084"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0912",
+            "pl": {
+                "pt": "Medicina",
+                "en": "Medicine",
+                "fr": "Médecine"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/091"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/104",
+            "pl": {
+                "fr": "Services de transport",
+                "en": "Transport services",
+                "pt": "Serviços de transporte"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/1041"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/10"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/1041",
+            "pl": {
+                "fr": "Services de transport",
+                "en": "Transport services",
+                "pt": "Serviços de transporte"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/104"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0188",
+            "pl": {
+                "en": "Inter-disciplinary programmes and qualifications involving education",
+                "fr": "Programmes interdisciplinaires et certifications impliquant l'éducation",
+                "pt": "Programas e qualificações interdisciplinares que envolvem a educação"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/018"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/018",
+            "pl": {
+                "en": "Inter-disciplinary programmes and qualifications involving education",
+                "fr": "Programmes interdisciplinaires et certifications impliquant l'éducation",
+                "pt": "Programas e qualificações interdisciplinares que envolvem a educação"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0188"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/01"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/099",
+            "pl": {
+                "pt": "Programas de saúde e proteção social não classificados noutras áreas",
+                "fr": "Santé et protection sociales non classés ailleurs",
+                "en": "Health and welfare not elsewhere classified"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0999"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/09"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0999",
+            "pl": {
+                "pt": "Programas de saúde e proteção social não classificados noutras áreas",
+                "fr": "Santé et protection sociales non classés ailleurs",
+                "en": "Health and welfare not elsewhere classified"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/099"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0310",
+            "pl": {
+                "pt": "Ciências sociais e comportamentais sem definição precisa",
+                "fr": "Sciences sociales et du comportement non définies",
+                "en": "Social and behavioural sciences not further defined"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/031"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/088",
+            "pl": {
+                "fr": "Programmes interdisciplinaires et certifications impliquant l'agriculture, la sylviculture et l'halieutique et les sciences vétérinaires",
+                "en": "Inter-disciplinary programmes and qualifications involving agriculture, forestry, fisheries and veterinary",
+                "pt": "Programas e qualificações interdisciplinares que envolvem a agricultura, silvicultura, pescas e ciências veterinárias"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0888"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/08"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0888",
+            "pl": {
+                "fr": "Programmes interdisciplinaires et certifications impliquant l'agriculture, la sylviculture et l'halieutique et les sciences vétérinaires",
+                "en": "Inter-disciplinary programmes and qualifications involving agriculture, forestry, fisheries and veterinary",
+                "pt": "Programas e qualificações interdisciplinares que envolvem a agricultura, silvicultura, pescas e ciências veterinárias"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/088"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/073",
+            "pl": {
+                "fr": "Architecture et bâtiment",
+                "pt": "Arquitetura e construção",
+                "en": "Architecture and construction"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0730",
+                "http://data.europa.eu/snb/isced-f/0731",
+                "http://data.europa.eu/snb/isced-f/0732"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/07"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/078",
+            "pl": {
+                "fr": "Programmes interdisciplinaires et certifications impliquant l'ingénierie, les industries de transformation et la construction",
+                "en": "Inter-disciplinary programmes and qualifications involving engineering, manufacturing and construction",
+                "pt": "Programas e qualificações interdisciplinares que envolvem a engenharia, indústrias transformadoras e construção"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0788"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/07"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/070",
+            "pl": {
+                "pt": "Engenharia, indústrias transformadoras e construção sem definição precisa",
+                "fr": "Ingénierie, industries de transformation et construction non définis",
+                "en": "Engineering, manufacturing and construction not further defined"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0700"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/07"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/092",
+            "pl": {
+                "fr": "Protection sociale",
+                "en": "Welfare",
+                "pt": "Proteção social"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0922",
+                "http://data.europa.eu/snb/isced-f/0921",
+                "http://data.europa.eu/snb/isced-f/0920",
+                "http://data.europa.eu/snb/isced-f/0929",
+                "http://data.europa.eu/snb/isced-f/0923"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/09"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/098",
+            "pl": {
+                "en": "Inter-disciplinary programmes and qualifications involving health and welfare",
+                "pt": "Programas e qualificações interdisciplinares que envolvem a saúde e a proteção social",
+                "fr": "Programmes interdisciplinaires et certifications impliquant la santé et la protection sociales"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0988"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/09"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0417",
+            "pl": {
+                "en": "Work skills",
+                "pt": "Competências laborais",
+                "fr": "Compétences professionnelles"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/041"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/009",
+            "pl": {
+                "pt": "Programas e qualificações genéricos não classificados noutras áreas",
+                "en": "Generic programmes and qualifications not elsewhere classified",
+                "fr": "Programmes et certifications génériques non classé ailleurs"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0099"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/00"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0099",
+            "pl": {
+                "pt": "Programas e qualificações genéricos não classificados noutras áreas",
+                "en": "Generic programmes and qualifications not elsewhere classified",
+                "fr": "Programmes et certifications génériques non classé ailleurs"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/009"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/100",
+            "pl": {
+                "pt": "Serviços sem definição precisa",
+                "en": "Services not further defined",
+                "fr": "Services non définis"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/1000"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/10"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/1000",
+            "pl": {
+                "pt": "Serviços sem definição precisa",
+                "en": "Services not further defined",
+                "fr": "Services non définis"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/100"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0922",
+            "pl": {
+                "en": "Child care and youth services",
+                "fr": "Soins aux enfants et à la jeunesse",
+                "pt": "Serviços de apoio a crianças e jovens"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/092"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0214",
+            "pl": {
+                "en": "Handicrafts",
+                "fr": "Artisanat",
+                "pt": "Artesanato"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/021"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0321",
+            "pl": {
+                "pt": "Jornalismo e reportagem",
+                "fr": "Journalism and reporting",
+                "en": "Journalism and reporting"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/032"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/032",
+            "pl": {
+                "en": "Journalism and information",
+                "pt": "Jornalismo e informação",
+                "fr": "Journalisme et information"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0321",
+                "http://data.europa.eu/snb/isced-f/0322",
+                "http://data.europa.eu/snb/isced-f/0329",
+                "http://data.europa.eu/snb/isced-f/0320"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/03"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0542",
+            "pl": {
+                "pt": "Estatística",
+                "fr": "Statistiques",
+                "en": "Statistics"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/054"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0541",
+            "pl": {
+                "pt": "Matemática",
+                "en": "Mathematics",
+                "fr": "Mathématiques"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/054"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0412",
+            "pl": {
+                "pt": "Finanças, banca e seguros",
+                "fr": "Finance, banque et assurances",
+                "en": "Finance, banking and insurance"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/041"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0521",
+            "pl": {
+                "fr": "Sciences environnementales",
+                "pt": "Ciências do ambiente",
+                "en": "Environmental sciences"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/052"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/052",
+            "pl": {
+                "pt": "Ambiente",
+                "en": "Environment",
+                "fr": "Environnement"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0521",
+                "http://data.europa.eu/snb/isced-f/0522",
+                "http://data.europa.eu/snb/isced-f/0520",
+                "http://data.europa.eu/snb/isced-f/0529"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/05"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0611",
+            "pl": {
+                "pt": "Informática na ótica do utilizador",
+                "en": "Computer use",
+                "fr": "Utilisation d’un ordinateur"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/061"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/03",
+            "pl": {
+                "en": "Social sciences, journalism and information",
+                "fr": "Sciences sociales, journalisme et information",
+                "pt": "Ciências sociais, jornalismo e informação"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/039",
+                "http://data.europa.eu/snb/isced-f/032",
+                "http://data.europa.eu/snb/isced-f/038",
+                "http://data.europa.eu/snb/isced-f/030",
+                "http://data.europa.eu/snb/isced-f/031"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/039",
+            "pl": {
+                "pt": "Programas das ciências sociais, jornalismo e informação não classificados noutras áreas",
+                "fr": "Sciences sociales, journalisme et information non classés ailleurs",
+                "en": "Social sciences, journalism and information not elsewhere classified"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0399"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/03"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/038",
+            "pl": {
+                "pt": "Programas e qualificações interdisciplinares que envolvem as ciências sociais, jornalismo e informação",
+                "fr": "Programmes interdisciplinaires et certifications impliquant les sciences sociales, le journalisme et l'information",
+                "en": "Inter-disciplinary programmes and qualifications involving social sciences, journalism and information"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0388"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/03"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/030",
+            "pl": {
+                "pt": "Ciências sociais, jornalismo e informação sem definição precisa",
+                "en": "Social sciences, journalism and information not further defined",
+                "fr": "Sciences sociales, journalisme et information non définis"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0300"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/03"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0399",
+            "pl": {
+                "pt": "Programas das ciências sociais, jornalismo e informação não classificados noutras áreas",
+                "fr": "Sciences sociales, journalisme et information non classés ailleurs",
+                "en": "Social sciences, journalism and information not elsewhere classified"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/039"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/003",
+            "pl": {
+                "fr": "Compétences personnelles",
+                "pt": "Competências pessoais e desenvolvimento pessoal",
+                "en": "Personal skills and development"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0031"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/00"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0031",
+            "pl": {
+                "fr": "Compétences et développement personnels",
+                "pt": "Competências pessoais e desenvolvimento pessoal",
+                "en": "Personal skills and development"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/003"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0210",
+            "pl": {
+                "pt": "Artes sem definição precisa",
+                "fr": "Arts non définis",
+                "en": "Arts not further defined"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/021"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0730",
+            "pl": {
+                "pt": "Arquitetura e construção sem definição precisa",
+                "en": "Architecture and construction not further defined",
+                "fr": "Architecture et bâtiment non définis"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/073"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/058",
+            "pl": {
+                "fr": "Programmes interdisciplinaires et certifications impliquant les sciences naturelles, mathématiques et statistiques",
+                "en": "Inter-disciplinary programmes and qualifications involving natural sciences, mathematics and statistics",
+                "pt": "Programas e qualificações interdisciplinares que envolvem as ciências naturais, matemática e estatística"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0588"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/05"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0588",
+            "pl": {
+                "fr": "Programmes interdisciplinaires et certifications impliquant les sciences naturelles, mathématiques et statistiques",
+                "en": "Inter-disciplinary programmes and qualifications involving natural sciences, mathematics and statistics",
+                "pt": "Programas e qualificações interdisciplinares que envolvem as ciências naturais, matemática e estatística"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/058"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0914",
+            "pl": {
+                "en": "Medical diagnostic and treatment technology",
+                "fr": "Diagnostic médical et technologie de traitement",
+                "pt": "Tecnologias de diagnóstico e terapêutica"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/091"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0288",
+            "pl": {
+                "pt": "Programas e qualificações interdisciplinares que envolvem as artes e as humanidades",
+                "en": "Inter-disciplinary programmes and qualifications involving arts and humanities",
+                "fr": "Programmes interdisciplinaires et certifications impliquant les arts et les lettres"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/028"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0322",
+            "pl": {
+                "fr": "Library, information and archival studies",
+                "pt": "Biblioteconomia, arquivística e ciências da informação",
+                "en": "Library, information and archival studies"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/032"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0414",
+            "pl": {
+                "pt": "Marketing e publicidade",
+                "fr": "Marketing et publicité",
+                "en": "Marketing and advertising"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/041"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/1011",
+            "pl": {
+                "en": "Domestic services",
+                "pt": "Serviços domésticos",
+                "fr": "Services domestiques"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/101"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/1013",
+            "pl": {
+                "pt": "Hotelaria, restauração e catering",
+                "fr": "Hôtellerie et services de restauration",
+                "en": "Hotel, restaurants and catering"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/101"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0731",
+            "pl": {
+                "en": "Architecture and town planning",
+                "pt": "Arquitetura e urbanismo",
+                "fr": "Architecture et urbanisme"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/073"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0732",
+            "pl": {
+                "pt": "Construção civil e engenharia civil",
+                "en": "Building and civil engineering",
+                "fr": "Construction et génie civil"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/073"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0511",
+            "pl": {
+                "fr": "Biologie",
+                "en": "Biology",
+                "pt": "Biologia"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/051"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/051",
+            "pl": {
+                "pt": "Ciências biológicas e ciências afins",
+                "fr": "Sciences biologiques et apparentées",
+                "en": "Biological and related sciences"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0511",
+                "http://data.europa.eu/snb/isced-f/0510",
+                "http://data.europa.eu/snb/isced-f/0519",
+                "http://data.europa.eu/snb/isced-f/0512"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/05"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0313",
+            "pl": {
+                "fr": "Psychologie",
+                "en": "Psychology",
+                "pt": "Psicologia"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/031"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0329",
+            "pl": {
+                "fr": "Journalisme et information non classés ailleurs",
+                "en": "Journalism and information not elsewhere classified",
+                "pt": "Programas de jornalismo e informação não classificados noutras áreas"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/032"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0300",
+            "pl": {
+                "pt": "Ciências sociais, jornalismo e informação sem definição precisa",
+                "en": "Social sciences, journalism and information not further defined",
+                "fr": "Sciences sociales, journalisme et information non définis"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/030"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/1039",
+            "pl": {
+                "en": "Security services not elsewhere classified",
+                "fr": "Services de sûreté non classés ailleurs",
+                "pt": "Programas de serviços de segurança não classificados noutras áreas"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/103"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/103",
+            "pl": {
+                "fr": "Services de sûreté",
+                "en": "Security services",
+                "pt": "Serviços de segurança"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/1039",
+                "http://data.europa.eu/snb/isced-f/1030",
+                "http://data.europa.eu/snb/isced-f/1031",
+                "http://data.europa.eu/snb/isced-f/1032"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/10"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0819",
+            "pl": {
+                "fr": "Agriculture non classé ailleurs",
+                "pt": "Programas de agricultura não classificados noutras áreas",
+                "en": "Agriculture not elsewhere classified"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/081"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/999",
+            "pl": {
+                "en": "Field unknown",
+                "fr": "Domaine inconnu",
+                "pt": "Área desconhecida"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/9999"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/99"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/9999",
+            "pl": {
+                "en": "Field unknown",
+                "fr": "Domaine inconnu",
+                "pt": "Área desconhecida"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/999"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/99",
+            "pl": {
+                "en": "Field unknown",
+                "fr": "Domaine inconnu",
+                "pt": "Área desconhecida"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/999"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0713",
+            "pl": {
+                "en": "Electricity and energy",
+                "pt": "Eletricidade e energia",
+                "fr": "Électricité et énergie"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/071"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0213",
+            "pl": {
+                "fr": "Beaux-arts",
+                "pt": "Belas-artes",
+                "en": "Fine arts"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/021"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0211",
+            "pl": {
+                "en": "Audio-visual techniques and media production",
+                "fr": "Techniques audiovisuelles et production multimédia",
+                "pt": "Técnicas audiovisuais e produção dos media"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/021"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0219",
+            "pl": {
+                "en": "Arts not elsewhere classified",
+                "pt": "Programas de artes não classificados noutras áreas",
+                "fr": "Arts non classés ailleurs"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/021"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0212",
+            "pl": {
+                "en": "Fashion, interior and industrial design",
+                "pt": "Design de moda, de interiores e industrial",
+                "fr": "Stylisme, décoration et design industriel"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/021"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0215",
+            "pl": {
+                "en": "Music and performing arts",
+                "fr": "Musique, théâtre, danse, cirque",
+                "pt": "Música e artes do espetáculo"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/021"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0419",
+            "pl": {
+                "fr": "Commerce et administration non classés ailleurs",
+                "en": "Business and administration not elsewhere classified",
+                "pt": "Programas de ciências empresariais e administração não classificados noutras áreas"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/041"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0788",
+            "pl": {
+                "fr": "Programmes interdisciplinaires et certifications impliquant l'ingénierie, les industries de transformation et la construction",
+                "en": "Inter-disciplinary programmes and qualifications involving engineering, manufacturing and construction",
+                "pt": "Programas e qualificações interdisciplinares que envolvem a engenharia, indústrias transformadoras e construção"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/078"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/1030",
+            "pl": {
+                "en": "Security services not further defined",
+                "pt": "Serviços de segurança sem definição precisa",
+                "fr": "Services de sûreté non définis"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/103"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/1031",
+            "pl": {
+                "en": "Military and defence",
+                "fr": "Sécurité militaire et défense",
+                "pt": "Segurança militar e defesa"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/103"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/1032",
+            "pl": {
+                "fr": "Protection des biens et des personnes",
+                "pt": "Proteção de pessoas e bens",
+                "en": "Protection of persons and property"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/103"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0510",
+            "pl": {
+                "pt": "Ciências biológicas e ciências afins sem definição precisa",
+                "en": "Biological and related sciences not further defined",
+                "fr": "Sciences biologiques et apparentées non définis"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/051"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0413",
+            "pl": {
+                "pt": "Gestão e administração",
+                "en": "Management and administration",
+                "fr": "Gestion et administration"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/041"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0988",
+            "pl": {
+                "en": "Inter-disciplinary programmes and qualifications involving health and welfare",
+                "pt": "Programas e qualificações interdisciplinares que envolvem a saúde e a proteção social",
+                "fr": "Programmes interdisciplinaires et certifications impliquant la santé et la protection sociales"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/098"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0917",
+            "pl": {
+                "fr": "Médecine et thérapies traditionnelles et complémentaires",
+                "en": "Traditional and complementary medicine and therapy",
+                "pt": "Medicina tradicional e complementar e terapia"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/091"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0500",
+            "pl": {
+                "fr": "Sciences naturelles, mathématiques et statistiques non définis",
+                "pt": "Ciências naturais, matemática e estatística sem definição precisa",
+                "en": "Natural sciences, mathematics and statistics not further defined"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/050"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/050",
+            "pl": {
+                "fr": "Sciences naturelles, mathématiques et statistiques non définis",
+                "pt": "Ciências naturais, matemática e estatística sem definição precisa",
+                "en": "Natural sciences, mathematics and statistics not further defined"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0500"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/05"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0320",
+            "pl": {
+                "pt": "Jornalismo e informação sem definição precisa",
+                "fr": "Journalisme et information non définis",
+                "en": "Journalism and information not further defined"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/032"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/089",
+            "pl": {
+                "en": "Agriculture, forestry, fisheries and veterinary not elsewhere classified",
+                "pt": "Programas de agricultura, silvicultura, pescas e ciências veterinárias não classificados noutras áreas",
+                "fr": "Agriculture, sylviculture et halieutique et sciences vétérinaires non classés ailleurs"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0899"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/08"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0899",
+            "pl": {
+                "en": "Agriculture, forestry, fisheries and veterinary not elsewhere classified",
+                "pt": "Programas de agricultura, silvicultura, pescas e ciências veterinárias não classificados noutras áreas",
+                "fr": "Agriculture, sylviculture et halieutique et sciences vétérinaires non classés ailleurs"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/089"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0415",
+            "pl": {
+                "pt": "Secretariado e trabalho administrativo",
+                "en": "Secretarial and office work",
+                "fr": "Travail de secrétariat et de bureau"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/041"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0411",
+            "pl": {
+                "en": "Accounting and taxation",
+                "fr": "Comptabilité et fiscalité",
+                "pt": "Contabilidade e fiscalidade"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/041"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0416",
+            "pl": {
+                "pt": "Comércio (por grosso e a retalho)",
+                "fr": "Vente en gros et au détail",
+                "en": "Wholesale and retail sales"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/041"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0239",
+            "pl": {
+                "pt": "Programas de línguas não classificados noutras áreas",
+                "fr": "Langues non classés ailleurs",
+                "en": "Languages not elsewhere classified"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/023"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/1014",
+            "pl": {
+                "pt": "Desporto",
+                "fr": "Sports",
+                "en": "Sports"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/101"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0911",
+            "pl": {
+                "en": "Dental studies",
+                "fr": "Études dentaires",
+                "pt": "Ciências dentárias"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/091"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0612",
+            "pl": {
+                "fr": "Conception et administration de bases de données et de réseau",
+                "en": "Database and network design and administration",
+                "pt": "Design e administração de bases de dados e de redes informáticas"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/061"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0519",
+            "pl": {
+                "pt": "Programas de ciências biológicas e ciências afins não classificados noutras áreas",
+                "fr": "Sciences biologiques et apparentées non classés ailleurs",
+                "en": "Biological and related sciences not elsewhere classified"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/051"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0522",
+            "pl": {
+                "pt": "Ambientes naturais e vida selvagem",
+                "fr": "Environnements naturels et faune et flore",
+                "en": "Natural environments and wildlife"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/052"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0520",
+            "pl": {
+                "fr": "Environnement non défini",
+                "en": "Environment not further defined",
+                "pt": "Ambiente sem definição precisa"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/052"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0529",
+            "pl": {
+                "pt": "Programas de ambiente não classificados noutras áreas",
+                "fr": "Environnement non classé ailleurs",
+                "en": "Environment not elsewhere classified"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/052"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0921",
+            "pl": {
+                "fr": "Soins gérontologiques et aux adultes handicapés",
+                "en": "Care of the elderly and of disabled adults",
+                "pt": "Assistência a idosos e a adultos deficientes"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/092"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0700",
+            "pl": {
+                "pt": "Engenharia, indústrias transformadoras e construção sem definição precisa",
+                "fr": "Ingénierie, industries de transformation et construction non définis",
+                "en": "Engineering, manufacturing and construction not further defined"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/070"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0299",
+            "pl": {
+                "fr": "Arts et lettres non classés ailleurs",
+                "en": "Arts and humanities not elsewhere classified",
+                "pt": "Programas de artes e humanidades não classificados noutras áreas"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/029"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0920",
+            "pl": {
+                "pt": "Proteção social sem definição precisa",
+                "fr": "Protection sociale non définie",
+                "en": "Welfare not further defined"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/092"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0388",
+            "pl": {
+                "pt": "Programas e qualificações interdisciplinares que envolvem as ciências sociais, jornalismo e informação",
+                "fr": "Programmes interdisciplinaires et certifications impliquant les sciences sociales, le journalisme et l'information",
+                "en": "Inter-disciplinary programmes and qualifications involving social sciences, journalism and information"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/038"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0200",
+            "pl": {
+                "en": "Arts and humanities not further defined",
+                "pt": "Artes e humanidades sem definição precisa",
+                "fr": "Lettres et arts non définis"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/020"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0714",
+            "pl": {
+                "pt": "Eletrónica e automação",
+                "en": "Electronics and automation",
+                "fr": "Électronique et automatisation"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/071"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0613",
+            "pl": {
+                "fr": "Développement et analyse de logiciels et d’applications",
+                "en": "Software and applications development and analysis",
+                "pt": "Desenvolvimento e análise de software e aplicações informáticas"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/061"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0232",
+            "pl": {
+                "fr": "Littérature et linguistique",
+                "en": "Literature and linguistics",
+                "pt": "Literatura e linguística"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/023"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0512",
+            "pl": {
+                "fr": "Biochimie",
+                "pt": "Bioquímica",
+                "en": "Biochemistry"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/051"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0812",
+            "pl": {
+                "fr": "Horticulture",
+                "pt": "Horticultura",
+                "en": "Horticulture"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/081"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0811",
+            "pl": {
+                "en": "Crop and livestock production",
+                "pt": "Produção agrícola e animal",
+                "fr": "Culture et élevage"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/081"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/059",
+            "pl": {
+                "fr": "Sciences naturelles, mathématiques et statistiques non classés ailleurs",
+                "en": "Natural sciences, mathematics and statistics not elsewhere classified",
+                "pt": "Programas de ciências naturais, matemática e estatística não classificados noutras áreas"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0599"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/05"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0599",
+            "pl": {
+                "fr": "Sciences naturelles, mathématiques et statistiques non classés ailleurs",
+                "en": "Natural sciences, mathematics and statistics not elsewhere classified",
+                "pt": "Programas de ciências naturais, matemática e estatística não classificados noutras áreas"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/059"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0915",
+            "pl": {
+                "fr": "Thérapie et rééducation",
+                "pt": "Terapia e reabilitação",
+                "en": "Therapy and rehabilitation"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/091"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0929",
+            "pl": {
+                "fr": "Protection sociale non classée ailleurs",
+                "en": "Welfare not elsewhere classified",
+                "pt": "Programas de proteção social não classificados noutras áreas"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/092"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0923",
+            "pl": {
+                "pt": "Trabalho social e aconselhamento",
+                "en": "Social work and counselling",
+                "fr": "Travail social et orientation"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/092"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0312",
+            "pl": {
+                "pt": "Ciências políticas e cidadania",
+                "en": "Political sciences and civics",
+                "fr": "Sciences politiques et éducation civique"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/031"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0619",
+            "pl": {
+                "en": "Information and communication technologies not elsewhere classified",
+                "pt": "Programas de tecnologias da informação e comunicação (TIC) não classificados noutras áreas",
+                "fr": "Technologies de l’information et de la communication (TIC) non classés ailleurs"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/061"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/1010",
+            "pl": {
+                "en": "Personal services not further defined",
+                "fr": "Services aux particuliers non définis",
+                "pt": "Serviços pessoais sem definição precisa"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/101"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0716",
+            "pl": {
+                "fr": "Véhicules à moteur, bateaux et aéronefs",
+                "pt": "Veículos a motor, navios e aviões",
+                "en": "Motor vehicles, ships and aircraft"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/071"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0311",
+            "pl": {
+                "fr": "Économie",
+                "en": "Economics",
+                "pt": "Economia"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/031"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/108",
+            "pl": {
+                "pt": "Programas e qualificações interdisciplinares que envolvem os serviços",
+                "fr": "Programmes interdisciplinaires et certifications impliquant les services",
+                "en": "Inter-disciplinary programmes and qualifications involving services"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/1088"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/10"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0011",
+            "pl": {
+                "pt": "Programas e qualificações de base",
+                "fr": "Programmes et certifications de base",
+                "en": "Basic programmes and qualifications"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/001"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/001",
+            "pl": {
+                "pt": "Programas e qualificações de base",
+                "fr": "Programmes et certifications de base",
+                "en": "Basic programmes and qualifications"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0011"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/00"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/1088",
+            "pl": {
+                "pt": "Programas e qualificações interdisciplinares que envolvem os serviços",
+                "fr": "Programmes interdisciplinaires et certifications impliquant les services",
+                "en": "Inter-disciplinary programmes and qualifications involving services"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/108"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0319",
+            "pl": {
+                "fr": "Sciences sociales et du comportement non classés ailleurs",
+                "en": "Social and behavioural sciences not elsewhere classified",
+                "pt": "Programas de ciências sociais e comportamentais não classificados noutras áreas"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/031"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/040",
+            "pl": {
+                "pt": "Ciências empresariais, administração e direito sem definição precisa",
+                "fr": "Commerce, administration et droit non définis",
+                "en": "Business, administration and law not further defined"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0400"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/04"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0400",
+            "pl": {
+                "pt": "Ciências empresariais, administração e direito sem definição precisa",
+                "fr": "Commerce, administration et droit non définis",
+                "en": "Business, administration and law not further defined"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/040"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/1020",
+            "pl": {
+                "pt": "Serviços de higiene e saúde ocupacional sem definição precisa",
+                "fr": "Hygiène et services de santé au travail non définis",
+                "en": "Hygiene and occupational health services not further defined"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/102"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0719",
+            "pl": {
+                "en": "Engineering and engineering trades not elsewhere classified",
+                "fr": "Ingénierie et techniques apparentées non classés ailleurs",
+                "pt": "Programas de engenharia e tecnologias afins não classificados noutras áreas"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/071"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0710",
+            "pl": {
+                "pt": "Engenharia e tecnologias afins sem definição precisa",
+                "fr": "Ingénierie et techniques apparentées non définis",
+                "en": "Engineering and engineering trades not further defined"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/071"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0711",
+            "pl": {
+                "pt": "Engenharia química e de processos",
+                "fr": "Ingénierie chimique et processus",
+                "en": "Chemical engineering and processes"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/071"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/1015",
+            "pl": {
+                "pt": "Viagens, turismo e lazer",
+                "en": "Travel, tourism and leisure",
+                "fr": "Voyage, tourisme et loisirs"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/101"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0910",
+            "pl": {
+                "fr": "Santé non définie",
+                "en": "Health not further defined",
+                "pt": "Saúde sem definição precisa"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/091"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/080",
+            "pl": {
+                "en": "Agriculture, forestry, fisheries and veterinary not further defined",
+                "pt": "Agricultura, silvicultura, pescas e ciências veterinárias sem definição precisa",
+                "fr": "Agriculture, sylviculture et halieutique et sciences vétérinaires non définis"
+            },
+            "nr": [
+                "http://data.europa.eu/snb/isced-f/0800"
+            ],
+            "b": [
+                "http://data.europa.eu/snb/isced-f/08"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0919",
+            "pl": {
+                "pt": "Programas de saúde não classificados noutras áreas",
+                "en": "Health not elsewhere classified",
+                "fr": "Santé non classée ailleurs"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/091"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0913",
+            "pl": {
+                "en": "Nursing and midwifery",
+                "pt": "Enfermagem geral e enfermagem obstétrica",
+                "fr": "Soins infirmiers et formation de sages-femmes"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/091"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/1021",
+            "pl": {
+                "pt": "Saúde pública",
+                "en": "Community sanitation",
+                "fr": "Salubrité publique"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/102"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0800",
+            "pl": {
+                "en": "Agriculture, forestry, fisheries and veterinary not further defined",
+                "pt": "Agricultura, silvicultura, pescas e ciências veterinárias sem definição precisa",
+                "fr": "Agriculture, sylviculture et halieutique et sciences vétérinaires non définis"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/080"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/1019",
+            "pl": {
+                "fr": "Services aux particuliers non classés ailleurs",
+                "pt": "Programas de serviços sociais não classificados noutras áreas",
+                "en": "Personal services not elsewhere classified"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/101"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        {
+            "@id": "http://data.europa.eu/snb/isced-f/0230",
+            "pl": {
+                "en": "Languages not further defined",
+                "pt": "Línguas sem definição precisa",
+                "fr": "Langues non définies"
+            },
+            "b": [
+                "http://data.europa.eu/snb/isced-f/023"
+            ],
+            "is": {
+                "@id": "http://data.europa.eu/snb/isced-f/25831c2"
+            },
+            "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+    ],
+    "@context": {
+        "al": {
+            "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
+            "@container": "@language"
+        },
+        "pl": {
+            "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+            "@container": "@language"
+        },
+        "is": {
+            "@id": "http://www.w3.org/2004/02/skos/core#inScheme"
+        },
+        "b": {
+            "@id": "http://www.w3.org/2004/02/skos/core#broader",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "nr": {
+            "@id": "http://www.w3.org/2004/02/skos/core#narrower",
+            "@type": "@id",
+            "@container": "@set"
+        }
+    }
+}
