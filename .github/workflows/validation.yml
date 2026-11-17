@@ -29,5 +29,5 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: public-data-site-${{ github.sha }}
-          path: docs/
+          path: build/site/
           if-no-files-found: error

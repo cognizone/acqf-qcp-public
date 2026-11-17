@@ -14,9 +14,10 @@ The intended public website is `https://data.acqf-qcp.africa/`.
 | ETF-dev | `https://data.acqf-qcp.africa/etf/model/exchange-model.ttl` |
 
 The ACQF endpoint and graph stay compatible. ETF is an additional path with EQF
-constraints. Both belong to one validated `docs/` tree from one commit. Publishing
+constraints. Both belong to one validated `build/site/` tree from one commit. Publishing
 that complete tree avoids a partially updated combination of ACQF and ETF files.
-The current workflow uploads a preview artifact and has no deployment job. Existing
+The current workflow rebuilds a clean site, verifies the committed `docs/`
+compatibility export, and uploads `build/site/` as a preview artifact and has no deployment job. Existing
 Pages publishing-source settings remain unchanged and must be confirmed at rollout.
 
 ## Current application dependencies
@@ -58,7 +59,7 @@ replacements in existing deployments.
 2. Exercise both product configurations in dedicated canaries using those reviewed
    artifacts. Confirm ACQF national levels and all eight official EQF levels, as
    well as rejection of the other product's national-level values where applicable.
-3. Publish the **entire** validated `docs/` tree to the existing website through its
+3. Publish the **entire** validated `build/site/` tree to the existing website through its
    configured publication process. Preserve the domain and ACQF paths. Verify both
    public validation files are reachable before switching either application.
 4. In the application deployment configuration, select the corresponding shared-site

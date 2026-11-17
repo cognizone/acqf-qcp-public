@@ -1,146 +1,136 @@
-# Shared publisher, product-owned sources
+# Publication architecture
 
-One repository builds ACQF and ETF for `https://data.acqf-qcp.africa/`.
-ACQF keeps every existing published path and RDF identifier. ETF is published under
-`/etf/`. Source organization is independent of public URLs.
+One repository builds ACQF and ETF for `https://data.acqf-qcp.africa/`. Maintained
+source and generated delivery artifacts have separate owners and locations:
 
 ```text
 common/
-  model/exchange-model.ttl       shared rules and shared CV bindings
+  model/                        shared structural shapes and CV bindings
   vocabularies/                 published shared CVs
-  contexts/                     published import contexts
-  frames/                       published import frame
   validation-inputs/            private frozen ISCED-F input
-  publication.json              shared website mappings
-  documentation/                shared reference page
-products/
-  acqf/
-    profile.ttl                 ACQF-specific bindings and restrictions
-    vocabularies/               catalogue and national/regional schemes
-    model/                      existing ACQF model extension
-    documentation/              existing landing page and model reference
-    examples/
-    tests/                      ACQF contract expectations
-    publication.json            profile, site mappings and export path
-  etf/
-    profile.ttl
-    vocabularies/               ETF catalogue and complete EQF distribution
-    documentation/
-    tests/
-    publication.json
-publication/                    shared Bash/Jena builder, queries and test runner
-docs/                           generated, deployable website; do not edit
+  contexts/, frames/            published import resources
+  documentation/                authored shared guidance
+  templates/                    source templates for generated model references
+  publication.json              shared source-to-URL mappings
+products/<product>/
+  profile.ttl                   product-specific CV bindings and restrictions
+  vocabularies/                 product catalogue and reviewed vocabulary snapshots
+  documentation/                authored product guidance
+  assets/                       optional static assets, with product-owned provenance
+  examples/, model/             optional product examples and legacy extensions
+  tests/                        product expectations and compatibility contracts
+  publication.json              profile, source-to-URL mappings and reference output
+publication/                    shared queries, fixtures and thin shell wrappers
+build/site/                     clean, disposable website; the release artifact
+docs/                           committed compatibility export, generated only
 ```
 
-`common/publication.json` maps shared sources to their existing published locations.
-Product configurations declare their profile, test expectations, site mappings and
-export path. Source paths are relative to the configuration's directory; `output`
-is relative to the repository and mapping `target` values are relative to the website.
-Neither builder contains ACQF/ETF conditionals.
+Sources resolve relative to their configuration file. Mapping targets are public
+paths relative to the website root; `output` and `reference.output` retain the
+`docs/` prefix to describe the committed compatibility location. They map to the
+same relative paths in `build/site/`.
 
-Validation reads the RDF-only directories `common/vocabularies/`,
-`common/validation-inputs/` and each product's `vocabularies/`. There are no separate
-file inventories. Profiles and catalogue links select which schemes constrain a
-property; an unreferenced legacy scheme does not expand the accepted values.
-Missing, empty and duplicate scheme definitions still fail validation assembly.
-Keep prose and non-RDF files outside these directories.
+## One-way generation
 
-## Build and check
+```text
+RDF sources + product profile -> assembled SHACL -> generated HTML reference
+Authored pages + static assets ---------------------------> clean build/site/
+clean build/site/ -> validated release artifact
+clean build/site/ -> committed docs/ compatibility export
+```
 
-Install Java 21+, Bash, jq and GNU coreutils:
+No generation task reads from `docs/`. HTML reference pages belong only in generated
+outputs. Authored prose and templates stay in the source tree. The retained ACQF
+SVG is an explicitly documented static legacy asset, not a representation that the
+build claims to regenerate from current RDF.
+
+The model reference renderer uses the existing Jena CLI and a small HTML template.
+It shows class/property constraints and vocabulary memberships from the assembled
+product graph. Structured constraints link to the complete SHACL model. Existing
+ACQF reference URL fragments are preserved by a product-owned compatibility test.
+It needs no external ontology, visualization engine or additional runtime/tool JAR.
+
+## Commands
 
 ```bash
-./gradlew buildValidation       # assemble the complete website and both models
-./gradlew check                 # check site copies and both validation contracts
+./gradlew buildSite                 # recreate clean build/site/ from source
+./gradlew buildValidation           # build site; update committed docs/ outputs
+./gradlew check                     # rebuild site; verify all contracts and exports
+./gradlew checkDocumentation        # quick catalogue-to-page link check
+bash publication/publish.sh check etf  # check only one product's validation graph
 ```
 
-Gradle Kotlin handles filesystem operations, JSON configuration, named-graph staging
-and the build/check lifecycle. Jena's CLI runs the RDF queries and validation.
-The Bash entry points are short compatibility wrappers:
+Gradle Kotlin handles filesystem/configuration work. Bash wrappers are entry points;
+Jena performs RDF parsing, querying, graph comparison and SHACL validation. The only
+downloaded RDF tool is the official Jena distribution, pinned by
+`publication/jena.sha512` and installed under ignored `build/tools/`.
 
-```bash
-bash publication/site.sh build
-bash publication/site.sh check
-# While editing only one validation profile:
-bash publication/publish.sh check etf
-```
+Validation loads the RDF-only directories `common/vocabularies/`,
+`common/validation-inputs/` and each product's `vocabularies/`. No file inventory is
+maintained separately. The profile and catalogue select accepted schemes. Unused
+legacy schemes do not expand accepted values. Missing, empty, ambiguous and duplicate
+scheme inputs fail. Non-RDF prose belongs outside these directories.
 
-The `setupJena` task installs the official CLI and verifies its archive against
-`publication/jena.sha512`. No separate application or dependency resolver is compiled.
-Publication uses reviewed local inputs; it does not fetch vocabularies or imports.
-The source files are staged in separate named graphs. SPARQL resolves scheme and
-catalogue bindings and rejects missing/empty/ambiguous inputs. Gradle groups the
-ordered result into explicit `sh:in` lists. Structural constraints and prefix validators remain intact.
+Generation stages every model and reference before replacing `build/site/`. It
+recreates that output from scratch, so removed resources and local scratch files
+cannot leak into a release. `docs/` is refreshed only by `buildValidation`, which
+removes obsolete tracked generated outputs and preserves unrelated untracked local
+files. Such local files are never copied into the canonical artifact. Do not deploy
+a dirty compatibility directory directly.
 
-The complete website is assembled in ignored `build/` first. Only after both models
-have been assembled successfully are declared outputs copied into `docs/`. Static
-resource mappings reject duplicate destinations. Unrelated local files are never
-deleted. When removing or relocating a published resource intentionally, remove its
-old tracked output too; check rejects obsolete tracked files. Stage new outputs and
-source moves before checking, so the tracked-file check sees the intended layout.
+## Checks
 
-Check compares each generated resource with its maintained source, reconstructs
-both validation graphs, compares RDF graphs including blank nodes, and runs the
-shared level, cardinality, diagnostic and duplicate-notation fixtures. The complete
-site check runs product-independent malformed-input tests once; the direct
-`publish.sh check <product>` wrapper runs `checkModels -Pproduct=<product>` for
-that product's graph and contract checks.
-The product-owned `products/acqf/tests/published-paths.txt` also protects all 46
-established ACQF public files. All 161 ACQF levels and eight EQF levels are exercised. ACQF additionally compares
-against its historical complete validation graph. Changing source file locations
-must not change that graph.
+The full check rebuilds the clean site and compares it with committed `docs/`.
+Static pages and generated references are compared as bytes; validation models are
+compared as RDF graphs, including blank nodes. Obsolete tracked outputs fail.
 
-## Published paths
+Shared malformed-input fixtures run once. Product tests exercise all 161 ACQF levels
+and eight EQF levels, cardinalities, invalid/mixed values, diagnostics and duplicate
+notation. ACQF additionally pins its historical complete validation graph, all 46
+established public files and existing model-reference anchors.
 
-| Content | URL path |
+Catalogue-to-documentation checks resolve each referenced scheme to its local RDF
+source and require a link from the product landing page to the published vocabulary.
+This checks actual RDF identities, including EQF's original EU scheme IRI. Country
+ordering and under-development placeholders remain editorial HTML. Run
+`./gradlew generateNqfList` to refresh linked titles from RDF, then rebuild exports.
+
+## Public paths and deployment
+
+| Content | Public path |
 | --- | --- |
-| ACQF landing page | `/` (existing anchors and navigation preserved) |
-| ACQF model documentation | `/exchange-model/exchange-model.html` |
-| ACQF complete validation graph | `/model/exchange-model.ttl` |
-| Existing ACQF vocabularies, contexts, examples | Existing `/model/...` URLs |
-| ETF landing page | `/etf/` |
-| ETF complete validation graph | `/etf/model/exchange-model.ttl` |
-| ETF catalogue, EQF and profile | `/etf/model/...` |
-| Shared reference page | `/common/` |
-| Shared source model | Existing `/model/common/exchange-model.ttl` |
+| ACQF landing page | `/` |
+| ACQF generated reference | `/exchange-model/exchange-model.html` |
+| ACQF retained diagram | `/exchange-model/exchange-model.svg` |
+| ACQF validation graph | `/model/exchange-model.ttl` |
+| Existing ACQF vocabularies, contexts and examples | Existing `/model/...` paths |
+| ETF guidance | `/etf/` |
+| ETF generated reference | `/etf/model/reference.html` |
+| ETF validation graph and vocabularies | `/etf/model/...` |
+| Shared guidance | `/common/` |
 
-ACQF does not acquire an `/acqf/` URL prefix. There are no ACQF compatibility aliases
-or redirects. Maintained sources and generated delivery copies have separate roles;
-only the sources are edited. RDF identifiers remain unchanged, including the
-original ETF catalogue namespace and official EU EQF scheme/member IRIs.
+ACQF has no new URL prefix or compatibility aliases. RDF identifiers remain intact.
+The older South Africa `za-qf-levels` resource stays available at its existing URL;
+the current catalogue binds `za-nqf-levels`.
 
-The existing ACQF HTML/SVG reference is retained. Its SHACL Play refresh command
-writes to `products/acqf/documentation/`, then the site build publishes it at the
-original URL. Run `./gradlew generateNqfList` to refresh vocabulary titles in the source landing
-page, then rebuild the site. It uses the existing Jena CLI to read RDF; country
-ordering, links and placeholders are maintained once in the marked HTML list.
-The title refresh preserves those editorial entries. Do not edit these resources
-in `docs/`.
-
-## Publication boundary
-
-The `dev2` workflow checks both products and uploads the whole validated `docs/`
-tree as one preview artifact. It neither deploys the live website nor changes any
-application setting. See [DEPLOYMENT.md](DEPLOYMENT.md) for the separate rollout.
-Acc and production are outside this work.
-
-Shared contexts and CVs remain single maintained sources. The old South Africa
-`za-qf-levels` document is retained at its original URL for compatibility; the current
-catalogue uses `za-nqf-levels`. This layout does not rename either scheme.
+CI runs the complete check and uploads only `build/site/` as one preview artifact.
+It never commits documents or deploys the live site. Existing raw GitHub consumers
+still require committed `docs/`, so retain that checked export until an explicit
+consumer/hosting migration. See [DEPLOYMENT.md](DEPLOYMENT.md). Acc and production
+are outside this work.
 
 ## Snapshot provenance
 
 The complete EQF Turtle is the lossless serialization of the official 20260923-0
-RDF/XML release at:
+RDF/XML release:
 
 https://op.europa.eu/o/opportal-service/euvoc-download-handler?cellarURI=http%3A%2F%2Fpublications.europa.eu%2Fresource%2Fdistribution%2Feuropean-qualification-framework%2F20260923-0%2Frdf%2Fskos_ap_eu%2Feuropean-qualification-framework-skos-ap-eu.rdf&fileName=european-qualification-framework-skos-ap-eu.rdf
 
-Original source SHA-256:
-`df1a574c4ab1c1d3559c631057d0aac67abcc1342d6a7b329423676384cea25a`.
-Its scheme is `http://data.europa.eu/snb/eqf/25831c2`.
+Original SHA-256: `df1a574c4ab1c1d3559c631057d0aac67abcc1342d6a7b329423676384cea25a`.
+Its scheme remains `http://data.europa.eu/snb/eqf/25831c2`.
 
 `common/validation-inputs/isced-f.jsonld` is QCP's frozen lookup from commit
 `c79c70c98078f5857793ec19cc6dbff94abb0f9c`, originally at
 `backend/src/main/resources/concept-schemes/http___data.europa.eu_snb_isced-f_25831c2`.
-It is a build input, not a second published ISCED vocabulary. Vocabulary refresh
-is deferred; update QCP's packaged lookups when accepted membership changes.
+It is a private build input, not another published ISCED vocabulary. Refresh is
+deferred; coordinate membership changes with QCP's packaged lookup resources.

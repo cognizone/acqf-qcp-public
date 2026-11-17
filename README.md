@@ -1,47 +1,41 @@
 # QCP public model and vocabularies
 
-This repository maintains the shared QCP model and product-specific ACQF/ETF
-validation contracts for https://data.acqf-qcp.africa/. On `dev2`, both products are
-checked together and packaged as one preview site. Existing deployments are unchanged.
+This repository maintains the shared QCP model and ACQF/ETF validation contracts
+for https://data.acqf-qcp.africa/. Work on `dev2` produces previews; it does not
+change the live website or application deployments.
 
-## Source layout
+## Source and output
 
-Shared model, vocabularies, contexts and reference documentation live in `common/`.
-Each product owns its profile, vocabularies, documentation and publication settings
-under `products/acqf/` or `products/etf/`. `docs/` is generated: ACQF retains its
-existing URLs, while ETF uses `/etf/`. See [publication/README.md](publication/README.md).
+- `common/`: shared model, vocabularies, contexts, authored documentation and templates.
+- `products/acqf/`, `products/etf/`: product profiles, vocabulary snapshots, authored guidance, assets and tests.
+- `publication/`: shared queries, lean shell entry points and test fixtures; orchestration lives in `build.gradle.kts`.
+- `build/site/`: clean generated website and the canonical release/preview artifact.
+- `docs/`: checked-in compatibility export for existing Pages/raw GitHub consumers; do not edit.
 
-## Data Model
+ACQF keeps its existing URLs. ETF uses `/etf/`. Folder names in the source tree do
+not rename RDF identifiers or published resources.
 
-Refresh the existing ACQF model documentation using SHACL Play. The command updates
-its source under `products/acqf/documentation/`; rebuild the site afterwards:
+## Build and verify
 
-1. Run `bash publication/setup-jena.sh` to install the checksum-pinned Jena CLI.
-2. Refresh NQF vocabulary titles in the source landing page
-```bash
-./gradlew generateNqfList
-```
-3. Generate diagram and HTML documentation (it downloads ELM and transforms the SHACL through `queries/generate-shacl-for-shacl-play.rq`) 
-```bash
-export JENA_HOME="$PWD/build/tools/apache-jena-6.2.0"
-export JENA_SPARQL=$JENA_HOME/bin/sparql
-export JENA_RIOT=$JENA_HOME/bin/riot
-./tools/generate-documentation.sh
-./gradlew buildValidation
-```
-
-## Product validation (dev)
-
-The existing commands remain available:
+With Java 21+, Bash, jq and GNU coreutils installed:
 
 ```bash
-./gradlew buildValidation
-./gradlew check
+./gradlew buildSite              # clean website, models and model-reference pages
+./gradlew buildValidation        # build site and refresh committed docs/ export
+./gradlew check                  # rebuild site; check exports and both contracts
+./gradlew checkDocumentation     # quick catalogue-to-page link check
+./gradlew generateNqfList        # optional: refresh NQF titles in authored ACQF page
 ```
 
+Jena is installed with checksum verification under `build/tools/`. No Python,
+SHACL Play, visualization JAR or external ontology download is needed. References
+are generated directly from each product's assembled validation graph. The retained
+ACQF SVG is a legacy static illustration; see [its provenance](products/acqf/README.md).
 
-See [publication/README.md](publication/README.md) for repository ownership, the
-architecture diagram, product profiles, standalone exports and CI checks. Edit the
-common model or a product profile, then regenerate both complete exports; do not
-edit generated validation files directly. See [deployment coordination](publication/DEPLOYMENT.md)
-before moving either application or the public website to the consolidated outputs.
+Commit generated compatibility exports with their source changes. CI uploads only
+the clean `build/site/` tree. Keep local experiments in ignored `sandbox/` or outside
+the checkout; files left in `docs/` are not release inputs.
+
+See [publication architecture](publication/README.md) and
+[deployment coordination](publication/DEPLOYMENT.md) before rolling out the site
+or changing either application's validation URL.

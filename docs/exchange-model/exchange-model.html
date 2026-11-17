@@ -1,1175 +1,232 @@
-<!DOCTYPE HTML><html lang="en">
-   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <style>
-		
-			body {
-						margin: 0;
-						font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-							"Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
-							"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-							"Noto Color Emoji";
-						background-color: #fff;
-					}
-					
-					.anchor {
-						float: left;
-						padding-right: 4px;
-						margin-left: -20px;
-						line-height: 1;
-						padding-top: 12px;
-					}
-							
-					a {
-						color: #007bff;
-						text-decoration: none;
-						background-color: transparent;
-					}
-					
-					a:-webkit-any-link {
-						cursor: pointer;
-					}
-					
-					.p {
-						font-size: 0.875em;
-					}
-					
-					h2 {
-						margin: 25px 0px 10px 0px;
-					}
-					
-					h3 {
-						font-size: 1.4em;
-					}
-
-					h4 {
-						font-size: 1.1em;
-						font-weight: bold;
-					}
-
-					.constraint_list li {
-						list-style:"> ";
-						font-style: italic;
-					}
-					
-					@media only print {
-					}
-					
-					@page {
-						size: A4 portrait;
-						margin-top: 1.2cm;
-						margin-bottom: 1.2cm;
-						margin-left: 1.2cm;
-						margin-right: 1.2cm;
-						background-repeat: no-repeat;
-						background-position: 40px 10px;
-						
-						@bottom-center
-						{
-						content
-						:
-						counter(
-						page
-						);
-					}
-					
-					}
-							
-					/* This section draw the format web */
-					.ul_type_none {
-						list-style-type: none;
-					}
-					
-					.sp_list_description_properties {
-						/* don't set it lower otherwise it gets hidden in PDF */
-						padding-left: 20px;
-					}
-					
-					dl, ol, ul {
-						margin-top: 0;
-						margin-bottom: 1rem;
-					}
-					
-					li {
-						display: list-item;
-						text-align: -webkit-match-parent;
-					}
-					
-					.sp_section_title_header {
-						font-family: Georgia, Garamond, serif;	
-						margin-top: 25px;
-						margin-bottom: 2.5rem;
-					    font-size: 1.5625rem;
-						display: block;
-						font-weight: 500;
-						color: #1e1e1f;
-						line-height: 1.2em;   
-					}
-					
-					.sp_section_subtitle {
-						font-family: Georgia, Garamond, serif;	
-						margin-top: 0;
-						margin-bottom: 0.5rem;
-						display: block;
-						font-weight: 500;
-						color: #1e1e1f;
-						line-height: 1.2em;  
-					}
-					
-					.sp_section_title_table {
-						font-family: Georgia, Garamond, serif;	
-						/* 0 because URI is right under */
-						margin-bottom: 0rem;
-						display: block;
-						font-weight: 500;
-						color: #1e1e1f;
-						line-height: 1.2em; 
-					}
-							
-
-					.sp_section_title_toc {
-						font-family: Georgia, Garamond, serif;	
-					}
-
-					/* URI below the title of the section */
-					.sp_section_uri	 {
-						margin-top: 0px;
-					}
-
-					/* div wrapping section title and URI below - same as a paragraph margin */
-					.sp_section_title_table_wrapper {
-						margin-bottom: 16px;
-						border-bottom: 1px solid;	
-					}
-					
-					.sp_section_nodeshape_diagram {
-						padding-bottom: 16px;
-					}
-					
-					.sp_section_nodeshape_center {
-						display: flex;
-						justify-content: center;
-					}
-					
-					table {
-						display: table;
-						border-spacing: 0px;
-						margin-bottom: 1rem;
-					}
-					
-					.table-striped tr:nth-child(even) {
-						background-color: #eee;
-					}
-							
-					.sp_table_prefixes table {
-						border-collapse: collapse;
-						margin-bottom: 1rem;
-						color: #212529;
-					}
-											
-					.sp_table_prefixes td {
-						padding: 0.25rem;
-						vertical-align: top;
-						border-top: 1px solid #dee2e6;
-					}
-					
-					.sp_table_propertyshapes {
-						border-collapse: collapse;
-						width: 100%;
-					}
-										
-					.sp_table_propertyshapes thead {
-						display: table-header-group;
-						vertical-align: middle;
-						border-color: inherit;
-					}
-													
-					.sp_table_propertyshapes tr {
-					    display: table-row;
-					    vertical-align: inherit;
-					    border-color: inherit;					    
-					}
-													
-					.sp_table_propertyshapes th:nth-child(4) {
-						width: 6%;
-					}
-													
-					.sp_table_propertyshapes td {
-						padding: 0.75rem;
-						border-top: 1px solid #dee2e6;
-					}
-													
-					.sp_table_propertyshapes tbody {
-						display: table-row-group;
-						vertical-align: middle;
-						border-color: inherit;
-					}
-										
-					.sp_table_propertyshapes_col_description {
-						word-break: break-word;
-					}
-					
-					tr.sp_propertyGroup {
-						font-style: italic;
-						background-color: #def0f7;
-					}
-					
-					tr.sp_propertyGroup td {
-						border-bottom: 1px solid black;
-						padding-bottom: 0.25 rem;
-					}
-					
-					.sp_serialization_badge {
-						margin-right: 0.5em;
-					}
-
-					.sp_nodeshape_description {
-						background: #efefef;
-						padding-top:1px;
-						padding-bottom:1px;
-						padding-left:10px;
-						padding-right:10px;
-						border-radius: 5px;
-						margin-bottom:10px;
-					}
-					
-					
-							.container {
-							    width: calc(100% - 40px);
-							    max-width: 1100px;
-							    margin-left: 300px;
-							    margin-right: auto;
-							}
-							.container {width: calc(100% - 500px);}
-							.toc {
-								position: fixed;
-								top: 0;
-								left: 0;
-								font-size: small;
-								padding: 10px 10px;
-								width: auto;
-								border-right: solid 2px #eeeeee;
-								bottom: 0;
-								overflow-y: scroll;
-								background-color:white;
-								max-width:255px;
-							}
-							.sp_list_toc {padding-left: 0px;}
-							.sp_list_toc_l2 {padding-left: 10px;}	
-							.sp_list_toc_l3 {padding-left: 8px;}					
-						</style>
-      <!--EXTRA CSS-->
-      <meta charset="UTF-8">
-      <meta name="lang" content="en">
-      <meta property="og:locale" content="en">
-   </head>
-   <body>
-      <div class="sp_container_principal container pt-4">
-         <h1 class="mb-4 sp_section_title_header"></h1>
-         <div><br></div>
-         <div class="sp_section_title_toc toc">
-            <h2 id="index">Table of Contents</h2>
-            <ul role="list" class="sp_list_toc ul_type_none t-x-mode">
-               <li><a href="#prefixes">Namespaces</a></li>
-               <li><a href="#documentation">Model documentation</a><ul role="list" class="ul_type_none sp_list_toc_l2">
-                     <li><a href="#dc:Location">dc:Location</a></li>
-                     <li><a href="#elm:Accreditation">elm:Accreditation</a></li>
-                     <li><a href="#elm:AwardingOpportunity">elm:AwardingOpportunity</a></li>
-                     <li><a href="#elm:CreditPoint">elm:CreditPoint</a></li>
-                     <li><a href="#elm:Identifier">elm:Identifier</a></li>
-                     <li><a href="#elm:LearningEntitlementSpecification">elm:LearningEntitlementSpecification</a></li>
-                     <li><a href="#elm:LearningOpportunity">elm:LearningOpportunity</a></li>
-                     <li><a href="#elm:LearningOutcome">elm:LearningOutcome</a></li>
-                     <li><a href="#elm:Note">elm:Note</a></li>
-                     <li><a href="#elm:Organisation">elm:Organisation</a></li>
-                     <li><a href="#elm:Qualification">elm:Qualification</a></li>
-                     <li><a href="#elm:WebResource">elm:WebResource</a></li>
-                     <li><a href="#skos:Concept">skos:Concept</a></li>
-                     <li><a href="#skos:ConceptScheme">skos:ConceptScheme</a></li>
-                  </ul>
-               </li>
-            </ul>
-         </div>
-         <div class="row mt-3">
-            <div class="col">
-               <section>
-                  <h2 id="prefixes" class="sp_section_subtitle">Namespaces</h2>
-                  <table class="sp_table_prefixes table table-striped table-responsive">
-                     <thead>
-                        <tr>
-                           <th>Prefix</th>
-                           <th>Namespace</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr>
-                           <td>adms</td>
-                           <td><a href="http://www.w3.org/ns/adms#" target="_blank">http://www.w3.org/ns/adms#</a></td>
-                        </tr>
-                        <tr>
-                           <td>dc</td>
-                           <td><a href="http://purl.org/dc/terms/" target="_blank">http://purl.org/dc/terms/</a></td>
-                        </tr>
-                        <tr>
-                           <td>elm</td>
-                           <td><a href="http://data.europa.eu/snb/model/elm/" target="_blank">http://data.europa.eu/snb/model/elm/</a></td>
-                        </tr>
-                        <tr>
-                           <td>elm-extension</td>
-                           <td><a href="https://data.acqf-qcp.africa/model/elm-extension/" target="_blank">https://data.acqf-qcp.africa/model/elm-extension/</a></td>
-                        </tr>
-                        <tr>
-                           <td>foaf</td>
-                           <td><a href="http://xmlns.com/foaf/0.1/" target="_blank">http://xmlns.com/foaf/0.1/</a></td>
-                        </tr>
-                        <tr>
-                           <td>rdf</td>
-                           <td><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#" target="_blank">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a></td>
-                        </tr>
-                        <tr>
-                           <td>skos</td>
-                           <td><a href="http://www.w3.org/2004/02/skos/core#" target="_blank">http://www.w3.org/2004/02/skos/core#</a></td>
-                        </tr>
-                        <tr>
-                           <td>xsd</td>
-                           <td><a href="http://www.w3.org/2001/XMLSchema#" target="_blank">http://www.w3.org/2001/XMLSchema#</a></td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </section>
-            </div>
-         </div><br><h2 id="documentation" class="sp_section_subtitle">Model documentation</h2>
-         <div class="row mt-3">
-            <div class="col">
-               <section>
-                  <div class="sp_section_title_table_wrapper">
-                     <h3 id="dc:Location" class="sp_section_title_table">dc:Location</h3><code class="sp_section_uri">http://purl.org/dc/terms/Location</code></div>
-                  <table class="sp_table_propertyshapes table-striped table-responsive">
-                     <thead>
-                        <tr>
-                           <th>Property name</th>
-                           <th>URI</th>
-                           <th>Expected value</th>
-                           <th>Card.</th>
-                           <th class="sp_description_column">Description</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>identifier</td>
-                           <td id="dc:Location_adms:identifier"><code><a href="http://www.w3.org/ns/adms#identifier">adms:identifier</a></code></td>
-                           <td><code><a href="#elm:Identifier">elm:Identifier</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">An identifier assigned to the resource.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>spatial code</td>
-                           <td id="dc:Location_elm:spatialCode"><code><a href="http://data.europa.eu/snb/model/elm/spatialCode">elm:spatialCode</a></code></td>
-                           <td><br><small></small></td>
-                           <td>
-                              <div style="width:30px">1..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">A code identifying a spatial scope in which this physical location is located.</td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </section>
-            </div>
-         </div><br><div class="row mt-3">
-            <div class="col">
-               <section>
-                  <div class="sp_section_title_table_wrapper">
-                     <h3 id="elm:Accreditation" class="sp_section_title_table">elm:Accreditation</h3><code class="sp_section_uri">http://data.europa.eu/snb/model/elm/Accreditation</code></div>
-                  <table class="sp_table_propertyshapes table-striped table-responsive">
-                     <thead>
-                        <tr>
-                           <th>Property name</th>
-                           <th>URI</th>
-                           <th>Expected value</th>
-                           <th>Card.</th>
-                           <th class="sp_description_column">Description</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>accrediting organisation</td>
-                           <td id="elm:Accreditation_elm:accreditingAgent"><code><a href="http://data.europa.eu/snb/model/elm/accreditingAgent">elm:accreditingAgent</a></code></td>
-                           <td><code><a href="#elm:Organisation">elm:Organisation</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">1..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The Quality Assuring Authority (i.e., assurer).</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>expiry date</td>
-                           <td id="elm:Accreditation_elm:expiryDate"><code><a href="http://data.europa.eu/snb/model/elm/expiryDate">elm:expiryDate</a></code></td>
-                           <td><code>xsd:dateTime</code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The date when the accreditation expires or was expired.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>identifier</td>
-                           <td id="elm:Accreditation_adms:identifier"><code><a href="http://www.w3.org/ns/adms#identifier">adms:identifier</a></code></td>
-                           <td><code><a href="#elm:Identifier">elm:Identifier</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">An identifier assigned to the resource.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>issue date</td>
-                           <td id="elm:Accreditation_dc:issued"><code><a href="http://purl.org/dc/terms/issued">dc:issued</a></code></td>
-                           <td><code>xsd:dateTime</code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">Date of formal issuance of the resource.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>organisation</td>
-                           <td id="elm:Accreditation_elm:organisation"><code><a href="http://data.europa.eu/snb/model/elm/organisation">elm:organisation</a></code></td>
-                           <td><code><a href="#elm:Organisation">elm:Organisation</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The organisation whose activities are being accredited.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>review date</td>
-                           <td id="elm:Accreditation_elm:reviewDate"><code><a href="http://data.europa.eu/snb/model/elm/reviewDate">elm:reviewDate</a></code></td>
-                           <td><code>xsd:dateTime</code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The date when the accreditation has to be reviewed.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>title</td>
-                           <td id="elm:Accreditation_dc:title"><code><a href="http://purl.org/dc/terms/title">dc:title</a></code></td>
-                           <td><code>rdf:langString</code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">1..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The title. One value per language is permitted.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>type</td>
-                           <td id="elm:Accreditation_dc:type"><code><a href="http://purl.org/dc/terms/type">dc:type</a></code></td>
-                           <td><br><small></small></td>
-                           <td>
-                              <div style="width:30px">1..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The type of the accreditation. It should be provided using the EDC Controlled List
-                              of Accreditation Types.</td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </section>
-            </div>
-         </div><br><div class="row mt-3">
-            <div class="col">
-               <section>
-                  <div class="sp_section_title_table_wrapper">
-                     <h3 id="elm:AwardingOpportunity" class="sp_section_title_table">elm:AwardingOpportunity</h3><code class="sp_section_uri">http://data.europa.eu/snb/model/elm/AwardingOpportunity</code></div>
-                  <table class="sp_table_propertyshapes table-striped table-responsive">
-                     <thead>
-                        <tr>
-                           <th>Property name</th>
-                           <th>URI</th>
-                           <th>Expected value</th>
-                           <th>Card.</th>
-                           <th class="sp_description_column">Description</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>awarding body</td>
-                           <td id="elm:AwardingOpportunity_elm:awardingBody"><code><a href="http://data.europa.eu/snb/model/elm/awardingBody">elm:awardingBody</a></code></td>
-                           <td><code><a href="#elm:Organisation">elm:Organisation</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">1..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The awarding body related to this awarding activity (i.e., the organisation that issues
-                              the qualification) Only in cases of co-awarding/co-graduation, where a qualification
-                              is issued to an individual by two or more organisations the cardinality is greater
-                              than 1.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>identifier</td>
-                           <td id="elm:AwardingOpportunity_adms:identifier"><code><a href="http://www.w3.org/ns/adms#identifier">adms:identifier</a></code></td>
-                           <td><code><a href="#elm:Identifier">elm:Identifier</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">An identifier assigned to the resource.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>more information</td>
-                           <td id="elm:AwardingOpportunity_elm:additionalNote"><code><a href="http://data.europa.eu/snb/model/elm/additionalNote">elm:additionalNote</a></code></td>
-                           <td><code><a href="#elm:Note">elm:Note</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">An additional free text note about the resource.</td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </section>
-            </div>
-         </div><br><div class="row mt-3">
-            <div class="col">
-               <section>
-                  <div class="sp_section_title_table_wrapper">
-                     <h3 id="elm:CreditPoint" class="sp_section_title_table">elm:CreditPoint</h3><code class="sp_section_uri">http://data.europa.eu/snb/model/elm/CreditPoint</code></div>
-                  <table class="sp_table_propertyshapes table-striped table-responsive">
-                     <thead>
-                        <tr>
-                           <th>Property name</th>
-                           <th>URI</th>
-                           <th>Expected value</th>
-                           <th>Card.</th>
-                           <th class="sp_description_column">Description</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>framework</td>
-                           <td id="elm:CreditPoint_elm:framework"><code><a href="http://data.europa.eu/snb/model/elm/framework">elm:framework</a></code></td>
-                           <td><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The framework used to assign the credit points to the learning specification. It could
-                              be provided using the EDC Controlled List of Educational Credit Systems.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>point</td>
-                           <td id="elm:CreditPoint_elm:point"><code><a href="http://data.europa.eu/snb/model/elm/point">elm:point</a></code></td>
-                           <td><code>xsd:double</code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">1..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The credit points assigned to the learning specification.</td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </section>
-            </div>
-         </div><br><div class="row mt-3">
-            <div class="col">
-               <section>
-                  <div class="sp_section_title_table_wrapper">
-                     <h3 id="elm:Identifier" class="sp_section_title_table">elm:Identifier</h3><code class="sp_section_uri">http://data.europa.eu/snb/model/elm/Identifier</code></div>
-                  <table class="sp_table_propertyshapes table-striped table-responsive">
-                     <thead>
-                        <tr>
-                           <th>Property name</th>
-                           <th>URI</th>
-                           <th>Expected value</th>
-                           <th>Card.</th>
-                           <th class="sp_description_column">Description</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>identifier content</td>
-                           <td id="elm:Identifier_skos:notation"><code><a href="http://www.w3.org/2004/02/skos/core#notation">skos:notation</a></code></td>
-                           <td><br><small></small></td>
-                           <td>
-                              <div style="width:30px">1..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">Content string which is the identifier. This property is used to assign a notation
-                              as a typed literal</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>scheme agency name</td>
-                           <td id="elm:Identifier_adms:schemeAgency"><code><a href="http://www.w3.org/ns/adms#schemeAgency">adms:schemeAgency</a></code></td>
-                           <td><code>rdf:langString</code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The name of the agent that manages the identifier scheme.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>scheme name</td>
-                           <td id="elm:Identifier_elm:schemeName"><code><a href="http://data.europa.eu/snb/model/elm/schemeName">elm:schemeName</a></code></td>
-                           <td><code>xsd:string</code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The name of the identifier scheme.</td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </section>
-            </div>
-         </div><br><div class="row mt-3">
-            <div class="col">
-               <section>
-                  <div class="sp_section_title_table_wrapper">
-                     <h3 id="elm:LearningEntitlementSpecification" class="sp_section_title_table">elm:LearningEntitlementSpecification</h3><code class="sp_section_uri">http://data.europa.eu/snb/model/elm/LearningEntitlementSpecification</code></div>
-                  <table class="sp_table_propertyshapes table-striped table-responsive">
-                     <thead>
-                        <tr>
-                           <th>Property name</th>
-                           <th>URI</th>
-                           <th>Expected value</th>
-                           <th>Card.</th>
-                           <th class="sp_description_column">Description</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>identifier</td>
-                           <td id="elm:LearningEntitlementSpecification_adms:identifier"><code><a href="http://www.w3.org/ns/adms#identifier">adms:identifier</a></code></td>
-                           <td><code><a href="#elm:Identifier">elm:Identifier</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">An identifier assigned to the resource.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>limit national occupation</td>
-                           <td id="elm:LearningEntitlementSpecification_elm:limitNationalOccupation"><code><a href="http://data.europa.eu/snb/model/elm/limitNationalOccupation">elm:limitNationalOccupation</a></code></td>
-                           <td><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">An Occupation or Occupational Category. It should be provided using a controlled vocabulary.</td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </section>
-            </div>
-         </div><br><div class="row mt-3">
-            <div class="col">
-               <section>
-                  <div class="sp_section_title_table_wrapper">
-                     <h3 id="elm:LearningOpportunity" class="sp_section_title_table">elm:LearningOpportunity</h3><code class="sp_section_uri">http://data.europa.eu/snb/model/elm/LearningOpportunity</code></div>
-                  <table class="sp_table_propertyshapes table-striped table-responsive">
-                     <thead>
-                        <tr>
-                           <th>Property name</th>
-                           <th>URI</th>
-                           <th>Expected value</th>
-                           <th>Card.</th>
-                           <th class="sp_description_column">Description</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>default language</td>
-                           <td id="elm:LearningOpportunity_elm:defaultLanguage"><code><a href="http://data.europa.eu/snb/model/elm/defaultLanguage">elm:defaultLanguage</a></code></td>
-                           <td><br><small></small></td>
-                           <td>
-                              <div style="width:30px">1..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The base language of the learning opportunity, to be considered authoritative.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>identifier</td>
-                           <td id="elm:LearningOpportunity_adms:identifier"><code><a href="http://www.w3.org/ns/adms#identifier">adms:identifier</a></code></td>
-                           <td><code><a href="#elm:Identifier">elm:Identifier</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">An identifier assigned to the resource.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>provided by</td>
-                           <td id="elm:LearningOpportunity_elm:providedBy"><code><a href="http://data.europa.eu/snb/model/elm/providedBy">elm:providedBy</a></code></td>
-                           <td><code><a href="#elm:Organisation">elm:Organisation</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">1..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The organisation providing or directing the learning opportunity. In the case of,
-                              e.g., joint qualifications, there may be several organisations directing the learning
-                              opportunity.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>qualification</td>
-                           <td id="elm:LearningOpportunity_null"><code></code></td>
-                           <td><code><a href="#elm:Qualification">elm:Qualification</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">1..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The qualification, including the curricula, of this learning opportunity.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>title</td>
-                           <td id="elm:LearningOpportunity_dc:title"><code><a href="http://purl.org/dc/terms/title">dc:title</a></code></td>
-                           <td><code>rdf:langString</code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">1..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The title. One value per language is permitted.</td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </section>
-            </div>
-         </div><br><div class="row mt-3">
-            <div class="col">
-               <section>
-                  <div class="sp_section_title_table_wrapper">
-                     <h3 id="elm:LearningOutcome" class="sp_section_title_table">elm:LearningOutcome</h3><code class="sp_section_uri">http://data.europa.eu/snb/model/elm/LearningOutcome</code></div>
-                  <table class="sp_table_propertyshapes table-striped table-responsive">
-                     <thead>
-                        <tr>
-                           <th>Property name</th>
-                           <th>URI</th>
-                           <th>Expected value</th>
-                           <th>Card.</th>
-                           <th class="sp_description_column">Description</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>identifier</td>
-                           <td id="elm:LearningOutcome_adms:identifier"><code><a href="http://www.w3.org/ns/adms#identifier">adms:identifier</a></code></td>
-                           <td><code><a href="#elm:Identifier">elm:Identifier</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">An identifier assigned to the resource.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>more information</td>
-                           <td id="elm:LearningOutcome_elm:additionalNote"><code><a href="http://data.europa.eu/snb/model/elm/additionalNote">elm:additionalNote</a></code></td>
-                           <td><code><a href="#elm:Note">elm:Note</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">An additional free text note about the resource.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>related skill(s)</td>
-                           <td id="elm:LearningOutcome_elm:relatedSkill"><code><a href="http://data.europa.eu/snb/model/elm/relatedSkill">elm:relatedSkill</a></code></td>
-                           <td><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">A link to a related skill or the level of a related skill on a skill framework (except
-                              ESCO). It should be provided using a controlled vocabulary.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>title</td>
-                           <td id="elm:LearningOutcome_dc:title"><code><a href="http://purl.org/dc/terms/title">dc:title</a></code></td>
-                           <td><code>rdf:langString</code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">1..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The title. One value per language is permitted.</td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </section>
-            </div>
-         </div><br><div class="row mt-3">
-            <div class="col">
-               <section>
-                  <div class="sp_section_title_table_wrapper">
-                     <h3 id="elm:Note" class="sp_section_title_table">elm:Note</h3><code class="sp_section_uri">http://data.europa.eu/snb/model/elm/Note</code></div>
-                  <table class="sp_table_propertyshapes table-striped table-responsive">
-                     <thead>
-                        <tr>
-                           <th>Property name</th>
-                           <th>URI</th>
-                           <th>Expected value</th>
-                           <th>Card.</th>
-                           <th class="sp_description_column">Description</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>note format</td>
-                           <td id="elm:Note_elm:noteFormat"><code><a href="http://data.europa.eu/snb/model/elm/noteFormat">elm:noteFormat</a></code></td>
-                           <td><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The format of the note. It should be provided using the IANA  types for text, text/plain,
-                              text/html etc.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>note literal</td>
-                           <td id="elm:Note_elm:noteLiteral"><code><a href="http://data.europa.eu/snb/model/elm/noteLiteral">elm:noteLiteral</a></code></td>
-                           <td><code>rdf:langString</code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">1..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The textual content of the note.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>subject</td>
-                           <td id="elm:Note_dc:subject"><code><a href="http://purl.org/dc/terms/subject">dc:subject</a></code></td>
-                           <td><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The subject of the note. It should be provided using a controlled vocabulary.</td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </section>
-            </div>
-         </div><br><div class="row mt-3">
-            <div class="col">
-               <section>
-                  <div class="sp_section_title_table_wrapper">
-                     <h3 id="elm:Organisation" class="sp_section_title_table">elm:Organisation</h3><code class="sp_section_uri">http://data.europa.eu/snb/model/elm/Organisation</code></div>
-                  <table class="sp_table_propertyshapes table-striped table-responsive">
-                     <thead>
-                        <tr>
-                           <th>Property name</th>
-                           <th>URI</th>
-                           <th>Expected value</th>
-                           <th>Card.</th>
-                           <th class="sp_description_column">Description</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>identifier</td>
-                           <td id="elm:Organisation_adms:identifier"><code><a href="http://www.w3.org/ns/adms#identifier">adms:identifier</a></code></td>
-                           <td><code><a href="#elm:Identifier">elm:Identifier</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">An identifier assigned to the resource.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>location</td>
-                           <td id="elm:Organisation_elm:location"><code><a href="http://data.europa.eu/snb/model/elm/location">elm:location</a></code></td>
-                           <td><br><small></small></td>
-                           <td>
-                              <div style="width:30px">1..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The location of the organisation.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>name</td>
-                           <td id="elm:Organisation_skos:prefLabel"><code><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a></code></td>
-                           <td><code>rdf:langString</code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">1..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The preferred name of the organisation. One value per language is permitted.</td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </section>
-            </div>
-         </div><br><div class="row mt-3">
-            <div class="col">
-               <section>
-                  <div class="sp_section_title_table_wrapper">
-                     <h3 id="elm:Qualification" class="sp_section_title_table">elm:Qualification</h3><code class="sp_section_uri">http://data.europa.eu/snb/model/elm/Qualification</code></div>
-                  <table class="sp_table_propertyshapes table-striped table-responsive">
-                     <thead>
-                        <tr>
-                           <th>Property name</th>
-                           <th>URI</th>
-                           <th>Expected value</th>
-                           <th>Card.</th>
-                           <th class="sp_description_column">Description</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>accreditation</td>
-                           <td id="elm:Qualification_elm:accreditation"><code><a href="http://data.europa.eu/snb/model/elm/accreditation">elm:accreditation</a></code></td>
-                           <td><code><a href="#elm:Accreditation">elm:Accreditation</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The associated accreditation.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>awarding information</td>
-                           <td id="elm:Qualification_elm:awardingOpportunity"><code><a href="http://data.europa.eu/snb/model/elm/awardingOpportunity">elm:awardingOpportunity</a></code></td>
-                           <td><code><a href="#elm:AwardingOpportunity">elm:AwardingOpportunity</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">1..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">Refers to  an activity related to the awarding of the qualification, such as the country
-                              or region where the qualification is awarded, the awarding body and optionally the
-                              awarding period now or in the past.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>credit points</td>
-                           <td id="elm:Qualification_elm:creditPoint"><code><a href="http://data.europa.eu/snb/model/elm/creditPoint">elm:creditPoint</a></code></td>
-                           <td><code><a href="#elm:CreditPoint">elm:CreditPoint</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The credit points assigned to the qualification, following an educational credit system.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>education level (ACQF)</td>
-                           <td id="elm:Qualification_acqf-qcp-model:elm-extension/educationLevelAcqf"><code><a href="https://data.acqf-qcp.africa/model/elm-extension/educationLevelAcqf">acqf-qcp-model:elm-extension/educationLevelAcqf</a></code></td>
-                           <td><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">An associated level of education within ACQF education levels.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>education level (NQF)</td>
-                           <td id="elm:Qualification_acqf-qcp-model:elm-extension/educationLevelNqf"><code><a href="https://data.acqf-qcp.africa/model/elm-extension/educationLevelNqf">acqf-qcp-model:elm-extension/educationLevelNqf</a></code></td>
-                           <td><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">An associated level of education within ACQF education levels.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>entitles To</td>
-                           <td id="elm:Qualification_elm:entitlesTo"><code><a href="http://data.europa.eu/snb/model/elm/entitlesTo">elm:entitlesTo</a></code></td>
-                           <td><code><a href="#elm:LearningEntitlementSpecification">elm:LearningEntitlementSpecification</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">Rights (such as which the person may acquire as a result of acquiring the learning
-                              outcomes).</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>entry requirement</td>
-                           <td id="elm:Qualification_elm:entryRequirement"><code><a href="http://data.europa.eu/snb/model/elm/entryRequirement">elm:entryRequirement</a></code></td>
-                           <td><code><a href="#elm:Note">elm:Note</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">Specific entry requirement or prerequisite of individuals for which this qualification
-                              is designed to start this learning opportunity.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>homepage</td>
-                           <td id="elm:Qualification_foaf:homepage"><code><a href="http://xmlns.com/foaf/0.1/homepage">foaf:homepage</a></code></td>
-                           <td><code><a href="#elm:WebResource">elm:WebResource</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The homepage.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>identifier</td>
-                           <td id="elm:Qualification_adms:identifier"><code><a href="http://www.w3.org/ns/adms#identifier">adms:identifier</a></code></td>
-                           <td><code><a href="#elm:Identifier">elm:Identifier</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">An identifier assigned to the resource.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>is part of</td>
-                           <td id="elm:Qualification_elm:isPartOf"><code><a href="http://data.europa.eu/snb/model/elm/isPartOf">elm:isPartOf</a></code></td>
-                           <td><code><a href="#elm:Qualification">elm:Qualification</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">Links the qualification to its master qualification (of which one this is part of).</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>learning outcome</td>
-                           <td id="elm:Qualification_elm:learningOutcome"><code><a href="http://data.europa.eu/snb/model/elm/learningOutcome">elm:learningOutcome</a></code></td>
-                           <td><code><a href="#elm:LearningOutcome">elm:LearningOutcome</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">1..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">An individual (expected) learning outcome of the qualification.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>learning outcome summary</td>
-                           <td id="elm:Qualification_elm:learningOutcomeSummary"><code><a href="http://data.europa.eu/snb/model/elm/learningOutcomeSummary">elm:learningOutcomeSummary</a></code></td>
-                           <td><code><a href="#elm:Note">elm:Note</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The full learning outcome summary of the qualification.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>more information</td>
-                           <td id="elm:Qualification_elm:additionalNote"><code><a href="http://data.europa.eu/snb/model/elm/additionalNote">elm:additionalNote</a></code></td>
-                           <td><code><a href="#elm:Note">elm:Note</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">An additional free text note about the resource. Can be used e.g. for qualification
-                              objectives.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>other documents</td>
-                           <td id="elm:Qualification_elm:supplementaryDocument"><code><a href="http://data.europa.eu/snb/model/elm/supplementaryDocument">elm:supplementaryDocument</a></code></td>
-                           <td><code><a href="#elm:WebResource">elm:WebResource</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">A public web resource containing additional documentation about the resource. For
-                              example, it could contain Links of the qualification (partly or fully) to Recognition
-                              of Prior Learning (RPL, VAE, VNFIL)</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>publisher</td>
-                           <td id="elm:Qualification_dc:publisher"><code><a href="http://purl.org/dc/terms/publisher">dc:publisher</a></code></td>
-                           <td><code><a href="#elm:Organisation">elm:Organisation</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">1..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The publisher.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>thematic area</td>
-                           <td id="elm:Qualification_elm:ISCEDFCode"><code><a href="http://data.europa.eu/snb/model/elm/ISCEDFCode">elm:ISCEDFCode</a></code></td>
-                           <td><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The thematic area according to the ISCED-F 2013 Classification. It should be provided
-                              using the ISCED-F controlled vocabulary.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>title</td>
-                           <td id="elm:Qualification_dc:title"><code><a href="http://purl.org/dc/terms/title">dc:title</a></code></td>
-                           <td><code>rdf:langString</code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">1..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The title. One value per language is permitted.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>type</td>
-                           <td id="elm:Qualification_dc:type"><code><a href="http://purl.org/dc/terms/type">dc:type</a></code></td>
-                           <td><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The type of the qualifications. It should be provided using the ACQF Controlled List
-                              of Qualification Types.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>volume of learning</td>
-                           <td id="elm:Qualification_elm:volumeOfLearning"><code><a href="http://data.europa.eu/snb/model/elm/volumeOfLearning">elm:volumeOfLearning</a></code></td>
-                           <td><code>xsd:duration</code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The estimated number of hours the learner is expected to spend engaged in learning
-                              to earn the award. This would include the notional number of hours in class, in group
-                              work, in practicals, as well as hours engaged in self-motivated study., The estimated
-                              number of hours the learner is expected to spend engaged in learning to earn the award.
-                              This would include the notional number of hours in, in group work, in practicals,
-                              as well as hours engaged in self-motivated study.</td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </section>
-            </div>
-         </div><br><div class="row mt-3">
-            <div class="col">
-               <section>
-                  <div class="sp_section_title_table_wrapper">
-                     <h3 id="elm:WebResource" class="sp_section_title_table">elm:WebResource</h3><code class="sp_section_uri">http://data.europa.eu/snb/model/elm/WebResource</code></div>
-                  <table class="sp_table_propertyshapes table-striped table-responsive">
-                     <thead>
-                        <tr>
-                           <th>Property name</th>
-                           <th>URI</th>
-                           <th>Expected value</th>
-                           <th>Card.</th>
-                           <th class="sp_description_column">Description</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>URL</td>
-                           <td id="elm:WebResource_elm:contentUrl"><code><a href="http://data.europa.eu/snb/model/elm/contentUrl">elm:contentUrl</a></code></td>
-                           <td><br><small></small></td>
-                           <td>
-                              <div style="width:30px">1..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The public access URL.</td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </section>
-            </div>
-         </div><br><div class="row mt-3">
-            <div class="col">
-               <section>
-                  <div class="sp_section_title_table_wrapper">
-                     <h3 id="skos:Concept" class="sp_section_title_table">skos:Concept</h3><code class="sp_section_uri">http://www.w3.org/2004/02/skos/core#Concept</code></div>
-                  <table class="sp_table_propertyshapes table-striped table-responsive">
-                     <thead>
-                        <tr>
-                           <th>Property name</th>
-                           <th>URI</th>
-                           <th>Expected value</th>
-                           <th>Card.</th>
-                           <th class="sp_description_column">Description</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>alternative name</td>
-                           <td id="skos:Concept_skos:altLabel"><code><a href="http://www.w3.org/2004/02/skos/core#altLabel">skos:altLabel</a></code></td>
-                           <td><code>rdf:langString</code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The alternative name. It must be disjoint with name (skos:prefLabel) of the Concept.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>in scheme</td>
-                           <td id="skos:Concept_skos:inScheme"><code><a href="http://www.w3.org/2004/02/skos/core#inScheme">skos:inScheme</a></code></td>
-                           <td><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The concept scheme this concept belongs to. The identification of the controlled vocabulary.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>name</td>
-                           <td id="skos:Concept_skos:prefLabel"><code><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a></code></td>
-                           <td><code>rdf:langString</code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">The text equivalent of the code content component. One value per language is permitted.</td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>notation</td>
-                           <td id="skos:Concept_skos:notation"><code><a href="http://www.w3.org/2004/02/skos/core#notation">skos:notation</a></code></td>
-                           <td><br><small></small></td>
-                           <td>
-                              <div style="width:30px">0..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description">A notation, also known as classification code, is a string of characters used to uniquely
-                              identify a concept within the scope of a given concept scheme. This property is used
-                              to assign a notation as a typed literal.</td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </section>
-            </div>
-         </div><br><div class="row mt-3">
-            <div class="col">
-               <section>
-                  <div class="sp_section_title_table_wrapper">
-                     <h3 id="skos:ConceptScheme" class="sp_section_title_table">skos:ConceptScheme</h3><code class="sp_section_uri">http://www.w3.org/2004/02/skos/core#ConceptScheme</code></div>
-               </section>
-            </div>
-         </div><br></div><script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js">//</script><script>				
-					anchors.options = {
-	                    icon: '#'
-	                  };
-               		anchors.options.placement = 'left';
-					anchors.add('h2,h3');
-					// for links inside tables		
-					anchors.add('td[id]');
-				</script></body>
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ACQF model reference</title>
+<style>body{font-family:system-ui,sans-serif;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}table{border-collapse:collapse;width:100%}td,th{border:1px solid #ccc;padding:.6rem;text-align:left;vertical-align:top}code{overflow-wrap:anywhere}section{margin-top:2rem}details ul{max-height:20rem;overflow:auto}a{color:#0056b3}</style></head>
+<body>
+<nav><a href="../index.html">Product documentation</a> · <a href="../model/exchange-model.ttl">Complete SHACL model</a></nav>
+<h1 id="index">ACQF model reference</h1>
+<p>This reference is generated from the assembled product validation graph. It lists class and property constraints, including permitted vocabulary values. Follow the complete SHACL model for structured constraints and executable SPARQL rules.</p>
+<div id="prefixes"><details><summary>Prefixes</summary><div><code>dc</code>: http://purl.org/dc/terms/</div><div><code>elm</code>: http://data.europa.eu/snb/model/elm/</div><div><code>adms</code>: http://www.w3.org/ns/adms#</div><div><code>foaf</code>: http://xmlns.com/foaf/0.1/</div><div><code>rdf</code>: http://www.w3.org/1999/02/22-rdf-syntax-ns#</div><div><code>sh</code>: http://www.w3.org/ns/shacl#</div><div><code>skos</code>: http://www.w3.org/2004/02/skos/core#</div><div><code>xsd</code>: http://www.w3.org/2001/XMLSchema#</div><div><code>acqf-qcp-model</code>: https://data.acqf-qcp.africa/model/</div><div><code>owl</code>: http://www.w3.org/2002/07/owl#</div></details></div>
+<main id="documentation"><section id="elm:Accreditation"><h2>elm:Accreditation</h2><p>The quality assurance or licensing of an organisation or a qualification. An accreditation instance can be used to specify information about: (1) the quality assurance and/or licensing of an organisation, (2) the quality assurance and/or licensing of an organisation with respect to a specific qualification.</p><table><thead><tr><th>Field</th><th>Path</th><th>Constraints</th></tr></thead><tbody><tr id="elm:Accreditation_rules_AccreditationShape"><td><b>Class rules</b><p>The quality assurance or licensing of an organisation or a qualification. An accreditation instance can be used to specify information about: (1) the quality assurance and/or licensing of an organisation, (2) the quality assurance and/or licensing of an organisation with respect to a specific qualification.</p></td><td><code></code></td><td><div><code>sh:closed</code>: true</div>
+<div><code>sh:ignoredProperties</code>: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"><code>rdf:type</code></a></div></td></tr>
+<tr id="elm:Accreditation_elm:accreditingAgent"><td><b>accrediting organisation</b><p>The Quality Assuring Authority (i.e., assurer).</p></td><td><code>elm:accreditingAgent</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/Organisation"><code>elm:Organisation</code></a></div>
+<div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:minCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:Accreditation_elm:expiryDate"><td><b>expiry date</b><p>The date when the accreditation expires or was expired.</p></td><td><code>elm:expiryDate</code></td><td><div><code>sh:datatype</code>: <a href="http://www.w3.org/2001/XMLSchema#dateTime"><code>xsd:dateTime</code></a></div>
+<div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:Accreditation_dc:issued"><td><b>issue date</b><p>Date of formal issuance of the resource.</p></td><td><code>dc:issued</code></td><td><div><code>sh:datatype</code>: <a href="http://www.w3.org/2001/XMLSchema#dateTime"><code>xsd:dateTime</code></a></div>
+<div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:Accreditation_elm:organisation"><td><b>organisation</b><p>The organisation whose activities are being accredited.</p></td><td><code>elm:organisation</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/Organisation"><code>elm:Organisation</code></a></div>
+<div><code>sh:minCount</code>: 0</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:Accreditation_elm:reviewDate"><td><b>review date</b><p>The date when the accreditation has to be reviewed.</p></td><td><code>elm:reviewDate</code></td><td><div><code>sh:datatype</code>: <a href="http://www.w3.org/2001/XMLSchema#dateTime"><code>xsd:dateTime</code></a></div>
+<div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:Accreditation_dc:type"><td><b>type</b><p>The type of the accreditation. It should be provided using the EDC Controlled List of Accreditation Types.</p></td><td><code>dc:type</code></td><td><details><summary>9 permitted values</summary><ul><li><a href="https://data.acqf-qcp.africa/model/accreditation-types/resource/approval"><code>acqf-qcp-model:accreditation-types/resource/approval</code></a></li><li><a href="https://data.acqf-qcp.africa/model/accreditation-types/resource/eqar-institutional-accreditation"><code>acqf-qcp-model:accreditation-types/resource/eqar-institutional-accreditation</code></a></li><li><a href="https://data.acqf-qcp.africa/model/accreditation-types/resource/eqar-programme-accreditation"><code>acqf-qcp-model:accreditation-types/resource/eqar-programme-accreditation</code></a></li><li><a href="https://data.acqf-qcp.africa/model/accreditation-types/resource/institutional-license"><code>acqf-qcp-model:accreditation-types/resource/institutional-license</code></a></li><li><a href="https://data.acqf-qcp.africa/model/accreditation-types/resource/institutional-quality-assurance"><code>acqf-qcp-model:accreditation-types/resource/institutional-quality-assurance</code></a></li><li><a href="https://data.acqf-qcp.africa/model/accreditation-types/resource/licensing"><code>acqf-qcp-model:accreditation-types/resource/licensing</code></a></li><li><a href="https://data.acqf-qcp.africa/model/accreditation-types/resource/programme-license"><code>acqf-qcp-model:accreditation-types/resource/programme-license</code></a></li><li><a href="https://data.acqf-qcp.africa/model/accreditation-types/resource/programme-quality-assurance"><code>acqf-qcp-model:accreditation-types/resource/programme-quality-assurance</code></a></li><li><a href="https://data.acqf-qcp.africa/model/accreditation-types/resource/registration"><code>acqf-qcp-model:accreditation-types/resource/registration</code></a></li></ul></details>
+<div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:minCount</code>: 1</div>
+<div><code>sh:nodeKind</code>: <a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div>
+<div><code>acqf-qcp-model:internal/startsWith</code>: https://data.acqf-qcp.africa/model/accreditation-types/resource/</div></td></tr>
+<tr id="elm:Accreditation_adms:identifier"><td><b>identifier</b><p>An identifier assigned to the resource.</p></td><td><code>adms:identifier</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/Identifier"><code>elm:Identifier</code></a></div>
+<div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:Accreditation_dc:title"><td><b>title</b><p>The title. One value per language is permitted.</p></td><td><code>dc:title</code></td><td><div><code>sh:datatype</code>: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"><code>rdf:langString</code></a></div>
+<div><code>sh:minCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div>
+<div><code>sh:uniqueLang</code>: true</div></td></tr></tbody></table></section>
+<section id="elm:AwardingOpportunity"><h2>elm:AwardingOpportunity</h2><p>An awarding opportunity describes how, where, from whom and when a claim may be obtained.</p><table><thead><tr><th>Field</th><th>Path</th><th>Constraints</th></tr></thead><tbody><tr id="elm:AwardingOpportunity_rules_AwardingOpportunityShape"><td><b>Class rules</b><p>An awarding opportunity describes how, where, from whom and when a claim may be obtained.</p></td><td><code></code></td><td><div><code>sh:closed</code>: true</div>
+<div><code>sh:ignoredProperties</code>: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"><code>rdf:type</code></a></div></td></tr>
+<tr id="elm:AwardingOpportunity_elm:awardingBody"><td><b>awarding body</b><p>The awarding body related to this awarding activity (i.e., the organisation that issues the qualification) Only in cases of co-awarding/co-graduation, where a qualification is issued to an individual by two or more organisations the cardinality is greater than 1.</p></td><td><code>elm:awardingBody</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/Organisation"><code>elm:Organisation</code></a></div>
+<div><code>sh:minCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:AwardingOpportunity_elm:additionalNote"><td><b>more information</b><p>An additional free text note about the resource.</p></td><td><code>elm:additionalNote</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/Note"><code>elm:Note</code></a></div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:AwardingOpportunity_adms:identifier"><td><b>identifier</b><p>An identifier assigned to the resource.</p></td><td><code>adms:identifier</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/Identifier"><code>elm:Identifier</code></a></div>
+<div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr></tbody></table></section>
+<section id="elm:CreditPoint"><h2>elm:CreditPoint</h2><p>The credit Points</p><table><thead><tr><th>Field</th><th>Path</th><th>Constraints</th></tr></thead><tbody><tr id="elm:CreditPoint_rules_CreditPointShape"><td><b>Class rules</b><p>The credit Points</p></td><td><code></code></td><td><div><code>sh:closed</code>: true</div>
+<div><code>sh:ignoredProperties</code>: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"><code>rdf:type</code></a></div></td></tr>
+<tr id="elm:CreditPoint_elm:framework"><td><b>framework</b><p>The framework used to assign the credit points to the learning specification. It could be provided using the EDC Controlled List of Educational Credit Systems.</p></td><td><code>elm:framework</code></td><td><details><summary>4 permitted values</summary><ul><li><a href="https://data.acqf-qcp.africa/model/creditpoint-framework/resource/acts"><code>acqf-qcp-model:creditpoint-framework/resource/acts</code></a></li><li><a href="https://data.acqf-qcp.africa/model/creditpoint-framework/resource/eacat"><code>acqf-qcp-model:creditpoint-framework/resource/eacat</code></a></li><li><a href="https://data.acqf-qcp.africa/model/creditpoint-framework/resource/ects"><code>acqf-qcp-model:creditpoint-framework/resource/ects</code></a></li><li><a href="https://data.acqf-qcp.africa/model/creditpoint-framework/resource/sadc-cats"><code>acqf-qcp-model:creditpoint-framework/resource/sadc-cats</code></a></li></ul></details>
+<div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:minCount</code>: 0</div>
+<div><code>sh:nodeKind</code>: <a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div>
+<div><code>acqf-qcp-model:internal/startsWith</code>: https://data.acqf-qcp.africa/model/creditpoint-framework/resource/</div></td></tr>
+<tr id="elm:CreditPoint_elm:point"><td><b>points</b><p>The credit points assigned to the learning specification.</p></td><td><code>elm:point</code></td><td><div><code>sh:datatype</code>: <a href="http://www.w3.org/2001/XMLSchema#double"><code>xsd:double</code></a></div>
+<div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:minCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr></tbody></table></section>
+<section id="elm:Identifier"><h2>elm:Identifier</h2><p>A character string used to identify a resource. An identifier is a character string used to uniquely identify one instance of an object within an identification scheme that is managed by an agency. The Identifier class is a critical aspect of the ELM. It is used to identify persons and organisations. In these cases, and more, the identifier itself will be some sort of alpha-numeric string but that string only has meaning if it is contextualised.</p><table><thead><tr><th>Field</th><th>Path</th><th>Constraints</th></tr></thead><tbody><tr id="elm:Identifier_rules_IdentifierShape"><td><b>Class rules</b><p>A character string used to identify a resource. An identifier is a character string used to uniquely identify one instance of an object within an identification scheme that is managed by an agency. The Identifier class is a critical aspect of the ELM. It is used to identify persons and organisations. In these cases, and more, the identifier itself will be some sort of alpha-numeric string but that string only has meaning if it is contextualised.</p></td><td><code></code></td><td><div><code>sh:closed</code>: true</div>
+<div><code>sh:ignoredProperties</code>: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"><code>rdf:type</code></a></div></td></tr>
+<tr id="elm:Identifier_skos:notation"><td><b>identifier content</b><p>Content string which is the identifier. This property is used to assign a notation as a typed literal</p></td><td><code>skos:notation</code></td><td><div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:minCount</code>: 1</div>
+<div><code>sh:nodeKind</code>: <a href="http://www.w3.org/ns/shacl#Literal"><code>sh:Literal</code></a></div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:Identifier_adms:schemeAgency"><td><b>scheme agency name</b><p>The name of the agent that manages the identifier scheme.</p></td><td><code>adms:schemeAgency</code></td><td><div><code>sh:datatype</code>: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"><code>rdf:langString</code></a></div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div>
+<div><code>sh:uniqueLang</code>: true</div></td></tr>
+<tr id="elm:Identifier_elm:schemeName"><td><b>scheme name</b><p>The name of the identifier scheme.</p></td><td><code>elm:schemeName</code></td><td><div><code>sh:datatype</code>: <a href="http://www.w3.org/2001/XMLSchema#string"><code>xsd:string</code></a></div>
+<div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr></tbody></table></section>
+<section id="elm:LearningEntitlementSpecification"><h2>elm:LearningEntitlementSpecification</h2><p>The specification of a right a person has access to, typically as a result of a learning achievement. It may take the form of the right to be a member of an organisation, to follow a certain learning opportunity specification, or to follow a certain career. Learning Entitlement Specifications is a subclass of Specification.</p><table><thead><tr><th>Field</th><th>Path</th><th>Constraints</th></tr></thead><tbody><tr id="elm:LearningEntitlementSpecification_rules_LearningEntitlementSpecificationShape"><td><b>Class rules</b><p>The specification of a right a person has access to, typically as a result of a learning achievement. It may take the form of the right to be a member of an organisation, to follow a certain learning opportunity specification, or to follow a certain career. Learning Entitlement Specifications is a subclass of Specification.</p></td><td><code></code></td><td><div><code>sh:closed</code>: true</div>
+<div><code>sh:ignoredProperties</code>: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"><code>rdf:type</code></a></div></td></tr>
+<tr id="elm:LearningEntitlementSpecification_elm:limitNationalOccupation"><td><b>limit national occupation</b><p>An Occupation or Occupational Category. It should be provided using a controlled vocabulary.</p></td><td><code>elm:limitNationalOccupation</code></td><td><div><code>sh:nodeKind</code>: <a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div>
+<div><code>acqf-qcp-model:internal/startsWith</code>: http://data.europa.eu/esco/occupation/</div></td></tr>
+<tr id="elm:LearningEntitlementSpecification_adms:identifier"><td><b>identifier</b><p>An identifier assigned to the resource.</p></td><td><code>adms:identifier</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/Identifier"><code>elm:Identifier</code></a></div>
+<div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr></tbody></table></section>
+<section id="elm:LearningOpportunity"><h2>elm:LearningOpportunity</h2><p>An opportunity to realise a given set of learning outcomes via a learning activity and/or assessment.</p><table><thead><tr><th>Field</th><th>Path</th><th>Constraints</th></tr></thead><tbody><tr id="elm:LearningOpportunity_rules_LearningOpportunityShape"><td><b>Class rules</b><p>An opportunity to realise a given set of learning outcomes via a learning activity and/or assessment.</p></td><td><code></code></td><td><div><code>sh:closed</code>: true</div>
+<div><code>sh:ignoredProperties</code>: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"><code>rdf:type</code></a></div></td></tr>
+<tr id="elm:LearningOpportunity_elm:defaultLanguage"><td><b>default language</b><p>The base language of the learning opportunity, to be considered authoritative.</p></td><td><code>elm:defaultLanguage</code></td><td><div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:minCount</code>: 1</div>
+<div><code>sh:nodeKind</code>: <a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div>
+<div><code>acqf-qcp-model:internal/startsWith</code>: http://publications.europa.eu/resource/authority/language/</div></td></tr>
+<tr id="elm:LearningOpportunity_null"><td><b>qualification</b><p>The qualification, including the curricula, of this learning opportunity.</p></td><td><code>inverse acqf-qcp-model:elm-extension/learningOpportunity</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/Qualification"><code>elm:Qualification</code></a></div>
+<div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:minCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:LearningOpportunity_elm:providedBy"><td><b>provided by</b><p>The organisation providing or directing the learning opportunity. In the case of, e.g., joint qualifications, there may be several organisations directing the learning opportunity.</p></td><td><code>elm:providedBy</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/Organisation"><code>elm:Organisation</code></a></div>
+<div><code>sh:minCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:LearningOpportunity_adms:identifier"><td><b>identifier</b><p>An identifier assigned to the resource.</p></td><td><code>adms:identifier</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/Identifier"><code>elm:Identifier</code></a></div>
+<div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:LearningOpportunity_dc:title"><td><b>title</b><p>The title. One value per language is permitted.</p></td><td><code>dc:title</code></td><td><div><code>sh:datatype</code>: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"><code>rdf:langString</code></a></div>
+<div><code>sh:minCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div>
+<div><code>sh:uniqueLang</code>: true</div></td></tr></tbody></table></section>
+<section id="elm:LearningOutcome"><h2>elm:LearningOutcome</h2><p>A statement regarding what a learner knows, understands and is able to do on completion of a learning process, which are defined in terms of knowledge, skills and responsibility and autonomy.</p><table><thead><tr><th>Field</th><th>Path</th><th>Constraints</th></tr></thead><tbody><tr id="elm:LearningOutcome_rules_LearningOutcomeShape"><td><b>Class rules</b><p>A statement regarding what a learner knows, understands and is able to do on completion of a learning process, which are defined in terms of knowledge, skills and responsibility and autonomy.</p></td><td><code></code></td><td><div><code>sh:closed</code>: true</div>
+<div><code>sh:ignoredProperties</code>: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"><code>rdf:type</code></a></div></td></tr>
+<tr id="elm:LearningOutcome_elm:relatedSkill"><td><b>related skill(s)</b><p>A link to a related skill or the level of a related skill on a skill framework (except ESCO). It should be provided using a controlled vocabulary.</p></td><td><code>elm:relatedSkill</code></td><td><div><code>sh:nodeKind</code>: <a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div>
+<div><code>acqf-qcp-model:internal/startsWith</code>: http://data.europa.eu/esco/skill/</div></td></tr>
+<tr id="elm:LearningOutcome_elm:additionalNote"><td><b>more information</b><p>An additional free text note about the resource.</p></td><td><code>elm:additionalNote</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/Note"><code>elm:Note</code></a></div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:LearningOutcome_adms:identifier"><td><b>identifier</b><p>An identifier assigned to the resource.</p></td><td><code>adms:identifier</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/Identifier"><code>elm:Identifier</code></a></div>
+<div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:LearningOutcome_dc:title"><td><b>title</b><p>The title. One value per language is permitted.</p></td><td><code>dc:title</code></td><td><div><code>sh:datatype</code>: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"><code>rdf:langString</code></a></div>
+<div><code>sh:minCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div>
+<div><code>sh:uniqueLang</code>: true</div></td></tr></tbody></table></section>
+<section id="elm:Note"><h2>elm:Note</h2><p>Free text metadata fields, such as the description, a historical or additional note of a qualification can contain a plain text or a XHTML fragment as literal value. By using a Note both the datatype of the literal and the language can be specified.</p><table><thead><tr><th>Field</th><th>Path</th><th>Constraints</th></tr></thead><tbody><tr id="elm:Note_rules_NoteShape"><td><b>Class rules</b><p>Free text metadata fields, such as the description, a historical or additional note of a qualification can contain a plain text or a XHTML fragment as literal value. By using a Note both the datatype of the literal and the language can be specified.</p></td><td><code></code></td><td><div><code>sh:closed</code>: true</div>
+<div><code>sh:ignoredProperties</code>: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"><code>rdf:type</code></a></div></td></tr>
+<tr id="elm:Note_elm:noteFormat"><td><b>note format</b><p>The format of the note. It should be provided using the IANA  types for text, text/plain, text/html etc.</p></td><td><code>elm:noteFormat</code></td><td><div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:Note_elm:noteLiteral"><td><b>note literal</b><p>The textual content of the note.</p></td><td><code>elm:noteLiteral</code></td><td><div><code>sh:datatype</code>: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"><code>rdf:langString</code></a></div>
+<div><code>sh:minCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:Note_dc:subject"><td><b>subject</b><p>The subject of the note. It should be provided using a controlled vocabulary.</p></td><td><code>dc:subject</code></td><td><div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr></tbody></table></section>
+<section id="elm:Organisation"><h2>elm:Organisation</h2><p>A legal person / registered organisation.</p><table><thead><tr><th>Field</th><th>Path</th><th>Constraints</th></tr></thead><tbody><tr id="elm:Organisation_rules_OrganisationShape"><td><b>Class rules</b><p>A legal person / registered organisation.</p></td><td><code></code></td><td><div><code>sh:closed</code>: true</div>
+<div><code>sh:ignoredProperties</code>: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"><code>rdf:type</code></a></div></td></tr>
+<tr id="elm:Organisation_elm:location"><td><b>location</b><p>The location of the organisation.</p></td><td><code>elm:location</code></td><td><div><code>sh:minCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:Organisation_skos:prefLabel"><td><b>name</b><p>The preferred name of the organisation. One value per language is permitted.</p></td><td><code>skos:prefLabel</code></td><td><div><code>sh:datatype</code>: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"><code>rdf:langString</code></a></div>
+<div><code>sh:minCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div>
+<div><code>sh:uniqueLang</code>: true</div></td></tr>
+<tr id="elm:Organisation_adms:identifier"><td><b>identifier</b><p>An identifier assigned to the resource.</p></td><td><code>adms:identifier</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/Identifier"><code>elm:Identifier</code></a></div>
+<div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr></tbody></table></section>
+<section id="elm:Qualification"><h2>elm:Qualification</h2><p>A specification of an assessment and validation process which is obtained when a competent authority determines that an individual has achieved learning outcomes to given standards. Qualification is a subclass of Learning Achievement Specification.</p><table><thead><tr><th>Field</th><th>Path</th><th>Constraints</th></tr></thead><tbody><tr id="elm:Qualification_rules_QualificationShape"><td><b>Class rules</b><p>A specification of an assessment and validation process which is obtained when a competent authority determines that an individual has achieved learning outcomes to given standards. Qualification is a subclass of Learning Achievement Specification.</p></td><td><code></code></td><td><div><code>sh:closed</code>: true</div>
+<div><code>sh:ignoredProperties</code>: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"><code>rdf:type</code></a>, <a href="https://data.acqf-qcp.africa/model/elm-extension/learningOpportunity"><code>acqf-qcp-model:elm-extension/learningOpportunity</code></a></div></td></tr>
+<tr id="elm:Qualification_elm:ISCEDFCode"><td><b>thematic area</b><p>The thematic area according to the ISCED-F 2013 Classification. It should be provided using the ISCED-F controlled vocabulary.</p></td><td><code>elm:ISCEDFCode</code></td><td><details><summary>220 permitted values</summary><ul><li><a href="http://data.europa.eu/snb/isced-f/00"><code>http://data.europa.eu/snb/isced-f/00</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/000"><code>http://data.europa.eu/snb/isced-f/000</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0000"><code>http://data.europa.eu/snb/isced-f/0000</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/001"><code>http://data.europa.eu/snb/isced-f/001</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0011"><code>http://data.europa.eu/snb/isced-f/0011</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/002"><code>http://data.europa.eu/snb/isced-f/002</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0021"><code>http://data.europa.eu/snb/isced-f/0021</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/003"><code>http://data.europa.eu/snb/isced-f/003</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0031"><code>http://data.europa.eu/snb/isced-f/0031</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/009"><code>http://data.europa.eu/snb/isced-f/009</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0099"><code>http://data.europa.eu/snb/isced-f/0099</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/01"><code>http://data.europa.eu/snb/isced-f/01</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/011"><code>http://data.europa.eu/snb/isced-f/011</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0110"><code>http://data.europa.eu/snb/isced-f/0110</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0111"><code>http://data.europa.eu/snb/isced-f/0111</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0112"><code>http://data.europa.eu/snb/isced-f/0112</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0113"><code>http://data.europa.eu/snb/isced-f/0113</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0114"><code>http://data.europa.eu/snb/isced-f/0114</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0119"><code>http://data.europa.eu/snb/isced-f/0119</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/018"><code>http://data.europa.eu/snb/isced-f/018</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0188"><code>http://data.europa.eu/snb/isced-f/0188</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/02"><code>http://data.europa.eu/snb/isced-f/02</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/020"><code>http://data.europa.eu/snb/isced-f/020</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0200"><code>http://data.europa.eu/snb/isced-f/0200</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/021"><code>http://data.europa.eu/snb/isced-f/021</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0210"><code>http://data.europa.eu/snb/isced-f/0210</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0211"><code>http://data.europa.eu/snb/isced-f/0211</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0212"><code>http://data.europa.eu/snb/isced-f/0212</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0213"><code>http://data.europa.eu/snb/isced-f/0213</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0214"><code>http://data.europa.eu/snb/isced-f/0214</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0215"><code>http://data.europa.eu/snb/isced-f/0215</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0219"><code>http://data.europa.eu/snb/isced-f/0219</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/022"><code>http://data.europa.eu/snb/isced-f/022</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0220"><code>http://data.europa.eu/snb/isced-f/0220</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0221"><code>http://data.europa.eu/snb/isced-f/0221</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0222"><code>http://data.europa.eu/snb/isced-f/0222</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0223"><code>http://data.europa.eu/snb/isced-f/0223</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0228"><code>http://data.europa.eu/snb/isced-f/0228</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0229"><code>http://data.europa.eu/snb/isced-f/0229</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/023"><code>http://data.europa.eu/snb/isced-f/023</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0230"><code>http://data.europa.eu/snb/isced-f/0230</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0231"><code>http://data.europa.eu/snb/isced-f/0231</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0232"><code>http://data.europa.eu/snb/isced-f/0232</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0239"><code>http://data.europa.eu/snb/isced-f/0239</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/028"><code>http://data.europa.eu/snb/isced-f/028</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0288"><code>http://data.europa.eu/snb/isced-f/0288</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/029"><code>http://data.europa.eu/snb/isced-f/029</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0299"><code>http://data.europa.eu/snb/isced-f/0299</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/03"><code>http://data.europa.eu/snb/isced-f/03</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/030"><code>http://data.europa.eu/snb/isced-f/030</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0300"><code>http://data.europa.eu/snb/isced-f/0300</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/031"><code>http://data.europa.eu/snb/isced-f/031</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0310"><code>http://data.europa.eu/snb/isced-f/0310</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0311"><code>http://data.europa.eu/snb/isced-f/0311</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0312"><code>http://data.europa.eu/snb/isced-f/0312</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0313"><code>http://data.europa.eu/snb/isced-f/0313</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0314"><code>http://data.europa.eu/snb/isced-f/0314</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0319"><code>http://data.europa.eu/snb/isced-f/0319</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/032"><code>http://data.europa.eu/snb/isced-f/032</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0320"><code>http://data.europa.eu/snb/isced-f/0320</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0321"><code>http://data.europa.eu/snb/isced-f/0321</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0322"><code>http://data.europa.eu/snb/isced-f/0322</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0329"><code>http://data.europa.eu/snb/isced-f/0329</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/038"><code>http://data.europa.eu/snb/isced-f/038</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0388"><code>http://data.europa.eu/snb/isced-f/0388</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/039"><code>http://data.europa.eu/snb/isced-f/039</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0399"><code>http://data.europa.eu/snb/isced-f/0399</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/04"><code>http://data.europa.eu/snb/isced-f/04</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/040"><code>http://data.europa.eu/snb/isced-f/040</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0400"><code>http://data.europa.eu/snb/isced-f/0400</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/041"><code>http://data.europa.eu/snb/isced-f/041</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0410"><code>http://data.europa.eu/snb/isced-f/0410</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0411"><code>http://data.europa.eu/snb/isced-f/0411</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0412"><code>http://data.europa.eu/snb/isced-f/0412</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0413"><code>http://data.europa.eu/snb/isced-f/0413</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0414"><code>http://data.europa.eu/snb/isced-f/0414</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0415"><code>http://data.europa.eu/snb/isced-f/0415</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0416"><code>http://data.europa.eu/snb/isced-f/0416</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0417"><code>http://data.europa.eu/snb/isced-f/0417</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0419"><code>http://data.europa.eu/snb/isced-f/0419</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/042"><code>http://data.europa.eu/snb/isced-f/042</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0421"><code>http://data.europa.eu/snb/isced-f/0421</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/048"><code>http://data.europa.eu/snb/isced-f/048</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0488"><code>http://data.europa.eu/snb/isced-f/0488</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/049"><code>http://data.europa.eu/snb/isced-f/049</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0499"><code>http://data.europa.eu/snb/isced-f/0499</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/05"><code>http://data.europa.eu/snb/isced-f/05</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/050"><code>http://data.europa.eu/snb/isced-f/050</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0500"><code>http://data.europa.eu/snb/isced-f/0500</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/051"><code>http://data.europa.eu/snb/isced-f/051</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0510"><code>http://data.europa.eu/snb/isced-f/0510</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0511"><code>http://data.europa.eu/snb/isced-f/0511</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0512"><code>http://data.europa.eu/snb/isced-f/0512</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0519"><code>http://data.europa.eu/snb/isced-f/0519</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/052"><code>http://data.europa.eu/snb/isced-f/052</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0520"><code>http://data.europa.eu/snb/isced-f/0520</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0521"><code>http://data.europa.eu/snb/isced-f/0521</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0522"><code>http://data.europa.eu/snb/isced-f/0522</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0529"><code>http://data.europa.eu/snb/isced-f/0529</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/053"><code>http://data.europa.eu/snb/isced-f/053</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0530"><code>http://data.europa.eu/snb/isced-f/0530</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0531"><code>http://data.europa.eu/snb/isced-f/0531</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0532"><code>http://data.europa.eu/snb/isced-f/0532</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0533"><code>http://data.europa.eu/snb/isced-f/0533</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0539"><code>http://data.europa.eu/snb/isced-f/0539</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/054"><code>http://data.europa.eu/snb/isced-f/054</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0540"><code>http://data.europa.eu/snb/isced-f/0540</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0541"><code>http://data.europa.eu/snb/isced-f/0541</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0542"><code>http://data.europa.eu/snb/isced-f/0542</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/058"><code>http://data.europa.eu/snb/isced-f/058</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0588"><code>http://data.europa.eu/snb/isced-f/0588</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/059"><code>http://data.europa.eu/snb/isced-f/059</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0599"><code>http://data.europa.eu/snb/isced-f/0599</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/06"><code>http://data.europa.eu/snb/isced-f/06</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/061"><code>http://data.europa.eu/snb/isced-f/061</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0610"><code>http://data.europa.eu/snb/isced-f/0610</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0611"><code>http://data.europa.eu/snb/isced-f/0611</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0612"><code>http://data.europa.eu/snb/isced-f/0612</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0613"><code>http://data.europa.eu/snb/isced-f/0613</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0619"><code>http://data.europa.eu/snb/isced-f/0619</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/068"><code>http://data.europa.eu/snb/isced-f/068</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0688"><code>http://data.europa.eu/snb/isced-f/0688</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/07"><code>http://data.europa.eu/snb/isced-f/07</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/070"><code>http://data.europa.eu/snb/isced-f/070</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0700"><code>http://data.europa.eu/snb/isced-f/0700</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/071"><code>http://data.europa.eu/snb/isced-f/071</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0710"><code>http://data.europa.eu/snb/isced-f/0710</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0711"><code>http://data.europa.eu/snb/isced-f/0711</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0712"><code>http://data.europa.eu/snb/isced-f/0712</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0713"><code>http://data.europa.eu/snb/isced-f/0713</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0714"><code>http://data.europa.eu/snb/isced-f/0714</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0715"><code>http://data.europa.eu/snb/isced-f/0715</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0716"><code>http://data.europa.eu/snb/isced-f/0716</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0719"><code>http://data.europa.eu/snb/isced-f/0719</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/072"><code>http://data.europa.eu/snb/isced-f/072</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0720"><code>http://data.europa.eu/snb/isced-f/0720</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0721"><code>http://data.europa.eu/snb/isced-f/0721</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0722"><code>http://data.europa.eu/snb/isced-f/0722</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0723"><code>http://data.europa.eu/snb/isced-f/0723</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0724"><code>http://data.europa.eu/snb/isced-f/0724</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0729"><code>http://data.europa.eu/snb/isced-f/0729</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/073"><code>http://data.europa.eu/snb/isced-f/073</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0730"><code>http://data.europa.eu/snb/isced-f/0730</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0731"><code>http://data.europa.eu/snb/isced-f/0731</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0732"><code>http://data.europa.eu/snb/isced-f/0732</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/078"><code>http://data.europa.eu/snb/isced-f/078</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0788"><code>http://data.europa.eu/snb/isced-f/0788</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/079"><code>http://data.europa.eu/snb/isced-f/079</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0799"><code>http://data.europa.eu/snb/isced-f/0799</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/08"><code>http://data.europa.eu/snb/isced-f/08</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/080"><code>http://data.europa.eu/snb/isced-f/080</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0800"><code>http://data.europa.eu/snb/isced-f/0800</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/081"><code>http://data.europa.eu/snb/isced-f/081</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0810"><code>http://data.europa.eu/snb/isced-f/0810</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0811"><code>http://data.europa.eu/snb/isced-f/0811</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0812"><code>http://data.europa.eu/snb/isced-f/0812</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0819"><code>http://data.europa.eu/snb/isced-f/0819</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/082"><code>http://data.europa.eu/snb/isced-f/082</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0821"><code>http://data.europa.eu/snb/isced-f/0821</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/083"><code>http://data.europa.eu/snb/isced-f/083</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0831"><code>http://data.europa.eu/snb/isced-f/0831</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/084"><code>http://data.europa.eu/snb/isced-f/084</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0841"><code>http://data.europa.eu/snb/isced-f/0841</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/088"><code>http://data.europa.eu/snb/isced-f/088</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0888"><code>http://data.europa.eu/snb/isced-f/0888</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/089"><code>http://data.europa.eu/snb/isced-f/089</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0899"><code>http://data.europa.eu/snb/isced-f/0899</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/09"><code>http://data.europa.eu/snb/isced-f/09</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/090"><code>http://data.europa.eu/snb/isced-f/090</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0900"><code>http://data.europa.eu/snb/isced-f/0900</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/091"><code>http://data.europa.eu/snb/isced-f/091</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0910"><code>http://data.europa.eu/snb/isced-f/0910</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0911"><code>http://data.europa.eu/snb/isced-f/0911</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0912"><code>http://data.europa.eu/snb/isced-f/0912</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0913"><code>http://data.europa.eu/snb/isced-f/0913</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0914"><code>http://data.europa.eu/snb/isced-f/0914</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0915"><code>http://data.europa.eu/snb/isced-f/0915</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0916"><code>http://data.europa.eu/snb/isced-f/0916</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0917"><code>http://data.europa.eu/snb/isced-f/0917</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0919"><code>http://data.europa.eu/snb/isced-f/0919</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/092"><code>http://data.europa.eu/snb/isced-f/092</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0920"><code>http://data.europa.eu/snb/isced-f/0920</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0921"><code>http://data.europa.eu/snb/isced-f/0921</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0922"><code>http://data.europa.eu/snb/isced-f/0922</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0923"><code>http://data.europa.eu/snb/isced-f/0923</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0929"><code>http://data.europa.eu/snb/isced-f/0929</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/098"><code>http://data.europa.eu/snb/isced-f/098</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0988"><code>http://data.europa.eu/snb/isced-f/0988</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/099"><code>http://data.europa.eu/snb/isced-f/099</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/0999"><code>http://data.europa.eu/snb/isced-f/0999</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/10"><code>http://data.europa.eu/snb/isced-f/10</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/100"><code>http://data.europa.eu/snb/isced-f/100</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/1000"><code>http://data.europa.eu/snb/isced-f/1000</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/101"><code>http://data.europa.eu/snb/isced-f/101</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/1010"><code>http://data.europa.eu/snb/isced-f/1010</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/1011"><code>http://data.europa.eu/snb/isced-f/1011</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/1012"><code>http://data.europa.eu/snb/isced-f/1012</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/1013"><code>http://data.europa.eu/snb/isced-f/1013</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/1014"><code>http://data.europa.eu/snb/isced-f/1014</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/1015"><code>http://data.europa.eu/snb/isced-f/1015</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/1019"><code>http://data.europa.eu/snb/isced-f/1019</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/102"><code>http://data.europa.eu/snb/isced-f/102</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/1020"><code>http://data.europa.eu/snb/isced-f/1020</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/1021"><code>http://data.europa.eu/snb/isced-f/1021</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/1022"><code>http://data.europa.eu/snb/isced-f/1022</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/1029"><code>http://data.europa.eu/snb/isced-f/1029</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/103"><code>http://data.europa.eu/snb/isced-f/103</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/1030"><code>http://data.europa.eu/snb/isced-f/1030</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/1031"><code>http://data.europa.eu/snb/isced-f/1031</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/1032"><code>http://data.europa.eu/snb/isced-f/1032</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/1039"><code>http://data.europa.eu/snb/isced-f/1039</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/104"><code>http://data.europa.eu/snb/isced-f/104</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/1041"><code>http://data.europa.eu/snb/isced-f/1041</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/108"><code>http://data.europa.eu/snb/isced-f/108</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/1088"><code>http://data.europa.eu/snb/isced-f/1088</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/109"><code>http://data.europa.eu/snb/isced-f/109</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/1099"><code>http://data.europa.eu/snb/isced-f/1099</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/99"><code>http://data.europa.eu/snb/isced-f/99</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/999"><code>http://data.europa.eu/snb/isced-f/999</code></a></li><li><a href="http://data.europa.eu/snb/isced-f/9999"><code>http://data.europa.eu/snb/isced-f/9999</code></a></li></ul></details>
+<div><code>sh:minCount</code>: 0</div>
+<div><code>sh:nodeKind</code>: <a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div>
+<div><code>acqf-qcp-model:internal/startsWith</code>: http://data.europa.eu/snb/isced-f/</div></td></tr>
+<tr id="elm:Qualification_elm:accreditation"><td><b>accreditation</b><p>The associated accreditation.</p></td><td><code>elm:accreditation</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/Accreditation"><code>elm:Accreditation</code></a></div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:Qualification_elm:additionalNote"><td><b>more information</b><p>An additional free text note about the resource. Can be used e.g. for qualification objectives.</p></td><td><code>elm:additionalNote</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/Note"><code>elm:Note</code></a></div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:Qualification_elm:awardingOpportunity"><td><b>awarding information</b><p>Refers to  an activity related to the awarding of the qualification, such as the country or region where the qualification is awarded, the awarding body and optionally the awarding period now or in the past.</p></td><td><code>elm:awardingOpportunity</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/AwardingOpportunity"><code>elm:AwardingOpportunity</code></a></div>
+<div><code>sh:minCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:Qualification_elm:creditPoint"><td><b>credit points</b><p>The credit points assigned to the qualification, following an educational credit system.</p></td><td><code>elm:creditPoint</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/CreditPoint"><code>elm:CreditPoint</code></a></div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:Qualification_acqf-qcp-model:elm-extension/educationLevelAcqf"><td><b>education level (ACQF)</b><p>An associated level of education within ACQF education levels.</p></td><td><code>acqf-qcp-model:elm-extension/educationLevelAcqf</code></td><td><details><summary>10 permitted values</summary><ul><li><a href="https://data.acqf-qcp.africa/model/acqf-levels/resource/level-1"><code>acqf-qcp-model:acqf-levels/resource/level-1</code></a></li><li><a href="https://data.acqf-qcp.africa/model/acqf-levels/resource/level-10"><code>acqf-qcp-model:acqf-levels/resource/level-10</code></a></li><li><a href="https://data.acqf-qcp.africa/model/acqf-levels/resource/level-2"><code>acqf-qcp-model:acqf-levels/resource/level-2</code></a></li><li><a href="https://data.acqf-qcp.africa/model/acqf-levels/resource/level-3"><code>acqf-qcp-model:acqf-levels/resource/level-3</code></a></li><li><a href="https://data.acqf-qcp.africa/model/acqf-levels/resource/level-4"><code>acqf-qcp-model:acqf-levels/resource/level-4</code></a></li><li><a href="https://data.acqf-qcp.africa/model/acqf-levels/resource/level-5"><code>acqf-qcp-model:acqf-levels/resource/level-5</code></a></li><li><a href="https://data.acqf-qcp.africa/model/acqf-levels/resource/level-6"><code>acqf-qcp-model:acqf-levels/resource/level-6</code></a></li><li><a href="https://data.acqf-qcp.africa/model/acqf-levels/resource/level-7"><code>acqf-qcp-model:acqf-levels/resource/level-7</code></a></li><li><a href="https://data.acqf-qcp.africa/model/acqf-levels/resource/level-8"><code>acqf-qcp-model:acqf-levels/resource/level-8</code></a></li><li><a href="https://data.acqf-qcp.africa/model/acqf-levels/resource/level-9"><code>acqf-qcp-model:acqf-levels/resource/level-9</code></a></li></ul></details>
+<div><code>sh:minCount</code>: 0</div>
+<div><code>sh:nodeKind</code>: <a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div>
+<div><code>acqf-qcp-model:internal/startsWith</code>: https://data.acqf-qcp.africa/model/acqf-levels/resource/</div></td></tr>
+<tr id="elm:Qualification_acqf-qcp-model:elm-extension/educationLevelNqf"><td><b>education level (NQF)</b><p>An associated level of education within ACQF education levels.</p></td><td><code>acqf-qcp-model:elm-extension/educationLevelNqf</code></td><td><details><summary>161 permitted values</summary><ul><li><a href="https://data.acqf-qcp.africa/model/ao-nqf-levels/resource/level-1"><code>acqf-qcp-model:ao-nqf-levels/resource/level-1</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ao-nqf-levels/resource/level-10"><code>acqf-qcp-model:ao-nqf-levels/resource/level-10</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ao-nqf-levels/resource/level-2"><code>acqf-qcp-model:ao-nqf-levels/resource/level-2</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ao-nqf-levels/resource/level-3"><code>acqf-qcp-model:ao-nqf-levels/resource/level-3</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ao-nqf-levels/resource/level-4"><code>acqf-qcp-model:ao-nqf-levels/resource/level-4</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ao-nqf-levels/resource/level-5"><code>acqf-qcp-model:ao-nqf-levels/resource/level-5</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ao-nqf-levels/resource/level-6"><code>acqf-qcp-model:ao-nqf-levels/resource/level-6</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ao-nqf-levels/resource/level-7"><code>acqf-qcp-model:ao-nqf-levels/resource/level-7</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ao-nqf-levels/resource/level-8"><code>acqf-qcp-model:ao-nqf-levels/resource/level-8</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ao-nqf-levels/resource/level-9"><code>acqf-qcp-model:ao-nqf-levels/resource/level-9</code></a></li><li><a href="https://data.acqf-qcp.africa/model/bw-nqf-levels/resource/level-1"><code>acqf-qcp-model:bw-nqf-levels/resource/level-1</code></a></li><li><a href="https://data.acqf-qcp.africa/model/bw-nqf-levels/resource/level-10"><code>acqf-qcp-model:bw-nqf-levels/resource/level-10</code></a></li><li><a href="https://data.acqf-qcp.africa/model/bw-nqf-levels/resource/level-2"><code>acqf-qcp-model:bw-nqf-levels/resource/level-2</code></a></li><li><a href="https://data.acqf-qcp.africa/model/bw-nqf-levels/resource/level-3"><code>acqf-qcp-model:bw-nqf-levels/resource/level-3</code></a></li><li><a href="https://data.acqf-qcp.africa/model/bw-nqf-levels/resource/level-4"><code>acqf-qcp-model:bw-nqf-levels/resource/level-4</code></a></li><li><a href="https://data.acqf-qcp.africa/model/bw-nqf-levels/resource/level-5"><code>acqf-qcp-model:bw-nqf-levels/resource/level-5</code></a></li><li><a href="https://data.acqf-qcp.africa/model/bw-nqf-levels/resource/level-6"><code>acqf-qcp-model:bw-nqf-levels/resource/level-6</code></a></li><li><a href="https://data.acqf-qcp.africa/model/bw-nqf-levels/resource/level-7"><code>acqf-qcp-model:bw-nqf-levels/resource/level-7</code></a></li><li><a href="https://data.acqf-qcp.africa/model/bw-nqf-levels/resource/level-8"><code>acqf-qcp-model:bw-nqf-levels/resource/level-8</code></a></li><li><a href="https://data.acqf-qcp.africa/model/bw-nqf-levels/resource/level-9"><code>acqf-qcp-model:bw-nqf-levels/resource/level-9</code></a></li><li><a href="https://data.acqf-qcp.africa/model/cv-nqf-levels/resource/level-1"><code>acqf-qcp-model:cv-nqf-levels/resource/level-1</code></a></li><li><a href="https://data.acqf-qcp.africa/model/cv-nqf-levels/resource/level-2"><code>acqf-qcp-model:cv-nqf-levels/resource/level-2</code></a></li><li><a href="https://data.acqf-qcp.africa/model/cv-nqf-levels/resource/level-3"><code>acqf-qcp-model:cv-nqf-levels/resource/level-3</code></a></li><li><a href="https://data.acqf-qcp.africa/model/cv-nqf-levels/resource/level-4"><code>acqf-qcp-model:cv-nqf-levels/resource/level-4</code></a></li><li><a href="https://data.acqf-qcp.africa/model/cv-nqf-levels/resource/level-5"><code>acqf-qcp-model:cv-nqf-levels/resource/level-5</code></a></li><li><a href="https://data.acqf-qcp.africa/model/cv-nqf-levels/resource/level-6"><code>acqf-qcp-model:cv-nqf-levels/resource/level-6</code></a></li><li><a href="https://data.acqf-qcp.africa/model/cv-nqf-levels/resource/level-7"><code>acqf-qcp-model:cv-nqf-levels/resource/level-7</code></a></li><li><a href="https://data.acqf-qcp.africa/model/cv-nqf-levels/resource/level-8"><code>acqf-qcp-model:cv-nqf-levels/resource/level-8</code></a></li><li><a href="https://data.acqf-qcp.africa/model/gh-nqf-levels/resource/level-1"><code>acqf-qcp-model:gh-nqf-levels/resource/level-1</code></a></li><li><a href="https://data.acqf-qcp.africa/model/gh-nqf-levels/resource/level-2"><code>acqf-qcp-model:gh-nqf-levels/resource/level-2</code></a></li><li><a href="https://data.acqf-qcp.africa/model/gh-nqf-levels/resource/level-3"><code>acqf-qcp-model:gh-nqf-levels/resource/level-3</code></a></li><li><a href="https://data.acqf-qcp.africa/model/gh-nqf-levels/resource/level-4"><code>acqf-qcp-model:gh-nqf-levels/resource/level-4</code></a></li><li><a href="https://data.acqf-qcp.africa/model/gh-nqf-levels/resource/level-5"><code>acqf-qcp-model:gh-nqf-levels/resource/level-5</code></a></li><li><a href="https://data.acqf-qcp.africa/model/gh-nqf-levels/resource/level-6"><code>acqf-qcp-model:gh-nqf-levels/resource/level-6</code></a></li><li><a href="https://data.acqf-qcp.africa/model/gh-nqf-levels/resource/level-7"><code>acqf-qcp-model:gh-nqf-levels/resource/level-7</code></a></li><li><a href="https://data.acqf-qcp.africa/model/gh-nqf-levels/resource/level-8"><code>acqf-qcp-model:gh-nqf-levels/resource/level-8</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ke-nqf-levels/resource/level-1"><code>acqf-qcp-model:ke-nqf-levels/resource/level-1</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ke-nqf-levels/resource/level-10"><code>acqf-qcp-model:ke-nqf-levels/resource/level-10</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ke-nqf-levels/resource/level-2"><code>acqf-qcp-model:ke-nqf-levels/resource/level-2</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ke-nqf-levels/resource/level-3"><code>acqf-qcp-model:ke-nqf-levels/resource/level-3</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ke-nqf-levels/resource/level-4"><code>acqf-qcp-model:ke-nqf-levels/resource/level-4</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ke-nqf-levels/resource/level-5"><code>acqf-qcp-model:ke-nqf-levels/resource/level-5</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ke-nqf-levels/resource/level-6"><code>acqf-qcp-model:ke-nqf-levels/resource/level-6</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ke-nqf-levels/resource/level-7"><code>acqf-qcp-model:ke-nqf-levels/resource/level-7</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ke-nqf-levels/resource/level-8"><code>acqf-qcp-model:ke-nqf-levels/resource/level-8</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ke-nqf-levels/resource/level-9"><code>acqf-qcp-model:ke-nqf-levels/resource/level-9</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ls-nqf-levels/resource/level-1"><code>acqf-qcp-model:ls-nqf-levels/resource/level-1</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ls-nqf-levels/resource/level-10"><code>acqf-qcp-model:ls-nqf-levels/resource/level-10</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ls-nqf-levels/resource/level-2"><code>acqf-qcp-model:ls-nqf-levels/resource/level-2</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ls-nqf-levels/resource/level-3"><code>acqf-qcp-model:ls-nqf-levels/resource/level-3</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ls-nqf-levels/resource/level-4"><code>acqf-qcp-model:ls-nqf-levels/resource/level-4</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ls-nqf-levels/resource/level-5"><code>acqf-qcp-model:ls-nqf-levels/resource/level-5</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ls-nqf-levels/resource/level-6"><code>acqf-qcp-model:ls-nqf-levels/resource/level-6</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ls-nqf-levels/resource/level-7"><code>acqf-qcp-model:ls-nqf-levels/resource/level-7</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ls-nqf-levels/resource/level-8"><code>acqf-qcp-model:ls-nqf-levels/resource/level-8</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ls-nqf-levels/resource/level-9"><code>acqf-qcp-model:ls-nqf-levels/resource/level-9</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ma-nqf-levels/resource/level-1"><code>acqf-qcp-model:ma-nqf-levels/resource/level-1</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ma-nqf-levels/resource/level-2"><code>acqf-qcp-model:ma-nqf-levels/resource/level-2</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ma-nqf-levels/resource/level-3"><code>acqf-qcp-model:ma-nqf-levels/resource/level-3</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ma-nqf-levels/resource/level-4"><code>acqf-qcp-model:ma-nqf-levels/resource/level-4</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ma-nqf-levels/resource/level-5"><code>acqf-qcp-model:ma-nqf-levels/resource/level-5</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ma-nqf-levels/resource/level-6"><code>acqf-qcp-model:ma-nqf-levels/resource/level-6</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ma-nqf-levels/resource/level-7"><code>acqf-qcp-model:ma-nqf-levels/resource/level-7</code></a></li><li><a href="https://data.acqf-qcp.africa/model/ma-nqf-levels/resource/level-8"><code>acqf-qcp-model:ma-nqf-levels/resource/level-8</code></a></li><li><a href="https://data.acqf-qcp.africa/model/mu-nqf-levels/resource/level-1"><code>acqf-qcp-model:mu-nqf-levels/resource/level-1</code></a></li><li><a href="https://data.acqf-qcp.africa/model/mu-nqf-levels/resource/level-10"><code>acqf-qcp-model:mu-nqf-levels/resource/level-10</code></a></li><li><a href="https://data.acqf-qcp.africa/model/mu-nqf-levels/resource/level-2"><code>acqf-qcp-model:mu-nqf-levels/resource/level-2</code></a></li><li><a href="https://data.acqf-qcp.africa/model/mu-nqf-levels/resource/level-3"><code>acqf-qcp-model:mu-nqf-levels/resource/level-3</code></a></li><li><a href="https://data.acqf-qcp.africa/model/mu-nqf-levels/resource/level-4"><code>acqf-qcp-model:mu-nqf-levels/resource/level-4</code></a></li><li><a href="https://data.acqf-qcp.africa/model/mu-nqf-levels/resource/level-5"><code>acqf-qcp-model:mu-nqf-levels/resource/level-5</code></a></li><li><a href="https://data.acqf-qcp.africa/model/mu-nqf-levels/resource/level-6"><code>acqf-qcp-model:mu-nqf-levels/resource/level-6</code></a></li><li><a href="https://data.acqf-qcp.africa/model/mu-nqf-levels/resource/level-7"><code>acqf-qcp-model:mu-nqf-levels/resource/level-7</code></a></li><li><a href="https://data.acqf-qcp.africa/model/mu-nqf-levels/resource/level-8"><code>acqf-qcp-model:mu-nqf-levels/resource/level-8</code></a></li><li><a href="https://data.acqf-qcp.africa/model/mu-nqf-levels/resource/level-9"><code>acqf-qcp-model:mu-nqf-levels/resource/level-9</code></a></li><li><a href="https://data.acqf-qcp.africa/model/mz-nqf-levels/resource/level-1"><code>acqf-qcp-model:mz-nqf-levels/resource/level-1</code></a></li><li><a href="https://data.acqf-qcp.africa/model/mz-nqf-levels/resource/level-10"><code>acqf-qcp-model:mz-nqf-levels/resource/level-10</code></a></li><li><a href="https://data.acqf-qcp.africa/model/mz-nqf-levels/resource/level-2"><code>acqf-qcp-model:mz-nqf-levels/resource/level-2</code></a></li><li><a href="https://data.acqf-qcp.africa/model/mz-nqf-levels/resource/level-3"><code>acqf-qcp-model:mz-nqf-levels/resource/level-3</code></a></li><li><a href="https://data.acqf-qcp.africa/model/mz-nqf-levels/resource/level-4"><code>acqf-qcp-model:mz-nqf-levels/resource/level-4</code></a></li><li><a href="https://data.acqf-qcp.africa/model/mz-nqf-levels/resource/level-5"><code>acqf-qcp-model:mz-nqf-levels/resource/level-5</code></a></li><li><a href="https://data.acqf-qcp.africa/model/mz-nqf-levels/resource/level-6"><code>acqf-qcp-model:mz-nqf-levels/resource/level-6</code></a></li><li><a href="https://data.acqf-qcp.africa/model/mz-nqf-levels/resource/level-7"><code>acqf-qcp-model:mz-nqf-levels/resource/level-7</code></a></li><li><a href="https://data.acqf-qcp.africa/model/mz-nqf-levels/resource/level-8"><code>acqf-qcp-model:mz-nqf-levels/resource/level-8</code></a></li><li><a href="https://data.acqf-qcp.africa/model/mz-nqf-levels/resource/level-9"><code>acqf-qcp-model:mz-nqf-levels/resource/level-9</code></a></li><li><a href="https://data.acqf-qcp.africa/model/na-nqf-levels/resource/level-1"><code>acqf-qcp-model:na-nqf-levels/resource/level-1</code></a></li><li><a href="https://data.acqf-qcp.africa/model/na-nqf-levels/resource/level-10"><code>acqf-qcp-model:na-nqf-levels/resource/level-10</code></a></li><li><a href="https://data.acqf-qcp.africa/model/na-nqf-levels/resource/level-2"><code>acqf-qcp-model:na-nqf-levels/resource/level-2</code></a></li><li><a href="https://data.acqf-qcp.africa/model/na-nqf-levels/resource/level-3"><code>acqf-qcp-model:na-nqf-levels/resource/level-3</code></a></li><li><a href="https://data.acqf-qcp.africa/model/na-nqf-levels/resource/level-4"><code>acqf-qcp-model:na-nqf-levels/resource/level-4</code></a></li><li><a href="https://data.acqf-qcp.africa/model/na-nqf-levels/resource/level-5"><code>acqf-qcp-model:na-nqf-levels/resource/level-5</code></a></li><li><a href="https://data.acqf-qcp.africa/model/na-nqf-levels/resource/level-6"><code>acqf-qcp-model:na-nqf-levels/resource/level-6</code></a></li><li><a href="https://data.acqf-qcp.africa/model/na-nqf-levels/resource/level-7"><code>acqf-qcp-model:na-nqf-levels/resource/level-7</code></a></li><li><a href="https://data.acqf-qcp.africa/model/na-nqf-levels/resource/level-8"><code>acqf-qcp-model:na-nqf-levels/resource/level-8</code></a></li><li><a href="https://data.acqf-qcp.africa/model/na-nqf-levels/resource/level-9"><code>acqf-qcp-model:na-nqf-levels/resource/level-9</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sadc-qf-levels/resource/level-1"><code>acqf-qcp-model:sadc-qf-levels/resource/level-1</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sadc-qf-levels/resource/level-10"><code>acqf-qcp-model:sadc-qf-levels/resource/level-10</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sadc-qf-levels/resource/level-2"><code>acqf-qcp-model:sadc-qf-levels/resource/level-2</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sadc-qf-levels/resource/level-3"><code>acqf-qcp-model:sadc-qf-levels/resource/level-3</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sadc-qf-levels/resource/level-4"><code>acqf-qcp-model:sadc-qf-levels/resource/level-4</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sadc-qf-levels/resource/level-5"><code>acqf-qcp-model:sadc-qf-levels/resource/level-5</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sadc-qf-levels/resource/level-6"><code>acqf-qcp-model:sadc-qf-levels/resource/level-6</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sadc-qf-levels/resource/level-7"><code>acqf-qcp-model:sadc-qf-levels/resource/level-7</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sadc-qf-levels/resource/level-8"><code>acqf-qcp-model:sadc-qf-levels/resource/level-8</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sadc-qf-levels/resource/level-9"><code>acqf-qcp-model:sadc-qf-levels/resource/level-9</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sc-nqf-levels/resource/level-1"><code>acqf-qcp-model:sc-nqf-levels/resource/level-1</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sc-nqf-levels/resource/level-10"><code>acqf-qcp-model:sc-nqf-levels/resource/level-10</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sc-nqf-levels/resource/level-2"><code>acqf-qcp-model:sc-nqf-levels/resource/level-2</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sc-nqf-levels/resource/level-3"><code>acqf-qcp-model:sc-nqf-levels/resource/level-3</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sc-nqf-levels/resource/level-4"><code>acqf-qcp-model:sc-nqf-levels/resource/level-4</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sc-nqf-levels/resource/level-5"><code>acqf-qcp-model:sc-nqf-levels/resource/level-5</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sc-nqf-levels/resource/level-6"><code>acqf-qcp-model:sc-nqf-levels/resource/level-6</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sc-nqf-levels/resource/level-7"><code>acqf-qcp-model:sc-nqf-levels/resource/level-7</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sc-nqf-levels/resource/level-8"><code>acqf-qcp-model:sc-nqf-levels/resource/level-8</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sc-nqf-levels/resource/level-9"><code>acqf-qcp-model:sc-nqf-levels/resource/level-9</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sz-nqf-levels/resource/level-1"><code>acqf-qcp-model:sz-nqf-levels/resource/level-1</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sz-nqf-levels/resource/level-10"><code>acqf-qcp-model:sz-nqf-levels/resource/level-10</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sz-nqf-levels/resource/level-2"><code>acqf-qcp-model:sz-nqf-levels/resource/level-2</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sz-nqf-levels/resource/level-3"><code>acqf-qcp-model:sz-nqf-levels/resource/level-3</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sz-nqf-levels/resource/level-4"><code>acqf-qcp-model:sz-nqf-levels/resource/level-4</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sz-nqf-levels/resource/level-5"><code>acqf-qcp-model:sz-nqf-levels/resource/level-5</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sz-nqf-levels/resource/level-6"><code>acqf-qcp-model:sz-nqf-levels/resource/level-6</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sz-nqf-levels/resource/level-7"><code>acqf-qcp-model:sz-nqf-levels/resource/level-7</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sz-nqf-levels/resource/level-8"><code>acqf-qcp-model:sz-nqf-levels/resource/level-8</code></a></li><li><a href="https://data.acqf-qcp.africa/model/sz-nqf-levels/resource/level-9"><code>acqf-qcp-model:sz-nqf-levels/resource/level-9</code></a></li><li><a href="https://data.acqf-qcp.africa/model/tn-nqf-levels/resource/level-1"><code>acqf-qcp-model:tn-nqf-levels/resource/level-1</code></a></li><li><a href="https://data.acqf-qcp.africa/model/tn-nqf-levels/resource/level-2"><code>acqf-qcp-model:tn-nqf-levels/resource/level-2</code></a></li><li><a href="https://data.acqf-qcp.africa/model/tn-nqf-levels/resource/level-3"><code>acqf-qcp-model:tn-nqf-levels/resource/level-3</code></a></li><li><a href="https://data.acqf-qcp.africa/model/tn-nqf-levels/resource/level-4"><code>acqf-qcp-model:tn-nqf-levels/resource/level-4</code></a></li><li><a href="https://data.acqf-qcp.africa/model/tn-nqf-levels/resource/level-5"><code>acqf-qcp-model:tn-nqf-levels/resource/level-5</code></a></li><li><a href="https://data.acqf-qcp.africa/model/tn-nqf-levels/resource/level-6"><code>acqf-qcp-model:tn-nqf-levels/resource/level-6</code></a></li><li><a href="https://data.acqf-qcp.africa/model/tn-nqf-levels/resource/level-7"><code>acqf-qcp-model:tn-nqf-levels/resource/level-7</code></a></li><li><a href="https://data.acqf-qcp.africa/model/za-nqf-levels/resource/level-1"><code>acqf-qcp-model:za-nqf-levels/resource/level-1</code></a></li><li><a href="https://data.acqf-qcp.africa/model/za-nqf-levels/resource/level-10"><code>acqf-qcp-model:za-nqf-levels/resource/level-10</code></a></li><li><a href="https://data.acqf-qcp.africa/model/za-nqf-levels/resource/level-2"><code>acqf-qcp-model:za-nqf-levels/resource/level-2</code></a></li><li><a href="https://data.acqf-qcp.africa/model/za-nqf-levels/resource/level-3"><code>acqf-qcp-model:za-nqf-levels/resource/level-3</code></a></li><li><a href="https://data.acqf-qcp.africa/model/za-nqf-levels/resource/level-4"><code>acqf-qcp-model:za-nqf-levels/resource/level-4</code></a></li><li><a href="https://data.acqf-qcp.africa/model/za-nqf-levels/resource/level-5"><code>acqf-qcp-model:za-nqf-levels/resource/level-5</code></a></li><li><a href="https://data.acqf-qcp.africa/model/za-nqf-levels/resource/level-6"><code>acqf-qcp-model:za-nqf-levels/resource/level-6</code></a></li><li><a href="https://data.acqf-qcp.africa/model/za-nqf-levels/resource/level-7"><code>acqf-qcp-model:za-nqf-levels/resource/level-7</code></a></li><li><a href="https://data.acqf-qcp.africa/model/za-nqf-levels/resource/level-8"><code>acqf-qcp-model:za-nqf-levels/resource/level-8</code></a></li><li><a href="https://data.acqf-qcp.africa/model/za-nqf-levels/resource/level-9"><code>acqf-qcp-model:za-nqf-levels/resource/level-9</code></a></li><li><a href="https://data.acqf-qcp.africa/model/zm-nqf-levels/resource/level-1"><code>acqf-qcp-model:zm-nqf-levels/resource/level-1</code></a></li><li><a href="https://data.acqf-qcp.africa/model/zm-nqf-levels/resource/level-10"><code>acqf-qcp-model:zm-nqf-levels/resource/level-10</code></a></li><li><a href="https://data.acqf-qcp.africa/model/zm-nqf-levels/resource/level-2"><code>acqf-qcp-model:zm-nqf-levels/resource/level-2</code></a></li><li><a href="https://data.acqf-qcp.africa/model/zm-nqf-levels/resource/level-3"><code>acqf-qcp-model:zm-nqf-levels/resource/level-3</code></a></li><li><a href="https://data.acqf-qcp.africa/model/zm-nqf-levels/resource/level-4"><code>acqf-qcp-model:zm-nqf-levels/resource/level-4</code></a></li><li><a href="https://data.acqf-qcp.africa/model/zm-nqf-levels/resource/level-5"><code>acqf-qcp-model:zm-nqf-levels/resource/level-5</code></a></li><li><a href="https://data.acqf-qcp.africa/model/zm-nqf-levels/resource/level-6"><code>acqf-qcp-model:zm-nqf-levels/resource/level-6</code></a></li><li><a href="https://data.acqf-qcp.africa/model/zm-nqf-levels/resource/level-7"><code>acqf-qcp-model:zm-nqf-levels/resource/level-7</code></a></li><li><a href="https://data.acqf-qcp.africa/model/zm-nqf-levels/resource/level-8"><code>acqf-qcp-model:zm-nqf-levels/resource/level-8</code></a></li><li><a href="https://data.acqf-qcp.africa/model/zm-nqf-levels/resource/level-9"><code>acqf-qcp-model:zm-nqf-levels/resource/level-9</code></a></li><li><a href="https://data.acqf-qcp.africa/model/zw-nqf-levels/resource/level-1"><code>acqf-qcp-model:zw-nqf-levels/resource/level-1</code></a></li><li><a href="https://data.acqf-qcp.africa/model/zw-nqf-levels/resource/level-10"><code>acqf-qcp-model:zw-nqf-levels/resource/level-10</code></a></li><li><a href="https://data.acqf-qcp.africa/model/zw-nqf-levels/resource/level-2"><code>acqf-qcp-model:zw-nqf-levels/resource/level-2</code></a></li><li><a href="https://data.acqf-qcp.africa/model/zw-nqf-levels/resource/level-3"><code>acqf-qcp-model:zw-nqf-levels/resource/level-3</code></a></li><li><a href="https://data.acqf-qcp.africa/model/zw-nqf-levels/resource/level-4"><code>acqf-qcp-model:zw-nqf-levels/resource/level-4</code></a></li><li><a href="https://data.acqf-qcp.africa/model/zw-nqf-levels/resource/level-5"><code>acqf-qcp-model:zw-nqf-levels/resource/level-5</code></a></li><li><a href="https://data.acqf-qcp.africa/model/zw-nqf-levels/resource/level-6"><code>acqf-qcp-model:zw-nqf-levels/resource/level-6</code></a></li><li><a href="https://data.acqf-qcp.africa/model/zw-nqf-levels/resource/level-7"><code>acqf-qcp-model:zw-nqf-levels/resource/level-7</code></a></li><li><a href="https://data.acqf-qcp.africa/model/zw-nqf-levels/resource/level-8"><code>acqf-qcp-model:zw-nqf-levels/resource/level-8</code></a></li><li><a href="https://data.acqf-qcp.africa/model/zw-nqf-levels/resource/level-9"><code>acqf-qcp-model:zw-nqf-levels/resource/level-9</code></a></li></ul></details>
+<div><code>sh:minCount</code>: 0</div>
+<div><code>sh:nodeKind</code>: <a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div>
+<div><code>acqf-qcp-model:internal/startsWith</code>: https://data.acqf-qcp.africa/model/</div></td></tr>
+<tr id="elm:Qualification_elm:entitlesTo"><td><b>entitles To</b><p>Rights (such as which the person may acquire as a result of acquiring the learning outcomes).</p></td><td><code>elm:entitlesTo</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/LearningEntitlementSpecification"><code>elm:LearningEntitlementSpecification</code></a></div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:Qualification_elm:entryRequirement"><td><b>entry requirement</b><p>Specific entry requirement or prerequisite of individuals for which this qualification is designed to start this learning opportunity.</p></td><td><code>elm:entryRequirement</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/Note"><code>elm:Note</code></a></div>
+<div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:Qualification_elm:isPartOf"><td><b>is part of</b><p>Links the qualification to its master qualification (of which one this is part of).</p></td><td><code>elm:isPartOf</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/Qualification"><code>elm:Qualification</code></a></div>
+<div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:Qualification_elm:learningOutcome"><td><b>learning outcome</b><p>An individual (expected) learning outcome of the qualification.</p></td><td><code>elm:learningOutcome</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/LearningOutcome"><code>elm:LearningOutcome</code></a></div>
+<div><code>sh:minCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:Qualification_elm:learningOutcomeSummary"><td><b>learning outcome summary</b><p>The full learning outcome summary of the qualification.</p></td><td><code>elm:learningOutcomeSummary</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/Note"><code>elm:Note</code></a></div>
+<div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:Qualification_elm:supplementaryDocument"><td><b>other documents</b><p>A public web resource containing additional documentation about the resource. For example, it could contain Links of the qualification (partly or fully) to Recognition of Prior Learning (RPL, VAE, VNFIL)</p></td><td><code>elm:supplementaryDocument</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/WebResource"><code>elm:WebResource</code></a></div>
+<div><code>sh:minCount</code>: 0</div>
+<div><code>sh:node</code>: <a href="https://data.acqf-qcp.africa/model/exchange-model/resource/URLRegexRestriction"><code>acqf-qcp-model:exchange-model/resource/URLRegexRestriction</code></a></div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:Qualification_dc:type"><td><b>type</b><p>The type of the qualifications. It should be provided using the ACQF Controlled List of Qualification Types.</p></td><td><code>dc:type</code></td><td><details><summary>4 permitted values</summary><ul><li><a href="https://data.acqf-qcp.africa/model/qualification-types/resource/full"><code>acqf-qcp-model:qualification-types/resource/full</code></a></li><li><a href="https://data.acqf-qcp.africa/model/qualification-types/resource/micro-credential"><code>acqf-qcp-model:qualification-types/resource/micro-credential</code></a></li><li><a href="https://data.acqf-qcp.africa/model/qualification-types/resource/partial"><code>acqf-qcp-model:qualification-types/resource/partial</code></a></li><li><a href="https://data.acqf-qcp.africa/model/qualification-types/resource/recognition-of-prior-learning"><code>acqf-qcp-model:qualification-types/resource/recognition-of-prior-learning</code></a></li></ul></details>
+<div><code>sh:nodeKind</code>: <a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div>
+<div><code>acqf-qcp-model:internal/startsWith</code>: https://data.acqf-qcp.africa/model/qualification-types/resource/</div></td></tr>
+<tr id="elm:Qualification_elm:volumeOfLearning"><td><b>volume of learning</b><p>The estimated number of hours the learner is expected to spend engaged in learning to earn the award. This would include the notional number of hours in class, in group work, in practicals, as well as hours engaged in self-motivated study., The estimated number of hours the learner is expected to spend engaged in learning to earn the award. This would include the notional number of hours in, in group work, in practicals, as well as hours engaged in self-motivated study.</p></td><td><code>elm:volumeOfLearning</code></td><td><div><code>sh:datatype</code>: <a href="http://www.w3.org/2001/XMLSchema#duration"><code>xsd:duration</code></a></div>
+<div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:Qualification_rules_UniqueQualificationNotationShape"><td><b>Class rules</b><p></p></td><td><code></code></td><td><div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div>
+<div><code>sh:sparql</code>: Qualification identifier notation {?value} must be unique within this upload.</div></td></tr>
+<tr id="elm:Qualification_foaf:homepage"><td><b>homepage</b><p>The homepage.</p></td><td><code>foaf:homepage</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/WebResource"><code>elm:WebResource</code></a></div>
+<div><code>sh:node</code>: <a href="https://data.acqf-qcp.africa/model/exchange-model/resource/URLRegexRestriction"><code>acqf-qcp-model:exchange-model/resource/URLRegexRestriction</code></a></div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:Qualification_adms:identifier"><td><b>identifier</b><p>An identifier assigned to the resource.</p></td><td><code>adms:identifier</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/Identifier"><code>elm:Identifier</code></a></div>
+<div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:Qualification_dc:publisher"><td><b>publisher</b><p>The publisher.</p></td><td><code>dc:publisher</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/Organisation"><code>elm:Organisation</code></a></div>
+<div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:minCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:Qualification_dc:title"><td><b>title</b><p>The title. One value per language is permitted.</p></td><td><code>dc:title</code></td><td><div><code>sh:datatype</code>: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"><code>rdf:langString</code></a></div>
+<div><code>sh:minCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div>
+<div><code>sh:uniqueLang</code>: true</div></td></tr></tbody></table></section>
+<section id="elm:WebResource"><h2>elm:WebResource</h2><p>A public web resource.</p><table><thead><tr><th>Field</th><th>Path</th><th>Constraints</th></tr></thead><tbody><tr id="elm:WebResource_elm:contentUrl"><td><b>URL</b><p>The public access URL.</p></td><td><code>elm:contentUrl</code></td><td><div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:minCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="elm:WebResource_rules_WebResourceShape"><td><b>Class rules</b><p>A public web resource.</p></td><td><code></code></td><td><div><code>sh:closed</code>: true</div>
+<div><code>sh:ignoredProperties</code>: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"><code>rdf:type</code></a></div></td></tr></tbody></table></section>
+<section id="dc:Location"><h2>dc:Location</h2><p>An identifiable geographic place.</p><table><thead><tr><th>Field</th><th>Path</th><th>Constraints</th></tr></thead><tbody><tr id="dc:Location_rules_LocationShape"><td><b>Class rules</b><p>An identifiable geographic place.</p></td><td><code></code></td><td><div><code>sh:closed</code>: true</div>
+<div><code>sh:ignoredProperties</code>: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"><code>rdf:type</code></a></div></td></tr>
+<tr id="dc:Location_elm:spatialCode"><td><b>spatial code</b><p>A code identifying a spatial scope in which this physical location is located.</p></td><td><code>elm:spatialCode</code></td><td><div><code>sh:minCount</code>: 1</div>
+<div><code>sh:nodeKind</code>: <a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div>
+<div><code>acqf-qcp-model:internal/startsWith</code>: http://publications.europa.eu/resource/authority/country/</div></td></tr>
+<tr id="dc:Location_adms:identifier"><td><b>identifier</b><p>An identifier assigned to the resource.</p></td><td><code>adms:identifier</code></td><td><div><code>sh:class</code>: <a href="http://data.europa.eu/snb/model/elm/Identifier"><code>elm:Identifier</code></a></div>
+<div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr></tbody></table></section>
+<section id="skos:Concept"><h2>skos:Concept</h2><p>A term from a controlled vocabulary modelled as a skos:Concept.</p><table><thead><tr><th>Field</th><th>Path</th><th>Constraints</th></tr></thead><tbody><tr id="skos:Concept_rules_ConceptShape"><td><b>Class rules</b><p>A term from a controlled vocabulary modelled as a skos:Concept.</p></td><td><code></code></td><td></td></tr>
+<tr id="skos:Concept_skos:altLabel"><td><b>alternative name</b><p>The alternative name. It must be disjoint with name (skos:prefLabel) of the Concept.</p></td><td><code>skos:altLabel</code></td><td><div><code>sh:datatype</code>: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"><code>rdf:langString</code></a></div>
+<div><code>sh:disjoint</code>: <a href="http://www.w3.org/2004/02/skos/core#prefLabel"><code>skos:prefLabel</code></a></div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="skos:Concept_skos:inScheme"><td><b>in scheme</b><p>The concept scheme this concept belongs to. The identification of the controlled vocabulary.</p></td><td><code>skos:inScheme</code></td><td><div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="skos:Concept_skos:notation"><td><b>notation</b><p>A notation, also known as classification code, is a string of characters used to uniquely identify a concept within the scope of a given concept scheme. This property is used to assign a notation as a typed literal.</p></td><td><code>skos:notation</code></td><td><div><code>sh:maxCount</code>: 1</div>
+<div><code>sh:nodeKind</code>: <a href="http://www.w3.org/ns/shacl#Literal"><code>sh:Literal</code></a></div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div></td></tr>
+<tr id="skos:Concept_skos:prefLabel"><td><b>name</b><p>The text equivalent of the code content component. One value per language is permitted.</p></td><td><code>skos:prefLabel</code></td><td><div><code>sh:datatype</code>: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"><code>rdf:langString</code></a></div>
+<div><code>sh:severity</code>: <a href="http://www.w3.org/ns/shacl#Violation"><code>sh:Violation</code></a></div>
+<div><code>sh:uniqueLang</code>: true</div></td></tr></tbody></table></section>
+<section id="skos:ConceptScheme"><h2>skos:ConceptScheme</h2><p>A controlled vocabulary modelled as a Concept Scheme.</p><table><thead><tr><th>Field</th><th>Path</th><th>Constraints</th></tr></thead><tbody><tr id="skos:ConceptScheme_rules_ConceptSchemeShape"><td><b>Class rules</b><p>A controlled vocabulary modelled as a Concept Scheme.</p></td><td><code></code></td><td></td></tr></tbody></table></section></main>
+</body>
 </html>

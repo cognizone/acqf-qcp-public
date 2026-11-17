@@ -15,5 +15,9 @@
       "source": "profile.ttl",
       "target": "etf/model/profile.ttl"
     }
-  ]
+  ],
+  "reference": {
+    "title": "ETF model reference",
+    "output": "docs/etf/model/reference.html"
+  }
 }

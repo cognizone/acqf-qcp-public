@@ -22,6 +22,14 @@
     {
       "source": "model",
       "target": "model"
+    },
+    {
+      "source": "assets",
+      "target": ""
     }
-  ]
+  ],
+  "reference": {
+    "title": "ACQF model reference",
+    "output": "docs/exchange-model/exchange-model.html"
+  }
 }
