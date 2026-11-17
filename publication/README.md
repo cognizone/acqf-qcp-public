@@ -54,22 +54,23 @@ Install Java 21+, Bash, jq and GNU coreutils:
 ./gradlew check                 # check site copies and both validation contracts
 ```
 
-Gradle remains a thin adapter to the same CLI used in CI. To use it directly:
+Gradle Kotlin handles filesystem operations, JSON configuration, named-graph staging
+and the build/check lifecycle. Jena's CLI runs the RDF queries and validation.
+The Bash entry points are short compatibility wrappers:
 
 ```bash
-bash publication/setup-jena.sh
-export PATH="$PWD/build/tools/apache-jena-6.2.0/bin:$PATH"
 bash publication/site.sh build
 bash publication/site.sh check
 # While editing only one validation profile:
 bash publication/publish.sh check etf
 ```
 
-Setup verifies the official Jena archive against `publication/jena.sha512`.
+The `setupJena` task installs the official CLI and verifies its archive against
+`publication/jena.sha512`. No separate application or dependency resolver is compiled.
 Publication uses reviewed local inputs; it does not fetch vocabularies or imports.
 The source files are staged in separate named graphs. SPARQL resolves scheme and
-catalogue bindings, rejects missing/empty/ambiguous inputs, and emits explicit
-`sh:in` lists. Structural constraints and prefix validators remain intact.
+catalogue bindings and rejects missing/empty/ambiguous inputs. Gradle groups the
+ordered result into explicit `sh:in` lists. Structural constraints and prefix validators remain intact.
 
 The complete website is assembled in ignored `build/` first. Only after both models
 have been assembled successfully are declared outputs copied into `docs/`. Static
@@ -82,7 +83,8 @@ Check compares each generated resource with its maintained source, reconstructs
 both validation graphs, compares RDF graphs including blank nodes, and runs the
 shared level, cardinality, diagnostic and duplicate-notation fixtures. The complete
 site check runs product-independent malformed-input tests once; the direct
-`publish.sh check <product>` command runs that product's graph and contract checks.
+`publish.sh check <product>` wrapper runs `checkModels -Pproduct=<product>` for
+that product's graph and contract checks.
 The product-owned `products/acqf/tests/published-paths.txt` also protects all 46
 established ACQF public files. All 161 ACQF levels and eight EQF levels are exercised. ACQF additionally compares
 against its historical complete validation graph. Changing source file locations
