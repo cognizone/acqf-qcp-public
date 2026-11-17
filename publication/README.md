@@ -20,15 +20,55 @@ products/<product>/
   assets/                       optional static assets, with product-owned provenance
   examples/, model/             optional product examples and legacy extensions
   tests/                        product expectations and compatibility contracts
-  publication.json              profile, source-to-URL mappings and reference output
+  publication.json              public context path and legacy URL exceptions
 publication/                    shared queries, fixtures and thin shell wrappers
 build/site/                     clean, disposable website; the release artifact
 docs/                           frozen legacy snapshot; not part of the build
 ```
 
-Sources resolve relative to their configuration file. Mapping targets, `output`
-and `reference.output` are public paths relative to the generated website root.
-They do not name a tracked output directory.
+Product manifests describe publication intent only. They do not describe RDF
+bindings, source file inventories, test locations or copy operations.
+
+ACQF retains its existing root context and two legacy filename exceptions:
+
+```json
+{
+  "basePath": "",
+  "profilePath": "model/acqf-profile.ttl",
+  "referencePath": "exchange-model/exchange-model.html"
+}
+```
+
+ETF needs only its context:
+
+```json
+{ "basePath": "etf" }
+```
+
+`basePath` is relative to the generated website root. Optional `profilePath` and
+`referencePath` override the final site-relative destination for compatibility;
+they are not source locations. Optional `title` overrides the default
+`<PRODUCT> model reference` page title. There is no separate manifest schema/DSL.
+
+The shared build applies these folder and filename conventions once:
+
+| Maintained source or generated output | Public path within the product context |
+| --- | --- |
+| `profile.ttl` | `model/profile.ttl` (unless overridden) |
+| `vocabularies/` | `model/` |
+| `documentation/`, optional `assets/` | Context root |
+| Optional `examples/` | `model/examples/` |
+| Optional `model/` extensions | `model/` |
+| Assembled validation graph | `model/exchange-model.ttl` |
+| Generated model reference | `model/reference.html` (unless overridden) |
+
+Tests always live in the product's `tests/` folder. Shared publication destinations
+are declared once in `common/publication.json` as a `paths` map from common resource
+folders to existing site-relative locations. Private validation inputs and templates
+are not in that map and are never copied wholesale into the site.
+
+RDF models, profiles and catalogues remain the source of validation semantics.
+RDF identifiers do not determine website context paths or legacy filenames.
 
 ## One-way generation
 

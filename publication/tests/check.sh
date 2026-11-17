@@ -4,7 +4,7 @@ set -euo pipefail
 common=$1 config=$2 work=$3
 tests=$common/publication/tests
 model=$work/generated.ttl
-expectations=$(dirname "$config")/$(jq -er '.tests' "$config")
+expectations=$(dirname "$config")/tests
 arq --data="$model" --query="$tests/contract.rq" --results=JSON > "$work/contract.json"
 jq -e --slurpfile expected "$expectations/contract.json" '
   .results.bindings | length == 1 and (.[0] |

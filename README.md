@@ -15,6 +15,8 @@ job and does not change hosting settings, application URLs, acc or production.
 - `build/site/`: complete generated artifact, built by CI; never committed.
 - `docs/`: frozen legacy snapshot retained for existing consumers and hosting compatibility. It is not a build input, output or freshness requirement.
 
+Product `publication.json` files declare only the public context and any legacy
+URL exceptions; source folders and standard output names follow conventions.
 Public paths and RDF IRIs are preserved in the generated artifact. ETF uses `/etf/`.
 No current website or application consumer is switched to this artifact automatically.
 

@@ -1,24 +1,9 @@
 {
-  "resources": [
-    {
-      "source": "vocabularies",
-      "target": "model"
-    },
-    {
-      "source": "model",
-      "target": "model/common"
-    },
-    {
-      "source": "contexts",
-      "target": "model/contexts"
-    },
-    {
-      "source": "frames",
-      "target": "model"
-    },
-    {
-      "source": "documentation",
-      "target": "common"
-    }
-  ]
+  "paths": {
+    "vocabularies": "model",
+    "model": "model/common",
+    "contexts": "model/contexts",
+    "frames": "model",
+    "documentation": "common"
+  }
 }

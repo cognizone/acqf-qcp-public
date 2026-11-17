@@ -5,8 +5,6 @@ plugins { base }
 
 fun json(file: File) = JsonSlurper().parse(file) as Map<*, *>
 fun Map<*, *>.text(key: String) = get(key) as String
-@Suppress("UNCHECKED_CAST")
-fun Map<*, *>.rows(key: String) = get(key) as List<Map<String, String>>
 fun bindings(file: File) = (json(file)["results"] as Map<*, *>)["bindings"] as List<*>
 
 val archive = file("publication/jena.sha512").readText().trim().split(Regex("\\s+"))[1]
@@ -30,8 +28,12 @@ fun siteFile(path: String, site: File): File {
     require(path.isNotBlank()) { "Published output path must not be empty" }
     return inside(site, site.resolve(path))
 }
-fun output(config: File, site: File) = siteFile(json(config).text("output"), site)
-fun referenceOutput(config: File, site: File) = siteFile((json(config)["reference"] as Map<*, *>).text("output"), site)
+fun productPath(config: File, path: String) = listOf(json(config).text("basePath"), path)
+    .filter { it.isNotEmpty() }.joinToString("/")
+fun output(config: File, site: File) = siteFile(productPath(config, "model/exchange-model.ttl"), site)
+fun referenceOutput(config: File, site: File) = siteFile(
+    json(config)["referencePath"] as? String ?: productPath(config, "model/reference.html"), site)
+fun profilePath(config: File) = json(config)["profilePath"] as? String ?: productPath(config, "model/profile.ttl")
 
 fun selectedProducts(): List<File> {
     val result = products.filter { selected.get() == "all" || it.parentFile.name == selected.get() }
@@ -63,7 +65,7 @@ fun assembleModel(config: File, work: File): File {
         writeText(jena("arq", *dataset.toTypedArray(), "--query=${file("publication/queries/$name.rq")}", "--results=$format"))
     }
     stage("common", file("common/model/exchange-model.ttl"))
-    stage("profile", config.parentFile.resolve(json(config).text("profile")))
+    stage("profile", config.parentFile.resolve("profile.ttl"))
     for (directory in listOf(file("common/vocabularies"), file("common/validation-inputs"), config.parentFile.resolve("vocabularies"))) {
         require(directory.isDirectory) { "Missing vocabulary directory: $directory" }
         directory.walkTopDown().filter { it.isFile }.sortedBy { it.path }.forEach { stage("vocabulary", it) }
@@ -86,20 +88,29 @@ fun assembleModel(config: File, work: File): File {
     }
 }
 
-// These are source-to-public-URL mappings, shared by generation and checks.
+// Folder conventions define inputs; manifests specify public routes and exceptions.
 fun resources(): Map<String, File> {
     val result = linkedMapOf<String, File>()
-    for (config in listOf(file("common/publication.json")) + products) {
-        for (mapping in json(config).rows("resources")) {
-            val source = inside(rootDir, config.parentFile.resolve(mapping.getValue("source")))
-            require(source.exists()) { "Missing site source: $source" }
-            for (input in source.walkTopDown().filter { it.isFile }) {
-                val suffix = if (source.isDirectory) input.relativeTo(source).path else ""
-                val target = inside(siteDirectory.get().asFile, siteDirectory.get().asFile.resolve(mapping.getValue("target")).resolve(suffix))
-                val relative = target.relativeTo(siteDirectory.get().asFile).path
-                check(result.put(relative, input) == null) { "Duplicate site output: $relative" }
-            }
+    fun add(source: File, path: String) {
+        inside(rootDir, source)
+        require(source.exists()) { "Missing site source: $source" }
+        for (input in source.walkTopDown().filter { it.isFile }) {
+            val suffix = if (source.isDirectory) input.relativeTo(source).path else ""
+            val target = inside(siteDirectory.get().asFile, siteDirectory.get().asFile.resolve(path).resolve(suffix))
+            val relative = target.relativeTo(siteDirectory.get().asFile).path
+            check(result.put(relative, input) == null) { "Duplicate site output: $relative" }
         }
+    }
+    val shared = json(file("common/publication.json"))["paths"] as Map<*, *>
+    shared.forEach { (folder, path) -> add(file("common/$folder"), path as String) }
+    val folders = mapOf("vocabularies" to "model", "documentation" to "", "assets" to "",
+        "examples" to "model/examples", "model" to "model")
+    for (config in products) {
+        folders.forEach { (folder, path) ->
+            val source = config.parentFile.resolve(folder)
+            if (source.exists()) add(source, productPath(config, path))
+        }
+        add(config.parentFile.resolve("profile.ttl"), profilePath(config))
     }
     return result
 }
@@ -119,8 +130,8 @@ fun buildModels(configs: List<File>, site: File, work: File) {
 fun checkModels(configs: List<File>, work: File, site: File? = null) {
     for (config in configs) {
         val folder = work.resolve(config.parentFile.name).apply { mkdirs() }
-        val model = if (site == null) assembleModel(config, folder)
-            else output(config, site).copyTo(folder.resolve("generated.ttl"), overwrite = true)
+        if (site == null) assembleModel(config, folder)
+        else output(config, site).copyTo(folder.resolve("generated.ttl"), overwrite = true)
         logger.lifecycle(command("bash", "publication/tests/check.sh", rootDir.path, config.path, folder.path).trim())
     }
 }
@@ -172,10 +183,9 @@ fun generateReference(config: File, site: File, work: File) {
         "<section id=\"${html(id)}\"><h2>${html(id)}</h2><p>${html(description)}</p><table><thead><tr><th>Field</th><th>Path</th><th>Constraints</th></tr></thead><tbody>$fields</tbody></table></section>"
     }.joinToString("\n")
     val reference = referenceOutput(config, site)
-    val documentTarget = json(config).rows("resources").single { it["source"] == "documentation" }.getValue("target")
-    val homepage = site.resolve(documentTarget).resolve("index.html")
+    val homepage = siteFile(productPath(config, "index.html"), site)
     val rendered = file("common/templates/model-reference.html").readText()
-        .replace("{{title}}", html((json(config)["reference"] as Map<*, *>).text("title")))
+        .replace("{{title}}", html(json(config)["title"] as? String ?: "${config.parentFile.name.uppercase()} model reference"))
         .replace("{{home}}", html(homepage.relativeTo(reference.parentFile).invariantSeparatorsPath))
         .replace("{{model}}", html(model.relativeTo(reference.parentFile).invariantSeparatorsPath))
         .replace("{{prefixes}}", "<details><summary>Prefixes</summary>" + referencePrefixes.entries.joinToString("") { "<div><code>${it.key}</code>: ${html(it.value)}</div>" } + "</details>")
@@ -185,7 +195,7 @@ fun generateReference(config: File, site: File, work: File) {
 }
 fun checkCatalogueLinks(config: File, work: File) {
     work.mkdirs()
-    val profile = work.resolve("profile.ttl").apply { writeText(config.parentFile.resolve(json(config).text("profile")).readText()) }
+    val profile = work.resolve("profile.ttl").apply { writeText(config.parentFile.resolve("profile.ttl").readText()) }
     val sources = config.parentFile.resolve("vocabularies").walkTopDown().filter { it.isFile }.sortedBy { it.path }.toList()
     val graphs = sources.mapIndexed { index, source ->
         val graph = work.resolve("vocabulary-$index.ttl").apply { writeText("@base <${uri(source)}> .\n" + source.readText()) }
@@ -259,7 +269,7 @@ val checkValidation = tasks.register("checkValidation") {
     doLast {
         val site = siteDirectory.get().asFile
         for (config in products) {
-            val tests = config.parentFile.resolve(json(config).text("tests"))
+            val tests = config.parentFile.resolve("tests")
             val paths = tests.resolve("published-paths.txt")
             if (paths.isFile) paths.readLines().forEach { check(inside(site, site.resolve(it)).isFile) { "Missing established public path: $it" } }
             val anchors = tests.resolve("reference-anchors.txt")

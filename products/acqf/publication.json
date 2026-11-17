@@ -1,35 +1,5 @@
 {
-  "profile": "profile.ttl",
-  "output": "model/exchange-model.ttl",
-  "tests": "tests",
-  "resources": [
-    {
-      "source": "vocabularies",
-      "target": "model"
-    },
-    {
-      "source": "documentation",
-      "target": ""
-    },
-    {
-      "source": "profile.ttl",
-      "target": "model/acqf-profile.ttl"
-    },
-    {
-      "source": "examples",
-      "target": "model/examples"
-    },
-    {
-      "source": "model",
-      "target": "model"
-    },
-    {
-      "source": "assets",
-      "target": ""
-    }
-  ],
-  "reference": {
-    "title": "ACQF model reference",
-    "output": "exchange-model/exchange-model.html"
-  }
+  "basePath": "",
+  "profilePath": "model/acqf-profile.ttl",
+  "referencePath": "exchange-model/exchange-model.html"
 }
