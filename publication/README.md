@@ -1,7 +1,8 @@
 # Publication architecture
 
-One repository builds ACQF and ETF for `https://data.acqf-qcp.africa/`. Maintained
-source and generated delivery artifacts have separate owners and locations:
+One repository builds ACQF and ETF as a DEV preview artifact. The live ACQF
+website used by PROD is frozen. Maintained sources and generated delivery artifacts
+have separate owners and locations:
 
 ```text
 common/
@@ -22,13 +23,12 @@ products/<product>/
   publication.json              profile, source-to-URL mappings and reference output
 publication/                    shared queries, fixtures and thin shell wrappers
 build/site/                     clean, disposable website; the release artifact
-docs/                           committed compatibility export, generated only
+docs/                           frozen legacy snapshot; not part of the build
 ```
 
-Sources resolve relative to their configuration file. Mapping targets are public
-paths relative to the website root; `output` and `reference.output` retain the
-`docs/` prefix to describe the committed compatibility location. They map to the
-same relative paths in `build/site/`.
+Sources resolve relative to their configuration file. Mapping targets, `output`
+and `reference.output` are public paths relative to the generated website root.
+They do not name a tracked output directory.
 
 ## One-way generation
 
@@ -36,10 +36,9 @@ same relative paths in `build/site/`.
 RDF sources + product profile -> assembled SHACL -> generated HTML reference
 Authored pages + static assets ---------------------------> clean build/site/
 clean build/site/ -> validated release artifact
-clean build/site/ -> committed docs/ compatibility export
 ```
 
-No generation task reads from `docs/`. HTML reference pages belong only in generated
+No build task reads from, writes to, or compares against working-tree `docs/`. HTML reference pages belong only in generated
 outputs. Authored prose and templates stay in the source tree. The retained ACQF
 SVG is an explicitly documented static legacy asset, not a representation that the
 build claims to regenerate from current RDF.
@@ -54,8 +53,8 @@ It needs no external ontology, visualization engine or additional runtime/tool J
 
 ```bash
 ./gradlew buildSite                 # recreate clean build/site/ from source
-./gradlew buildValidation           # build site; update committed docs/ outputs
-./gradlew check                     # rebuild site; verify all contracts and exports
+./gradlew buildValidation           # compatibility alias for buildSite
+./gradlew check                     # CI: build source and verify generated artifact
 ./gradlew checkDocumentation        # quick catalogue-to-page link check
 bash publication/publish.sh check etf  # check only one product's validation graph
 ```
@@ -72,17 +71,23 @@ legacy schemes do not expand accepted values. Missing, empty, ambiguous and dupl
 scheme inputs fail. Non-RDF prose belongs outside these directories.
 
 Generation stages every model and reference before replacing `build/site/`. It
-recreates that output from scratch, so removed resources and local scratch files
-cannot leak into a release. `docs/` is refreshed only by `buildValidation`, which
-removes obsolete tracked generated outputs and preserves unrelated untracked local
-files. Such local files are never copied into the canonical artifact. Do not deploy
-a dirty compatibility directory directly.
+recreates that output from scratch and verifies it contains exactly the declared
+publication targets. Local scratch files and removed resources cannot leak into a
+release. All output stays under ignored `build/`; model-only builds use
+`build/models/`. The tracked `docs/` snapshot is left unchanged.
+
+CI performs the normal build and checks, then uploads the clean artifact. Developers
+commit sources and expectations only; local builds are optional for previewing or
+troubleshooting. No bot generates commits or synchronizes the legacy snapshot.
 
 ## Checks
 
-The full check rebuilds the clean site and compares it with committed `docs/`.
-Static pages and generated references are compared as bytes; validation models are
-compared as RDF graphs, including blank nodes. Obsolete tracked outputs fail.
+The full check rebuilds the clean site and validates the artifact itself. It
+verifies declared publication targets, both validation contracts, legacy URL paths
+and reference anchors. It does not require any generated files in Git or compare
+against the retained `docs/` tree. The immutable historical ACQF baseline is read
+from its explicit Git commit/path; future intended contract changes require reviewing
+that test expectation, not rewriting the production website snapshot.
 
 Shared malformed-input fixtures run once. Product tests exercise all 161 ACQF levels
 and eight EQF levels, cardinalities, invalid/mixed values, diagnostics and duplicate
@@ -113,11 +118,14 @@ ACQF has no new URL prefix or compatibility aliases. RDF identifiers remain inta
 The older South Africa `za-qf-levels` resource stays available at its existing URL;
 the current catalogue binds `za-nqf-levels`.
 
-CI runs the complete check and uploads only `build/site/` as one preview artifact.
-It never commits documents or deploys the live site. Existing raw GitHub consumers
-still require committed `docs/`, so retain that checked export until an explicit
-consumer/hosting migration. See [DEPLOYMENT.md](DEPLOYMENT.md). Acc and production
-are outside this work.
+CI runs the complete check, asserts the working tree stayed unchanged and uploads
+only `build/site/` as a preview artifact. There are no deployment jobs or hosting
+changes. In particular, `https://data.acqf-qcp.africa/` is a production dependency
+and must not be updated. A future rollout can target only a separately selected
+DEV environment. See [DEPLOYMENT.md](DEPLOYMENT.md).
+
+Existing raw GitHub consumers continue to see the frozen `docs/` snapshot. It must
+not be presented as the latest source preview. No current application URL is changed.
 
 ## Snapshot provenance
 

@@ -1,41 +1,51 @@
-# QCP public model and vocabularies
+# QCP model and vocabulary sources
 
-This repository maintains the shared QCP model and ACQF/ETF validation contracts
-for https://data.acqf-qcp.africa/. Work on `dev2` produces previews; it does not
-change the live website or application deployments.
+This repository maintains the shared QCP model and ACQF/ETF product definitions.
+Push source changes to `dev2`: GitHub Actions builds, validates and uploads the
+complete **DEV preview artifact**. Local builds are optional.
+
+**The live ACQF website is used by PROD and is frozen.** This branch has no deployment
+job and does not change hosting settings, application URLs, acc or production.
 
 ## Source and output
 
-- `common/`: shared model, vocabularies, contexts, authored documentation and templates.
-- `products/acqf/`, `products/etf/`: product profiles, vocabulary snapshots, authored guidance, assets and tests.
-- `publication/`: shared queries, lean shell entry points and test fixtures; orchestration lives in `build.gradle.kts`.
-- `build/site/`: clean generated website and the canonical release/preview artifact.
-- `docs/`: checked-in compatibility export for existing Pages/raw GitHub consumers; do not edit.
+- `common/`: shared model, vocabularies, contexts, authored guidance and templates.
+- `products/acqf/`, `products/etf/`: product profiles, vocabulary snapshots, guidance, assets and tests.
+- `publication/`: shared queries, test fixtures and lean shell entry points.
+- `build/site/`: complete generated artifact, built by CI; never committed.
+- `docs/`: frozen legacy snapshot retained for existing consumers and hosting compatibility. It is not a build input, output or freshness requirement.
 
-ACQF keeps its existing URLs. ETF uses `/etf/`. Folder names in the source tree do
-not rename RDF identifiers or published resources.
+Public paths and RDF IRIs are preserved in the generated artifact. ETF uses `/etf/`.
+No current website or application consumer is switched to this artifact automatically.
 
-## Build and verify
+## Normal workflow
+
+1. Edit maintained sources and product expectations.
+2. Commit and push to `dev2`, or open a pull request targeting it.
+3. CI runs the build and checks, enforces that it changed no repository files, and
+   uploads `public-data-site-<commit SHA>` on success.
+4. Download the artifact for review. A future deployment must target a separately
+   selected DEV environment; deployment is outside this workflow.
+
+Do not regenerate or commit `docs/` for source changes. Its raw GitHub URLs continue
+to expose the retained snapshot, not the latest generated preview.
+
+## Optional local checks
 
 With Java 21+, Bash, jq and GNU coreutils installed:
 
 ```bash
-./gradlew buildSite              # clean website, models and model-reference pages
-./gradlew buildValidation        # build site and refresh committed docs/ export
-./gradlew check                  # rebuild site; check exports and both contracts
+./gradlew check                  # build and validate build/site/ from source
+./gradlew buildSite              # build an optional local preview
 ./gradlew checkDocumentation     # quick catalogue-to-page link check
-./gradlew generateNqfList        # optional: refresh NQF titles in authored ACQF page
+./gradlew generateNqfList        # optional authoring helper for NQF titles
 ```
 
-Jena is installed with checksum verification under `build/tools/`. No Python,
-SHACL Play, visualization JAR or external ontology download is needed. References
-are generated directly from each product's assembled validation graph. The retained
-ACQF SVG is a legacy static illustration; see [its provenance](products/acqf/README.md).
+`buildValidation` remains an alias for `buildSite`. All build entry points write
+only under ignored `build/`; none refresh `docs/`. Model-only builds use
+`build/models/`. Jena is checksum-pinned under `build/tools/`; no Python, SHACL Play,
+visualization JAR or external ontology download is needed.
 
-Commit generated compatibility exports with their source changes. CI uploads only
-the clean `build/site/` tree. Keep local experiments in ignored `sandbox/` or outside
-the checkout; files left in `docs/` are not release inputs.
-
-See [publication architecture](publication/README.md) and
-[deployment coordination](publication/DEPLOYMENT.md) before rolling out the site
-or changing either application's validation URL.
+See [publication architecture](publication/README.md),
+[the DEV deployment boundary](publication/DEPLOYMENT.md), and
+[the retained diagram's provenance](products/acqf/README.md).

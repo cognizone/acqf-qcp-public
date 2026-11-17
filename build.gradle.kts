@@ -27,8 +27,8 @@ fun inside(parent: File, child: File): File {
     return child
 }
 fun siteFile(path: String, site: File): File {
-    require(path.startsWith("docs/")) { "Output must be inside docs/: $path" }
-    return inside(site, site.resolve(path.removePrefix("docs/")))
+    require(path.isNotBlank()) { "Published output path must not be empty" }
+    return inside(site, site.resolve(path))
 }
 fun output(config: File, site: File) = siteFile(json(config).text("output"), site)
 fun referenceOutput(config: File, site: File) = siteFile((json(config)["reference"] as Map<*, *>).text("output"), site)
@@ -95,8 +95,8 @@ fun resources(): Map<String, File> {
             require(source.exists()) { "Missing site source: $source" }
             for (input in source.walkTopDown().filter { it.isFile }) {
                 val suffix = if (source.isDirectory) input.relativeTo(source).path else ""
-                val target = inside(file("docs"), file("docs").resolve(mapping.getValue("target")).resolve(suffix))
-                val relative = target.relativeTo(file("docs")).path
+                val target = inside(siteDirectory.get().asFile, siteDirectory.get().asFile.resolve(mapping.getValue("target")).resolve(suffix))
+                val relative = target.relativeTo(siteDirectory.get().asFile).path
                 check(result.put(relative, input) == null) { "Duplicate site output: $relative" }
             }
         }
@@ -121,7 +121,6 @@ fun checkModels(configs: List<File>, work: File, site: File? = null) {
         val folder = work.resolve(config.parentFile.name).apply { mkdirs() }
         val model = if (site == null) assembleModel(config, folder)
             else output(config, site).copyTo(folder.resolve("generated.ttl"), overwrite = true)
-        jena("rdfcompare", model.path, output(config, file("docs")).path, "TURTLE", "TURTLE")
         logger.lifecycle(command("bash", "publication/tests/check.sh", rootDir.path, config.path, folder.path).trim())
     }
 }
@@ -215,7 +214,7 @@ val setupJena = tasks.register<Exec>("setupJena") {
 }
 tasks.register("buildModels") {
     dependsOn(setupJena)
-    doLast { workspace { buildModels(selectedProducts(), file("docs"), it) } }
+    doLast { workspace { buildModels(selectedProducts(), layout.buildDirectory.dir("models").get().asFile, it) } }
 }
 tasks.register("checkModels") {
     dependsOn(setupJena)
@@ -245,15 +244,8 @@ val buildSite = tasks.register("buildSite") {
 }
 tasks.register("buildValidation") {
     group = "publication"
-    description = "Build the website and refresh the committed docs compatibility export."
+    description = "Compatibility alias for buildSite; generated files stay under build/."
     dependsOn(buildSite)
-    doLast {
-        val site = siteDirectory.get().asFile
-        val generated = site.walkTopDown().filter { it.isFile }.map { "docs/" + it.relativeTo(site).invariantSeparatorsPath }.toSet()
-        val obsolete = command("git", "ls-files", "docs").lineSequence().filter { it.isNotEmpty() && it !in generated }
-        obsolete.forEach { check(!file(it).exists() || file(it).delete()) { "Cannot remove obsolete generated output: $it" } }
-        site.copyRecursively(file("docs"), overwrite = true)
-    }
 }
 val checkDocumentation = tasks.register("checkDocumentation") {
     group = "verification"
@@ -264,19 +256,12 @@ val checkDocumentation = tasks.register("checkDocumentation") {
 val checkValidation = tasks.register("checkValidation") {
     group = "verification"
     dependsOn(buildSite, checkDocumentation)
-    mustRunAfter("buildValidation")
     doLast {
         val site = siteDirectory.get().asFile
-        val modelPaths = products.map { output(it, site).relativeTo(site).path }.toSet()
-        val expected = site.walkTopDown().filter { it.isFile }.map { "docs/" + it.relativeTo(site).invariantSeparatorsPath }.toSet()
-        for (candidate in site.walkTopDown().filter { it.isFile }) {
-            val path = candidate.relativeTo(site).path
-            if (path !in modelPaths) check(file("docs/$path").readBytes().contentEquals(candidate.readBytes())) { "Stale generated output: docs/$path" }
-        }
         for (config in products) {
             val tests = config.parentFile.resolve(json(config).text("tests"))
             val paths = tests.resolve("published-paths.txt")
-            if (paths.isFile) paths.readLines().forEach { check(file(it).isFile) { "Missing established public path: $it" } }
+            if (paths.isFile) paths.readLines().forEach { check(inside(site, site.resolve(it)).isFile) { "Missing established public path: $it" } }
             val anchors = tests.resolve("reference-anchors.txt")
             if (anchors.isFile) {
                 val html = referenceOutput(config, site).readText()
@@ -287,8 +272,6 @@ val checkValidation = tasks.register("checkValidation") {
             logger.lifecycle(command("bash", "publication/tests/check-inputs.sh", rootDir.path, work.path).trim())
             checkModels(products, work, site)
         }
-        val obsolete = command("git", "ls-files", "docs").lineSequence().filter { it.isNotEmpty() }.toSet() - expected
-        check(obsolete.isEmpty()) { "Obsolete tracked site files: $obsolete" }
         logger.lifecycle("Checked clean site, documentation, public paths and both product contracts")
     }
 }

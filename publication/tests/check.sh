@@ -29,7 +29,7 @@ diff -u "$work/notation-expected.tsv" "$work/notation-actual.tsv"
 # Optional historical contract belongs to the product, not the shared runner.
 baseline=$(jq -r '.baseline // empty' "$expectations/contract.json")
 if [[ -n $baseline ]]; then
-  git -C "$common" show "$baseline:$(jq -er '.output' "$config")" > "$work/baseline.ttl"
+  git -C "$common" show "$baseline:$(jq -er '.baselinePath' "$expectations/contract.json")" > "$work/baseline.ttl"
   rdfcompare "$model" "$work/baseline.ttl" TURTLE TURTLE
 fi
 echo "Passed level, cardinality, diagnostic and notation checks"

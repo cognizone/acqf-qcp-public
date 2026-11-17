@@ -1,85 +1,52 @@
-# Coordinating the shared site and application deployments
+# DEV preview boundary — no production deployment
 
-Work is isolated on `dev2`. No live website settings, existing deployment branches,
-application configuration or running services are changed by the preview workflow.
+The existing `https://data.acqf-qcp.africa/` website is used by PROD. It is frozen.
+Do not publish this artifact there, change its Pages source/domain/settings, update
+acc/public branches, or switch current application configuration as part of this work.
 
-## One website release
+## What GitHub Actions does
 
-Both product graphs, catalogues and supporting files are maintained in ACQF public.
-The intended public website is `https://data.acqf-qcp.africa/`.
+On pushes and pull requests targeting `dev2`, the workflow:
 
-| Consumer | Validation contract on the shared website |
-| --- | --- |
-| ACQF-dev | `https://data.acqf-qcp.africa/model/exchange-model.ttl` |
-| ETF-dev | `https://data.acqf-qcp.africa/etf/model/exchange-model.ttl` |
+1. Builds a clean `build/site/` entirely from maintained sources.
+2. Validates ACQF and ETF contracts, model references, catalogue links and public paths.
+3. Checks that the build left the Git working tree unchanged.
+4. Uploads `build/site/` as `public-data-site-<commit SHA>`.
 
-The ACQF endpoint and graph stay compatible. ETF is an additional path with EQF
-constraints. Both belong to one validated `build/site/` tree from one commit. Publishing
-that complete tree avoids a partially updated combination of ACQF and ETF files.
-The current workflow rebuilds a clean site, verifies the committed `docs/`
-compatibility export, and uploads `build/site/` as a preview artifact and has no deployment job. Existing
-Pages publishing-source settings remain unchanged and must be confirmed at rollout.
+There is no deployment job, Pages write permission, environment deployment,
+repository dispatch, application rollout or bot commit. Source changes never require
+a developer to regenerate and commit website files locally.
 
-## Current application dependencies
+## Retained compatibility snapshot
 
-The QCP application currently selects validation with
-`env.acqf.qcp.exchange-format.shapes`. Its product-specific development profiles
-select raw GitHub documents from separate public repositories:
+The tracked `docs/` tree is deliberately frozen. No task reads it as generation
+input, writes it, or requires it to match new source changes. Existing raw GitHub
+consumers and existing hosting arrangements are left alone. A raw URL under
+`dev2/docs/` is a legacy snapshot, not a preview of the latest source.
 
-- ACQF-dev: `backend/src/acqf/resources/application-acqf-dev.yml` selects the ACQF
-  public repo's `dev/docs/model/exchange-model.ttl`.
-- ETF-dev: `backend/src/etf/resources/application-etf-dev.yml` selects the ETF public
-  repo's `dev/docs/model/exchange-model.ttl`.
-- Local product profiles also contain development URLs and must be considered when
-  making the eventual configuration change.
+The ACQF regression baseline is also frozen, but has a different role: its explicit
+historical commit/path in `products/acqf/tests/contract.json` is read from Git objects
+to preserve the approved validation contract. It does not depend on working-tree
+`docs/` or make that folder a required build artifact.
 
-These application files have not been edited in this work. Their current working
-tree already contains a separate product-resource refactoring. Do not merge site
-migration changes into that work implicitly. The application loads shapes at
-startup, so publishing a file alone does not switch a running application's graph.
+## Future DEV rollout
 
-For an explicitly configured canary, after pushing/reviewing `dev2`, the two preview
-URLs from the actual ACQF repository are:
+When a DEV target has been explicitly selected and authorized:
 
-```text
-https://raw.githubusercontent.com/cognizone/acqf-qcp-public/refs/heads/dev2/docs/model/exchange-model.ttl
-https://raw.githubusercontent.com/cognizone/acqf-qcp-public/refs/heads/dev2/docs/etf/model/exchange-model.ttl
-```
+1. Choose a successful source revision and its matching preview artifact.
+2. Deploy the whole artifact to that separate DEV target, preserving relative paths.
+3. Verify `/model/exchange-model.ttl`, `/etf/model/exchange-model.ttl` and the product
+   documentation on the DEV target.
+4. Change only explicitly selected development/local application configurations to
+   those DEV URLs and compatible vocabulary lookups; test startup and sample imports.
 
-The canonical repository is `cognizone/acqf-qcp-public`; the old remote spelling
-redirects to it. Use the canonical spelling for new links.
-These preview URLs do not publish the public website and are not automatic
-replacements in existing deployments.
+No DEV hostname or deployment mechanism is assumed or configured here. RDF identifiers
+can keep their established namespaces while documents are served from a DEV URL.
+Existing production URLs, the live ACQF website and production application consumers
+stay unchanged. This procedure does not authorize a later production rollout.
 
-## Rollout order after approval
+## DEV rollback
 
-1. Run `./gradlew buildValidation check` on one reviewed source revision. CI must
-   pass both contracts. Review the complete `public-data-site-<SHA>` preview, including
-   both exported graphs and the unchanged shared resources.
-2. Exercise both product configurations in dedicated canaries using those reviewed
-   artifacts. Confirm ACQF national levels and all eight official EQF levels, as
-   well as rejection of the other product's national-level values where applicable.
-3. Publish the **entire** validated `build/site/` tree to the existing website through its
-   configured publication process. Preserve the domain and ACQF paths. Verify both
-   public validation files are reachable before switching either application.
-4. In the application deployment configuration, select the corresponding shared-site
-   URL for each product. Package matching product lookup resources and deploy/restart
-   ACQF-dev and ETF-dev. Membership or identifier changes require coordinated lookup
-   updates; this consolidation itself preserves existing identifiers and membership.
-5. Check startup validation loading, product framework choices and sample imports in
-   both deployments. Rebuild concept indexes only if their membership/content changed.
-6. Retire ETF's old publication pipeline only after no deployment depends on its old
-   raw `dev` URL. Leave that branch available during migration. Do not promote the
-   ETF `dev2` retirement deletions into a still-consumed deployment branch early.
-
-ACQF and ETF application rollouts need not occur simultaneously: the site addition
-is backward compatible for ACQF. They must consume the intended product contract
-and compatible lookup data from the reviewed release.
-
-## Rollback
-
-Keep the previous complete website artifact/commit and previous application URL and
-lookup-resource settings. Roll back the website as one tree, not individual product
-files. An application can revert to its prior URL/settings while the old publication
-branch remains available. Acceptance/production deployment profiles and resources
-are outside the `dev2` cutover until separately reviewed.
+Keep the preceding DEV artifact and development application settings. Roll back the
+DEV site as one artifact, and revert only the development settings changed in that
+rollout. Production hosting and production settings are outside this process.

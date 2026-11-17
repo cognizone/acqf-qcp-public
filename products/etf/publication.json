@@ -1,6 +1,6 @@
 {
   "profile": "profile.ttl",
-  "output": "docs/etf/model/exchange-model.ttl",
+  "output": "etf/model/exchange-model.ttl",
   "tests": "tests",
   "resources": [
     {
@@ -18,6 +18,6 @@
   ],
   "reference": {
     "title": "ETF model reference",
-    "output": "docs/etf/model/reference.html"
+    "output": "etf/model/reference.html"
   }
 }

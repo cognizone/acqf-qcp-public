@@ -1,6 +1,6 @@
 {
   "profile": "profile.ttl",
-  "output": "docs/model/exchange-model.ttl",
+  "output": "model/exchange-model.ttl",
   "tests": "tests",
   "resources": [
     {
@@ -30,6 +30,6 @@
   ],
   "reference": {
     "title": "ACQF model reference",
-    "output": "docs/exchange-model/exchange-model.html"
+    "output": "exchange-model/exchange-model.html"
   }
 }

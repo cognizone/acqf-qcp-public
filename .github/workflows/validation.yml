@@ -1,4 +1,4 @@
-name: Check and preview the public data site
+name: Build and validate DEV preview artifact
 on:
   push:
     branches: [dev2]
@@ -23,8 +23,10 @@ jobs:
         with:
           path: build/tools
           key: jena-cli-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('publication/jena.sha512') }}
-      - name: Check website resources and both product contracts
-        run: ./gradlew check
+      - name: Build from source and validate both product contracts
+        run: |
+          ./gradlew check
+          test -z "$(git status --porcelain --untracked-files=all)"
       - name: Upload the complete site preview
         uses: actions/upload-artifact@v7
         with:
