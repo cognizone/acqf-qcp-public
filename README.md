@@ -17,9 +17,9 @@ Refresh the existing ACQF model documentation using SHACL Play. The command upda
 its source under `products/acqf/documentation/`; rebuild the site afterwards:
 
 1. Run `bash publication/setup-jena.sh` to install the checksum-pinned Jena CLI.
-2. Generate NQF list to the documentation
+2. Refresh NQF vocabulary titles in the source landing page
 ```bash
-python "tools/generate-nqf-list.py"
+./gradlew generateNqfList
 ```
 3. Generate diagram and HTML documentation (it downloads ELM and transforms the SHACL through `queries/generate-shacl-for-shacl-play.rq`) 
 ```bash

@@ -173,3 +173,38 @@ val checkValidation = tasks.register("checkValidation") {
 }
 tasks.named("check") { dependsOn(checkValidation) }
 tasks.register("test") { dependsOn(checkValidation) }
+
+// The HTML owns display order and placeholders; vocabulary RDF owns the titles.
+tasks.register("generateNqfList") {
+    group = "documentation"
+    description = "Refresh vocabulary titles in the ACQF landing page's NQF list."
+    dependsOn(setupJena)
+    doLast {
+        val index = file("products/acqf/documentation/index.html")
+        val html = index.readText()
+        val block = Regex("(?s)<!-- BEGIN GENERATED NQF LEVEL LIST -->\\n(.*?)\\n\\s*<!-- END GENERATED NQF LEVEL LIST -->")
+        val match = block.findAll(html).toList().single().groups[1]!!
+        workspace { work ->
+            val data = file("products/acqf/vocabularies").walkTopDown().filter { it.isFile }.sortedBy { it.path }
+                .mapIndexed { i, source ->
+                    val input = work.resolve("vocabulary-$i.ttl")
+                    input.writeText("@base <${uri(source)}> .\n" + source.readText())
+                    "--data=$input"
+                }.toList()
+            val result = work.resolve("titles.json")
+            result.writeText(jena("arq", *data.toTypedArray(), "--query=${file("publication/queries/nqf-titles.rq")}", "--results=JSON"))
+            val titles = bindings(result).map { it as Map<*, *> }
+                .groupBy { (it["scheme"] as Map<*, *>).text("value") }
+                .mapValues { (_, rows) -> (rows.first()["title"] as Map<*, *>).text("value") }
+            val anchor = Regex("(<a href=\"model/([^\"]+)\">).*?(</a>)")
+            val list = anchor.replace(match.value) { link ->
+                val raw = titles.getValue("https://data.acqf-qcp.africa/model/${link.groupValues[2]}")
+                    .removeSuffix(" levels and level descriptors")
+                val title = if (raw == "NQF") "NQF levels" else if ("levels" in raw.lowercase()) raw else "$raw levels"
+                val escaped = title.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+                link.groupValues[1] + escaped + link.groupValues[3]
+            }
+            index.writeText(html.replaceRange(match.range, list))
+        }
+    }
+}

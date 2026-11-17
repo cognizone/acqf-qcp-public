@@ -111,8 +111,11 @@ original ETF catalogue namespace and official EU EQF scheme/member IRIs.
 
 The existing ACQF HTML/SVG reference is retained. Its SHACL Play refresh command
 writes to `products/acqf/documentation/`, then the site build publishes it at the
-original URL. The NQF-list helper also edits the source landing page. Do not edit
-these resources in `docs/`.
+original URL. Run `./gradlew generateNqfList` to refresh vocabulary titles in the source landing
+page, then rebuild the site. It uses the existing Jena CLI to read RDF; country
+ordering, links and placeholders are maintained once in the marked HTML list.
+The title refresh preserves those editorial entries. Do not edit these resources
+in `docs/`.
 
 ## Publication boundary
 
