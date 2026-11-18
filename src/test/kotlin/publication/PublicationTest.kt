@@ -11,7 +11,7 @@ import kotlin.test.assertTrue
 class PublicationTest {
     @Test
     fun productContextChangesDestinationsWithoutChangingSourceLocations() = fixture { root, publication ->
-        write(root, "products/etf/publication.json", """{"basePath":"preview/etf", "title":"ETF preview"}""")
+        write(root, "products/etf/publication.json", """{"publicBaseUrl":"https://acqf.example/","basePath":"preview/etf", "title":"ETF preview"}""")
         val product = Product(root.resolve("products/etf"))
         assertEquals(root.resolve("build/site/preview/etf/model/exchange-model.ttl"), product.model(publication.siteDirectory))
         assertEquals(root.resolve("build/site/preview/etf/model/reference.html"), product.reference(publication.siteDirectory))
@@ -56,7 +56,7 @@ class PublicationTest {
 
     @Test
     fun productContextCannotWriteOutsideTheSite() = fixture { root, publication ->
-        write(root, "products/acqf/publication.json", """{"basePath":"../../outside"}""")
+        write(root, "products/acqf/publication.json", """{"publicBaseUrl":"https://acqf.example/","basePath":"../../outside"}""")
         val product = Product(root.resolve("products/acqf"))
         assertFailsWith<IllegalArgumentException> { product.model(publication.siteDirectory) }
         assertFalse(root.resolve("outside").exists())
@@ -64,7 +64,7 @@ class PublicationTest {
 
     @Test
     fun legacyOverrideCannotWriteOutsideTheSite() = fixture { root, publication ->
-        write(root, "products/acqf/publication.json", """{"basePath":"", "referencePath":"../../outside.html"}""")
+        write(root, "products/acqf/publication.json", """{"publicBaseUrl":"https://acqf.example/","basePath":"", "referencePath":"../../outside.html"}""")
         val product = Product(root.resolve("products/acqf"))
         assertFailsWith<IllegalArgumentException> { product.reference(publication.siteDirectory) }
         assertFalse(root.resolve("outside.html").exists())
@@ -88,9 +88,9 @@ class PublicationTest {
     private fun fixture(test: (File, Publication) -> Unit) {
         val root = Files.createTempDirectory("publication-test-").toFile()
         try {
-            write(root, "common/publication.json", """{"paths":{"documentation":"common"}}""")
+            write(root, "common/publication.json", """{"publicBaseUrl":"https://common.example/","paths":{"documentation":"common"}}""")
             write(root, "common/documentation/index.html", "shared guidance")
-            write(root, "products/acqf/publication.json", """{"basePath":"", "referencePath":"exchange-model/exchange-model.html"}""")
+            write(root, "products/acqf/publication.json", """{"publicBaseUrl":"https://acqf.example/","basePath":"", "referencePath":"exchange-model/exchange-model.html"}""")
             write(root, "products/acqf/profile.ttl", "profile source")
             write(root, "products/acqf/documentation/index.html", "product guidance")
             test(root, Publication(root, Tools(root, root.resolve("unused-jena"))))

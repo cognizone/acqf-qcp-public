@@ -33,7 +33,9 @@ to preserve the approved validation contract. It does not depend on working-tree
 
 When a DEV target has been explicitly selected and authorized:
 
-1. Choose a successful source revision and its matching preview artifact.
+1. Configure `publicBaseUrl` in the common, ACQF and ETF manifests for the selected
+   DEV destinations, then choose a successful revision and its matching artifact.
+   These settings control cross-publication links, not deployment or RDF IRIs.
 2. Deploy the whole artifact to that separate DEV target, preserving relative paths.
 3. Verify `/model/exchange-model.ttl`, `/etf/model/exchange-model.ttl` and the product
    documentation on the DEV target.

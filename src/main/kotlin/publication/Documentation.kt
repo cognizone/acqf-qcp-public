@@ -2,6 +2,13 @@ package publication
 
 import java.io.File
 
+// Only HTML publication links are expanded; RDF and JSON-LD sources keep their identifiers.
+fun Publication.renderDocumentation(document: String) = Regex("\\{\\{([^{}]+)}}").replace(document) { match ->
+    html(requireNotNull(publicBaseUrls[match.groupValues[1]]) {
+        "Unknown publication URL placeholder: ${match.value}"
+    })
+}
+
 fun Publication.checkCatalogueLinks(config: Product, work: File) {
     work.mkdirs()
     val profile = work.resolve("profile.ttl").apply { writeText(config.directory.resolve("profile.ttl").readText()) }
@@ -18,7 +25,7 @@ fun Publication.checkCatalogueLinks(config: Product, work: File) {
     val index = config.directory.resolve("documentation/index.html").canonicalFile
     val indexPath = resources.entries.single { it.value.canonicalFile == index }.key
     val base = java.net.URI("https://publication.invalid/$indexPath")
-    val linked = Regex("href=\"([^\"]+)\"").findAll(index.readText()).map { base.resolve(it.groupValues[1]) }
+    val linked = Regex("href=\"([^\"]+)\"").findAll(renderDocumentation(index.readText())).map { base.resolve(it.groupValues[1]) }
         .filter { it.host == base.host }.mapNotNull { resources[it.path.removePrefix("/")]?.canonicalFile }.toSet()
     for (row in bindings(result)) {
         check(byGraph[term(row, "graph")] in linked) { "Catalogue scheme missing from ${index.path}: ${term(row, "scheme")}" }

@@ -17,8 +17,11 @@ job and does not change hosting settings, application URLs, acc or production.
 - `build/site/`: complete generated artifact, built by CI; never committed.
 - `docs/`: frozen legacy snapshot retained for existing consumers and hosting compatibility. It is not a build input, output or freshness requirement.
 
-Product `publication.json` files declare only the public context and any legacy
-URL exceptions; source folders and standard output names follow conventions.
+Publication manifests declare a `publicBaseUrl` for common, ACQF and ETF. Product
+`basePath` controls the combined artifact layout; legacy URL exceptions remain
+explicit. Source folders and standard output names follow conventions.
+Cross-publication documentation links use the configured public URLs, allowing
+separate domains later without rewriting RDF identifiers or changing deployment.
 The common source model and product profiles stay in the repository as build inputs;
 only assembled validation models are published. Consumer-facing paths and RDF IRIs
 are preserved in the generated artifact. ETF uses `/etf/`.

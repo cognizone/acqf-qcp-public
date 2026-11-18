@@ -12,7 +12,7 @@ common/
   contexts/, frames/            published import resources
   documentation/                authored shared guidance
   templates/                    source templates for generated model references
-  publication.json              shared source-to-URL mappings
+  publication.json              public base URL and shared resource routes
 products/<product>/
   profile.ttl                   source-only product CV bindings and restrictions
   vocabularies/                 product catalogue and reviewed vocabulary snapshots
@@ -20,7 +20,7 @@ products/<product>/
   assets/                       optional static assets, with product-owned provenance
   examples/, model/             optional product examples and legacy extensions
   tests/                        product expectations and compatibility contracts
-  publication.json              public context path and legacy URL exceptions
+  publication.json              public base URL, local context and legacy URL exceptions
 src/main/kotlin/publication/     ordinary Kotlin publication tool
 src/test/kotlin/publication/     publication boundary and failure-handling tests
 publication/                    shared queries, RDF fixtures and thin shell wrappers
@@ -35,18 +35,19 @@ ACQF retains its existing root context and legacy reference filename:
 
 ```json
 {
+  "publicBaseUrl": "https://data.acqf-qcp.africa/",
   "basePath": "",
   "referencePath": "exchange-model/exchange-model.html"
 }
 ```
 
-ETF needs only its context:
+ETF declares its public URL and local artifact context:
 
 ```json
-{ "basePath": "etf" }
+{ "publicBaseUrl": "https://data.acqf-qcp.africa/etf/", "basePath": "etf" }
 ```
 
-`basePath` is relative to the generated website root. Optional `referencePath`
+`basePath` is relative to the generated website root and controls local output only. Optional `referencePath`
 overrides the final site-relative reference destination for compatibility.
 Optional `title` overrides the default
 `<PRODUCT> model reference` page title. There is no separate manifest schema/DSL.
@@ -71,6 +72,34 @@ source-only. Separate publication of these layers can be added later if needed.
 
 RDF models, profiles and catalogues remain the source of validation semantics.
 RDF identifiers do not determine website context paths or legacy filenames.
+
+## Publication URLs and domains
+
+Each owner has one `publicBaseUrl` in its existing manifest. Common currently uses
+`https://data.acqf-qcp.africa/`, covering the shared `model/...` resources and
+`common/` documentation; ACQF uses the same root; ETF uses that host's `/etf/`
+context. Base URLs must be absolute HTTP(S) URLs without a query or fragment. A
+trailing slash is added when omitted.
+
+Authored HTML uses `{{commonUrl}}`, `{{acqfUrl}}` and `{{etfUrl}}` for links between
+publications. For example, `{{etfUrl}}model/exchange-model.ttl` points to ETF's
+complete validation model. The build expands these values in HTML and rejects
+unknown publication placeholders. Links within a product stay relative.
+
+To point the three owners at separate domains, change their `publicBaseUrl` values,
+for example to `https://common.example/`, `https://acqf.example/` and
+`https://etf.example/`. ETF's URL can be a domain root while its local `basePath`
+stays `etf`: public locations and combined artifact layout are independent. The
+shared resource routes remain relative to the common base URL; its documentation
+still uses `common/` unless those authored routes are deliberately changed.
+
+These settings generate links only. The build still produces one `build/site/`
+artifact; it does not provision domains, split deployments, rewrite RDF/JSON-LD or
+change concept IRIs. Generated model references keep relative links to their own
+product's documentation and model, and their RDF term links retain the original
+identifiers. A namespace migration is a separate compatibility change. Before a
+future DEV deployment, configure URLs for the selected DEV destinations; links in
+a downloaded preview follow the configured destinations. Production stays frozen.
 
 ## Application contract and vocabulary content
 

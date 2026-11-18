@@ -70,7 +70,7 @@
 </head>
 <body>
 <div class="content">
-    <nav><a href="etf/">ETF documentation</a> · <a href="common/">Shared model reference</a></nav>
+    <nav><a href="{{etfUrl}}">ETF documentation</a> · <a href="{{commonUrl}}common/">Shared model reference</a></nav>
     <h1>ACQF Qualifications and Credentials Platform (QCP)</h1>
     <p>Welcome to the roadmap of the Qualifications and Credentials Platform (QCP) of the African Continent
         Qualification Framework (ACQF).</p>
@@ -105,7 +105,7 @@
         </li>
         <li>controlled vocabularies (expressed in the <a href="https://www.w3.org/TR/skos-reference/">SKOS</a> format)
             <ul>
-                <li><b>[CUSTOM FOR ACQF QCP]</b> <a href="model/accreditation-types">Accreditation types</a> for <code>Accreditation
+                <li><b>[CUSTOM FOR ACQF QCP]</b> <a href="{{commonUrl}}model/accreditation-types">Accreditation types</a> for <code>Accreditation
                     → type</code></li>
                 <li>
                     <a href="https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://publications.europa.eu/resource/authority/language">Language</a>
@@ -120,13 +120,13 @@
                     <code>LearningEntitlementSpecification → limit national occupation</code></li>
                 <li><a href="https://esco.ec.europa.eu/en/classification/skill_main">ESCO Skills</a> for <code>LearningOutcome
                     → related skill</code></li>
-                <li><b>[CUSTOM FOR ACQF QCP]</b> <a href="model/qualification-types">Qualification types</a> for <code>Qualification
+                <li><b>[CUSTOM FOR ACQF QCP]</b> <a href="{{commonUrl}}model/qualification-types">Qualification types</a> for <code>Qualification
                     → type</code></li>
-                <li><b>[CUSTOM FOR ACQF QCP]</b> <a href="model/creditpoint-framework">Credit point frameworks</a> for
+                <li><b>[CUSTOM FOR ACQF QCP]</b> <a href="{{commonUrl}}model/creditpoint-framework">Credit point frameworks</a> for
                     <code>CreditPoint → framework</code></li>
                 <li><b>[CUSTOM FOR ACQF QCP]</b> for <code>Qualification → education level</code>
                     <ul>
-                        <li><a href="model/acqf-levels">ACQF levels</a></li>
+                        <li><a href="{{commonUrl}}model/acqf-levels">ACQF levels</a></li>
                         <li>NQF levels
                             <ul>
                                 <!-- BEGIN GENERATED NQF LEVEL LIST -->
@@ -169,9 +169,9 @@
     <h3 id="etf">ETF Qualifications Database</h3>
     <p>ETF uses the shared QCP exchange model with its own qualification-framework constraints.</p>
     <ul>
-        <li><a href="etf/model/exchange-model.ttl">ETF validation constraints</a>, using the original EQF level IRIs.</li>
-        <li><a href="etf/model/internal/virtualspace-nqfs">ETF qualification-framework catalogue</a>.</li>
-        <li><a href="etf/model/eqf-nqf-levels">Complete European Qualifications Framework vocabulary</a>.</li>
+        <li><a href="{{etfUrl}}model/exchange-model.ttl">ETF validation constraints</a>, using the original EQF level IRIs.</li>
+        <li><a href="{{etfUrl}}model/internal/virtualspace-nqfs">ETF qualification-framework catalogue</a>.</li>
+        <li><a href="{{etfUrl}}model/eqf-nqf-levels">Complete European Qualifications Framework vocabulary</a>.</li>
     </ul>
 
     <h4>Serializations</h4>
@@ -183,14 +183,14 @@
     directly transformed to RDF by interpreting the JSON data using the following <a
         href="https://www.w3.org/TR/json-ld11/">JSON-LD</a> contexts:</p>
     <ul>
-        <li><a href="https://data.acqf-qcp.africa/model/contexts/identifier.json">identifier.json</a></li>
-        <li><a href="https://data.acqf-qcp.africa/model/contexts/import.json">import.json</a> (describes the root JSON
+        <li><a href="{{commonUrl}}model/contexts/identifier.json">identifier.json</a></li>
+        <li><a href="{{commonUrl}}model/contexts/import.json">import.json</a> (describes the root JSON
             object)
         </li>
-        <li><a href="https://data.acqf-qcp.africa/model/contexts/note.json">note.json</a></li>
-        <li><a href="https://data.acqf-qcp.africa/model/contexts/organisation.json">organisation.json</a></li>
-        <li><a href="https://data.acqf-qcp.africa/model/contexts/qualification.json">qualification.json</a></li>
-        <li><a href="https://data.acqf-qcp.africa/model/contexts/webresource.json">webresource.json</a></li>
+        <li><a href="{{commonUrl}}model/contexts/note.json">note.json</a></li>
+        <li><a href="{{commonUrl}}model/contexts/organisation.json">organisation.json</a></li>
+        <li><a href="{{commonUrl}}model/contexts/qualification.json">qualification.json</a></li>
+        <li><a href="{{commonUrl}}model/contexts/webresource.json">webresource.json</a></li>
     </ul>
 
     <hr/>

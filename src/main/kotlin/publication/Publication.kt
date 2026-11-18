@@ -6,6 +6,10 @@ import java.nio.file.Files
 class Publication(val rootDir: File, val tools: Tools) {
     val products = file("products").listFiles().orEmpty().sortedBy { it.name }
         .filter { it.resolve("publication.json").isFile }.map(::Product)
+    private val commonConfig = json(file("common/publication.json"))
+    val publicBaseUrls = mapOf("commonUrl" to normalizedPublicBaseUrl(
+        requireNotNull(commonConfig.get("publicBaseUrl")) { "Missing publicBaseUrl: common/publication.json" }.asString
+    )) + products.associate { "${it.name}Url" to it.publicBaseUrl }
     val siteDirectory = file("build/site")
 
     fun file(path: String) = rootDir.resolve(path)
@@ -29,7 +33,7 @@ class Publication(val rootDir: File, val tools: Tools) {
                 check(result.put(relative, input) == null) { "Duplicate site output: $relative" }
             }
         }
-        val shared = json(file("common/publication.json")).getAsJsonObject("paths")
+        val shared = commonConfig.getAsJsonObject("paths")
         shared.entrySet().forEach { (folder, path) -> add(file("common/$folder"), path.asString) }
         val folders = mapOf("vocabularies" to "model", "documentation" to "", "assets" to "",
             "examples" to "model/examples", "model" to "model")
@@ -66,7 +70,11 @@ class Publication(val rootDir: File, val tools: Tools) {
             listOf(it.model(stage), it.reference(stage)).map { target -> target.relativeTo(stage).path }
         }
         check(targets.size == targets.toSet().size) { "Duplicate static/model/reference publication targets" }
-        resources.forEach { (path, source) -> source.copyTo(stage.resolve(path).apply { parentFile.mkdirs() }) }
+        resources.forEach { (path, source) ->
+            val target = stage.resolve(path).apply { parentFile.mkdirs() }
+            if (source.extension == "html") target.writeText(renderDocumentation(source.readText()))
+            else source.copyTo(target)
+        }
         buildModels(products, stage, work)
         products.forEach { generateReference(it, stage, work.resolve("reference-${it.name}")) }
         val actual = stage.walkTopDown().filter { it.isFile }.map { it.relativeTo(stage).path }.toSet()
