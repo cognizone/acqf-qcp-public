@@ -21,7 +21,9 @@ products/<product>/
   examples/, model/             optional product examples and legacy extensions
   tests/                        product expectations and compatibility contracts
   publication.json              public context path and legacy URL exceptions
-publication/                    shared queries, fixtures and thin shell wrappers
+src/main/kotlin/publication/     ordinary Kotlin publication tool
+src/test/kotlin/publication/     publication boundary and failure-handling tests
+publication/                    shared queries, RDF fixtures and thin shell wrappers
 build/site/                     clean, disposable website; the release artifact
 docs/                           frozen legacy snapshot; not part of the build
 ```
@@ -87,7 +89,7 @@ The model reference renderer uses the existing Jena CLI and a small HTML templat
 It shows class/property constraints and vocabulary memberships from the assembled
 product graph. Structured constraints link to the complete SHACL model. Existing
 ACQF reference URL fragments are preserved by a product-owned compatibility test.
-It needs no external ontology, visualization engine or additional runtime/tool JAR.
+It needs no external ontology or visualization engine.
 
 ## Commands
 
@@ -99,10 +101,18 @@ It needs no external ontology, visualization engine or additional runtime/tool J
 bash publication/publish.sh check etf  # check only one product's validation graph
 ```
 
-Gradle Kotlin handles filesystem/configuration work. Bash wrappers are entry points;
-Jena performs RDF parsing, querying, graph comparison and SHACL validation. The only
-downloaded RDF tool is the official Jena distribution, pinned by
-`publication/jena.sha512` and installed under ignored `build/tools/`.
+Gradle only compiles the Kotlin tool and connects build/check tasks. The tool lives
+in ordinary source files: `Publication.kt` orchestrates staging and validation,
+`Product.kt` reads each manifest once, `ModelAssembly.kt` assembles the validation
+graph, and `ModelReference.kt` and `Documentation.kt` handle documentation. Process
+execution, RDF staging and JSON result access are shared in `Tools.kt`.
+
+Bash wrappers remain entry points. Jena performs RDF parsing, querying, graph
+comparison and SHACL validation. The official Jena distribution is pinned by
+`publication/jena.sha512` and installed under ignored `build/tools/`. Its bundled
+Gson library also reads the small JSON manifests and SPARQL results. The Kotlin
+compiler and test dependencies are managed by the standard Kotlin JVM Gradle plugin;
+no system Kotlin installation or custom Gradle plugin is needed.
 
 Validation loads the RDF-only directories `common/vocabularies/`,
 `common/validation-inputs/` and each product's `vocabularies/`. No file inventory is
@@ -110,7 +120,8 @@ maintained separately. The profile and catalogue select accepted schemes. Unused
 legacy schemes do not expand accepted values. Missing, empty, ambiguous and duplicate
 scheme inputs fail. Non-RDF prose belongs outside these directories.
 
-Generation stages every model and reference before replacing `build/site/`. It
+Generation stages every model and reference before replacing `build/site/`. Individual
+model files need no atomic replacement inside this disposable staging directory. It
 recreates that output from scratch and verifies it contains exactly the declared
 publication targets. Local scratch files and removed resources cannot leak into a
 release. All output stays under ignored `build/`; model-only builds use
@@ -128,6 +139,10 @@ and reference anchors. It does not require any generated files in Git or compare
 against the retained `docs/` tree. The immutable historical ACQF baseline is read
 from its explicit Git commit/path; future intended contract changes require reviewing
 that test expectation, not rewriting the production website snapshot.
+
+The Kotlin tests cover context paths, legacy exceptions, private-source isolation,
+output collisions, path boundaries and failure diagnostics. Source-validation and
+generation failures leave the previous site intact; staging is cleaned afterwards.
 
 Shared malformed-input fixtures run once. Product tests exercise all 161 ACQF levels
 and eight EQF levels, cardinalities, invalid/mixed values, diagnostics and duplicate

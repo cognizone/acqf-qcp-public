@@ -11,7 +11,9 @@ job and does not change hosting settings, application URLs, acc or production.
 
 - `common/`: shared model, vocabularies, contexts, authored guidance and templates.
 - `products/acqf/`, `products/etf/`: product profiles, vocabulary snapshots, guidance, assets and tests.
-- `publication/`: shared queries, test fixtures and lean shell entry points.
+- `src/main/kotlin/publication/`: the publication tool; model assembly, references and catalogue helpers.
+- `src/test/kotlin/publication/`: publication boundary and failure-handling tests.
+- `publication/`: shared queries, RDF test fixtures and lean shell entry points.
 - `build/site/`: complete generated artifact, built by CI; never committed.
 - `docs/`: frozen legacy snapshot retained for existing consumers and hosting compatibility. It is not a build input, output or freshness requirement.
 
@@ -34,7 +36,7 @@ to expose the retained snapshot, not the latest generated preview.
 
 ## Optional local checks
 
-With Java 21+, Bash, jq and GNU coreutils installed:
+With Java 21 installed, Bash, jq and GNU coreutils:
 
 ```bash
 ./gradlew check                  # build and validate build/site/ from source
@@ -45,7 +47,8 @@ With Java 21+, Bash, jq and GNU coreutils installed:
 
 `buildValidation` remains an alias for `buildSite`. All build entry points write
 only under ignored `build/`; none refresh `docs/`. Model-only builds use
-`build/models/`. Jena is checksum-pinned under `build/tools/`; no Python, SHACL Play,
+`build/models/`. Gradle compiles the Kotlin publication tool and runs its tests as
+part of `check`. Jena is checksum-pinned under `build/tools/`; no Python, SHACL Play,
 visualization JAR or external ontology download is needed.
 
 See [publication architecture](publication/README.md),
