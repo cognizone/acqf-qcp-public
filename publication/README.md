@@ -6,7 +6,7 @@ have separate owners and locations:
 
 ```text
 common/
-  model/                        shared structural shapes and CV bindings
+  model/                        source-only shared structural shapes and CV bindings
   vocabularies/                 published shared CVs
   validation-inputs/            private frozen ISCED-F input
   contexts/, frames/            published import resources
@@ -14,7 +14,7 @@ common/
   templates/                    source templates for generated model references
   publication.json              shared source-to-URL mappings
 products/<product>/
-  profile.ttl                   product-specific CV bindings and restrictions
+  profile.ttl                   source-only product CV bindings and restrictions
   vocabularies/                 product catalogue and reviewed vocabulary snapshots
   documentation/                authored product guidance
   assets/                       optional static assets, with product-owned provenance
@@ -31,12 +31,11 @@ docs/                           frozen legacy snapshot; not part of the build
 Product manifests describe publication intent only. They do not describe RDF
 bindings, source file inventories, test locations or copy operations.
 
-ACQF retains its existing root context and two legacy filename exceptions:
+ACQF retains its existing root context and legacy reference filename:
 
 ```json
 {
   "basePath": "",
-  "profilePath": "model/acqf-profile.ttl",
   "referencePath": "exchange-model/exchange-model.html"
 }
 ```
@@ -47,16 +46,15 @@ ETF needs only its context:
 { "basePath": "etf" }
 ```
 
-`basePath` is relative to the generated website root. Optional `profilePath` and
-`referencePath` override the final site-relative destination for compatibility;
-they are not source locations. Optional `title` overrides the default
+`basePath` is relative to the generated website root. Optional `referencePath`
+overrides the final site-relative reference destination for compatibility.
+Optional `title` overrides the default
 `<PRODUCT> model reference` page title. There is no separate manifest schema/DSL.
 
 The shared build applies these folder and filename conventions once:
 
 | Maintained source or generated output | Public path within the product context |
 | --- | --- |
-| `profile.ttl` | `model/profile.ttl` (unless overridden) |
 | `vocabularies/` | `model/` |
 | `documentation/`, optional `assets/` | Context root |
 | Optional `examples/` | `model/examples/` |
@@ -66,11 +64,33 @@ The shared build applies these folder and filename conventions once:
 
 Tests always live in the product's `tests/` folder. Shared publication destinations
 are declared once in `common/publication.json` as a `paths` map from common resource
-folders to existing site-relative locations. Private validation inputs and templates
-are not in that map and are never copied wholesale into the site.
+folders to existing site-relative locations. The common model and product profiles
+are source-only maintainability layers. They feed the assembled validation graphs
+and are not published separately. Validation inputs and templates also remain
+source-only. Separate publication of these layers can be added later if needed.
 
 RDF models, profiles and catalogues remain the source of validation semantics.
 RDF identifiers do not determine website context paths or legacy filenames.
+
+## Application contract and vocabulary content
+
+The common model and product profiles define the application validation contract.
+Changes to properties, cardinalities, datatypes, binding rules or validation behavior
+must be reviewed together with application code. Keeping these layers in a separate
+repository does not give them an independent compatibility lifecycle.
+
+Domain vocabulary content, such as NQF/EQF levels and classifications, is the
+pluggable part under those established bindings. Labels, hierarchy and membership
+can evolve without changing Java code where the application handles those concepts
+generically. Membership changes intentionally change the accepted values. Since the
+publisher expands membership into `sh:in`, a vocabulary update requires rebuilding
+the complete validation artifact and keeping application vocabulary lookups in sync.
+
+Workflow vocabularies need separate care: the application uses editorial and
+publication status constants in its business logic. Changes to their behavioral
+meaning belong to the application contract even though the values are expressed
+as SKOS concepts. A future refresh mechanism should preserve this compatibility
+boundary; this build does not implement runtime refresh or application rollout.
 
 ## One-way generation
 
@@ -146,8 +166,8 @@ generation failures leave the previous site intact; staging is cleaned afterward
 
 Shared malformed-input fixtures run once. Product tests exercise all 161 ACQF levels
 and eight EQF levels, cardinalities, invalid/mixed values, diagnostics and duplicate
-notation. ACQF additionally pins its historical complete validation graph, all 46
-established public files and existing model-reference anchors.
+notation. ACQF additionally pins its historical complete validation graph, the 44
+retained ACQF public files and existing model-reference anchors.
 
 Catalogue-to-documentation checks resolve each referenced scheme to its local RDF
 source and require a link from the product landing page to the published vocabulary.

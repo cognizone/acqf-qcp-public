@@ -19,8 +19,13 @@ job and does not change hosting settings, application URLs, acc or production.
 
 Product `publication.json` files declare only the public context and any legacy
 URL exceptions; source folders and standard output names follow conventions.
-Public paths and RDF IRIs are preserved in the generated artifact. ETF uses `/etf/`.
-No current website or application consumer is switched to this artifact automatically.
+The common source model and product profiles stay in the repository as build inputs;
+only assembled validation models are published. Consumer-facing paths and RDF IRIs
+are preserved in the generated artifact. ETF uses `/etf/`.
+The model and profiles evolve with application constraints; domain vocabularies
+are pluggable content under stable bindings. Workflow status semantics remain
+coupled to application behavior. No current website or application consumer is
+switched to this artifact automatically.
 
 ## Normal workflow
 

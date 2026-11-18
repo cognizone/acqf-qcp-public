@@ -1,7 +1,6 @@
 {
   "paths": {
     "vocabularies": "model",
-    "model": "model/common",
     "contexts": "model/contexts",
     "frames": "model",
     "documentation": "common"

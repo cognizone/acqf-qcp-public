@@ -13,7 +13,6 @@ class PublicationTest {
     fun productContextChangesDestinationsWithoutChangingSourceLocations() = fixture { root, publication ->
         write(root, "products/etf/publication.json", """{"basePath":"preview/etf", "title":"ETF preview"}""")
         val product = Product(root.resolve("products/etf"))
-        assertEquals("preview/etf/model/profile.ttl", product.profilePath)
         assertEquals(root.resolve("build/site/preview/etf/model/exchange-model.ttl"), product.model(publication.siteDirectory))
         assertEquals(root.resolve("build/site/preview/etf/model/reference.html"), product.reference(publication.siteDirectory))
         assertEquals("ETF preview", product.title)
@@ -21,21 +20,21 @@ class PublicationTest {
     }
 
     @Test
-    fun acqfLegacyExceptionsRemainRelativeToTheSiteRoot() = fixture { root, publication ->
+    fun acqfLegacyReferenceRemainsRelativeToTheSiteRoot() = fixture { root, publication ->
         val product = publication.products.single()
-        assertEquals("model/acqf-profile.ttl", product.profilePath)
         assertEquals(root.resolve("build/site/exchange-model/exchange-model.html"), product.reference(publication.siteDirectory))
         assertEquals("ACQF model reference", product.title)
     }
 
     @Test
     fun onlyPublicSourceFoldersAreCopied() = fixture { root, publication ->
+        write(root, "common/model/exchange-model.ttl", "common source model")
         write(root, "common/validation-inputs/private.jsonld", "private RDF input")
         write(root, "common/templates/reference.html", "private template")
         write(root, "products/acqf/tests/contract.json", "private expectation")
         write(root, "docs/legacy.html", "frozen snapshot")
         write(root, "products/acqf/README.md", "private provenance")
-        assertEquals(setOf("common/index.html", "index.html", "model/acqf-profile.ttl"), publication.resources().keys)
+        assertEquals(setOf("common/index.html", "index.html"), publication.resources().keys)
     }
 
     @Test
@@ -91,7 +90,7 @@ class PublicationTest {
         try {
             write(root, "common/publication.json", """{"paths":{"documentation":"common"}}""")
             write(root, "common/documentation/index.html", "shared guidance")
-            write(root, "products/acqf/publication.json", """{"basePath":"", "profilePath":"model/acqf-profile.ttl", "referencePath":"exchange-model/exchange-model.html"}""")
+            write(root, "products/acqf/publication.json", """{"basePath":"", "referencePath":"exchange-model/exchange-model.html"}""")
             write(root, "products/acqf/profile.ttl", "profile source")
             write(root, "products/acqf/documentation/index.html", "product guidance")
             test(root, Publication(root, Tools(root, root.resolve("unused-jena"))))

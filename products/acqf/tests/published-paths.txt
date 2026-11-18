@@ -4,10 +4,8 @@ exchange-model/fields-acqf.rq
 index.html
 model/accreditation-types
 model/acqf-levels
-model/acqf-profile.ttl
 model/ao-nqf-levels
 model/bw-nqf-levels
-model/common/exchange-model.ttl
 model/contexts/identifier.json
 model/contexts/import.json
 model/contexts/note.json

@@ -38,7 +38,6 @@ class Publication(val rootDir: File, val tools: Tools) {
                 val source = config.directory.resolve(folder)
                 if (source.exists()) add(source, config.path(path))
             }
-            add(config.directory.resolve("profile.ttl"), config.profilePath)
         }
         return result
     }
