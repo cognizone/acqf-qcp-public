@@ -1,0 +1,7 @@
+PREFIX p: <urn:publication:graph:>
+PREFIX qcp: <https://data.acqf-qcp.africa/model/internal/>
+CONSTRUCT { ?s ?p ?o } WHERE {
+  VALUES ?part { p:common p:profile }
+  ?part p:source ?graph . GRAPH ?graph { ?s ?p ?o }
+  FILTER (?p NOT IN (qcp:controlledVocabulary, qcp:controlledVocabularyCatalogue))
+}

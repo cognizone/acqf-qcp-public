@@ -1,4 +1,4 @@
-name: Check published validation model
+name: Build and validate DEV preview artifact
 on:
   push:
     branches: [dev]
@@ -13,11 +13,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Regression baseline is an earlier dev commit.
+          fetch-depth: 0
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '21'
       - uses: gradle/actions/setup-gradle@v4
-      - name: Check export, ACQF equivalence and standalone SHACL validation
-        run: ./gradlew check
+      - uses: actions/cache@v4
+        with:
+          path: build/tools
+          key: jena-cli-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('publication/jena.sha512') }}
+      - name: Build from source and validate both product contracts
+        run: |
+          ./gradlew check
+          test -z "$(git status --porcelain --untracked-files=all)"
+      - name: Upload the complete site preview
+        uses: actions/upload-artifact@v7
+        with:
+          name: public-data-site-${{ github.sha }}
+          path: build/site/
+          if-no-files-found: error

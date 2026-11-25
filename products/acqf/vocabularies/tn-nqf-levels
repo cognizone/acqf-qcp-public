@@ -1,0 +1,282 @@
+@prefix acqf-qcp-model: <https://data.acqf-qcp.africa/model/> .
+@prefix :               <https://data.acqf-qcp.africa/model/tn-nqf-levels/resource/> .
+@prefix dct:            <http://purl.org/dc/terms/> .
+@prefix skos:           <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
+
+acqf-qcp-model:tn-nqf-levels
+    a                  skos:ConceptScheme ;
+    dct:title          "Classification nationale des qualifications"@fr, "National Qualifications Framework"@en ;
+    dct:description    "La classification nationale des qualifications est un cadre de référence qui relie les diplômes délivrés par les différentes composantes du dispositif de développement des ressources humaines aux niveaux de qualifications correspondants. Elle comprend sept niveaux de qualifications et six descripteurs formulés en terme de résultats de l’apprentissage."@fr ;
+    dct:created        "2026-10-06"^^xsd:date ;
+    dct:publisher      "cognizone bv" ;
+    dct:creator        "Petr Křemen" ;
+    dct:license        <http://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:source         <https://natlex.ilo.org/dyn/natlex2/natlex2/files/download/81846/TUN-81846.pdf> ;
+    dct:bibliographicCitation "Décret n° 2009-2139 du 8 juillet 2009, fixant la classification nationale des qualifications. Journal Officiel de la République Tunisienne, n° 57, 17 juillet 2009, pages 1944–1947."@fr ;
+    skos:hasTopConcept :level-1, :level-2, :level-3, :level-4, :level-5, :level-6, :level-7 .
+
+:level-1
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:tn-nqf-levels ;
+    skos:prefLabel  "Level 1"@en, "Niveau 1"@fr ;
+    skos:definition """
+Complexité:
+- Réaliser une série d’opérations standardisées simples et répétitives à l’aide de techniques et instruments mis à sa disposition dont il comprend les principes d’utilisation.
+- Comprendre et appliquer des instructions orales et/ou écrites simples.
+
+Autonomie:
+- Vérifier la conformité du travail accompli par rapport à la commande.
+
+Responsabilité:
+- Faire des comptes rendus oraux des tâches et activités réalisées.
+- Exercer dans un champ d’activité restreint.
+
+Adaptabilité:
+- Intervenir dans des contextes stables, peu sensibles à des facteurs exogènes.
+
+Savoirs:
+- Savoirs de base concrets et factuels en lien étroit avec l’activité et exploités par itération ou au cas par cas.
+
+Savoir faire et comportement:
+- Aptitudes cognitives et pratiques nécessaires à la réalisation d’une série d’opérations standardisées, simples et répétitives.
+- Aptitude à travailler en équipe et à communiquer de façon simple dans son champ d’activité, avec un niveau adéquat de langue.
+- Aptitude à continuer à apprendre dans une situation plus ou moins contrôlée.
+"""@fr ;
+    skos:scopeNote  """
+Diplôme :
+- Certificat de compétence (CC)
+- Diplôme de Fin de l’enseignement de Base Technique (DFEBT)
+- Diplôme de fin de l’enseignement de base (DFEB)
+"""@fr
+.
+
+:level-2
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:tn-nqf-levels ;
+    skos:prefLabel  "Level 2"@en, "Niveau 2"@fr ;
+    skos:definition """
+Complexité:
+- Utiliser des modes opératoires en nombre limité et bien définis pour effectuer des tâches liées au poste de travail.
+- Sélectionner des instruments et des techniques dont il comprend les principes sous jacents.
+- Lire des notes ou données en rapport avec son champ d’activité.
+
+Autonomie:
+- Disposer d’une marge de manœuvre limitée.
+- Vérifier à son niveau la qualité du produit fini ou du service rendu.
+
+Responsabilité:
+- Faire des comptes rendus oraux et/ou écrits des tâches et activités réalisées.
+- Exercer éventuellement avec une équipe, dans un champ d’activité restreint.
+
+Adaptabilité:
+- Intervenir dans des contextes stables ou soumis à des changements limités.
+- Adapter son comportement aux circonstances et problèmes posés.
+
+Savoirs:
+- Savoirs de base concrets et factuels en lien étroit avec l’activité, et compréhension des articulations entre les éléments de ces savoirs.
+
+Savoir faire et comportement:
+- Aptitudes cognitives et pratiques nécessaires à la réalisation d’une série d’opérations standardisées.
+- Aptitude à appliquer des règles et des méthodes simples selon une approche logique du déroulement des opérations.
+- Aptitude à communiquer dans des situations courantes et à échanger dans son champ d’activité, avec un niveau adéquat de langue.
+- Aptitude à continuer à apprendre.
+"""@fr ;
+    skos:scopeNote  """
+Diplôme :
+- Certificat d’Aptitude Professionnelle (CAP)
+"""@fr
+.
+
+:level-3
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:tn-nqf-levels ;
+    skos:prefLabel  "Level 3"@en, "Niveau 3"@fr ;
+    skos:definition """
+Complexité:
+- Appliquer des modes opératoires et des procédures dans la limite des techniques afférentes à l’exécution de l’activité.
+- Sélectionner des méthodes, outils et matériaux dont il maîtrise les principes sous jacents pour résoudre un ensemble limité de problèmes.
+- Lire et interpréter des notes ou données en rapport avec son champ d’activité.
+
+Autonomie:
+- Organiser soi-même son travail sur la base de consignes spécifiques.
+- Estimer le niveau de qualité du travail accompli.
+
+Responsabilité:
+- Faire des comptes rendus oraux et écrits des activités réalisées.
+- Exercer individuellement ou en équipe, dans un champ d’activité plus ou moins étendu.
+
+Adaptabilité:
+- Intervenir dans un contexte de travail évolutif soumis à des facteurs externes qui n’engendrent pas de changements importants.
+- Formuler des solutions adaptées aux problèmes posés.
+
+Savoirs:
+- Savoirs appliqués avec une maîtrise de notions théoriques liées au champ d’activité et aux domaines connexes.
+
+Savoir faire et comportement:
+- Aptitudes cognitives et pratiques nécessaires à l’application de modes opératoires et de procédures.
+- Aptitudes à sélectionner et appliquer des méthodes et outils contribuant à la construction d’une réponse appropriée selon une approche de résolution de problèmes.
+- Aptitude à communiquer et à donner de brèves explications sur un projet ou une idée, avec un niveau adéquat de langue.
+- Aptitude à coordonner ses activités au sein d’un groupe, éventuellement à exercer des responsabilités au sein d’une équipe restreinte.
+- Aptitude à organiser ses apprentissages.
+"""@fr ;
+    skos:scopeNote  """
+Diplôme :
+- Brevet de Technicien Professionnel (BTP)
+- Baccalauréat Professionnel
+- Baccalauréat
+"""@fr
+.
+
+:level-4
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:tn-nqf-levels ;
+    skos:prefLabel  "Level 4"@en, "Niveau 4"@fr ;
+    skos:definition """
+Complexité:
+- Etablir et appliquer des modes opératoires relatifs à un ensemble de tâches cycliques ou de séquences de travail.
+- Sélectionner et/ou adapter des méthodes, outils et matériaux pour résoudre des problèmes dans un contexte plus ou moins étendu.
+- Intégrer des informations de différentes sources et les mobiliser pour proposer des solutions dans son champ d’activité.
+
+Autonomie:
+- Planifier et organiser le travail de son équipe sur la base de consignes générales.
+- Evaluer la qualité du travail accompli par son équipe.
+
+Responsabilité:
+- Faire des comptes rendus écrits et oraux circonstanciés sur son activité et éventuellement de celle des personnes placées sous sa responsabilité.
+- Exercer généralement avec une équipe, dans un champ d’activité plus ou moins étendu.
+
+Adaptabilité:
+- Intervenir dans un contexte de travail évolutif soumis à des facteurs externes qui peuvent engendrer des changements plus ou moins importants.
+- Formuler des solutions adaptées aux problèmes dans son champ d’activité.
+
+Savoirs:
+- Savoirs théoriques et appliqués liés au champ d’activité.
+
+Savoir faire et comportement:
+- Aptitudes cognitives et pratiques nécessaires à l’établissement et à l’application de modes opératoires selon une approche de résolution de problèmes.
+- Aptitude à communiquer de façon claire et détaillée en donnant des avis argumentés, avec un niveau adéquat de langue.
+- Aptitude à diriger ou animer une équipe placée sous sa responsabilité.
+- Aptitude à identifier ses propres besoins en formation et à construire son parcours d’apprentissage.
+"""@fr ;
+    skos:scopeNote  """
+Diplôme :
+- Brevet de Technicien Supérieur (BTS)
+"""@fr
+.
+
+:level-5
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:tn-nqf-levels ;
+    skos:prefLabel  "Level 5"@en, "Niveau 5"@fr ;
+    skos:definition """
+Complexité:
+- Etablir et appliquer des modes opératoires relatifs à son champ d’activité.
+- Maîtriser les méthodes, les techniques et les outils pour résoudre des problèmes dans un contexte plus ou moins étendu.
+- Analyser et synthétiser des informations de différentes sources pour traduire des instructions en termes simples et les mobiliser pour proposer des solutions dans son champ d’activité.
+
+Autonomie:
+- Planifier et organiser le travail de son équipe.
+- Evaluer le travail accompli par son équipe.
+
+Responsabilité:
+- Elaborer des rapports et faire des comptes rendus écrits et oraux circonstanciés sur son activité et de celle des personnes placées sous sa responsabilité.
+- Superviser une équipe, dans un champ d’activité plus ou moins étendu.
+
+Adaptabilité:
+- Intervenir dans un contexte de travail évolutif soumis à des facteurs externes qui peuvent engendrer des changements importants.
+- Apporter des réponses adaptées à des problèmes imprévisibles ou nouveaux.
+
+Savoirs:
+- Savoirs théoriques et appliqués liés au champ d’activité et aux domaines connexes.
+
+Savoir faire et comportement:
+- Aptitudes cognitives et pratiques nécessaires à l’établissement et à l’application de modes opératoires selon une approche de résolution de problèmes comportant une dimension abstraite.
+- Aptitude à communiquer de façon claire et détaillée en donnant des avis argumentés, avec un niveau adéquat de langue.
+- Aptitude à diriger ou animer une équipe placée sous sa responsabilité.
+- Aptitude à identifier ses propres besoins en formation et à construire son parcours d’apprentissage.
+"""@fr ;
+    skos:scopeNote  """
+Diplôme :
+- Licence
+- Licence appliquée
+"""@fr
+.
+
+:level-6
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:tn-nqf-levels ;
+    skos:prefLabel  "Level 6"@en, "Niveau 6"@fr ;
+    skos:definition """
+Complexité:
+- Concevoir des modes opératoires relatifs à différents champs d’activités et gérer les organisations et systèmes nécessaires à leur mise en oeuvre.
+- Définir et optimiser les moyens et les ressources à mettre en oeuvre dans un contexte d’activité étendu.
+- Analyser et synthétiser des informations tirées de diverses sources pour développer des solutions innovantes et les exploiter dans son champ d’activité.
+
+Autonomie:
+- Elaborer des procédures de travail d’une ou plusieurs équipes.
+- Planifier et organiser le travail d’une ou plusieurs équipes.
+- Evaluer les travaux accomplis par une ou plusieurs équipes.
+
+Responsabilité:
+- Elaborer des rapports analytiques et de synthèse et des comptes rendus se rapportant aux activités planifiées et/ou réalisées et aux événements non prévus.
+- Exercer avec/ou dans une équipe et définir des objectifs pour la réalisation du travail, dans un champ d’activité étendu.
+
+Adaptabilité:
+- Intervenir dans un contexte de travail évolutif soumis à des facteurs internes et des facteurs externes qui peuvent engendrer des changements importants.
+- Développer des solutions innovantes et adaptées à des problèmes imprévisibles ou nouveaux.
+
+Savoirs:
+- Savoirs théoriques approfondis et appliqués à l’interface de plusieurs champs d’activités comportant une maîtrise d’outils méthodologiques et de démarches critiques.
+
+Savoir faire et comportement:
+- Aptitudes cognitives et pratiques nécessaires à la résolution de problèmes complexes ou imprévisibles.
+- Aptitude à s’exprimer couramment et de façon bien structurée sur des thèmes professionnels et académiques, avec un niveau adéquat de langue.
+- Aptitude à encadrer ou animer des équipes diversifiées, à identifier les besoins en formation, à former et faire évoluer le personnel placé sous sa responsabilité.
+- Aptitude à assimiler des savoirs et à produire de nouveaux savoirs.
+- Aptitude à identifier ses propres besoins en formation, à évoluer dans des contextes non familiers et à s’auto-évaluer.
+"""@fr ;
+    skos:scopeNote  """
+Diplôme :
+- Master
+- Master professionnel
+"""@fr
+.
+
+:level-7
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:tn-nqf-levels ;
+    skos:prefLabel  "Level 7"@en, "Niveau 7"@fr ;
+    skos:definition """
+Complexité:
+- Définir des stratégies de travail spécifiques à un champ d’activité ou de connaissance large ou hautement spécialisé.
+- Mettre en oeuvre, conduire et évaluer les stratégies de travail d’une ou plusieurs équipes ou structures.
+- Développer de nouvelles idées ou processus dans un domaine de pointe.
+- Communiquer dans un ou plusieurs domaines d’expertise et engager un dialogue critique avec des pairs dans des champs hautement spécialisés.
+
+Autonomie:
+- Définir et opérationnaliser des plans stratégiques dans un contexte large d’activité impliquant plusieurs équipes.
+
+Responsabilité:
+- Synthétiser des rapports et des comptes rendus se rapportant à une ou plusieurs activités assurées par une ou plusieurs équipes.
+- Prendre les décisions nécessaires sur la base des résultats obtenus.
+- Exercer avec une ou plusieurs équipes, dans un champ d’activité très étendu.
+
+Adaptabilité:
+- Intervenir dans un contexte de travail évolutif caractérisé par des changements importants imprévisibles.
+- Créer des solutions, des alternatives et/ou des démarches innovantes et adaptées à des problèmes imprévisibles ou nouveaux.
+
+Savoirs:
+- Savoirs théoriques et appliqués comportant une maîtrise d’outils méthodologiques, hautement spécialisés et à la pointe du champ de la connaissance, dans un champ d’activité ou à l’interface de plusieurs champs.
+
+Savoir faire et comportement:
+- Aptitudes cognitives et pratiques nécessaires à la résolution de problèmes stratégiques ou critiques, complexes ou imprévisibles selon une approche créative contribuant à l’évolution des savoirs.
+- Aptitude à s’exprimer couramment et de façon différenciée et nuancée sur des thèmes professionnels et académiques complexes, avec un niveau adéquat de langue.
+- Aptitude à faire preuve d’initiative, à définir les finalités et les stratégies, à constituer, encadrer et animer des équipes diversifiées et hétérogènes et à développer les performances collectives de ses équipes.
+- Aptitude à identifier des champs inédits de recherche et développement fondamentaux et appliqués, à évoluer continuellement dans des contextes non familiers et à s’auto-évaluer.
+"""@fr ;
+    skos:scopeNote  """
+Diplôme :
+- Doctorat
+"""@fr
+.

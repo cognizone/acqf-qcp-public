@@ -1,0 +1,1 @@
+<urn:test:case:cross> <https://data.acqf-qcp.africa/model/elm-extension/educationLevelNqf> <https://data.acqf-qcp.africa/model/tn-nqf-levels/resource/level-1> .

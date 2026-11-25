@@ -1,0 +1,50 @@
+@prefix acqf-qcp-model: <https://data.acqf-qcp.africa/model/> .
+@prefix :               <https://data.acqf-qcp.africa/model/creditpoint-framework/resource/> .
+@prefix dct:            <http://purl.org/dc/terms/> .
+@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos:           <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
+
+acqf-qcp-model:creditpoint-framework
+    a                  skos:ConceptScheme ;
+    dct:title          "ACQF Credit Point Frameworks"@en ;
+    dct:description    "This is a SKOS representation of the ACQF Credit Point Frameworks."@en ;
+    dct:created        "2024-06-25"^^xsd:date ;
+    dct:publisher      "cognizone bv" ;
+    dct:creator        "Petr Křemen" ;
+    dct:license        <http://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:source         "ACQF-II QCP Architecture report 20240503" ;
+    skos:hasTopConcept :acts, :ects, :eacat, :sadc-cats .
+
+:acts
+    a              skos:Concept ;
+    skos:inScheme  acqf-qcp-model:creditpoint-framework ;
+    skos:prefLabel "African Credit Transfer System"@en ;
+    skos:altLabel  "ACTS"@en ;
+    dct:source     <https://haqaa2.obsglob.org/wp-content/uploads/2023/02/Final-ACTS-Recommendations-1.pdf>
+.
+
+:ects
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:creditpoint-framework ;
+    skos:prefLabel  "European Credit Transfer System"@en ;
+    skos:altLabel   "ECTS"@en ;
+    skos:exactMatch <http://data.europa.eu/snb/education-credit/6fcec5c5af>
+.
+
+:eacat
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:creditpoint-framework ;
+    skos:prefLabel  "East African Credit Accumulation and Transfer"@en ;
+    skos:altLabel   "EACAT"@en ;
+    skos:exactMatch <https://www.iucea.org/mdocs-posts/east-african-credit-accumulation-and-transfer-system/>
+.
+
+:sadc-cats
+    a              skos:Concept ;
+    skos:inScheme  acqf-qcp-model:creditpoint-framework ;
+    skos:prefLabel "Southern African Development Community Accumulation and Transfer System"@en ;
+    skos:altLabel  "SADC-CATS"@en ;
+    skos:exactMatch
+                   <https://haqaa.aau.org/wp-content/uploads/2016/04/DRAFT-SADC-GUIDELINES-FOR-CREDIT-ACCUMULATION-AND-TRANSFER-003.docx>
+.

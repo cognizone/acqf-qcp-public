@@ -1,0 +1,20 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX dc: <http://purl.org/dc/terms/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?class ?shape ?path ?inverse ?name ?description ?constraint ?value WHERE {
+  { ?shape sh:targetClass ?class }
+  UNION {
+    ?node sh:targetClass ?class ; sh:property ?shape .
+    ?shape sh:path ?path . OPTIONAL { ?path sh:inversePath ?inverse }
+  }
+  OPTIONAL { ?shape sh:name ?name . FILTER(LANG(?name) IN ("", "en")) }
+  OPTIONAL { ?shape (sh:description|dc:description) ?description . FILTER(LANG(?description) IN ("", "en")) }
+  OPTIONAL {
+    ?shape ?constraint ?raw .
+    FILTER(?constraint NOT IN (rdf:type, sh:path, sh:name, sh:description, dc:description, sh:targetClass, sh:property))
+    OPTIONAL { ?raw rdf:rest*/rdf:first ?member }
+    OPTIONAL { ?raw sh:message ?message }
+    BIND(COALESCE(?member, ?message, ?raw) AS ?value)
+  }
+}
+ORDER BY STR(?class) STR(?shape) STR(?constraint) STR(?value)

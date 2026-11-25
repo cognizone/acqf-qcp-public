@@ -1,0 +1,9 @@
+{
+  "publicBaseUrl": "https://data.acqf-qcp.africa/",
+  "paths": {
+    "vocabularies": "model",
+    "contexts": "model/contexts",
+    "frames": "model",
+    "documentation": "common"
+  }
+}

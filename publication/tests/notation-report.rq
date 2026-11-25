@@ -1,0 +1,2 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+SELECT DISTINCT ?focus WHERE { ?result a sh:ValidationResult; sh:focusNode ?focus } ORDER BY ?focus

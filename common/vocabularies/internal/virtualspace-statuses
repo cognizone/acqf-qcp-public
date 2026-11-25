@@ -1,0 +1,28 @@
+@prefix acqf-qcp-internal: <https://data.acqf-qcp.africa/model/internal/> .
+@prefix :               <https://data.acqf-qcp.africa/model/internal/virtualspace-statuses/resource/> .
+@prefix dct:            <http://purl.org/dc/terms/> .
+@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos:           <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
+
+acqf-qcp-internal:virtualspace-statuses
+    a                  skos:ConceptScheme ;
+    dct:title          "ACQF QCP Virtual Space Statuses"@en ;
+    dct:description    "This is a SKOS representation of the ACQF QCP Virtual Space Statuses."@en ;
+    dct:created        "2024-11-04"^^xsd:date ;
+    dct:publisher      "cognizone bv" ;
+    dct:creator        "Petr Křemen" ;
+    dct:license        <http://creativecommons.org/publicdomain/zero/1.0/> ;
+    skos:hasTopConcept :active, :disabled .
+
+:active
+    a              skos:Concept ;
+    skos:inScheme  acqf-qcp-internal:virtualspace-statuses ;
+    skos:prefLabel "Active"@en, "Actif"@fr, "Ativo"@pt
+.
+
+:disabled
+    a              skos:Concept ;
+    skos:inScheme  acqf-qcp-internal:virtualspace-statuses ;
+    skos:prefLabel "Disabled"@en, "Désactivé"@fr, "Desativado"@pt
+.

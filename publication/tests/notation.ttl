@@ -1,0 +1,19 @@
+@prefix elm: <http://data.europa.eu/snb/model/elm/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix t: <urn:test:case:> .
+# Duplicate strings and equal lexical forms with different datatypes fail.
+t:duplicate1 a elm:Qualification; adms:identifier [skos:notation "ABC"] .
+t:duplicate2 a elm:Qualification; adms:identifier [skos:notation "ABC"] .
+t:numeric1 a elm:Qualification; adms:identifier [skos:notation "123"] .
+t:numeric2 a elm:Qualification; adms:identifier [skos:notation 123] .
+# Distinct values, case differences and trailing spaces remain distinct.
+t:distinct1 a elm:Qualification; adms:identifier [skos:notation "DEF"] .
+t:distinct2 a elm:Qualification; adms:identifier [skos:notation "GHI"] .
+t:case1 a elm:Qualification; adms:identifier [skos:notation "Case"] .
+t:case2 a elm:Qualification; adms:identifier [skos:notation "case"] .
+t:space1 a elm:Qualification; adms:identifier [skos:notation "Space"] .
+t:space2 a elm:Qualification; adms:identifier [skos:notation "Space "] .
+# A resource outside the Qualification class does not create a duplicate.
+t:qualified a elm:Qualification; adms:identifier [skos:notation "Other"] .
+t:other adms:identifier [skos:notation "Other"] .

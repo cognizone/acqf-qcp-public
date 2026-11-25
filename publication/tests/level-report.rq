@@ -1,0 +1,5 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+# Count constraint components, ignoring duplicate rows from SPARQL validators.
+SELECT ?focus (COUNT(DISTINCT ?component) AS ?count) WHERE {
+  ?result a sh:ValidationResult; sh:focusNode ?focus; sh:sourceConstraintComponent ?component
+} GROUP BY ?focus ORDER BY ?focus

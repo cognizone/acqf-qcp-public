@@ -1,0 +1,10 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+CONSTRUCT { ?s ?p ?o } WHERE {
+  {
+    VALUES ?s { <https://data.acqf-qcp.africa/model/exchange-model/resource/UniqueQualificationNotationShape> }
+    ?s ?p ?o
+  } UNION {
+    <https://data.acqf-qcp.africa/model/exchange-model/resource/UniqueQualificationNotationShape> sh:sparql ?s .
+    ?s ?p ?o
+  }
+}

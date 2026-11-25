@@ -1,0 +1,153 @@
+@prefix acqf-qcp-model: <https://data.acqf-qcp.africa/model/> .
+@prefix :               <https://data.acqf-qcp.africa/model/zw-nqf-levels/resource/> .
+@prefix dct:            <http://purl.org/dc/terms/> .
+@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos:           <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
+
+acqf-qcp-model:zw-nqf-levels
+    a                  skos:ConceptScheme ;
+    dct:title          "Zimbabwe National Qualifications Framework levels and level descriptors"@en ;
+    dct:description    "This is a SKOS representation of the ZNQF levels and level descriptors."@en ;
+    dct:created        "2024-06-25"^^xsd:date ;
+    dct:publisher      "cognizone bv" ;
+    dct:creator        "Petr Křemen" ;
+    dct:license        <http://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:source         <https://www.zimche.ac.zw/wp-content/uploads/2019/04/ZNQF.pdf> ;
+    skos:hasTopConcept :level-1, :level-2, :level-3, :level-4, :level-5, :level-6, :level-7, :level-8, :level-9,
+                       :level-10 .
+
+:level-1
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:zw-nqf-levels ;
+    skos:prefLabel  "Level 1"@en ;
+    skos:altLabel   "Primary Level Certificate"@en ;
+    skos:notation   "ZNQF-1" ;
+    skos:definition """
+- Rudimentary knowledge
+- Relate elementary techniques to mastery and mathematical ability including desirable values
+- Work under intermittent guidance, consistent scrutiny and limited autonomy
+"""
+.
+
+:level-2
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:zw-nqf-levels ;
+    skos:prefLabel  "Level 2"@en ;
+    skos:altLabel   "Ordinary Level Certificate"@en ;
+    skos:notation   "ZNQF-2" ;
+    skos:definition """
+- Broad-based knowledge
+- Relate basic procedures and techniques
+- Work in a controlled atmosphere, under direct supervision
+"""
+.
+
+:level-3
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:zw-nqf-levels ;
+    skos:prefLabel  "Level 3"@en ;
+    skos:altLabel   "General Advanced Level Certificate"@en ;
+    skos:notation   "ZNQF-3" ;
+    skos:definition """
+- In-depth knowledge in specific subject areas
+- Relate series of techniques in the field of study, to resolve challenges in broad circumstances
+- Function under general supervision
+"""
+.
+
+:level-4
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:zw-nqf-levels ;
+    skos:prefLabel  "Level 4"@en ;
+    skos:altLabel   "National Certificate"@en ;
+    skos:notation   "ZNQF-4" ;
+    skos:definition """
+- Operational knowledge in the area of specialty
+- Relate diverse of techniques in the area of specialty, to get to the bottom recognisable problems in moderately usual settings
+- Work under general supervision
+"""
+.
+
+:level-5
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:zw-nqf-levels ;
+    skos:prefLabel  "Level 5"@en ;
+    skos:altLabel   "National Diploma"@en ;
+    skos:notation   "ZNQF-5" ;
+    skos:definition """
+- Comprehensive knowledge in the area of specialty
+- Relate wide-ranging procedures, to work out real problems, in non-routine situations
+- work under broad supervision
+"""
+.
+
+:level-6
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:zw-nqf-levels ;
+    skos:prefLabel  "Level 6"@en ;
+    skos:altLabel   "HND"@en ;
+    skos:notation   "ZNQF-6" ;
+    skos:definition """
+- Work within wide-ranging self-sufficiency
+- Specialised knowledge in the area of specialty
+- Relate various and specific methods in the area of specialty entailing elementary investigation
+- Work within wide-range of structures and a specific self-sufficiency
+"""
+.
+
+
+:level-7
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:zw-nqf-levels ;
+    skos:prefLabel  "Level 7"@en ;
+    skos:altLabel   "General Degree"@en ;
+    skos:notation   "ZNQF-7" ;
+    skos:definition """
+- Comprehensive knowledge in the area of specialty
+- Apply recognized tenets, calling for a wide range of information to work out challenges in diverse settings
+"""
+.
+
+:level-8
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:zw-nqf-levels ;
+    skos:prefLabel  "Level 8"@en ;
+    skos:altLabel   "Honours Degree"@en ;
+    skos:notation   "ZNQF-8" ;
+    skos:definition """
+- Methodical comprehension of strategic facets area of specialty
+- Implement precisely analysis and enquiry procedures within the area of specialty
+- Work out setbacks using thoughts and methods in their area of specialty
+- Work within wide-ranging self-sufficiency
+"""
+.
+
+:level-9
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:zw-nqf-levels ;
+    skos:prefLabel  "Level 9"@en ;
+    skos:altLabel   "Master Post Graduate"@en ;
+    skos:notation   "ZNQF-9" ;
+    skos:definition """
+- Mastery of knowledge in the field of study
+- Analysis of complex issues and research proposing solutions based on critical thinking
+- Participate in resource management and supervision of others
+- In-depth expert knowledge in the field of study
+- Specialised skills and principles based on systematic scrutiny of information
+- Function within wide-ranging independence
+"""
+.
+
+:level-10
+    a               skos:Concept ;
+    skos:inScheme   acqf-qcp-model:zw-nqf-levels ;
+    skos:prefLabel  "Level 10"@en ;
+    skos:altLabel   "PhD"@en ;
+    skos:notation   "ZNQF-10" ;
+    skos:definition """
+- Cutting edge research and creation of new knowledge in the development of the study
+- Advance new techniques, ideas or approaches
+- Autonomous in research conducted
+"""
+.
