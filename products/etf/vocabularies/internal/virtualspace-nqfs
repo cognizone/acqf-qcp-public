@@ -14,7 +14,7 @@ etf-qd:virtualspace-nqfs
     dct:creator        "Petr Křemen" ;
     dct:license        <http://creativecommons.org/publicdomain/zero/1.0/> ;
     skos:hasTopConcept
-        :eqf-nqf
+        :eqf-nqf, :bd-nqf
 .
 
 :eqf-nqf
@@ -22,4 +22,11 @@ etf-qd:virtualspace-nqfs
     skos:inScheme  etf-qd:virtualspace-nqfs ;
     dct:relation   <http://data.europa.eu/snb/eqf/25831c2> ;
     skos:prefLabel "European Qualifications Framework (EQF)"@en
+.
+
+:bd-nqf
+    a              skos:Concept ;
+    skos:inScheme  etf-qd:virtualspace-nqfs ;
+    dct:relation   <https://data.etf-qd.cogni.zone/model/bd-nqf-levels> ;
+    skos:prefLabel "Bangladesh National Qualifications Framework (BNQF)"@en
 .

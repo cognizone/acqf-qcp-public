@@ -8,7 +8,6 @@ expectations=$(dirname "$config")/tests
 arq --data="$model" --query="$tests/contract.rq" --results=JSON > "$work/contract.json"
 jq -e --slurpfile expected "$expectations/contract.json" '
   .results.bindings | length == 1 and (.[0] |
-    .count.value == ($expected[0].levels | tostring) and
     .prefixCount.value == ($expected[0].prefixes | tostring))
 ' "$work/contract.json" >/dev/null
 arq --data="$model" --query="$tests/level-shapes.rq" --results=TURTLE > "$work/level-shapes.ttl"

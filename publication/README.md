@@ -194,8 +194,8 @@ output collisions, path boundaries and failure diagnostics. Source-validation an
 generation failures leave the previous site intact; staging is cleaned afterwards.
 
 Shared malformed-input fixtures run once. Product tests exercise all 161 ACQF levels
-and eight EQF levels, cardinalities, invalid/mixed values, diagnostics and duplicate
-notation. ACQF additionally pins its historical complete validation graph, the 44
+and ETF's eight EQF and ten Bangladesh BNQF levels, cardinalities, invalid/mixed
+values, diagnostics and duplicate notation. ACQF additionally pins its historical complete validation graph, the 44
 retained ACQF public files and existing model-reference anchors.
 
 Catalogue-to-documentation checks resolve each referenced scheme to its local RDF

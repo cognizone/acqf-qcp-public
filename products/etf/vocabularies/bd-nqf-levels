@@ -1,0 +1,85 @@
+@prefix etf-model: <https://data.etf-qd.cogni.zone/model/> .
+@prefix :         <https://data.etf-qd.cogni.zone/model/bd-nqf-levels/resource/> .
+@prefix dct:      <http://purl.org/dc/terms/> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+
+etf-model:bd-nqf-levels
+    a skos:ConceptScheme ;
+    dct:title "Bangladesh National Qualifications Framework (BNQF)"@en ;
+    dct:description "The ten levels of the Bangladesh National Qualifications Framework, transcribed from the English translation of the BNQF Policy, 2026."@en ;
+    dct:created "2026-11-27"^^xsd:date ;
+    dct:publisher "cognizone" ;
+    dct:source "Bangladesh National Qualifications Framework (BNQF) Policy, 2026; supplied file: Draft English Translated copy of Approved _ BNQF Policy .pdf; Section 5.1 (printed page 5), Sections 6.1-6.10 (printed pages 8-11)."@en ;
+    skos:hasTopConcept :level-1, :level-2, :level-3, :level-4, :level-5,
+        :level-6, :level-7, :level-8, :level-9, :level-10 .
+
+:level-1
+    a skos:Concept ;
+    skos:inScheme etf-model:bd-nqf-levels ;
+    skos:prefLabel "Level 1"@en ;
+    skos:notation "1" ;
+    skos:scopeNote "Includes National Skills Certificate (NSC) 1."@en .
+
+:level-2
+    a skos:Concept ;
+    skos:inScheme etf-model:bd-nqf-levels ;
+    skos:prefLabel "Level 2"@en ;
+    skos:notation "2" ;
+    skos:scopeNote "Includes National Skills Certificate (NSC) 2."@en .
+
+:level-3
+    a skos:Concept ;
+    skos:inScheme etf-model:bd-nqf-levels ;
+    skos:prefLabel "Level 3"@en ;
+    skos:notation "3" ;
+    skos:scopeNote "Includes SSC, Dakhil, vocational equivalents and National Skills Certificate (NSC) 3."@en .
+
+:level-4
+    a skos:Concept ;
+    skos:inScheme etf-model:bd-nqf-levels ;
+    skos:prefLabel "Level 4"@en ;
+    skos:notation "4" ;
+    skos:scopeNote "Includes National Skills Certificate (NSC) 4."@en .
+
+:level-5
+    a skos:Concept ;
+    skos:inScheme etf-model:bd-nqf-levels ;
+    skos:prefLabel "Level 5"@en ;
+    skos:notation "5" ;
+    skos:scopeNote "Includes HSC, Alim, HSC (Vocational), HSC (BMT), vocational equivalents and National Skills Certificate (NSC) 5."@en .
+
+:level-6
+    a skos:Concept ;
+    skos:inScheme etf-model:bd-nqf-levels ;
+    skos:prefLabel "Level 6"@en ;
+    skos:notation "6" ;
+    skos:scopeNote "Includes the four-year technical diploma and National Skills Certificate (NSC) 6. Section 5.5 distinguishes their learning volume, scope and purpose; placement at the same BNQF level does not make them fully equivalent."@en .
+
+:level-7
+    a skos:Concept ;
+    skos:inScheme etf-model:bd-nqf-levels ;
+    skos:prefLabel "Level 7"@en ;
+    skos:notation "7" ;
+    skos:scopeNote "Includes three-, four- and five-year bachelor's programmes and Fazil."@en .
+
+:level-8
+    a skos:Concept ;
+    skos:inScheme etf-model:bd-nqf-levels ;
+    skos:prefLabel "Level 8"@en ;
+    skos:notation "8" ;
+    skos:scopeNote "Includes postgraduate certificates and postgraduate diplomas."@en .
+
+:level-9
+    a skos:Concept ;
+    skos:inScheme etf-model:bd-nqf-levels ;
+    skos:prefLabel "Level 9"@en ;
+    skos:notation "9" ;
+    skos:scopeNote "Includes master's programmes by research, coursework or mixed mode, and Kamil."@en .
+
+:level-10
+    a skos:Concept ;
+    skos:inScheme etf-model:bd-nqf-levels ;
+    skos:prefLabel "Level 10"@en ;
+    skos:notation "10" ;
+    skos:scopeNote "Includes doctoral programmes (PhD by research or mixed mode)."@en .
