@@ -972,7 +972,7 @@ qcp:startsWithConstraintComponent
         <http://www.w3.org/ns/shacl#description>
                 "An associated level of education within ACQF education levels."@en;
         <http://www.w3.org/ns/shacl#in>
-                ( <http://data.europa.eu/snb/eqf/1> <http://data.europa.eu/snb/eqf/2> <http://data.europa.eu/snb/eqf/3> <http://data.europa.eu/snb/eqf/4> <http://data.europa.eu/snb/eqf/5> <http://data.europa.eu/snb/eqf/6> <http://data.europa.eu/snb/eqf/7> <http://data.europa.eu/snb/eqf/8> );
+                ( <http://data.europa.eu/snb/eqf/1> <http://data.europa.eu/snb/eqf/2> <http://data.europa.eu/snb/eqf/3> <http://data.europa.eu/snb/eqf/4> <http://data.europa.eu/snb/eqf/5> <http://data.europa.eu/snb/eqf/6> <http://data.europa.eu/snb/eqf/7> <http://data.europa.eu/snb/eqf/8> <https://data.etf-qd.cogni.zone/model/bd-nqf-levels/resource/level-1> <https://data.etf-qd.cogni.zone/model/bd-nqf-levels/resource/level-10> <https://data.etf-qd.cogni.zone/model/bd-nqf-levels/resource/level-2> <https://data.etf-qd.cogni.zone/model/bd-nqf-levels/resource/level-3> <https://data.etf-qd.cogni.zone/model/bd-nqf-levels/resource/level-4> <https://data.etf-qd.cogni.zone/model/bd-nqf-levels/resource/level-5> <https://data.etf-qd.cogni.zone/model/bd-nqf-levels/resource/level-6> <https://data.etf-qd.cogni.zone/model/bd-nqf-levels/resource/level-7> <https://data.etf-qd.cogni.zone/model/bd-nqf-levels/resource/level-8> <https://data.etf-qd.cogni.zone/model/bd-nqf-levels/resource/level-9> );
         <http://www.w3.org/ns/shacl#minCount>
                 0;
         <http://www.w3.org/ns/shacl#name>
